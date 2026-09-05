@@ -1,318 +1,233 @@
-# 🌳 درختچهٔ کامل مقالات هدف QPedia
+# درختچهٔ زندهٔ مقالات QPedia
 
-**تاریخ تدوین:** ۱۴ شهریور ۱۴۰۵ / ۵ سپتامبر ۲۰۲۶  
-**هدف دانشنامه:** ۱۶۰ مقاله  
-**منبع انتشار:** مسترلیست گیتهاب `docs/74-published-articles-master-list.md` (۱۳ شهریور ۱۴۰۵) + بک‌لاگ `docs/unpublished-articles-backlog.md`  
-**هشدار:** اسکن زندهٔ سایت‌مپ در این محیط کامل نشد (ایندکس باز شد، زیرنقشه‌ها ۵۲۲ دادند). عدد ۷۴ از سند گیتهاب است، نه از REST همین لحظه.
+**منبع:** صفحات زندهٔ `qpedia.ir` — ۱۴ شهریور ۱۴۰۵ / ۵ سپتامبر ۲۰۲۶  
+**ساختار دسته:** سایت‌مپ زنده `wp-sitemap-taxonomies-quantum_category-1.xml` (۱۳ ترم)  
+**مقالات:** آرشیوهای `/topic/{slug}/` که همین جلسه HTTP 200 دادند.
 
-**علائم:**
-- ✅ منتشرشده (طبق مسترلیست ۷۴)
-- 📦 آماده در `articles/` — هنوز وارد سایت نشده
-- ⬜ در صف تألیف
-- ⚠️ تکراریِ زندهٔ قبلی — در مسترلیست ۷۴ نیست؛ اگر هنوز روی سایت است باید حذف شود
+فقط دسته و زیردسته‌ای که **الان روی سایت است**. دستهٔ `mathematics` در سایت‌مپ زنده نیست و اینجا هم نیست.
+
+آرشیوهایی که این جلسه ۵۲۲ دادند با ⚠ مشخص شده‌اند؛ مقاله‌شان در صورت وجود از آرشیو **مادر** آمده.
 
 ---
 
-## 📊 جمع‌بندی
+## نقشهٔ زندهٔ دسته‌ها (۱۳)
 
-| وضعیت | تعداد |
+```
+مبانی و مفاهیم          /topic/fundamentals/
+ ├─ مفاهیم پایه         /topic/core-concepts/          ⚠ آرشیو ۵۲۲
+ └─ ذرات بنیادی         /topic/particles/              ✅ خوانده شد
+
+تاریخ و آزمایش‌ها       /topic/history-experiments/
+ ├─ تاریخ کوانتوم       /topic/history/                ⚠ آرشیو ۵۲۲
+ └─ آزمایش‌های کوانتومی /topic/experiments/            ⚠ آرشیو ۵۲۲
+
+پدیده‌های کوانتومی      /topic/phenomena/              ✅ خوانده شد
+
+فناوری و کاربردها       /topic/technology/
+ ├─ فناوری‌های روزمره   /topic/everyday-tech/          ✅ خوانده شد
+ ├─ رایانش و ارتباطات   /topic/quantum-computing/      ⚠ آرشیو ۵۲۲
+ └─ زیست‌شناسی کوانتومی /topic/quantum-biology/        ⚠ آرشیو ۵۲۲
+
+تفسیرها و فلسفه         /topic/interpretations/        ✅ خوانده شد
+نقد شبه‌علم             /topic/pseudoscience/          ⚠ آرشیو ۵۲۲
+```
+
+---
+
+# ۱. مبانی و مفاهیم کوانتوم
+`/topic/fundamentals/` — برگهٔ ۱ و ۲ زنده · **۳۵ مقاله**
+
+### ذرات بنیادی — `/topic/particles/` (۹ مقاله، آرشیو زنده)
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| ذرات مجازی چیستند؟ | `virtual-particles` |
+| نوترینو چیست؟ | `neutrino` |
+| مدل استاندارد چیست؟ | `standard-model` |
+| بوزون هیگز چیست؟ | `higgs-boson` |
+| کوارک چیست؟ | `quark` |
+| اسپین هسته‌ای چیست؟ | `nuclear-spin` |
+| پادماده چیست؟ | `antimatter` |
+| فوتون دقیقا چیست ؟ | `photon` |
+| الکترون چیست؟ ویژگی‌ها، نقش در اتم و برق | `electron` |
+
+### مفاهیم پایه — `/topic/core-concepts/`
+آرشیو زیردسته این جلسه ۵۲۲ بود. این ۲۶ مقاله روی آرشیو مادر `fundamentals` هستند و در `particles` نیستند:
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| کوانتوم یعنی چه؟ | `what-is-quantum` |
+| برهم‌نهی کوانتومی | `quantum-superposition` |
+| برهم نهی چیست؟ وقتی یک ذره «هم این است هم آن» | `superposition-explained` |
+| برهم نهی یعنی چه، و چرا اشیای بزرگ برهم نهی نمی شوند | `why-large-objects-dont-superpose` |
+| دوگانگی موج و ذره | `wave-particle-duality` |
+| تابع موج چیست؟ | `wave-function` |
+| اندازه‌گیری و فروپاشی | `quantum-measurement` |
+| اسپین؛ چرخشی که چرخش نیست | `quantum-spin` |
+| ترازهای انرژی و کوانتش | `energy-levels` |
+| واهمدوسی؛ چرا دنیا عادی است! | `decoherence` |
+| ثابت پلانک؛ کوچک‌ترین واحد جهان | `planck-constant` |
+| اصل طرد پاولی دقیقاً چه می‌گوید؟ | `pauli-exclusion-principle` |
+| اصل عدم قطعیت هایزنبرگ به زبان ساده | `heisenberg-uncertainty-principle` |
+| ناظر در کوانتوم چیست؟ | `observer` |
+| اصل مکملیت چیست؟ | `complementarity-principle` |
+| حالت کوانتومی چیست؟ | `quantum-state` |
+| عدد کوانتومی چیست؟ | `quantum-number` |
+| تفاوت جبرگرایی کلاسیک و احتمال کوانتومی | `determinism-vs-probability` |
+| تفاوت فیزیک کوانتوم و مکانیک کوانتومی چیست؟ | `quantum-physics-vs-quantum-mechanics` |
+| آیا فیزیک کلاسیک اشتباه بود؟ نه، محدود بود | `is-classical-physics-wrong` |
+| تمثیل تاس در مقابل تمثیل سکه | `coin-vs-dice-quantum-uncertainty` |
+| تمرین ذهنی: خودتان یک تمثیل بسازید | `quantum-analogy-exercise-boundary` |
+| چرا «نفهمیدنِ درست» کوانتوم، خودش یک دستاورد است؟ | `quantum-understanding-achievement` |
+| نقشهٔ ذهنی پنج‌گانه برای فهم درست کوانتوم | `quantum-fivefold-mental-map` |
+| چرا ریاضیات کوانتوم درست است ولی فهمش سخت است؟ | `why-quantum-math-works` |
+| منابع معتبر فارسی و انگلیسی برای یادگیری عمیق‌تر کوانتوم | `quantum-learning-resources` |
+
+---
+
+# ۲. تاریخ و آزمایش‌های کوانتوم
+`/topic/history-experiments/` — **۱۹ مقاله** روی برگهٔ ۱ زنده  
+برگهٔ ۲ و زیردسته‌های `history` / `experiments` این جلسه ۵۲۲.
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| مقالهٔ EPR چیست؟ | `epr-paradox` |
+| آزمایش اشترن-گرلاخ چیست؟ | `stern-gerlach-experiment` |
+| کنفرانس سولوی ۱۹۲۷ چه بود؟ | `solvay-conference-1927` |
+| آزمایش آسپه ۱۹۸۲ چه بود؟ | `aspect-experiment-1982` |
+| چگالش بوز-اینشتین چیست؟ | `bose-einstein-condensate` |
+| اثر فوتوالکتریک | `photoelectric-effect` |
+| اینشتین و اثر فوتوالکتریک (نه فقط نسبیت) | `einstein-photoelectric-effect` |
+| نامساوی بل | `bell-inequality` |
+| آزمایش های بل: چگونه درهم تنیدگی اثبات شد! | `bell-experiments` |
+| شرودینگر: زندگی، معادله و گربه‌ای که هرگز نداشت | `schrodinger-life-equation` |
+| پلانک و بحران تابش جسم سیاه | `max-planck-blackbody` |
+| دیراک و پیش‌بینی پادماده | `dirac-antimatter` |
+| فاینمن: نابغه‌ای که کوانتوم را ساده توضیح می‌داد | `feynman-quantum-explainer` |
+| نبرد اینشتین و بور بر سر معنای کوانتوم | `einstein-bohr-debate` |
+| زنان فراموش‌شدهٔ فیزیک کوانتوم | `forgotten-women-quantum` |
+| فاجعهٔ فرابنفش | `ultraviolet-catastrophe` |
+| مدل اتمی بور | `bohr-atomic-model` |
+| آزمایش دو شکاف | `double-slit-experiment` |
+| اثر زنون کوانتومی | `quantum-zeno-effect` |
+
+---
+
+# ۳. پدیده‌های کوانتومی
+`/topic/phenomena/` — **۱۳ مقاله** · بدون زیردسته
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| همدوسی چیست؟ | `coherence` |
+| صفر مطلق چیست؟ | `absolute-zero` |
+| واپاشی آلفا چیست؟ | `alpha-decay` |
+| گسیل تحریکی چیست؟ | `stimulated-emission` |
+| چگالش بوز-اینشتین چیست؟ | `bose-einstein-condensate` |
+| همجوشی ستارگان چگونه ممکن است؟ | `stellar-fusion` |
+| ابررسانایی | `superconductivity` |
+| درهم‌تنیدگی کوانتومی | `quantum-entanglement-explained` |
+| تونل‌زنی کوانتومی | `quantum-tunneling` |
+| گربهٔ شرودینگر | `schrodinger-cat` |
+| نوسانات خلأ | `vacuum-fluctuations` |
+| اثر کازیمیر | `casimir-effect` |
+| ابرشارگی؛ مایعی که از لیوان بالا می‌رود | `superfluidity` |
+
+---
+
+# ۴. فناوری و کاربردهای کوانتومی
+`/topic/technology/` — برگهٔ ۱ و ۲ زنده · **۲۸ مقاله**
+
+### فناوری‌های روزمره — `/topic/everyday-tech/` (۸ مقاله، آرشیو زنده)
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| حافظهٔ فلش چطور کار می‌کند؟ | `flash-memory` |
+| میکروسکوپ تونلی چیست؟ | `scanning-tunneling-microscope` |
+| فیبر نوری چگونه کار می‌کند؟ | `fiber-optics` |
+| ام‌آرآی (MRI) چگونه کار می‌کند؟ | `mri-quantum` |
+| ساعت اتمی و جی‌پی‌اس | `atomic-clock-gps` |
+| ترانزیستور؛ کوانتوم در جیب شما | `transistor-quantum` |
+| لیزر چطور کار می‌کند؟ | `how-lasers-work` |
+| پنل خورشیدی و اثر فوتوالکتریک | `solar-cells-photoelectric` |
+
+### رایانش و ارتباطات — `/topic/quantum-computing/`
+آرشیو زیردسته ۵۲۲. این ۱۴ مقاله روی آرشیو مادر هستند و در everyday-tech نیستند:
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| کیوبیت چیست؟ | `qubit` |
+| الگوریتم شور چیست؟ | `shor-algorithm` |
+| الگوریتم گروور چیست؟ | `grover-algorithm` |
+| گیت کوانتومی چیست؟ | `quantum-gate` |
+| قضیهٔ عدم‌کپی چیست؟ | `no-cloning-theorem` |
+| تصحیح خطای کوانتومی چیست؟ | `quantum-error-correction` |
+| شبیه‌سازی کوانتومی چیست؟ | `quantum-simulation` |
+| برتری کوانتومی چیست؟ | `quantum-supremacy` |
+| رمزنگاری کوانتومی و آیندهٔ امنیت اینترنت | `quantum-cryptography-internet-security` |
+| کامپیوتر کوانتومی چیست و چقدر با واقعیت فاصله دارد؟ | `quantum-computer-reality` |
+| درهم‌تنیدگی در کامپیوترهای کوانتومی امروزی | `entanglement-quantum-computers` |
+| تله پورت کوانتومی چیست؟ | `quantum-teleportation` |
+| آیا هوش مصنوعی از کوانتوم استفاده می کند؟ | `does-ai-use-quantum` |
+| آینده شغلی: آیا باید فیزیک کوانتوم یاد بگیریم؟ | `quantum-career-future-learn` |
+
+### زیست‌شناسی کوانتومی — `/topic/quantum-biology/`
+آرشیو زیردسته ۵۲۲. این ۵ مقاله روی آرشیو مادر:
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| قطب‌نمای پرندگان | `bird-quantum-compass` |
+| حس بویایی؛ شکل یا ارتعاش؟ | `quantum-smell` |
+| آنزیم‌ها؛ عبور از دیوار به‌جای پریدن | `enzyme-quantum-tunneling` |
+| فتوسنتز؛ کارآمدترین ماشین جهان | `quantum-photosynthesis` |
+| آیا جهش ژنتیکی کوانتومی است؟ | `genetic-mutation` |
+
+### فقط روی مادر فناوری دیده شد (زیردسته‌اش از آرشیو زنده مشخص نشد)
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| حسگرهای کوانتومی؛ آیندهٔ دقت اندازه‌گیری | `quantum-sensors` |
+
+---
+
+# ۵. تفسیرها و فلسفهٔ کوانتوم
+`/topic/interpretations/` — **۵ مقاله** · آرشیو زنده
+
+| عنوان زنده | اسلاگ |
+|---|---|
+| تفسیر دوبروی-بوهم چیست؟ | `pilot-wave` |
+| تفسیر جهان‌های موازی | `many-worlds-interpretation` |
+| تفسیر کپنهاگی | `copenhagen-interpretation` |
+| آیا کوانتوم یعنی چندجهانی واقعی است؟ | `is-many-worlds-real` |
+| آیا فیزیک دانان بر سر معنای اندازه گیری توافق دارند؟ | `quantum-interpretation-debate` |
+
+---
+
+# ۶. نقد شبه‌علم
+`/topic/pseudoscience/` — آرشیو دسته این جلسه ۵۲۲  
+دو مقاله با باز کردن صفحهٔ تکی تأیید شد؛ سه تای دیگر از لینک «مقاله‌های مرتبط» همان صفحات زنده:
+
+| عنوان | اسلاگ | نحوهٔ تأیید |
+|---|---|---|
+| «همه‌چیز انرژی است» — بررسی یک ادعا | `everything-is-energy-claim` | صفحهٔ تکی ۲۰۰ |
+| کوانتوم و پزشکی | `quantum-alternative-medicine-science` | صفحهٔ تکی ۲۰۰ |
+| آیا مغز کوانتومی است؟ | `is-the-brain-quantum` | لینک مرتبط روی صفحهٔ زنده |
+| چگونه ادعای شبه‌علمی را در یک جمله تشخیص دهیم | `spot-pseudoscience-one-sentence` | لینک مرتبط روی صفحهٔ زنده |
+| آیا درهم تنیدگی یعنی اطلاعات سریع تر از نور منتقل می شود؟ | `entanglement-myths` | لینک مرتبط روی صفحهٔ زنده |
+
+---
+
+## شمارش همین جلسه
+
+| دستهٔ زنده | مقاله‌های دیده‌شده |
 |---|---:|
-| ✅ منتشرشده (مسترلیست) | **۷۴** |
-| 📦 آمادهٔ ایمپورت | **۱۴** |
-| ⬜ صف تألیف | **۸۶** |
-| هدف نقشه | **۱۶۰** |
-| ⚠️ تکراری احتمالی | `quantum-alternative-medicine-science-2` |
+| مبانی (`fundamentals`) | ۳۵ |
+| تاریخ و آزمایش (`history-experiments`) | ۱۹ |
+| پدیده‌ها (`phenomena`) | ۱۳ |
+| فناوری (`technology`) | ۲۸ |
+| تفسیرها (`interpretations`) | ۵ |
+| شبه‌علم (`pseudoscience`) | ۲ قطعی + ۳ از لینک مرتبط |
+| **یکتا (بدون تکرار `bose-einstein-condensate`)** | حدود **۹۹ تا ۱۰۴** |
 
-۷۴ + ۱۴ + ۸۶ = ۱۷۴ ردیف عملیاتی؛ ۱۴ مقالهٔ آماده و بخشی از ۷۴ خارج از ستون‌های سخت ۱۶۰ هستند (موج توضیحی/سئو). نقشهٔ ۱۶۰ همچنان هدف پوشش موضوعی است.
+تکرار زنده: `bose-einstein-condensate` هم در تاریخ/آزمایش است هم در پدیده‌ها.
 
----
-
-# 🔵 مبانی و مفاهیم کوانتوم (`fundamentals`)
-
-### مفاهیم پایه (`core-concepts`)
-
-**منتشرشده**
-- ✅ کوانتوم یعنی چه؟ — `what-is-quantum`
-- ✅ برهم‌نهی کوانتومی — `quantum-superposition`
-- ✅ برهم‌نهی چیست؟ وقتی یک ذره «هم این است هم آن» — `superposition-explained`
-- ✅ برهم‌نهی یعنی چه، و چرا اشیای بزرگ برهم‌نهی نمی‌شوند — `why-large-objects-dont-superpose`
-- ✅ دوگانگی موج و ذره — `wave-particle-duality`
-- ✅ تابع موج چیست؟ — `wave-function`
-- ✅ اندازه‌گیری و فروپاشی — `quantum-measurement`
-- ✅ اسپین؛ چرخشی که چرخش نیست — `quantum-spin`
-- ✅ ترازهای انرژی و کوانتش — `energy-levels`
-- ✅ واهم‌دوسی؛ چرا دنیا عادی است! — `decoherence`
-- ✅ ثابت پلانک؛ کوچک‌ترین واحد جهان — `planck-constant`
-- ✅ اصل طرد پاولی — `pauli-exclusion-principle`
-- ✅ اصل عدم قطعیت هایزنبرگ به زبان ساده — `heisenberg-uncertainty-principle`
-- ✅ تفاوت فیزیک کوانتوم و مکانیک کوانتومی چیست؟ — `quantum-physics-vs-quantum-mechanics`
-- ✅ تفاوت جبرگرایی کلاسیک و احتمال کوانتومی — `determinism-vs-probability`
-- ✅ تمثیل تاس در مقابل تمثیل سکه — `coin-vs-dice-quantum-uncertainty`
-- ✅ تمرین ذهنی: خودتان یک تمثیل بسازید — `quantum-analogy-exercise-boundary`
-- ✅ جمع‌بندی: چرا نفهمیدنِ درست کوانتوم دستاورد است — `quantum-understanding-achievement`
-- ✅ نقشهٔ ذهنی پنج‌گانه — `quantum-fivefold-mental-map`
-- ✅ آیا فیزیک کلاسیک اشتباه بود؟ — `is-classical-physics-wrong`
-
-**آمادهٔ انتشار**
-- 📦 عدد کوانتومی — `quantum-number`
-- 📦 اصل مکملیت — `complementarity-principle`
-- 📦 ناظر — `observer`
-- 📦 اصل عدم قطعیت (تحلیلی) — `uncertainty-principle`
-- 📦 حالت کوانتومی — `quantum-state`
-
-**صف تألیف**
-- ⬜ همدوسی کوانتومی — `quantum-coherence`
-- ⬜ نویز کوانتومی — `quantum-noise`
-- ⬜ حد استاندارد کوانتومی — `standard-quantum-limit`
-- ⬜ حالت‌های فشرده — `squeezed-quantum-states`
-- ⬜ اندازه‌گیری ضعیف — `weak-measurement`
-- ⬜ توموگرافی حالت — `quantum-state-tomography`
-- ⬜ زمان همدوسی — `coherence-time`
-- ⬜ دمای بحرانی — `critical-temperature`
-- ⬜ صفر مطلق — `absolute-zero`
-- ⬜ خلأ کوانتومی — `quantum-vacuum`
-
-### ذرات بنیادی (`particles`)
-
-**منتشرشده**
-- ✅ فوتون دقیقاً چیست؟ — `photon`
-- ✅ الکترون چیست؟ — `electron`
-
-**صف تألیف**
-- ⬜ کوارک — `quark`
-- ⬜ نوترینو — `neutrino`
-- ⬜ بوزون هیگز — `higgs-boson`
-- ⬜ پادماده و عدم تقارن جهان — `antimatter-universe`
-- ⬜ مدل استاندارد — `standard-model`
-- ⬜ ذرات مجازی — `virtual-particles`
-- ⬜ چهار نیروی بنیادی — `fundamental-forces`
-- ⬜ اسپین هسته‌ای — `nuclear-spin`
-
----
-
-# 🟠 تاریخ و آزمایش‌های کوانتوم (`history-experiments`)
-
-### تاریخ کوانتوم (`history`)
-
-**منتشرشده**
-- ✅ اثر فوتوالکتریک — `photoelectric-effect`
-- ✅ اینشتین و اثر فوتوالکتریک — `einstein-photoelectric-effect`
-- ✅ فاجعهٔ فرابنفش — `ultraviolet-catastrophe`
-- ✅ پلانک و بحران تابش جسم سیاه — `max-planck-blackbody`
-- ✅ مدل اتمی بور — `bohr-atomic-model`
-- ✅ نامساوی بل — `bell-inequality`
-- ✅ آزمایش‌های بل — `bell-experiments`
-- ✅ نبرد اینشتین و بور — `einstein-bohr-debate`
-- ✅ زنان فراموش‌شدهٔ فیزیک کوانتوم — `forgotten-women-quantum`
-- ✅ شرودینگر: زندگی، معادله و گربه — `schrodinger-life-equation`
-- ✅ فاینمن: نابغه‌ای که کوانتوم را ساده توضیح می‌داد — `feynman-quantum-explainer`
-- ✅ دیراک و پیش‌بینی پادماده — `dirac-antimatter`
-
-**صف تألیف**
-- ⬜ کنفرانس سولوی ۱۹۲۷ — `solvay-conference-1927`
-- ⬜ پارادوکس EPR — `epr-paradox`
-- ⬜ نوبل فیزیک ۲۰۲۲ — `nobel-physics-2022`
-- ⬜ تولد مکانیک ماتریسی — `matrix-mechanics-birth`
-- ⬜ معادلهٔ شرودینگر (تاریخ کشف) — `schrodinger-equation-history`
-- ⬜ فاینمن و QED — `feynman-qed`
-- ⬜ بل و متغیرهای پنهان — `bell-theorem-hidden-variables`
-- ⬜ اورت و جهان‌های چندگانه — `everett-many-worlds-history`
-
-### آزمایش‌های کوانتومی (`experiments`)
-
-**منتشرشده**
-- ✅ آزمایش دو شکاف — `double-slit-experiment`
-- ✅ اثر زنون کوانتومی — `quantum-zeno-effect`
-
-**صف تألیف**
-- ⬜ اشترن-گرلاخ — `stern-gerlach-experiment`
-- ⬜ آزمایش تک‌الکترونی تونومورا — `tonomura-single-electron-experiment`
-- ⬜ پاک‌کن کوانتومی — `quantum-eraser`
-- ⬜ انتخاب تأخیری ویلر — `delayed-choice-experiment`
-- ⬜ تداخل‌سنج ماخ-زندر — `mach-zehnder-interferometer`
-- ⬜ آزمایش آسپه ۱۹۸۲ — `aspect-experiment-1982`
-- ⬜ تله‌های یونی — `ion-traps`
-- ⬜ چگالش بوز-اینشتین — `bose-einstein-condensate`
-- ⬜ طیف‌سنجی اتمی — `atomic-spectroscopy`
-
----
-
-# 🟣 پدیده‌های کوانتومی (`phenomena`)
-
-**منتشرشده**
-- ✅ درهم‌تنیدگی کوانتومی — `quantum-entanglement-explained`
-- ✅ تونل‌زنی کوانتومی — `quantum-tunneling`
-- ✅ گربهٔ شرودینگر — `schrodinger-cat`
-- ✅ نوسانات خلأ — `vacuum-fluctuations`
-- ✅ اثر کازیمیر — `casimir-effect`
-- ✅ ابررسانایی — `superconductivity`
-- ✅ ابرشارگی — `superfluidity`
-
-**صف تألیف**
-- ⬜ اثر هال کوانتومی — `quantum-hall-effect`
-- ⬜ اثر جوزفسون — `josephson-effect`
-- ⬜ گسیل تحریکی — `stimulated-emission`
-- ⬜ واپاشی آلفا — `alpha-decay-tunneling`
-- ⬜ همجوشی در ستارگان — `quantum-fusion-stars`
-- ⬜ اثر آهارونوف-بوهم — `aharonov-bohm-effect`
-
----
-
-# 🟢 فناوری و کاربردهای کوانتومی (`technology`)
-
-### فناوری‌های روزمره (`everyday-tech`)
-
-**منتشرشده**
-- ✅ ام‌آرآی — `mri-quantum`
-- ✅ لیزر — `how-lasers-work`
-- ✅ ترانزیستور — `transistor-quantum`
-- ✅ ساعت اتمی و جی‌پی‌اس — `atomic-clock-gps`
-- ✅ حسگرهای کوانتومی — `quantum-sensors`
-- ✅ پنل خورشیدی و اثر فوتوالکتریک — `solar-cells-photoelectric`
-
-**صف تألیف**
-- ⬜ میکروسکوپ الکترونی — `electron-microscope`
-- ⬜ LED — `led-quantum-physics`
-- ⬜ حافظهٔ فلش — `flash-memory-quantum-tunneling`
-- ⬜ میکروسکوپ تونلی روبشی — `scanning-tunneling-microscope`
-- ⬜ فیبر نوری — `quantum-fiber-optics`
-
-### رایانش و ارتباطات (`quantum-computing`)
-
-**منتشرشده**
-- ✅ کیوبیت چیست؟ — `qubit`
-- ✅ رمزنگاری کوانتومی و آیندهٔ امنیت اینترنت — `quantum-cryptography-internet-security`
-- ✅ تله‌پورت کوانتومی — `quantum-teleportation`
-- ✅ کامپیوتر کوانتومی چیست و چقدر با واقعیت فاصله دارد — `quantum-computer-reality`
-- ✅ درهم‌تنیدگی در کامپیوترهای کوانتومی امروزی — `entanglement-quantum-computers`
-- ✅ آیا هوش مصنوعی از کوانتوم استفاده می‌کند؟ — `does-ai-use-quantum`
-- ✅ آینده شغلی: آیا باید فیزیک کوانتوم یاد بگیریم؟ — `quantum-career-future-learn`
-- ✅ منابع فارسی و انگلیسی معتبر — `quantum-learning-resources`
-
-**آمادهٔ انتشار**
-- 📦 کامپیوتر کوانتومی (معماری و برتری) — `quantum-computer`
-- 📦 توزیع کلید کوانتومی — `quantum-key-distribution`
-- 📦 گیت کوانتومی — `quantum-gate`
-- 📦 قضیهٔ عدم تکثیر — `no-cloning-theorem`
-- 📦 رمزنگاری کوانتومی (مبانی) — `quantum-cryptography`
-- 📦 رمزنگاری پساکوانتومی — `post-quantum-cryptography`
-- 📦 الگوریتم‌های کوانتومی — `quantum-algorithm`
-
-**صف تألیف**
-- ⬜ الگوریتم شور — `shor-algorithm`
-- ⬜ الگوریتم گرور — `grover-algorithm`
-- ⬜ تصحیح خطای کوانتومی — `quantum-error-correction`
-- ⬜ مدار کوانتومی — `quantum-circuit`
-- ⬜ پیچیدگی کوانتومی — `quantum-complexity-theory`
-- ⬜ کیوبیت ابررسانا — `superconducting-qubits`
-- ⬜ یون به‌دام‌افتاده — `trapped-ion-qubits`
-- ⬜ رایانش فوتونیکی — `photonic-quantum-computing`
-- ⬜ اتم خنثی — `neutral-atom-qubits`
-- ⬜ گوگل ویلو — `google-willow-quantum-chip`
-- ⬜ برتری کوانتومی — `quantum-supremacy`
-- ⬜ اینترنت و ارتباطات کوانتومی — `quantum-internet-communications`
-- ⬜ شبیه‌سازی کوانتومی — `quantum-simulation-materials`
-
-### زیست‌شناسی کوانتومی (`quantum-biology`)
-
-**منتشرشده**
-- ✅ قطب‌نمای پرندگان — `bird-quantum-compass`
-- ✅ حس بویایی — `quantum-smell`
-- ✅ آنزیم‌ها و تونل‌زنی — `enzyme-quantum-tunneling`
-- ✅ فتوسنتز کوانتومی — `quantum-photosynthesis`
-
-**صف تألیف**
-- ⬜ بینایی و ردوپسین — `quantum-vision-rhodopsin`
-- ⬜ جهش ژنتیکی و تونل‌زنی در DNA — `quantum-tunneling-dna-mutation`
-- ⬜ زیست‌شناسی کوانتومی چیست — `what-is-quantum-biology`
-- ⬜ مسیر انرژی خورشید تا برگ — `quantum-energy-transfer-biology`
-- ⬜ کوانتوم در زندگی روزمره — `everyday-quantum-effects`
-- ⬜ وضعیت کوانتوم در ایران — `quantum-technology-iran-region`
-
----
-
-# 🔴 تفسیرها و فلسفه (`interpretations`)
-
-**منتشرشده**
-- ✅ تفسیر کپنهاگی — `copenhagen-interpretation`
-- ✅ تفسیر جهان‌های موازی — `many-worlds-interpretation`
-- ✅ آیا فیزیک‌دانان بر سر معنای اندازه‌گیری توافق دارند؟ — `quantum-interpretation-debate`
-- ✅ آیا کوانتوم یعنی چندجهانی واقعی است؟ — `is-many-worlds-real`
-- ✅ آیا با فکر کردن می‌توان واقعیت کوانتومی را تغییر داد؟ — `mind-quantum-reality`
-
-**صف تألیف**
-- ⬜ موج راهنما (دوبروی-بوهم) — `de-broglie-bohm-pilot-wave`
-- ⬜ فروپاشی عینی — `objective-collapse-theories`
-- ⬜ کیوبیسم — `quantum-bayesianism-qbism`
-- ⬜ تاریخ‌های سازگار — `consistent-histories`
-- ⬜ تفسیر ترامعاملاتی — `transactional-interpretation`
-- ⬜ ابرجبرگرایی — `superdeterminism`
-- ⬜ مسئلهٔ اندازه‌گیری — `quantum-measurement-problem`
-- ⬜ کدام تفسیر درست است؟ — `which-quantum-interpretation-is-correct`
-
----
-
-# 🧮 ریاضیات و فرمالیسم (`mathematics`)
-
-**منتشرشده**
-- ✅ چرا ریاضیات کوانتوم درست است ولی فهمش سخت است — `why-quantum-math-works`
-
-**آمادهٔ انتشار**
-- 📦 فضای هیلبرت — `hilbert-space`
-- 📦 عملگر — `operator`
-
-**صف تألیف**
-- ⬜ نماد براکت — `bra-ket-notation`
-- ⬜ عملگر هرمیتی — `hermitian-operators`
-- ⬜ مقدار ویژه و تابع ویژه — `eigenvalues-eigenstates`
-- ⬜ ماتریس چگالی — `density-matrix`
-- ⬜ دامنهٔ احتمال — `probability-amplitude`
-- ⬜ قاعدهٔ بورن — `born-rule`
-- ⬜ کموتاتور — `commutators-quantum`
-- ⬜ معادلهٔ شرودینگر — `schrodinger-equation`
-- ⬜ معادلهٔ دیراک — `dirac-equation`
-- ⬜ معادلهٔ کلاین-گوردون — `klein-gordon-equation`
-- ⬜ تبدیل فوریه در کوانتوم — `fourier-transform-quantum`
-- ⬜ اصل برهم‌نهی خطی — `linear-superposition-principle`
-- ⬜ انتگرال مسیر فاینمن — `feynman-path-integral`
-- ⬜ نمایش تعامل — `interaction-picture-quantum`
-- ⬜ بازبهنجارش — `renormalization`
-
----
-
-# ⚫ نقد شبه‌علم (`pseudoscience`)
-
-**منتشرشده**
-- ✅ کوانتوم و پزشکی جایگزین — `quantum-alternative-medicine-science`
-- ✅ «همه‌چیز انرژی است» — `everything-is-energy-claim`
-- ✅ آیا مغز کوانتومی است؟ — `is-the-brain-quantum`
-- ✅ چگونه ادعای شبه‌علمی را در یک جمله تشخیص دهیم — `spot-pseudoscience-one-sentence`
-- ✅ آیا درهم‌تنیدگی یعنی اطلاعات سریع‌تر از نور؟ — `entanglement-myths`
-- ✅ آیا مغز انسان از پدیده‌های کوانتومی استفاده می‌کند؟ — `brain-quantum-phenomena`
-- ✅ آیا کوانتوم ثابت می‌کند خدا وجود دارد یا ندارد؟ — `does-quantum-prove-god`
-
-**صف تألیف**
-- ⬜ نقد «راز» و قانون جذب — `quantum-law-of-attraction-debunked`
-- ⬜ آگاهی و فروپاشی (Orch-OR) — `consciousness-quantum-collapse-debunked`
-- ⬜ نقل‌قول‌های جعلی اینشتین/بور/فاینمن — `fake-quotes-einstein-feynman-debunked`
-- ⬜ سوءاستفادهٔ بازاریابی از عدم قطعیت — `pseudoscience-uncertainty-abuse`
-- ⬜ محصولات کوانتومی تقلبی — `fake-quantum-commercial-products`
-- ⬜ مرز علم و شبه‌علم — `quantum-science-vs-pseudoscience-boundary`
-
-**تکراری**
-- ⚠️ `quantum-alternative-medicine-science-2` — در مسترلیست ۷۴ نیست؛ اگر هنوز publish است حذف/پیش‌نویس شود.
-
----
-
-## فهرست تخت ۷۴ منتشرشده (برای چک سریع)
-
-`atomic-clock-gps` · `bell-experiments` · `bell-inequality` · `bird-quantum-compass` · `bohr-atomic-model` · `brain-quantum-phenomena` · `casimir-effect` · `coin-vs-dice-quantum-uncertainty` · `copenhagen-interpretation` · `decoherence` · `determinism-vs-probability` · `dirac-antimatter` · `does-ai-use-quantum` · `does-quantum-prove-god` · `double-slit-experiment` · `einstein-bohr-debate` · `einstein-photoelectric-effect` · `electron` · `energy-levels` · `entanglement-myths` · `entanglement-quantum-computers` · `enzyme-quantum-tunneling` · `everything-is-energy-claim` · `feynman-quantum-explainer` · `forgotten-women-quantum` · `heisenberg-uncertainty-principle` · `how-lasers-work` · `is-classical-physics-wrong` · `is-many-worlds-real` · `is-the-brain-quantum` · `many-worlds-interpretation` · `max-planck-blackbody` · `mind-quantum-reality` · `mri-quantum` · `pauli-exclusion-principle` · `photoelectric-effect` · `photon` · `planck-constant` · `quantum-alternative-medicine-science` · `quantum-analogy-exercise-boundary` · `quantum-career-future-learn` · `quantum-computer-reality` · `quantum-cryptography-internet-security` · `quantum-entanglement-explained` · `quantum-fivefold-mental-map` · `quantum-interpretation-debate` · `quantum-learning-resources` · `quantum-measurement` · `quantum-photosynthesis` · `quantum-physics-vs-quantum-mechanics` · `quantum-sensors` · `quantum-smell` · `quantum-spin` · `quantum-superposition` · `quantum-teleportation` · `quantum-tunneling` · `quantum-understanding-achievement` · `quantum-zeno-effect` · `qubit` · `schrodinger-cat` · `schrodinger-life-equation` · `solar-cells-photoelectric` · `spot-pseudoscience-one-sentence` · `superconductivity` · `superfluidity` · `superposition-explained` · `transistor-quantum` · `ultraviolet-catastrophe` · `vacuum-fluctuations` · `wave-function` · `wave-particle-duality` · `what-is-quantum` · `why-large-objects-dont-superpose` · `why-quantum-math-works`
-
----
-
-## اقدام پیشنهادی بعدی (فقط پیشنهاد — اجرا نمی‌شود مگر بگویید بساز)
-
-1. اسکن زندهٔ REST یا سایت‌مپ مقالات برای تأیید ۷۴ اسلاگ.
-2. ایمپورت ۱۴ مقالهٔ آماده.
-3. حذف تکراری `-2` اگر هنوز publish است.
-4. بعد: صف تألیف ۸۶ موضوع، ترجیحاً ذرات + ریاضی که الان تقریباً خالی‌اند.
+آنچه در سایت‌مپ دسته **نیست:** `/topic/mathematics/`
