@@ -9,10 +9,6 @@ article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم 
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),واهم‌دوسی؛ چرا دنیا عادی است!,decoherence
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),ثابت پلانک؛ کوچک‌ترین واحد جهان,planck-constant
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اصل طرد پاولی دقیقاً چه می‌گوید؟ به زبان ساده,pauli-exclusion-principle
-article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),حالت کوانتومی چیست؟,quantum-state
-article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),عدد کوانتومی چیست؟,quantum-number
-article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),ناظر در کوانتوم چیست؟,observer
-article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اصل مکملیت چیست؟,complementarity-principle
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اصل عدم قطعیت هایزنبرگ به زبان ساده,heisenberg-uncertainty-principle
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),برهم‌نهی چیست؟ وقتی یک ذره «هم این است هم آن»,superposition-explained
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),برهم‌نهی یعنی چه، و چرا اشیای بزرگ برهم‌نهی نمی‌شوند,why-large-objects-dont-superpose
@@ -20,11 +16,11 @@ article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم 
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تفاوت فیزیک کوانتوم و مکانیک کوانتومی چیست؟,quantum-physics-vs-quantum-mechanics
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تمثیل تاس در مقابل تمثیل سکه: کدام برای عدم قطعیت بهتر است؟,coin-vs-dice-quantum-uncertainty
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تمرین ذهنی: خودتان یک تمثیل بسازید و مرزش را پیدا کنید,quantum-analogy-exercise-boundary
-article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),چرا «نفهمیدنِ درست» کوانتوم، خودش یک دستاورد است؟,quantum-understanding-achievement
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),چرا «نفهمیدن درست» کوانتوم، خودش یک دستاورد است؟,quantum-understanding-achievement
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),نقشهٔ ذهنی پنج‌گانه برای فهم درست کوانتوم,quantum-fivefold-mental-map
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),آیا فیزیک کلاسیک اشتباه بود؟ نه، محدود بود,is-classical-physics-wrong
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),چرا ریاضیات کوانتوم درست است ولی فهمش سخت است؟,why-quantum-math-works
-article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),منابع معتبر فارسی و انگلیسی برای یادگیری عمیق کوانتوم,quantum-learning-resources
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),منابع معتبر فارسی و انگلیسی برای یادگیری عمیق تر کوانتوم,quantum-learning-resources
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),آینده شغلی: آیا باید فیزیک کوانتوم یاد بگیریم؟,quantum-career-future-learn
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),فوتون دقیقاً چیست؟,photon
 article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),الکترون چیست؟ ویژگی‌ها، نقش در اتم و برق,electron
@@ -43,7 +39,6 @@ article,تاریخ و آزمایش‌های کوانتوم (`history-experiments
 article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),اینشتین و اثر فوتوالکتریک (نه فقط نسبیت),einstein-photoelectric-effect
 article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),نبرد اینشتین و بور بر سر معنای کوانتوم,einstein-bohr-debate
 article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),کنفرانس سولوی ۱۹۲۷ چه بود؟,solvay-conference-1927
-article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),مقالهٔ EPR چیست؟,epr-paradox
 article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),دیراک و پیش‌بینی پادماده؛ وقتی ریاضیات از واقعیت جلو زد,dirac-antimatter
 article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),فاینمن؛ نابغه‌ای که کوانتوم را ساده توضیح می‌داد,feynman-quantum-explainer
 article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),شرودینگر: زندگی، معادله و گربه‌ای که هرگز نداشت,schrodinger-life-equation
@@ -80,11 +75,9 @@ article,فناوری و کاربردهای کوانتومی (`technology`),را�
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),درهم‌تنیدگی در کامپیوترهای کوانتومی امروزی,entanglement-quantum-computers
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),برتری کوانتومی چیست؟,quantum-supremacy
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),الگوریتم شور چیست؟,shor-algorithm
-article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),الگوریتم گرور چیست؟,grover-algorithm
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),الگوریتم گروور چیست؟,grover-algorithm
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),تصحیح خطای کوانتومی چیست؟,quantum-error-correction
-article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),گیت کوانتومی چیست؟,quantum-gate
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),شبیه‌سازی کوانتومی چیست؟,quantum-simulation
-article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),قضیهٔ عدم‌کپی چیست؟,no-cloning-theorem
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),تله‌پورت کوانتومی چیست؟,quantum-teleportation
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),حسگرهای کوانتومی؛ آیندهٔ دقت اندازه‌گیری,quantum-sensors
 article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),آیا هوش مصنوعی از کوانتوم استفاده می‌کند؟,does-ai-use-quantum
