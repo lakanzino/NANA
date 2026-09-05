@@ -1,0 +1,22 @@
+/*
+Theme Name: Quantum Pedia Child
+Theme URI: https://qpedia.ir
+Author: M.r.lak, A-Del, R.LOR
+Author URI: https://qpedia.ir
+Description: قالب فرزند Quantum Pedia برای اعمال اصلاحات سئو و امنیت بدون دستکاری قالب اصلی
+Version: 1.0.3-lux
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: quantum-pedia-child
+Template: quantum-pedia
+Tags: rtl-language-support, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/* 
+   استایل‌های اختصاصی فرزند را اینجا بنویسید
+   یا از فایل assets/css/custom.css استفاده کنید
+   (فعلاً خالی بماند)
+*/

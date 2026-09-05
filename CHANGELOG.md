@@ -7,6 +7,23 @@
 
 ---
 
+## ۱۴۰۵/۰۶/۱۴ — پاکسازی `functions.php` قالب فرزند (v1.0.3-lux)
+
+منبع: زیپ محلی `quantum-pedia-child (6).zip` + `functions1.php.txt` در [lakanzino/qpedia.ir](https://github.com/lakanzino/qpedia.ir)
+
+رفع‌ها:
+- حذف چسبیدن دو فایل `functions.php` به هم و enqueue تکراری
+- حذف نوتیس دیباگ `unfiltered_html` از پیشخوان
+- خنثی‌سازی `fonts.css` والد با `wp_dequeue_style` (بدون deregister)
+- ترجمهٔ رشته‌های انگلیسی هدر/جست‌وجو
+- گارد `file_exists` برای ماژول glossary
+- مستثنی کردن `quantum-sitemap.xml` و برگه‌های ثابت از قانون catch-all
+- نرمال‌سازی جست‌وجوی فارسی روی خود کوئری، نه فقط نمایش
+
+بستهٔ نصب: `quantum-pedia-child.zip`
+
+---
+
 ## 🏆 دستاورد بزرگ: استقلال کامل از افزونه‌ها (Plugin-Independent)
 
 با انتقال کدهای ساختاری به پوسته فرزند (`quantum-pedia-child`)، تمامی افزونه‌های سفارشی با موفقیت غیرفعال شدند و سایت هم‌اکنون تنها با **۲ افزونه خدماتی/سرعتی** با حداکثر توان و ثبات در حال کار است:
