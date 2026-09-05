@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "cpt": "quantum_article",
+  "tax": "quantum_category",
+  "categories": [
+    { "slug": "fundamentals",        "name": "مبانی و مفاهیم کوانتوم",       "parent": "" },
+    { "slug": "core-concepts",       "name": "مفاهیم پایه",                  "parent": "fundamentals" },
+    { "slug": "particles",           "name": "ذرات بنیادی",                  "parent": "fundamentals" },
+    { "slug": "history-experiments", "name": "تاریخ و آزمایش‌های کوانتوم",   "parent": "" },
+    { "slug": "history",             "name": "تاریخ کوانتوم",                "parent": "history-experiments" },
+    { "slug": "experiments",         "name": "آزمایش‌های کوانتومی",          "parent": "history-experiments" },
+    { "slug": "phenomena",           "name": "پدیده‌های کوانتومی",           "parent": "" },
+    { "slug": "technology",          "name": "فناوری و کاربردهای کوانتومی",  "parent": "" },
+    { "slug": "everyday-tech",       "name": "فناوری‌های روزمره",            "parent": "technology" },
+    { "slug": "quantum-computing",   "name": "رایانش و ارتباطات کوانتومی",   "parent": "technology" },
+    { "slug": "quantum-biology",     "name": "زیست‌شناسی کوانتومی",          "parent": "technology" },
+    { "slug": "interpretations",     "name": "تفسیرها و فلسفهٔ کوانتوم",     "parent": "" },
+    { "slug": "pseudoscience",       "name": "نقد شبه‌علم",                   "parent": "" },
+    { "slug": "mathematics",         "name": "ریاضیات و فرمالیسم کوانتومی",  "parent": "" }
+  ],
+  "articles": []
+}
