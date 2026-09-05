@@ -1,0 +1,161 @@
+﻿type,category,subcategory,title_fa,slug
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),کوانتوم یعنی چه؟,what-is-quantum
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),برهم‌نهی کوانتومی,quantum-superposition
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),دوگانگی موج و ذره,wave-particle-duality
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تابع موج چیست؟,wave-function
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اندازه‌گیری و فروپاشی,quantum-measurement
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اسپین؛ چرخشی که چرخش نیست,quantum-spin
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),ترازهای انرژی و کوانتش,energy-levels
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),واهم‌دوسی؛ چرا دنیا عادی است!,decoherence
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),ثابت پلانک؛ کوچک‌ترین واحد جهان,planck-constant
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اصل طرد پاولی دقیقاً چه می‌گوید؟ به زبان ساده,pauli-exclusion-principle
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),حالت کوانتومی چیست؟,quantum-state
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),عدد کوانتومی چیست؟,quantum-number
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),ناظر در کوانتوم چیست؟,observer
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اصل مکملیت چیست؟,complementarity-principle
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),اصل عدم قطعیت هایزنبرگ به زبان ساده,heisenberg-uncertainty-principle
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),برهم‌نهی چیست؟ وقتی یک ذره «هم این است هم آن»,superposition-explained
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),برهم‌نهی یعنی چه، و چرا اشیای بزرگ برهم‌نهی نمی‌شوند,why-large-objects-dont-superpose
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تفاوت جبرگرایی کلاسیک و احتمال کوانتومی,determinism-vs-probability
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تفاوت فیزیک کوانتوم و مکانیک کوانتومی چیست؟,quantum-physics-vs-quantum-mechanics
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تمثیل تاس در مقابل تمثیل سکه: کدام برای عدم قطعیت بهتر است؟,coin-vs-dice-quantum-uncertainty
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),تمرین ذهنی: خودتان یک تمثیل بسازید و مرزش را پیدا کنید,quantum-analogy-exercise-boundary
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),چرا «نفهمیدنِ درست» کوانتوم، خودش یک دستاورد است؟,quantum-understanding-achievement
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),نقشهٔ ذهنی پنج‌گانه برای فهم درست کوانتوم,quantum-fivefold-mental-map
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),آیا فیزیک کلاسیک اشتباه بود؟ نه، محدود بود,is-classical-physics-wrong
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),چرا ریاضیات کوانتوم درست است ولی فهمش سخت است؟,why-quantum-math-works
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),منابع معتبر فارسی و انگلیسی برای یادگیری عمیق کوانتوم,quantum-learning-resources
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),مفاهیم پایه (`core-concepts`),آینده شغلی: آیا باید فیزیک کوانتوم یاد بگیریم؟,quantum-career-future-learn
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),فوتون دقیقاً چیست؟,photon
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),الکترون چیست؟ ویژگی‌ها، نقش در اتم و برق,electron
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),کوارک چیست؟,quark
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),نوترینو چیست؟,neutrino
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),بوزون هیگز چیست؟,higgs-boson
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),پادماده چیست؟,antimatter
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),مدل استاندارد چیست؟,standard-model
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),ذرات مجازی چیستند؟,virtual-particles
+article,مبانی و مفاهیم کوانتوم (`fundamentals`),ذرات بنیادی (`particles`),اسپین هسته‌ای چیست؟,nuclear-spin
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),اثر فوتوالکتریک,photoelectric-effect
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),فاجعهٔ فرابنفش,ultraviolet-catastrophe
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),مدل اتمی بور,bohr-atomic-model
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),نامساوی بل,bell-inequality
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),پلانک و بحران تابش جسم سیاه؛ جرقه‌ای که فیزیک را متحول کرد,max-planck-blackbody
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),اینشتین و اثر فوتوالکتریک (نه فقط نسبیت),einstein-photoelectric-effect
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),نبرد اینشتین و بور بر سر معنای کوانتوم,einstein-bohr-debate
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),کنفرانس سولوی ۱۹۲۷ چه بود؟,solvay-conference-1927
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),مقالهٔ EPR چیست؟,epr-paradox
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),دیراک و پیش‌بینی پادماده؛ وقتی ریاضیات از واقعیت جلو زد,dirac-antimatter
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),فاینمن؛ نابغه‌ای که کوانتوم را ساده توضیح می‌داد,feynman-quantum-explainer
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),شرودینگر: زندگی، معادله و گربه‌ای که هرگز نداشت,schrodinger-life-equation
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),تاریخ کوانتوم (`history`),زنان فراموش‌شدهٔ فیزیک کوانتوم,forgotten-women-quantum
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),آزمایش‌های کوانتومی (`experiments`),آزمایش دو شکاف,double-slit-experiment
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),آزمایش‌های کوانتومی (`experiments`),اثر زنون کوانتومی,quantum-zeno-effect
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),آزمایش‌های کوانتومی (`experiments`),آزمایش اشترن-گرلاخ چیست؟,stern-gerlach-experiment
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),آزمایش‌های کوانتومی (`experiments`),آزمایش آسپه ۱۹۸۲ چه بود؟,aspect-experiment-1982
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),آزمایش‌های کوانتومی (`experiments`),آزمایش‌های بل؛ چگونه درهم‌تنیدگی اثبات شد!,bell-experiments
+article,تاریخ و آزمایش‌های کوانتوم (`history-experiments`),آزمایش‌های کوانتومی (`experiments`),چگالش بوز-اینشتین چیست؟,bose-einstein-condensate
+article,پدیده‌های کوانتومی (`phenomena`),,درهم‌تنیدگی کوانتومی,quantum-entanglement-explained
+article,پدیده‌های کوانتومی (`phenomena`),,تونل‌زنی کوانتومی,quantum-tunneling
+article,پدیده‌های کوانتومی (`phenomena`),,گربهٔ شرودینگر,schrodinger-cat
+article,پدیده‌های کوانتومی (`phenomena`),,نوسانات خلأ,vacuum-fluctuations
+article,پدیده‌های کوانتومی (`phenomena`),,اثر کازیمیر,casimir-effect
+article,پدیده‌های کوانتومی (`phenomena`),,ابررسانایی,superconductivity
+article,پدیده‌های کوانتومی (`phenomena`),,ابرشارگی؛ مایعی که از لیوان بالا می‌رود,superfluidity
+article,پدیده‌های کوانتومی (`phenomena`),,همدوسی چیست؟,coherence
+article,پدیده‌های کوانتومی (`phenomena`),,صفر مطلق چیست؟,absolute-zero
+article,پدیده‌های کوانتومی (`phenomena`),,واپاشی آلفا چیست؟,alpha-decay
+article,پدیده‌های کوانتومی (`phenomena`),,گسیل تحریکی چیست؟,stimulated-emission
+article,پدیده‌های کوانتومی (`phenomena`),,همجوشی ستارگان چگونه ممکن است؟,stellar-fusion
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),لیزر چطور کار می‌کند؟,how-lasers-work
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),ترانزیستور؛ کوانتوم در جیب شما,transistor-quantum
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),ساعت اتمی و جی‌پی‌اس,atomic-clock-gps
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),ام‌آر‌آی (MRI) چگونه کار می‌کند؟ ریشهٔ کوانتومی آن,mri-quantum
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),پیل خورشیدی و اثر فوتوالکتریک؛ تبدیل نور به جریان زندگی,solar-cells-photoelectric
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),حافظهٔ فلش چطور کار می‌کند؟,flash-memory
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),میکروسکوپ تونلی چیست؟,scanning-tunneling-microscope
+article,فناوری و کاربردهای کوانتومی (`technology`),فناوری‌های روزمره (`everyday-tech`),فیبر نوری چگونه کار می‌کند؟,fiber-optics
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),کیوبیت چیست؟,qubit
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),رمزنگاری کوانتومی و آیندهٔ امنیت اینترنت,quantum-cryptography-internet-security
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),کامپیوتر کوانتومی چیست و چقدر با واقعیت فاصله دارد؟,quantum-computer-reality
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),درهم‌تنیدگی در کامپیوترهای کوانتومی امروزی,entanglement-quantum-computers
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),برتری کوانتومی چیست؟,quantum-supremacy
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),الگوریتم شور چیست؟,shor-algorithm
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),الگوریتم گرور چیست؟,grover-algorithm
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),تصحیح خطای کوانتومی چیست؟,quantum-error-correction
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),گیت کوانتومی چیست؟,quantum-gate
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),شبیه‌سازی کوانتومی چیست؟,quantum-simulation
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),قضیهٔ عدم‌کپی چیست؟,no-cloning-theorem
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),تله‌پورت کوانتومی چیست؟,quantum-teleportation
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),حسگرهای کوانتومی؛ آیندهٔ دقت اندازه‌گیری,quantum-sensors
+article,فناوری و کاربردهای کوانتومی (`technology`),رایانش و ارتباطات کوانتومی (`computing`),آیا هوش مصنوعی از کوانتوم استفاده می‌کند؟,does-ai-use-quantum
+article,فناوری و کاربردهای کوانتومی (`technology`),زیست‌شناسی کوانتومی (`quantum-biology`),فتوسنتز؛ کارآمدترین ماشین جهان و رد پای کوانتوم,quantum-photosynthesis
+article,فناوری و کاربردهای کوانتومی (`technology`),زیست‌شناسی کوانتومی (`quantum-biology`),قطب‌نمای پرندگان,bird-quantum-compass
+article,فناوری و کاربردهای کوانتومی (`technology`),زیست‌شناسی کوانتومی (`quantum-biology`),حس بویایی؛ شکل یا ارتعاش؟,quantum-smell
+article,فناوری و کاربردهای کوانتومی (`technology`),زیست‌شناسی کوانتومی (`quantum-biology`),آنزیم‌ها؛ عبور از دیوار به‌جای پریدن,enzyme-quantum-tunneling
+article,فناوری و کاربردهای کوانتومی (`technology`),زیست‌شناسی کوانتومی (`quantum-biology`),آیا جهش ژنتیکی کوانتومی است؟,genetic-mutation
+article,تفسیرها و فلسفهٔ کوانتوم (`interpretations`),,تفسیر کپنهاگی,copenhagen-interpretation
+article,تفسیرها و فلسفهٔ کوانتوم (`interpretations`),,تفسیر جهان‌های موازی,many-worlds-interpretation
+article,تفسیرها و فلسفهٔ کوانتوم (`interpretations`),,تفسیر دوبروی-بوهم چیست؟,pilot-wave
+article,تفسیرها و فلسفهٔ کوانتوم (`interpretations`),,آیا کوانتوم یعنی چندجهانی واقعی است؟,is-many-worlds-real
+article,تفسیرها و فلسفهٔ کوانتوم (`interpretations`),,آیا فیزیک‌دانان بر سر معنای اندازه‌گیری توافق دارند؟,quantum-interpretation-debate
+article,نقد شبه‌علم (`pseudoscience`),,«همه‌چیز انرژی است» — بررسی یک ادعا,everything-is-energy-claim
+article,نقد شبه‌علم (`pseudoscience`),,آیا مغز کوانتومی است؟,is-the-brain-quantum
+article,نقد شبه‌علم (`pseudoscience`),,آیا مغز انسان از پدیده‌های کوانتومی استفاده می‌کند؟ (بررسی ادعاها),brain-quantum-phenomena
+article,نقد شبه‌علم (`pseudoscience`),,کوانتوم و پزشکی,quantum-alternative-medicine-science
+article,نقد شبه‌علم (`pseudoscience`),,چگونه ادعای شبه‌علمی را در یک جمله تشخیص دهیم,spot-pseudoscience-one-sentence
+article,نقد شبه‌علم (`pseudoscience`),,آیا درهم‌تنیدگی یعنی اطلاعات سریع‌تر از نور منتقل می‌شود؟,entanglement-myths
+article,نقد شبه‌علم (`pseudoscience`),,آیا با فکر کردن می‌توان واقعیت کوانتومی را تغییر داد؟,mind-quantum-reality
+article,نقد شبه‌علم (`pseudoscience`),,آیا کوانتوم ثابت می‌کند خدا وجود دارد یا ندارد؟,does-quantum-prove-god
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,ماکس پلانک,max-planck
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,آلبرت اینشتین,albert-einstein
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,نیلز بور,niels-bohr
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,لویی دوبروی؛ شاهزاده‌ای که الکترون را موج کرد,louis-de-broglie
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,اروین شرودینگر؛ مردی که جهان را موج کرد,erwin-schrodinger
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,ورنر هایزنبرگ؛ جوانی که عدم قطعیت را کشف کرد,werner-heisenberg
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,پل دیراک,paul-dirac
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,ماکس بورن؛ مترجم احتمال در کوانتوم,max-born
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,ولفگانگ پاولی,wolfgang-pauli
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,پاسکوال یوردان,pascual-jordan
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,هانس کرامرس؛ نابغهٔ گمنام مکانیک کوانتومی,hans-kramers
+scientist,گروه ۱ — بنیان‌گذاران مکانیک کوانتومی,,آرنولد زومرفلد,arnold-sommerfeld
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,ریچارد فاینمن؛ مردی که کوانتوم را به تصویر کشید,richard-feynman
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,جولیان شوینگر؛ مهارکنندهٔ بی‌نهایت‌ها,julian-schwinger
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,سین-ایتیرو توموناگا؛ نابغهٔ تنها در جنگ,sin-itiro-tomonaga
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,فریمن دایسون,freeman-dyson
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,هرمان وایل,hermann-weyl
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,هیدکی یوکاوا,hideki-yukawa
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,ساتیندرا بوز,satyendra-bose
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,انریکه فرمی,enrico-fermi
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,یوجین ویگنر؛ زبان تقارن در فیزیک,eugene-wigner
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,هانس بته؛ مردی که راز خورشید را گشود,hans-bethe
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,جرج گاموف؛ از تونل‌زنی تا مهبانگ,george-gamow
+scientist,گروه ۲ — نظریهٔ میدان‌های کوانتومی و QED,,لو لاندائو؛ نابغه‌ای که سانحه خاموشش کرد,lev-landau
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,جان بل,john-bell
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,هیو اورت,hugh-everett
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,دیوید بوهم,david-bohm
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,جان ویلر؛ مردی که سیاه‌چاله را نام گذاشت,john-wheeler
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,ووی‌چخ زورک؛ توضیح‌دهندهٔ دنیای کلاسیک,wojciech-zurek
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,آلن اسپکت,alain-aspect
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,جان کلاوزر؛ آزمایشگری که به حاشیه گوش نداد,john-clauser
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,آنتونی زایلینگر,anton-zeilinger
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,جان فون‌نویمان؛ مغزی که کوانتوم را بنیان نوشت,john-von-neumann
+scientist,گروه ۳ — بنیادها، درهم‌تنیدگی و تفسیرها,,پل اهرنفست؛ پلی که زیر پای خودش شکست,paul-ehrenfest
+scientist,گروه ۴ — آزمایشگران و کاشفان,,ارنست رادرفورد؛ کاشف هستهٔ اتم,ernest-rutherford
+scientist,گروه ۴ — آزمایشگران و کاشفان,,رابرت میلیکان؛ وزن کردن بار الکترون,robert-millikan
+scientist,گروه ۴ — آزمایشگران و کاشفان,,اتو اشترن؛ آزمایشی که اسپین را عینی کرد,otto-stern
+scientist,گروه ۴ — آزمایشگران و کاشفان,,آکیرا تونومورا؛ الکترون‌ها یکی‌یکی,akira-tonomura
+scientist,گروه ۴ — آزمایشگران و کاشفان,,لئو اساکی؛ دیودی که از دیوار عبور کرد,leo-esaki
+scientist,گروه ۴ — آزمایشگران و کاشفان,,برایان جوزفسون؛ پیش‌بینی در ۲۲سالگی,brian-josephson
+scientist,گروه ۴ — آزمایشگران و کاشفان,,گرد بینینگ؛ نخستین نگاه به اتم‌ها,gerd-binnig
+scientist,گروه ۴ — آزمایشگران و کاشفان,,هاینریش روهرر؛ دیدن اتم‌ها با لمس,heinrich-rohrer
+scientist,گروه ۴ — آزمایشگران و کاشفان,,چارلز ویلسون,charles-wilson
+scientist,گروه ۴ — آزمایشگران و کاشفان,,آرتور کامپتون,arthur-compton
+scientist,گروه ۵ — پیشینیان کلاسیک و ریاضی‌دانان,,آیزاک نیوتن,isaac-newton
+scientist,گروه ۵ — پیشینیان کلاسیک و ریاضی‌دانان,,جیمز کلرک ماکسول؛ مرد چهار معادله,james-clerk-maxwell
+scientist,گروه ۵ — پیشینیان کلاسیک و ریاضی‌دانان,,لودویگ بولتزمن؛ شمارندهٔ بی‌نظمی,ludwig-boltzmann
+scientist,گروه ۵ — پیشینیان کلاسیک و ریاضی‌دانان,,دیوید هیلبرت,david-hilbert
+scientist,گروه ۵ — پیشینیان کلاسیک و ریاضی‌دانان,,امی نوتر؛ زنی که تقارن را ترجمه کرد,emmy-noether
+scientist,گروه ۶ — شیمی، هسته و رایانش کوانتومی,,ماری کوری؛ دو نوبل، یک زندگی,marie-curie
+scientist,گروه ۶ — شیمی، هسته و رایانش کوانتومی,,لیزه مایتنر؛ مادر شکافت هسته‌ای,lise-meitner
+scientist,گروه ۶ — شیمی، هسته و رایانش کوانتومی,,پیتر شور,peter-shor
+scientist,گروه ۶ — شیمی، هسته و رایانش کوانتومی,,دیوید دویچ,david-deutsch
