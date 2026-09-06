@@ -1,0 +1,62 @@
+/* ═══════════════════════════════════════════════════════════════
+   اصلاح رنگ اصطلاح واژه‌نامه — چسباندن به انتهای استایل فرزند
+
+   مشکل: رنگ متن اصطلاح با رنگ هایلایت یکی شده بود و متن
+   به‌سختی دیده می‌شد.
+
+   راه‌حل: رنگ متن **هرگز** تغییر نکند. اصطلاح همان رنگ متن
+   پیرامونش را می‌گیرد و فقط با هایلایت و بولد متمایز می‌شود.
+
+   این فایل را می‌توانید عیناً به انتهای style.css پوستهٔ فرزند
+   اضافه کنید — یا در «افزودنی CSS» سفارشی‌ساز.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* رنگ متن اصطلاح در همهٔ حالت‌ها از والد ارث می‌برد */
+.quantum-glossary-term,
+.quantum-glossary-term:link,
+.quantum-glossary-term:visited,
+.quantum-glossary-term:hover,
+.quantum-glossary-term:focus,
+.quantum-glossary-term:focus-visible,
+.quantum-glossary-term:active,
+.quantum-glossary-term.active{
+    color:inherit !important;
+}
+
+/* در حالت تیرهٔ سیستم هم رنگ متن دست‌نخورده می‌ماند —
+   فقط شفافیت هایلایت کمی کم می‌شود تا روی زمینهٔ تیره مزاحم نباشد */
+@media(prefers-color-scheme:dark){
+    .quantum-glossary-term,
+    .quantum-glossary-term:hover,
+    .quantum-glossary-term:focus-visible,
+    .quantum-glossary-term.active{
+        color:inherit !important;
+    }
+    .quantum-glossary-term{
+        background-image:linear-gradient(
+            100deg,
+            rgba(45,212,191,.16) 0%,
+            rgba(56,189,248,.14) 100%
+        ) !important;
+        box-shadow:inset 0 0 0 1px rgba(94,234,212,.24) !important;
+    }
+    .quantum-glossary-term:hover,
+    .quantum-glossary-term:focus-visible,
+    .quantum-glossary-term.active{
+        background-image:linear-gradient(
+            100deg,
+            rgba(45,212,191,.26) 0%,
+            rgba(56,189,248,.22) 100%
+        ) !important;
+        box-shadow:inset 0 0 0 1px rgba(94,234,212,.38) !important;
+    }
+}
+
+/* اگر ترجیح می‌دهید اصطلاح همیشه مشکی باشد — نه ارث‌بری —
+   خط زیر را از حالت توضیح خارج کنید:
+
+.quantum-glossary-term,
+.quantum-glossary-term:hover,
+.quantum-glossary-term.active{ color:#111827 !important; }
+
+*/
