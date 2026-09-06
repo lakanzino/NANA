@@ -216,7 +216,7 @@ $qp_stats = array(
 
 		<section class="qp-front-hero">
 			<div class="qp-front-hero__badge">دانشنامهٔ فارسی فیزیک کوانتوم</div>
-			<h1 class="qp-front-hero__title">کوانتوم را از پایه، دقیق و روان یاد بگیرید</h1>
+			<h1 class="qp-front-hero__title">شگفتی‌های دنیای کوانتوم را ساده، دقیق و بی‌اغراق کشف کنید</h1>
 			<p class="qp-front-hero__desc">هر مقاله با منبع علمی معتبر نوشته شده، به زبان ساده — بدون فرمول‌های ترسناک و بدون ادعاهای بی‌پایه.</p>
 
 			<div class="qp-front-hero__actions">
@@ -225,26 +225,43 @@ $qp_stats = array(
 			</div>
 		</section>
 
-		<?php if ( ! empty( $qp_featured_posts ) ) : ?>
-		<section class="qp-front-section qp-front-section--picks">
-			<div class="qp-front-section__head">
-				<div>
-					<div class="qp-front-section__eyebrow">اگر وقت یک مقاله را داری</div>
-					<h2 class="qp-front-section__title">از این‌ها شروع کن</h2>
-					<p class="qp-front-section__desc">پرخواننده‌ترین و جذاب‌ترین مقاله‌های دانشنامه.</p>
+		<section class="qp-front-section qp-front-section--search" aria-label="جست‌وجو">
+			<div class="qp-front-searchbox">
+				<div class="qp-front-searchbox__label">دنبال موضوع خاصی هستید؟</div>
+				<div class="qp-front-search">
+					<?php get_search_form(); ?>
 				</div>
 			</div>
+		</section>
 
-			<div class="qp-front-picks">
+		<section class="qp-front-section qp-front-section--stats" aria-label="آمار دانشنامه">
+			<div class="qp-front-hero__stats" data-qp-counters>
+				<?php foreach ( $qp_stats as $qp_stat ) : ?>
+					<div class="qp-front-stat">
+						<span
+							class="qp-front-stat__num"
+							data-qp-count="<?php echo esc_attr( (string) $qp_stat['num'] ); ?>"
+						><?php echo esc_html( number_format_i18n( $qp_stat['num'] ) ); ?></span>
+						<span class="qp-front-stat__label"><?php echo esc_html( $qp_stat['label'] ); ?></span>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</section>
+
+		<?php if ( ! empty( $qp_featured_posts ) ) : ?>
+		<section class="qp-front-section qp-front-section--picks">
+			<div class="qp-front-picksrail">
+				<div class="qp-front-picks">
 				<?php foreach ( $qp_featured_posts as $qp_i => $qp_item ) : ?>
 					<?php $qp_p = $qp_item['post']; ?>
-					<a class="qp-front-pick<?php echo ( 0 === $qp_i ) ? ' qp-front-pick--lead' : ''; ?>" href="<?php echo esc_url( get_permalink( $qp_p ) ); ?>">
+					<a class="qp-front-pick<?php echo ( 0 === $qp_i ) ? ' qp-front-pick--first' : ''; ?>" href="<?php echo esc_url( get_permalink( $qp_p ) ); ?>">
 						<span class="qp-front-pick__tag"><?php echo esc_html( $qp_item['tag'] ); ?></span>
 						<h3 class="qp-front-pick__title"><?php echo esc_html( get_the_title( $qp_p ) ); ?></h3>
 						<p class="qp-front-pick__hook"><?php echo esc_html( $qp_item['hook'] ); ?></p>
 						<span class="qp-front-pick__more">بخوانید</span>
 					</a>
 				<?php endforeach; ?>
+				</div>
 			</div>
 		</section>
 		<?php endif; ?>
@@ -282,29 +299,6 @@ $qp_stats = array(
 				</div>
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
-		</section>
-
-		<section class="qp-front-section qp-front-section--search" aria-label="جست‌وجو">
-			<div class="qp-front-searchbox">
-				<div class="qp-front-searchbox__label">دنبال موضوع خاصی هستید؟</div>
-				<div class="qp-front-search">
-					<?php get_search_form(); ?>
-				</div>
-			</div>
-		</section>
-
-		<section class="qp-front-section qp-front-section--stats" aria-label="آمار دانشنامه">
-			<div class="qp-front-hero__stats" data-qp-counters>
-				<?php foreach ( $qp_stats as $qp_stat ) : ?>
-					<div class="qp-front-stat">
-						<span
-							class="qp-front-stat__num"
-							data-qp-count="<?php echo esc_attr( (string) $qp_stat['num'] ); ?>"
-						><?php echo esc_html( number_format_i18n( $qp_stat['num'] ) ); ?></span>
-						<span class="qp-front-stat__label"><?php echo esc_html( $qp_stat['label'] ); ?></span>
-					</div>
-				<?php endforeach; ?>
-			</div>
 		</section>
 
 		<section id="qp-front-cats" class="qp-front-section qp-front-section--cats">

@@ -5,72 +5,108 @@
    بدون تصویر، بدون فونت اضافه.
    ══════════════════════════════════════════════════════════ */
 
-/* ── ۳) مقاله‌های پیشنهادی ─────────────────────────────── */
-.qp-front-picks{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
+/* ── ۳) مقاله‌های پیشنهادی: اسلایدر افقی، شش کارت مربعی ─
+   سه کارت دیده می‌شود، سه تای دیگر با کشیدن. */
+.qp-front-picksrail{
+  position:relative;
+  margin:0 -4px;
+  padding:18px 4px;
+}
+/* سایهٔ پررنگ بالا و پایین تا اسلایدر از بقیه جدا دیده شود */
+.qp-front-picksrail::before,
+.qp-front-picksrail::after{
+  content:"";
+  position:absolute;
+  inset-inline:0;
+  height:16px;
+  pointer-events:none;
+  z-index:2;
+}
+.qp-front-picksrail::before{
+  top:0;
+  background:linear-gradient(180deg,rgba(15,118,110,.13),rgba(15,118,110,0));
+}
+.qp-front-picksrail::after{
+  bottom:0;
+  background:linear-gradient(0deg,rgba(15,118,110,.13),rgba(15,118,110,0));
 }
 
+.qp-front-picks{
+  --qp-pick-gap:14px;
+  display:flex;
+  gap:var(--qp-pick-gap);
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding:6px 2px 10px;
+}
+.qp-front-picks::-webkit-scrollbar{display:none}
+
 .qp-front-pick{
+  flex:0 0 calc((100% - (var(--qp-pick-gap) * 2)) / 3);
+  aspect-ratio:1 / 1;            /* کاملاً مربعی و هم‌اندازه */
+  scroll-snap-align:start;
   display:flex;
   flex-direction:column;
-  padding:20px;
+  padding:26px 22px 20px;        /* فاصله از بالای کاور تا شروع متن */
   background:var(--qp-card);
   border:1px solid var(--qp-line);
-  border-radius:16px;
+  border-radius:18px;
   text-decoration:none;
   color:inherit;
-  box-shadow:0 10px 28px rgba(17,24,39,.04);
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(17,24,39,.07);
   transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;
 }
 .qp-front-pick:hover,
 .qp-front-pick:focus-visible{
   border-color:var(--qp-accent);
-  transform:translateY(-2px);
-  box-shadow:0 14px 30px rgba(15,118,110,.10);
+  transform:translateY(-3px);
+  box-shadow:0 18px 38px rgba(15,118,110,.14);
 }
 
-/* کارت اول عرض دو ستون می‌گیرد تا چشم اول سراغش برود. */
-.qp-front-pick--lead{
-  grid-column:span 2;
-  background:linear-gradient(135deg,#f0fdfa 0%,#ffffff 62%);
-  border-color:rgba(15,118,110,.22);
+/* کارت اول: زمینهٔ کاملاً سفید با سایهٔ نرم، هم‌اندازهٔ بقیه */
+.qp-front-pick--first{
+  background:#ffffff;
+  border-color:rgba(15,118,110,.18);
+  box-shadow:0 14px 34px rgba(17,24,39,.10);
 }
-.qp-front-pick--lead .qp-front-pick__title{font-size:1.3rem}
-.qp-front-pick--lead .qp-front-pick__hook{font-size:1rem}
 
 .qp-front-pick__tag{
   align-self:flex-start;
   display:inline-flex;
   align-items:center;
-  padding:4px 9px;
+  padding:5px 11px;
   border-radius:999px;
   background:var(--qp-accent-soft);
   color:var(--qp-accent);
-  font-size:.76rem;
-  font-weight:700;
+  font-size:.8rem;
+  font-weight:800;
 }
 .qp-front-pick__title{
-  margin:12px 0 0;
+  margin:16px 0 0;
   color:var(--qp-ink);
-  font-size:1.08rem;
-  line-height:1.7;
-  font-weight:800;
+  font-size:1.22rem;
+  line-height:1.65;
+  font-weight:900;
   letter-spacing:-.01em;
 }
 .qp-front-pick__hook{
-  margin:10px 0 0;
+  margin:12px 0 0;
   color:var(--qp-dim);
-  line-height:1.95;
-  font-size:.94rem;
+  line-height:1.9;
+  font-size:1rem;
+  font-weight:600;
   flex:1;
+  overflow:hidden;
 }
 .qp-front-pick__more{
-  margin-top:14px;
+  margin-top:12px;
   color:var(--qp-accent);
-  font-weight:700;
-  font-size:.92rem;
+  font-weight:800;
+  font-size:.96rem;
 }
 .qp-front-pick__more::after{
   content:"\00a0←";
@@ -242,21 +278,20 @@
   .qp-front-pick__more::after{transition:none}
   .qp-front-pick:hover,
   .qp-front-stat:hover{transform:none}
-  .qp-front-scirail{scroll-behavior:auto}
+  .qp-front-scirail,
+  .qp-front-picks{scroll-behavior:auto}
 }
 
 /* ── ۹) واکنش‌گرا ──────────────────────────────────────── */
 @media (max-width:900px){
-  .qp-front-picks{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .qp-front-pick--lead{grid-column:span 2}
+  .qp-front-pick{flex-basis:calc((100% - var(--qp-pick-gap)) / 2)}
   /* تبلت: دو کارت‌ونیم دیده شود تا بفهمد ادامه دارد */
   .qp-front-scirail__track{--qp-sci-w:calc((100% - 28px) / 2.3)}
 }
 
 @media (max-width:640px){
-  .qp-front-picks{grid-template-columns:1fr}
-  .qp-front-pick--lead{grid-column:span 1}
-  .qp-front-pick--lead .qp-front-pick__title{font-size:1.15rem}
+  .qp-front-pick{flex-basis:82%}
+  .qp-front-pick__title{font-size:1.1rem}
   /* موبایل: یک کارت‌ونیم */
   .qp-front-scirail__track{--qp-sci-w:calc((100% - 14px) / 1.45)}
   .qp-front-scientist--all{min-height:150px}
