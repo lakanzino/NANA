@@ -1,4 +1,6 @@
-# تصاویر شاخص QPedia
+# تصاویر شاخص QPedia — کامل ✅
+
+**۵۱ تصویر برای ۵۱ مقالهٔ بدون تصویر شاخص.**
 
 ## سبک بصری
 
@@ -11,32 +13,41 @@
 
 ارتفاع و رنگ عمداً یکسان نیست تا مجموعه یکنواخت نشود:
 
-| رنگ | نمونه |
+| رنگ | کاربرد |
 |---|---|
-| فیروزه‌ای | error-correction · harvest-now · josephson |
-| قرمز | q-day · condor · no-cloning |
-| طلایی | post-quantum · quantum-gate |
-| سبز زمردی | quantum-internet · willow |
-| سبز لیمویی | quantum-radar |
-| بنفش | quantum-ml |
+| 🔴 قرمز | هشدار و نقد — q-day · no-cloning · debunked · pseudoscience |
+| 🟠 نارنجی | bitcoin · hype · LK-99 · wigner · thermodynamics · century |
+| 🟡 طلایی | post-quantum · careers · free-will · attosecond · nobel-2025 |
+| 🟢 زمردی | willow · navigation · darwinism · spin-liquid · eraser |
+| 🟩 لیمویی | radar · chemistry · battery · simulation |
+| 🔵 فیروزه‌ای | error-correction · josephson · holographic · time-crystal |
+| 🟣 بنفش | quantum-ml · sci-fi · immortality · gravity · weirdness |
+| 🩷 سرخابی | pet-scan · quantum-dots · strings · black-hole |
 
 ارتفاع: بعضی وسط نوشته، بعضی یک‌سوم بالا، بعضی یک‌سوم پایین.
+
+### استثنا
+
+`quantum-century-2025` (مقالهٔ ستون صد سالگی) عمداً متفاوت است:
+**دیاگرام‌های رنگی** به‌جای دو رنگ، و **زیرنویس فارسی** «صد سالگی
+کوانتوم» زیر عنوان انگلیسی.
 
 ## دو نسخه
 
 | پوشه | فرمت | ابعاد | حجم |
 |---|---|---|---|
 | `thumbs/` | PNG | ۱۴۵۶×۷۲۸ | ~۱٫۴ MB |
-| **`thumbs-webp/`** | **WebP** | **۹۰۰×۴۵۰** | **~۴۰ KB** |
+| **`thumbs-webp/`** | **WebP** | **۹۰۰×۴۵۰** | **~۴۲ KB** |
 
-**برای آپلود از `thumbs-webp/` استفاده کنید.**
-نام هر فایل = اسلاگ مقاله.
+**برای آپلود از `thumbs-webp/` استفاده کنید** — نام هر فایل دقیقاً
+برابر اسلاگ مقاله است، پس انتساب ساده است.
 
-## پیشرفت — ۵۰ از ۵۱
+## پیشرفت
 
-- [x] دستهٔ ۱ — ۱۰ تصویر ✅ بازسازی‌شده با خط اسکن
-- [x] دستهٔ ۲ — ۱۰ تصویر ✅ بازسازی‌شده
-- [x] دستهٔ ۳ — ۱۰ تصویر (روزمره + نقد شبه‌علم)
-- [x] دستهٔ ۴ — ۱۰ تصویر (فلسفه و تفسیر)
-- [~] دستهٔ ۵ — ۱۰ از ۱۱ (پدیده‌ها و تاریخ) — فقط quantum-century-2025 مانده
+- [x] دستهٔ ۱ — ۱۰ (فناوری و رایانش)
+- [x] دستهٔ ۲ — ۱۰ (فناوری، پزشکی، شغل)
+- [x] دستهٔ ۳ — ۱۰ (روزمره + نقد شبه‌علم)
+- [x] دستهٔ ۴ — ۱۰ (فلسفه و تفسیر)
+- [x] دستهٔ ۵ — ۱۱ (پدیده‌ها و تاریخ)
 
+**۵۱ از ۵۱ — تمام.**
