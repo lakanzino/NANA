@@ -1,0 +1,304 @@
+{
+ "items": [
+  {
+   "slug": "bird-quantum-compass",
+   "file": "bird-quantum-compass.webp",
+   "alt": "پرندهٔ مهاجر با خطوط میدان مغناطیسی زمین و مولکول کریپتوکروم در شبکیه، گرد عبارت BIRD COMPASS",
+   "title": "قطب‌نمای پرندگان"
+  },
+  {
+   "slug": "brain-quantum-phenomena",
+   "file": "brain-quantum-phenomena.webp",
+   "alt": "سه جعبهٔ ادعا با حکم داوری و مقایسهٔ زمان همدوسی با زمان سیگنال عصبی، گرد عبارت THE CLAIMS",
+   "title": "آیا مغز انسان از پدیده های کوانتومی استفاده می کند؟ (بررسی ادعاها)"
+  },
+  {
+   "slug": "coin-vs-dice-quantum-uncertainty",
+   "file": "coin-vs-dice-quantum-uncertainty.webp",
+   "alt": "سکه و تاس در کنار موج کوتاه و موج کشیده که گسترهٔ مکمل را نشان می‌دهند، گرد عبارت COIN OR DICE",
+   "title": "تمثیل تاس در مقابل تمثیل سکه: کدام برای عدم قطعیت بهتر است؟"
+  },
+  {
+   "slug": "determinism-vs-probability",
+   "file": "determinism-vs-probability.webp",
+   "alt": "ساعت کوکی دیو لاپلاس در برابر تاسی با تصادف ذاتی و داوری آزمون بل، گرد عبارت CHANCE OR FATE",
+   "title": "تفاوت جبرگرایی کلاسیک و احتمال کوانتومی"
+  },
+  {
+   "slug": "dirac-antimatter",
+   "file": "dirac-antimatter.webp",
+   "alt": "معادلهٔ دیراک، جواب‌های انرژی منفی و رد پوزیترون در اتاقک ابر، گرد عبارت MATH FIRST",
+   "title": "دیراک و پیش‌بینی پادماده؛ وقتی ریاضیات از واقعیت جلو زد"
+  },
+  {
+   "slug": "does-ai-use-quantum",
+   "file": "does-ai-use-quantum.webp",
+   "alt": "تراشهٔ گرافیکی که شبکهٔ عصبی اجرا می‌کند و کیوبیت خط‌خورده در مرکز داده، گرد عبارت AI AND QUANTUM",
+   "title": "آیا هوش مصنوعی از کوانتوم استفاده می کند؟"
+  },
+  {
+   "slug": "does-quantum-prove-god",
+   "file": "does-quantum-prove-god.webp",
+   "alt": "مرزی که پرسش تجربی را از پرسش متافیزیکی جدا می‌کند و دو استدلال با شکاف منطقی، گرد عبارت SCIENCE & FAITH",
+   "title": "آیا کوانتوم ثابت می کند خدا وجود دارد یا ندارد؟"
+  },
+  {
+   "slug": "einstein-bohr-debate",
+   "file": "einstein-bohr-debate.webp",
+   "alt": "دو حباب گفتار متقابل و آزمایش فکری جعبهٔ نور با ترازو، گرد عبارت THE GREAT DEBATE با خط اسکن قرمز",
+   "title": "نبرد اینشتین و بور بر سر معنای کوانتوم"
+  },
+  {
+   "slug": "einstein-photoelectric-effect",
+   "file": "einstein-photoelectric-effect.webp",
+   "alt": "میز ادارهٔ ثبت اختراع، کوانتاهای نور بر سطح فلز و خط زمانی سال معجزه، گرد عبارت MIRACLE YEAR",
+   "title": "اینشتین و اثر فوتوالکتریک (نه فقط نسبیت)"
+  },
+  {
+   "slug": "entanglement-myths",
+   "file": "entanglement-myths.webp",
+   "alt": "دو ذرهٔ درهم‌تنیده با فلش پیام فراتر از نور که خط خورده و کانال کلاسیک لازم، گرد عبارت NO SIGNALLING",
+   "title": "آیا درهم تنیدگی یعنی اطلاعات سریع تر از نور منتقل می شود؟"
+  },
+  {
+   "slug": "entanglement-quantum-computers",
+   "file": "entanglement-quantum-computers.webp",
+   "alt": "چند کیوبیت با خطوط درهم‌تنیدگی و گیت کنترل‌شدهٔ نات که جفت بل می‌سازد، گرد عبارت ENTANGLED QUBITS",
+   "title": "درهم‌تنیدگی در کامپیوترهای کوانتومی امروزی"
+  },
+  {
+   "slug": "enzyme-quantum-tunneling",
+   "file": "enzyme-quantum-tunneling.webp",
+   "alt": "جایگاه فعال آنزیم و پروتونی که به‌جای عبور از بالای سد از میان آن می‌گذرد، گرد عبارت ENZYME TUNNELING",
+   "title": "آنزیم‌ها؛ عبور از دیوار به‌جای پریدن"
+  },
+  {
+   "slug": "everything-is-energy-claim",
+   "file": "everything-is-energy-claim.webp",
+   "alt": "رابطهٔ جرم و انرژی به‌دقت نوشته‌شده در کنار نمودار هالهٔ مبهمِ خط‌خورده، گرد عبارت IS ALL ENERGY؟",
+   "title": "«همه‌چیز انرژی است» — بررسی یک ادعا"
+  },
+  {
+   "slug": "feynman-quantum-explainer",
+   "file": "feynman-quantum-explainer.webp",
+   "alt": "دیاگرام‌های فاینمن، تختهٔ سیاه با طرح‌های ساده و انتگرال مسیر، گرد عبارت SIMPLY EXPLAINED",
+   "title": "فاینمن: نابغه‌ای که کوانتوم را ساده توضیح می‌داد"
+  },
+  {
+   "slug": "fiber-optics",
+   "file": "fiber-optics.webp",
+   "alt": "بازتاب کلی داخلی در مغزی شیشه‌ای و کابل زیردریایی روی کف اقیانوس، گرد عبارت FIBER OPTICS",
+   "title": "فیبر نوری چگونه کار می‌کند؟"
+  },
+  {
+   "slug": "flash-memory",
+   "file": "flash-memory.webp",
+   "alt": "مقطع سلول با دروازهٔ شناور و الکترون‌هایی که از لایهٔ عایق تونل می‌زنند، گرد عبارت FLASH MEMORY",
+   "title": "حافظهٔ فلش چطور کار می‌کند؟"
+  },
+  {
+   "slug": "forgotten-women-quantum",
+   "file": "forgotten-women-quantum.webp",
+   "alt": "نمودار لایه‌ای هسته، آزمایش نقض پاریته و سه قاب پرترهٔ خالی، گرد عبارت UNSUNG PIONEERS",
+   "title": "زنان فراموش‌شدهٔ فیزیک کوانتوم"
+  },
+  {
+   "slug": "genetic-mutation",
+   "file": "genetic-mutation.webp",
+   "alt": "مارپیچ دوگانهٔ دی‌ان‌ای و پروتونی که از پیوند هیدروژنی تونل می‌زند، گرد عبارت DNA TUNNELING",
+   "title": "آیا جهش ژنتیکی کوانتومی است؟"
+  },
+  {
+   "slug": "grover-algorithm",
+   "file": "grover-algorithm.webp",
+   "alt": "فهرست نامرتب با یک عضو نشان‌دار و میله‌های تقویت دامنه، گرد عبارت GROVER SEARCH با خط اسکن بنفش",
+   "title": "الگوریتم گروور چیست؟"
+  },
+  {
+   "slug": "is-classical-physics-wrong",
+   "file": "is-classical-physics-wrong.webp",
+   "alt": "تقدیم مدار عطارد و مسیر هواپیمای نیوتنی که هنوز دقیق است، گرد عبارت LIMITED NOT WRONG",
+   "title": "آیا فیزیک کلاسیک اشتباه بود؟ نه، محدود بود"
+  },
+  {
+   "slug": "is-many-worlds-real",
+   "file": "is-many-worlds-real.webp",
+   "alt": "جهان‌های شاخه‌شاخه با علامت سؤال و نشانگر آزمون‌ناپذیری، گرد عبارت REALLY REAL؟ با خط اسکن قرمز",
+   "title": "آیا کوانتوم یعنی چندجهانی واقعی است؟"
+  },
+  {
+   "slug": "is-the-brain-quantum",
+   "file": "is-the-brain-quantum.webp",
+   "alt": "مغز با ساختار ریزلوله‌ها و دماسنج سی‌وهفت درجه که محیط گرم و مرطوب را نشان می‌دهد، گرد عبارت QUANTUM BRAIN",
+   "title": "آیا مغز کوانتومی است؟"
+  },
+  {
+   "slug": "max-planck-blackbody",
+   "file": "max-planck-blackbody.webp",
+   "alt": "کاواک جسم سیاه با روزنهٔ کوچک و بسته‌های گسستهٔ انرژی، گرد عبارت THE FIRST QUANTUM با خط اسکن طلایی",
+   "title": "پلانک و بحران تابش جسم سیاه؛ جرقه‌ای که فیزیک را متحول کرد"
+  },
+  {
+   "slug": "mind-quantum-reality",
+   "file": "mind-quantum-reality.webp",
+   "alt": "مغزی با حباب فکر به سوی تابع موج و فلش علّی شکسته میان ذهن و ذره، گرد عبارت MIND OVER MATTER",
+   "title": "آیا با فکر کردن می توان واقعیت کوانتومی را تغییر داد؟"
+  },
+  {
+   "slug": "pilot-wave",
+   "file": "pilot-wave.webp",
+   "alt": "ذره‌ای که بر موج راهنما سوار است و مسیر معین دارد، به‌همراه خط ناجایگزیدگی، گرد عبارت PILOT WAVE",
+   "title": "تفسیر دوبروی-بوهم چیست؟"
+  },
+  {
+   "slug": "quantum-alternative-medicine-science",
+   "file": "quantum-alternative-medicine-science.webp",
+   "alt": "دستگاهی با عقربه‌های پرزرق‌وبرق بدون اصل کارکرد و ام‌آر‌آی به‌عنوان نمونهٔ واقعی، گرد عبارت QUANTUM MEDICINE",
+   "title": "کوانتوم و پزشکی"
+  },
+  {
+   "slug": "quantum-analogy-exercise-boundary",
+   "file": "quantum-analogy-exercise-boundary.webp",
+   "alt": "نمودار چهارمرحله‌ای و تمثیلی با ترک آشکار در نقطهٔ شکست، گرد عبارت BUILD AN ANALOGY با خط اسکن نارنجی",
+   "title": "تمرین ذهنی: خودتان یک تمثیل بسازید و مرزش را پیدا کنید"
+  },
+  {
+   "slug": "quantum-classical-boundary",
+   "file": "quantum-classical-boundary.webp",
+   "alt": "محور مقیاس از اتم تا جسم روزمره با موج محوشونده و محیط پراکنده‌کننده، گرد عبارت THE BOUNDARY",
+   "title": "چرا کوانتوم را در زندگی روزمره حس نمی کنیم؟"
+  },
+  {
+   "slug": "quantum-computer-reality",
+   "file": "quantum-computer-reality.webp",
+   "alt": "لوستر یخچال رقیق‌سازی، مقایسهٔ بیت و کیوبیت و میله‌های خطای دوران نویزی، گرد عبارت QUANTUM COMPUTER",
+   "title": "کامپیوتر کوانتومی چیست و چقدر با واقعیت فاصله دارد؟"
+  },
+  {
+   "slug": "quantum-cryptography-internet-security",
+   "file": "quantum-cryptography-internet-security.webp",
+   "alt": "تبادل کلید با قطبش فوتون و استراق سمعی که با اختلال آشکار می‌شود، گرد عبارت QUANTUM KEY",
+   "title": "رمزنگاری کوانتومی و آیندهٔ امنیت اینترنت"
+  },
+  {
+   "slug": "quantum-error-correction",
+   "file": "quantum-error-correction.webp",
+   "alt": "شبکهٔ کد سطحی با کیوبیت‌های داده و سنجش و منحنی افت نرخ خطا زیر آستانه، گرد عبارت ERROR CORRECTION",
+   "title": "تصحیح خطای کوانتومی چیست؟"
+  },
+  {
+   "slug": "quantum-fivefold-mental-map",
+   "file": "quantum-fivefold-mental-map.webp",
+   "alt": "نقشه‌ای به سبک مترو با پنج ایستگاه و خطوط اتصال میان مفاهیم کلیدی، گرد عبارت MENTAL MAP",
+   "title": "نقشهٔ ذهنی پنج‌گانه برای فهم درست کوانتوم"
+  },
+  {
+   "slug": "quantum-interpretation-debate",
+   "file": "quantum-interpretation-debate.webp",
+   "alt": "سه جعبهٔ تفسیر با برچسب‌های متفاوت که همگی به پیش‌بینی یکسان می‌رسند، گرد عبارت THE DEBATE",
+   "title": "آیا فیزیک دانان بر سر معنای اندازه گیری توافق دارند؟"
+  },
+  {
+   "slug": "quantum-learning-resources",
+   "file": "quantum-learning-resources.webp",
+   "alt": "پلکان سه‌مرحله‌ای یادگیری، کتاب درس باز و دفترچهٔ کد کوانتومی روی لپ‌تاپ، گرد عبارت LEARN QUANTUM",
+   "title": "منابع معتبر فارسی و انگلیسی برای یادگیری عمیق‌تر کوانتوم"
+  },
+  {
+   "slug": "quantum-photosynthesis",
+   "file": "quantum-photosynthesis.webp",
+   "alt": "برگ با مجموعهٔ آنتن کلروفیل و انتقال انرژی که چند مسیر را هم‌زمان می‌آزماید، گرد واژهٔ PHOTOSYNTHESIS",
+   "title": "فتوسنتز؛ کارآمدترین ماشین جهان و رد پای کوانتوم"
+  },
+  {
+   "slug": "quantum-physics-vs-quantum-mechanics",
+   "file": "quantum-physics-vs-quantum-mechanics.webp",
+   "alt": "چتری که چند زیرشاخه را پوشش می‌دهد و هستهٔ ریاضی درونش، گرد عبارت PHYSICS VS MECHANICS با خط اسکن طلایی",
+   "title": "تفاوت فیزیک کوانتوم و مکانیک کوانتومی چیست؟"
+  },
+  {
+   "slug": "quantum-sensors",
+   "file": "quantum-sensors.webp",
+   "alt": "تداخل‌سنج اتمی برای سنجش شتاب ناچیز و حلقهٔ مغناطیس‌سنج اسکوئید، گرد عبارت QUANTUM SENSORS",
+   "title": "حسگرهای کوانتومی؛ آیندهٔ دقت اندازه‌گیری"
+  },
+  {
+   "slug": "quantum-simulation",
+   "file": "quantum-simulation.webp",
+   "alt": "مولکولی که با شبکهٔ اتم‌های سرد مدل می‌شود و منحنی رشد نمایی فضای حالت، گرد عبارت SIMULATION",
+   "title": "شبیه‌سازی کوانتومی چیست؟"
+  },
+  {
+   "slug": "quantum-smell",
+   "file": "quantum-smell.webp",
+   "alt": "مولکولی که مانند کلید در گیرنده می‌نشیند در کنار مدهای ارتعاشی فنرمانند، گرد عبارت SHAPE OR VIBRATION",
+   "title": "حس بویایی؛ شکل یا ارتعاش؟"
+  },
+  {
+   "slug": "quantum-supremacy",
+   "file": "quantum-supremacy.webp",
+   "alt": "مدار تصادفی با توزیع خروجی و میله‌های مقایسهٔ زمان اجرا با رایانهٔ کلاسیک، گرد عبارت SUPREMACY",
+   "title": "برتری کوانتومی چیست؟"
+  },
+  {
+   "slug": "quantum-teleportation",
+   "file": "quantum-teleportation.webp",
+   "alt": "حالتی که در یک نقطه نابود و در نقطهٔ دیگر بازسازی می‌شود، به‌همراه کانال کلاسیک لازم، گرد عبارت TELEPORTATION",
+   "title": "تله پورت کوانتومی چیست؟"
+  },
+  {
+   "slug": "quantum-understanding-achievement",
+   "file": "quantum-understanding-achievement.webp",
+   "alt": "نردبان فهم با چند پله و داربست تمثیل کنار ساختمان، گرد عبارت KNOWING THE LIMITS با خط اسکن طلایی",
+   "title": "چرا «نفهمیدنِ درست» کوانتوم، خودش یک دستاورد است؟"
+  },
+  {
+   "slug": "quantum-zeno-effect",
+   "file": "quantum-zeno-effect.webp",
+   "alt": "کتری زیر نگاهی که هرگز نمی‌جوشد و منحنی واپاشی که با مشاهدهٔ مکرر مسطح می‌شود، گرد عبارت ZENO EFFECT",
+   "title": "اثر زنون کوانتومی"
+  },
+  {
+   "slug": "scanning-tunneling-microscope",
+   "file": "scanning-tunneling-microscope.webp",
+   "alt": "سوزن میکروسکوپ تونلی بر فراز سطح و منحنی نمایی جریان بر حسب فاصله، گرد عبارت SEEING ATOMS",
+   "title": "میکروسکوپ تونلی چیست؟"
+  },
+  {
+   "slug": "schrodinger-life-equation",
+   "file": "schrodinger-life-equation.webp",
+   "alt": "کلبهٔ اسکی با دفترچه، معادلهٔ موج و طرح گربه‌ای با علامت سؤال، گرد عبارت WAVE AND CAT",
+   "title": "شرودینگر: زندگی، معادله و گربه‌ای که هرگز نداشت"
+  },
+  {
+   "slug": "shor-algorithm",
+   "file": "shor-algorithm.webp",
+   "alt": "عدد بزرگی که به دو عامل اول تجزیه می‌شود و مدار تبدیل فوریهٔ کوانتومی، گرد عبارت SHOR ALGORITHM",
+   "title": "الگوریتم شور چیست؟"
+  },
+  {
+   "slug": "spot-pseudoscience-one-sentence",
+   "file": "spot-pseudoscience-one-sentence.webp",
+   "alt": "فهرست وارسی ابطال‌پذیری و واژه‌های علمی‌نما که به‌عنوان تزئین خط خورده‌اند، گرد عبارت SPOT THE FAKE",
+   "title": "چگونه ادعای شبه‌علمی را در یک جمله تشخیص دهیم"
+  },
+  {
+   "slug": "superposition-explained",
+   "file": "superposition-explained.webp",
+   "alt": "دو حالت ممکن با وزن دامنه که روی هم رسم شده‌اند و لحظهٔ انتخاب یکی هنگام اندازه‌گیری، گرد عبارت BOTH AT ONCE",
+   "title": "برهم نهی چیست؟ وقتی یک ذره «هم این است هم آن»"
+  },
+  {
+   "slug": "why-large-objects-dont-superpose",
+   "file": "why-large-objects-dont-superpose.webp",
+   "alt": "طول موج دوبروی که با رشد جرم کوچک می‌شود و ذرات محیط که همدوسی را می‌شویند، گرد عبارت WHY NOT BIG",
+   "title": "برهم نهی یعنی چه، و چرا اشیای بزرگ برهم نهی نمی شوند"
+  },
+  {
+   "slug": "why-quantum-math-works",
+   "file": "why-quantum-math-works.webp",
+   "alt": "پیش‌بینی منطبق تا دوازده رقم اعشار، بردارهای فضای هیلبرت و نمودار گروه تقارن، گرد عبارت WHY IT WORKS",
+   "title": "چرا ریاضیات کوانتوم درست است ولی فهمش سخت است؟"
+  }
+ ]
+}
