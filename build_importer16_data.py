@@ -34,6 +34,10 @@ VOID_TAGS = ['br', 'hr', 'img', 'input', 'meta', 'link']
 
 
 def xml_safe(html):
+    # موجودیت‌های نام‌دار HTML (nbsp، mdash و…) در XML تعریف نشده‌اند،
+    # پس موقتاً کنار گذاشته می‌شوند و در پایان برمی‌گردند.
+    html = re.sub(r'&([A-Za-z][A-Za-z0-9]{1,31});',
+                  lambda m: '\ue000' + m.group(1) + '\ue001', html)
     html = re.sub(r'&(?!(?:amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)',
                   '&amp;', html)
     for t in VOID_TAGS:

@@ -282,6 +282,10 @@ def xml_safe(html):
       ۱) «&» خام در HTML مجاز است، در XML نه.
       ۲) تگ‌های تهی مثل <br> در HTML بسته نمی‌شوند، در XML باید <br/>.
     """
+    # موجودیت‌های نام‌دار HTML (nbsp، mdash و…) در XML تعریف نشده‌اند،
+    # پس موقتاً کنار گذاشته می‌شوند و در پایان برمی‌گردند.
+    html = re.sub(r'&([A-Za-z][A-Za-z0-9]{1,31});',
+                  lambda m: '\ue000' + m.group(1) + '\ue001', html)
     html = re.sub(r'&(?!(?:amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)',
                   '&amp;', html)
     for t in VOID_TAGS:
@@ -341,6 +345,8 @@ def inject_links(html, self_slug, skip_targets=frozenset()):
     out = re.sub(r'<p>\s*</p>', '', out)
     out = re.sub(r'\n{3,}', '\n', out)
     out = re.sub(r'<(br|hr)\s*/>', r'<\1>', out)
+    out = re.sub('\ue000([A-Za-z][A-Za-z0-9]{1,31})\ue001',
+                 lambda m: '&' + m.group(1) + ';', out)
     return out.strip(), len(used)
 
 
@@ -422,6 +428,8 @@ def add_single_link(body, term, target):
         return body, False
     out = ''.join(c.toxml() for c in root.childNodes)
     out = re.sub(r'<(br|hr)\s*/>', r'<\1>', out)
+    out = re.sub('\ue000([A-Za-z][A-Za-z0-9]{1,31})\ue001',
+                 lambda m: '&' + m.group(1) + ';', out)
     return out.strip(), True
 
 

@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-QPedia Importer 14 — بستهٔ بازبینی «فناوری» (خوشهٔ رایانش کوانتومی)
+QPedia Importer 17 — پنج هابِ اصلی سایت
 
-پنج مقاله — کوتاه‌ترین مقالات کل سایت، در قلب خوشهٔ رایانش:
-  quantum-simulation (۴۰۸), quantum-error-correction (۴۵۴),
-  grover-algorithm (۴۶۲), shor-algorithm (۴۸۹), quantum-supremacy (۶۰۲)
+پنج مقاله با بیشترین لینک ورودی در کل سایت (روی هم ۱۴۴ ورودی):
+  qubit (۳۹), photon (۳۱), electron (۳۱),
+  quantum-entanglement-explained (۲۵), double-slit-experiment (۱۸)
 
-این پنج‌تا هاب‌اند (شور ۱۱ لینک ورودی، تصحیح خطا ۹) اما کوتاه‌ترین.
-همچنین منابعشان بریتانیکا/ویکی بود، نه مقالهٔ اولیه.
-
-سیاست لحن: صدای نویسنده حفظ و تقویت می‌شود.
+سه‌تایشان **هیچ بخش منابعی نداشتند** و دوتای دیگر فقط بریتانیکا.
+اینها ویترین علمی سایت‌اند و بیشترین ترافیک داخلی را می‌گیرند.
 """
 
 import json
@@ -21,28 +19,29 @@ from xml.dom import minidom
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = json.load(open('/tmp/src/articles.json', encoding='utf-8'))
 
+# آخرین نسخهٔ هر مقاله (پس از بسته‌های ۹ تا ۱۶)
+for _n in range(9, 17):
+    _p = os.path.join(ROOT, f'qpedia-importer-{_n}', 'data', 'articles.json')
+    if os.path.exists(_p):
+        for _a in json.load(open(_p, encoding='utf-8'))['articles']:
+            if _a['slug'] in SRC:
+                SRC[_a['slug']] = dict(SRC[_a['slug']], body=_a['html'])
+
 BATCH = [
-    'quantum-simulation',
-    'quantum-error-correction',
-    'grover-algorithm',
-    'shor-algorithm',
-    'quantum-supremacy',
+    'qubit',
+    'photon',
+    'electron',
+    'quantum-entanglement-explained',
+    'double-slit-experiment',
 ]
 
 # ── لینک برگشتی (رفت‌وبرگشت) ────────────────────────────────────
 # این مقالات محتوایشان تغییر نمی‌کند؛ فقط یک لینک برگشتی به مقالات
 # این بسته می‌گیرند تا خوشه دوطرفه شود. اصطلاح در متنشان از قبل
 # وجود دارد و فقط لینک‌دار می‌شود.
-BACKLINKS = {
-    # خوشهٔ رایانش را دوطرفه می‌کنیم. سه هاب دیگر (willow-chip،
-    # post-quantum-cryptography، quantum-gate) از قبل لینک داشتند.
-    'qubit':                    ('اصلاح خطای کوانتومی',
-                                 'quantum-error-correction'),
-    'quantum-computer-reality': ('شبیه سازی مولکول ها',
-                                 'quantum-simulation'),
-}
+BACKLINKS = {}
 
-from sections_14 import SECTIONS, VOICE
+from sections_17 import SECTIONS, VOICE
 
 ZWNJ = '\u200c'
 
@@ -185,66 +184,62 @@ SKIP_TAGS = {'a', 'h1', 'h2', 'h3', 'h4', 'code', 'pre', 'blockquote'}
 # منابع قبلی متن ساده بودند (بدون لینک و DOI). اینجا هر منبع به
 # شناسهٔ دائمی و قابل راستی‌آزمایی وصل می‌شود.
 REFS = {
-    'quantum-simulation': [
-        ('Feynman, R. P.', 'Simulating physics with computers',
-         'International Journal of Theoretical Physics', '21, 1982',
-         '10.1007/BF02650179'),
-        ('Georgescu, I. M., Ashhab, S. &amp; Nori, F.',
-         'Quantum simulation', 'Reviews of Modern Physics', '86, 2014',
-         '10.1103/RevModPhys.86.153'),
-        ('Arute, F. et al.',
-         'Quantum supremacy using a programmable superconducting processor',
-         'Nature', '574, 2019', '10.1038/s41586-019-1666-5'),
-    ],
-    'quantum-error-correction': [
-        ('Shor, P. W.',
-         'Scheme for reducing decoherence in quantum computer memory',
-         'Physical Review A', '52, 1995', '10.1103/PhysRevA.52.R2493'),
-        ('Steane, A. M.', 'Error Correcting Codes in Quantum Theory',
-         'Physical Review Letters', '77, 1996',
-         '10.1103/PhysRevLett.77.793'),
-        ('Google Quantum AI',
-         'Quantum error correction below the surface code threshold',
-         'Nature', '638, 2025', '10.1038/s41586-024-08449-y'),
-    ],
-    'grover-algorithm': [
-        ('Grover, L. K.',
-         'A fast quantum mechanical algorithm for database search',
-         'Proceedings of the 28th Annual ACM Symposium on Theory of '
-         'Computing (STOC)', '1996', '10.1145/237814.237866'),
-        ('Bennett, C. H., Bernstein, E., Brassard, G. &amp; Vazirani, U.',
-         'Strengths and Weaknesses of Quantum Computing',
-         'SIAM Journal on Computing', '26, 1997',
-         '10.1137/S0097539796300933'),
+    'qubit': [
         ('Nielsen, M. A. &amp; Chuang, I. L.',
          'Quantum Computation and Quantum Information',
          'Cambridge University Press', '2010', '10.1017/CBO9780511976667'),
-    ],
-    'shor-algorithm': [
-        ('Shor, P. W.',
-         'Polynomial-Time Algorithms for Prime Factorization and Discrete '
-         'Logarithms on a Quantum Computer',
-         'SIAM Journal on Computing', '26, 1997',
-         '10.1137/S0097539795293172'),
-        ('Gidney, C. &amp; Ekerå, M.',
-         'How to factor 2048 bit RSA integers in 8 hours using 20 million '
-         'noisy qubits', 'Quantum', '5, 2021',
-         '10.22331/q-2021-04-15-433'),
-        ('NIST Post-Quantum Cryptography Standards', '',
-         'NIST', '',
-         'URL:https://csrc.nist.gov/projects/post-quantum-cryptography'),
-    ],
-    'quantum-supremacy': [
+        ('Unruh, W. G.', 'Maintaining coherence in quantum computers',
+         'Physical Review A', '51, 1995', '10.1103/PhysRevA.51.992'),
         ('Arute, F. et al.',
          'Quantum supremacy using a programmable superconducting processor',
          'Nature', '574, 2019', '10.1038/s41586-019-1666-5'),
-        ('Preskill, J.',
-         'Quantum Computing in the NISQ era and beyond',
-         'Quantum', '2, 2018', '10.22331/q-2018-08-06-79'),
-        ('Pan, F., Chen, K. &amp; Zhang, P.',
-         'Solving the Sampling Problem of the Sycamore Quantum Circuits',
-         'Physical Review Letters', '129, 2022',
-         '10.1103/PhysRevLett.129.090502'),
+    ],
+    'photon': [
+        ('Einstein, A.',
+         'Über einen die Erzeugung und Verwandlung des Lichtes '
+         'betreffenden heuristischen Gesichtspunkt',
+         'Annalen der Physik', '322, 1905', '10.1002/andp.19053220607'),
+        ('Compton, A. H.',
+         'A Quantum Theory of the Scattering of X-rays by Light Elements',
+         'Physical Review', '21, 1923', '10.1103/PhysRev.21.483'),
+        ('The Nobel Prize in Physics 1921 — Albert Einstein', '',
+         'NobelPrize.org', '',
+         'URL:https://www.nobelprize.org/prizes/physics/1921/summary/'),
+    ],
+    'electron': [
+        ('Thomson, J. J.', 'Cathode Rays',
+         'Philosophical Magazine', '44, 1897', '10.1080/14786449708621070'),
+        ('Davisson, C. &amp; Germer, L. H.',
+         'Diffraction of Electrons by a Crystal of Nickel',
+         'Physical Review', '30, 1927', '10.1103/PhysRev.30.705'),
+        ('Uhlenbeck, G. E. &amp; Goudsmit, S.',
+         'Spinning Electrons and the Structure of Spectra',
+         'Nature', '117, 1926', '10.1038/117264a0'),
+    ],
+    'quantum-entanglement-explained': [
+        ('Einstein, A., Podolsky, B. &amp; Rosen, N.',
+         'Can Quantum-Mechanical Description of Physical Reality Be '
+         'Considered Complete?',
+         'Physical Review', '47, 1935', '10.1103/PhysRev.47.777'),
+        ('Bell, J. S.', 'On the Einstein Podolsky Rosen Paradox',
+         'Physics Physique Fizika', '1, 1964',
+         '10.1103/PhysicsPhysiqueFizika.1.195'),
+        ('Yin, J. et al.',
+         'Satellite-based entanglement distribution over 1200 kilometers',
+         'Science', '356, 2017', '10.1126/science.aan3211'),
+    ],
+    'double-slit-experiment': [
+        ('Tonomura, A. et al.',
+         'Demonstration of single-electron buildup of an interference '
+         'pattern',
+         'American Journal of Physics', '57, 1989', '10.1119/1.16104'),
+        ('Jönsson, C.', 'Elektroneninterferenzen an mehreren '
+         'künstlich hergestellten Feinspalten',
+         'Zeitschrift für Physik', '161, 1961', '10.1007/BF01342460'),
+        ('Feynman, R. P., Leighton, R. B. &amp; Sands, M.',
+         'The Feynman Lectures on Physics, Vol. III — Quantum Behavior',
+         '', '',
+         'URL:https://www.feynmanlectures.caltech.edu/III_01.html'),
     ],
 }
 
@@ -534,7 +529,7 @@ def main():
         ],
         'articles': articles,
     }
-    out_dir = os.path.join(ROOT, 'qpedia-importer-14', 'data')
+    out_dir = os.path.join(ROOT, 'qpedia-importer-17', 'data')
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, 'articles.json'), 'w',
               encoding='utf-8') as f:
