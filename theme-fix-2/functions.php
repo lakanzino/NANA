@@ -66,6 +66,35 @@ function qpedia_child_enqueue_assets() {
 			true
 		);
 	}
+
+	/*
+	 * ── دارایی‌های مخصوص صفحهٔ نخست ──
+	 * فقط روی صفحهٔ اول بارگذاری می‌شوند تا صفحات مقاله سبک بمانند.
+	 */
+	if ( is_front_page() ) {
+
+		$front_css = get_stylesheet_directory() . '/assets/css/qpedia-front-v2.css';
+		if ( file_exists( $front_css ) ) {
+			wp_enqueue_style(
+				'qpedia-front-v2',
+				get_stylesheet_directory_uri() . '/assets/css/qpedia-front-v2.css',
+				array( 'qpedia-child-custom' ),
+				filemtime( $front_css )
+			);
+		}
+
+		$counters_js = get_stylesheet_directory() . '/assets/js/qpedia-counters.js';
+		if ( file_exists( $counters_js ) ) {
+			wp_enqueue_script(
+				'qpedia-counters',
+				get_stylesheet_directory_uri() . '/assets/js/qpedia-counters.js',
+				array(),
+				filemtime( $counters_js ),
+				true
+			);
+			wp_script_add_data( 'qpedia-counters', 'defer', true );
+		}
+	}
 }
 add_action( 'wp_enqueue_scripts', 'qpedia_child_enqueue_assets', 20 );
 
@@ -269,19 +298,34 @@ add_filter( 'post_type_link', 'qpedia_child_article_permalink', 10, 2 );
  * (نسخه عوض شد تا با آپلود این فایل، rewriteها یک‌بار به‌روز شوند)
  */
 function qpedia_child_maybe_flush_rewrites() {
-	$version = 'qpedia-lite-2026-08-30-pages';
+	// بهینه‌سازی: flush فقط در پیشخوان اجرا شود، نه در هر بازدید کاربر.
+	// flush_rewrite_rules عملیات سنگینی است و روی صفحات عمومی جایی ندارد.
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	$version = 'qpedia-lite-2026-09-06-front3';
+
 	if ( get_option( 'qpedia_child_rewrite_version' ) !== $version ) {
 		flush_rewrite_rules();
 		update_option( 'qpedia_child_rewrite_version', $version, false );
 	}
 }
-add_action( 'init', 'qpedia_child_maybe_flush_rewrites', 99 );
+add_action( 'admin_init', 'qpedia_child_maybe_flush_rewrites', 99 );
 
 /**
  * جمع‌کردن مسیر قدیمی glossary
  */
 function qpedia_child_redirect_legacy_glossary() {
-	$request_path = wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ), PHP_URL_PATH );
+	$raw = isset( $_SERVER['REQUEST_URI'] ) ? (string) $_SERVER['REQUEST_URI'] : '';
+
+	// بهینه‌سازی: اگر رشتهٔ glossary اصلاً در آدرس نیست، بی‌خود
+	// wp_parse_url را صدا نزن. این تابع روی همهٔ بازدیدها اجرا می‌شود.
+	if ( '' === $raw || false === strpos( $raw, 'glossary' ) ) {
+		return;
+	}
+
+	$request_path = wp_parse_url( wp_unslash( $raw ), PHP_URL_PATH );
 	$request_path = is_string( $request_path ) ? trim( $request_path, '/' ) : '';
 
 	if ( 'glossary' === $request_path ) {
@@ -428,14 +472,7 @@ require_once get_stylesheet_directory() . '/inc/glossary-assets.php';
 require_once get_stylesheet_directory() . '/inc/glossary-cache.php';
 require_once get_stylesheet_directory() . '/inc/glossary-content.php';
 
-// موقت: فقط برای دیباگ — بعد از تست حذفش کن
-add_action( 'admin_notices', function() {
-    if ( ! current_user_can( 'manage_options' ) ) {
-        return;
-    }
-    $cap = current_user_can( 'unfiltered_html' ) ? 'بله' : 'خیر';
-    echo '<div class="notice notice-info"><p>unfiltered_html: ' . esc_html( $cap ) . '</p></div>';
-});
+/* حذف شد: پیام دیباگ unfiltered_html در پیشخوان. کارش تمام شده بود. */
 
 
 
@@ -447,30 +484,17 @@ add_action( 'admin_notices', function() {
 
 defined( 'ABSPATH' ) || exit;
 
-// ۱. راه‌اندازی و بارگذاری ترجمه پوسته فرزند
-add_action( 'after_setup_theme', 'qpedia_child_setup' );
-function qpedia_child_setup() {
-    load_child_theme_textdomain( 'quantum-pedia-child', get_stylesheet_directory() . '/languages' );
-}
+/*
+ * حذف شد: تابع تکراری qpedia_child_setup.
+ * کار آن با qpedia_child_load_textdomain (بالای همین فایل) یکی بود.
+ */
 
-// ۲. بارگذاری استایل‌های چیدمان و ظاهر مقالات
-add_action( 'wp_enqueue_scripts', 'qpedia_child_enqueue_styles', 20 );
-function qpedia_child_enqueue_styles() {
-    $ver = '1.0.4';
-    if ( file_exists( get_stylesheet_directory() . '/assets/css/qpedia-layouts.css' ) ) {
-        wp_enqueue_style( 'qpedia-layouts', get_stylesheet_directory_uri() . '/assets/css/qpedia-layouts.css', array(), $ver );
-    }
-
-    // استایل تازهٔ صفحهٔ نخست — فقط روی صفحهٔ اول بارگذاری می‌شود.
-    if ( is_front_page() && file_exists( get_stylesheet_directory() . '/assets/css/qpedia-front-v2.css' ) ) {
-        wp_enqueue_style(
-            'qpedia-front-v2',
-            get_stylesheet_directory_uri() . '/assets/css/qpedia-front-v2.css',
-            array( 'qpedia-layouts' ),
-            $ver
-        );
-    }
-}
+/*
+ * حذف شد: تابع تکراری qpedia_child_enqueue_styles.
+ * همان استایل qpedia-layouts را دوباره صف می‌کرد و نسخهٔ ثابت 1.0.3 داشت
+ * که جلوی به‌روزرسانی کش را می‌گرفت. حالا فقط
+ * qpedia_child_enqueue_assets (بالای همین فایل) این کار را می‌کند.
+ */
 
 // ۳. درج خودکار متاتگ‌های سئو و OpenGraph در هدر مقالات
 add_action( 'wp_head', 'qpedia_auto_seo_meta_tags', 1 );
@@ -587,12 +611,18 @@ function qpedia_render_custom_sitemap() {
         return;
     }
 
+    // بهینه‌سازی: پیش‌تر همهٔ آبجکت‌های کامل پست را می‌کشید.
+    // حالا فقط شناسه‌ها می‌آیند و کش متا/ترم غیرفعال است.
     $articles = get_posts( array(
-        'post_type'      => 'quantum_article',
-        'post_status'    => 'publish',
-        'posts_per_page' => -1,
-        'orderby'        => 'modified',
-        'order'          => 'DESC',
+        'post_type'              => 'quantum_article',
+        'post_status'            => 'publish',
+        'posts_per_page'         => 500,
+        'orderby'                => 'modified',
+        'order'                  => 'DESC',
+        'fields'                 => 'ids',
+        'no_found_rows'          => true,
+        'update_post_meta_cache' => false,
+        'update_post_term_cache' => false,
     ) );
 
     header( 'Content-Type: application/xml; charset=utf-8', true, 200 );
@@ -605,10 +635,10 @@ function qpedia_render_custom_sitemap() {
     echo "    <priority>1.0</priority>\n";
     echo "  </url>\n";
 
-    foreach ( $articles as $post ) {
+    foreach ( $articles as $post_id ) {
         echo "  <url>\n";
-        echo "    <loc>" . esc_url( get_permalink( $post->ID ) ) . "</loc>\n";
-        echo "    <lastmod>" . esc_html( get_the_modified_date( 'Y-m-d\TH:i:sP', $post->ID ) ) . "</lastmod>\n";
+        echo "    <loc>" . esc_url( get_permalink( $post_id ) ) . "</loc>\n";
+        echo "    <lastmod>" . esc_html( get_the_modified_date( 'Y-m-d\TH:i:sP', $post_id ) ) . "</lastmod>\n";
         echo "    <changefreq>weekly</changefreq>\n";
         echo "    <priority>0.8</priority>\n";
         echo "  </url>\n";

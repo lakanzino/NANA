@@ -62,15 +62,8 @@ if ( ! is_wp_error( $qpedia_header_categories ) && ! empty( $qpedia_header_categ
 	<div class="container qp-global-header__inner">
 		<div class="qp-global-header__brand">
 			<a class="qp-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<span class="qp-brand__logo-wrap" aria-hidden="true">
-					<svg class="qp-brand__logo" viewBox="0 0 48 48" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
-						<ellipse cx="24" cy="24" rx="21" ry="8.5" stroke="currentColor" stroke-width="1.7" opacity=".55"/>
-						<ellipse cx="24" cy="24" rx="21" ry="8.5" stroke="currentColor" stroke-width="1.7" opacity=".55" transform="rotate(60 24 24)"/>
-						<ellipse cx="24" cy="24" rx="21" ry="8.5" stroke="currentColor" stroke-width="1.7" opacity=".55" transform="rotate(120 24 24)"/>
-						<circle cx="24" cy="24" r="4.6" fill="currentColor"/>
-					</svg>
-				</span>
 				<span class="qp-brand__text">
+					<span class="qp-brand__wordmark" aria-hidden="true">QUANTUM<span class="qp-brand__wordmark-thin">PEDIA</span></span>
 					<span class="qp-brand__title">کوانتوم پدیا فارسی</span>
 					<span class="qp-brand__desc">دانشنامهٔ فارسی فیزیک کوانتوم</span>
 				</span>

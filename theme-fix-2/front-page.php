@@ -1,13 +1,15 @@
 <?php
 /**
- * Front page template — نسخهٔ بازطراحی‌شده.
+ * Front page template — نسخهٔ ۳.
  *
- * تغییرات نسبت به نسخهٔ قبل:
- *  ۱) متن معرفی کوتاه و معنادار شد.
- *  ۲) بخش «از کجا شروع کنم؟» با «مقاله‌های پیشنهادی» جایگزین شد.
- *  ۳) بخش مقالات تازه دکمهٔ درست «همهٔ مقاله‌ها» گرفت.
- *  ۴) دانشمندان به یک ردیف اسلایدری (CSS خالص، بدون جاوااسکریپت) تبدیل شد.
- *  ۵) بارگذاری تنبل تصاویر دانشمندان برای سرعت.
+ * ترتیب بخش‌ها:
+ *   ۱) قهرمان (بدون آمار)
+ *   ۲) مقاله‌های پیشنهادی
+ *   ۳) تازه‌ترین نوشته‌ها  ← آمد بالا، بدون تصویر شاخص
+ *   ۴) جست‌وجو
+ *   ۵) شمارنده‌های انیمیشنی
+ *   ۶) دسته‌بندی موضوعات
+ *   ۷) دانشمندان (ردیف اسلایدری)
  *
  * @package Quantum_Pedia_Child
  */
@@ -30,18 +32,19 @@ $parent_categories = get_terms(
 		'order'      => 'DESC',
 	)
 );
+if ( is_wp_error( $parent_categories ) ) {
+	$parent_categories = array();
+}
 
-$subcategories = get_terms(
+$all_terms = get_terms(
 	array(
 		'taxonomy'   => 'quantum_category',
 		'hide_empty' => true,
-		'orderby'    => 'count',
-		'order'      => 'DESC',
 	)
 );
 $sub_total = 0;
-if ( ! is_wp_error( $subcategories ) && ! empty( $subcategories ) ) {
-	foreach ( $subcategories as $sub_term ) {
+if ( ! is_wp_error( $all_terms ) ) {
+	foreach ( $all_terms as $sub_term ) {
 		if ( ! empty( $sub_term->parent ) ) {
 			$sub_total++;
 		}
@@ -70,9 +73,8 @@ $cat_icons = array(
 
 /*
  * ── مقاله‌های پیشنهادی ─────────────────────────────────────────
- * این‌ها جای «از کجا شروع کنم؟» را گرفتند.
- * برای عوض کردن، فقط اسلاگ و متن قلاب را در این آرایه تغییر بده.
- * ترتیب: از جذاب‌ترین به سمت عمومی‌تر.
+ * برای تغییر، فقط اسلاگ و متن قلاب را عوض کن.
+ * کارت اول عرض دو ستون می‌گیرد، پس جذاب‌ترین را اول بگذار.
  */
 $qp_featured_slugs = array(
 	array(
@@ -107,12 +109,35 @@ $qp_featured_slugs = array(
 	),
 );
 
+/*
+ * یک کوئری برای همهٔ پیشنهادی‌ها به‌جای شش فراخوانی جدا.
+ */
 $qp_featured_posts = array();
-foreach ( $qp_featured_slugs as $qp_item ) {
-	$qp_post = get_page_by_path( $qp_item['slug'], OBJECT, 'quantum_article' );
-	if ( $qp_post && 'publish' === $qp_post->post_status ) {
-		$qp_item['post']     = $qp_post;
-		$qp_featured_posts[] = $qp_item;
+$qp_slug_list      = wp_list_pluck( $qp_featured_slugs, 'slug' );
+
+$qp_featured_query = get_posts(
+	array(
+		'post_type'              => 'quantum_article',
+		'post_status'            => 'publish',
+		'post_name__in'          => $qp_slug_list,
+		'posts_per_page'         => count( $qp_slug_list ),
+		'orderby'                => 'post_name__in',
+		'no_found_rows'          => true,
+		'update_post_meta_cache' => false,
+		'update_post_term_cache' => false,
+	)
+);
+
+if ( ! empty( $qp_featured_query ) ) {
+	$qp_by_slug = array();
+	foreach ( $qp_featured_query as $qp_p ) {
+		$qp_by_slug[ $qp_p->post_name ] = $qp_p;
+	}
+	foreach ( $qp_featured_slugs as $qp_item ) {
+		if ( isset( $qp_by_slug[ $qp_item['slug'] ] ) ) {
+			$qp_item['post']     = $qp_by_slug[ $qp_item['slug'] ];
+			$qp_featured_posts[] = $qp_item;
+		}
 	}
 }
 
@@ -120,18 +145,19 @@ foreach ( $qp_featured_slugs as $qp_item ) {
 if ( empty( $qp_featured_posts ) ) {
 	$qp_fallback = get_posts(
 		array(
-			'post_type'        => 'quantum_article',
-			'posts_per_page'   => 6,
-			'post_status'      => 'publish',
-			'orderby'          => 'date',
-			'order'            => 'DESC',
-			'suppress_filters' => false,
+			'post_type'              => 'quantum_article',
+			'posts_per_page'         => 6,
+			'post_status'            => 'publish',
+			'orderby'                => 'date',
+			'order'                  => 'DESC',
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
 		)
 	);
-	foreach ( $qp_fallback as $qp_post ) {
+	foreach ( $qp_fallback as $qp_p ) {
 		$qp_featured_posts[] = array(
-			'post' => $qp_post,
-			'hook' => wp_trim_words( (string) $qp_post->post_excerpt, 18, '…' ),
+			'post' => $qp_p,
+			'hook' => wp_trim_words( (string) $qp_p->post_excerpt, 18, '…' ),
 			'tag'  => 'پیشنهاد',
 		);
 	}
@@ -152,49 +178,46 @@ $latest_articles = new WP_Query(
 
 $featured_scientists = new WP_Query(
 	array(
-		'post_type'              => 'quantum_scientist',
-		'posts_per_page'         => 10,
-		'post_status'            => 'publish',
-		'orderby'                => 'date',
-		'order'                  => 'DESC',
-		'ignore_sticky_posts'    => true,
-		'no_found_rows'          => true,
-		'update_post_meta_cache' => false,
+		'post_type'           => 'quantum_scientist',
+		'posts_per_page'      => 10,
+		'post_status'         => 'publish',
+		'orderby'             => 'date',
+		'order'               => 'DESC',
+		'ignore_sticky_posts' => true,
+		'no_found_rows'       => true,
 	)
 );
 
-/* شمارندهٔ تصاویر: سه تصویر اول eager، بقیه lazy — برای سرعت بارگذاری اول. */
+/* سه تصویر اول eager، بقیه lazy — برای سرعت بارگذاری اول. */
 $qp_sci_index = 0;
+
+/* شمارنده‌ها: مقدار واقعی در data-target می‌رود تا جاوااسکریپت بشمارد. */
+$qp_stats = array(
+	array(
+		'num'   => $article_total,
+		'label' => 'مقاله',
+	),
+	array(
+		'num'   => count( $parent_categories ),
+		'label' => 'دستهٔ اصلی',
+	),
+	array(
+		'num'   => $sub_total,
+		'label' => 'زیردسته',
+	),
+	array(
+		'num'   => $scientist_total,
+		'label' => 'دانشمند',
+	),
+);
 ?>
 <main id="primary" class="site-main">
 	<div class="container qp-front">
+
 		<section class="qp-front-hero">
 			<div class="qp-front-hero__badge">دانشنامهٔ فارسی فیزیک کوانتوم</div>
 			<h1 class="qp-front-hero__title">کوانتوم را از پایه، دقیق و روان یاد بگیرید</h1>
 			<p class="qp-front-hero__desc">هر مقاله با منبع علمی معتبر نوشته شده، به زبان ساده — بدون فرمول‌های ترسناک و بدون ادعاهای بی‌پایه.</p>
-
-			<div class="qp-front-hero__stats" aria-label="آمار دانشنامه">
-				<div class="qp-front-stat">
-					<span class="qp-front-stat__num"><?php echo esc_html( number_format_i18n( $article_total ) ); ?></span>
-					<span class="qp-front-stat__label">مقاله</span>
-				</div>
-				<div class="qp-front-stat">
-					<span class="qp-front-stat__num"><?php echo esc_html( number_format_i18n( is_wp_error( $parent_categories ) ? 0 : count( $parent_categories ) ) ); ?></span>
-					<span class="qp-front-stat__label">دستهٔ اصلی</span>
-				</div>
-				<div class="qp-front-stat">
-					<span class="qp-front-stat__num"><?php echo esc_html( number_format_i18n( $sub_total ) ); ?></span>
-					<span class="qp-front-stat__label">زیردسته</span>
-				</div>
-				<div class="qp-front-stat">
-					<span class="qp-front-stat__num"><?php echo esc_html( number_format_i18n( $scientist_total ) ); ?></span>
-					<span class="qp-front-stat__label">دانشمند</span>
-				</div>
-			</div>
-
-			<div class="qp-front-search">
-				<?php get_search_form(); ?>
-			</div>
 
 			<div class="qp-front-hero__actions">
 				<a class="qp-front-btn qp-front-btn--primary" href="<?php echo esc_url( home_url( '/topic/fundamentals/' ) ); ?>">شروع از مبانی</a>
@@ -214,11 +237,8 @@ $qp_sci_index = 0;
 
 			<div class="qp-front-picks">
 				<?php foreach ( $qp_featured_posts as $qp_i => $qp_item ) : ?>
-					<?php
-					$qp_p    = $qp_item['post'];
-					$qp_lead = ( 0 === $qp_i );
-					?>
-					<a class="qp-front-pick<?php echo $qp_lead ? ' qp-front-pick--lead' : ''; ?>" href="<?php echo esc_url( get_permalink( $qp_p ) ); ?>">
+					<?php $qp_p = $qp_item['post']; ?>
+					<a class="qp-front-pick<?php echo ( 0 === $qp_i ) ? ' qp-front-pick--lead' : ''; ?>" href="<?php echo esc_url( get_permalink( $qp_p ) ); ?>">
 						<span class="qp-front-pick__tag"><?php echo esc_html( $qp_item['tag'] ); ?></span>
 						<h3 class="qp-front-pick__title"><?php echo esc_html( get_the_title( $qp_p ) ); ?></h3>
 						<p class="qp-front-pick__hook"><?php echo esc_html( $qp_item['hook'] ); ?></p>
@@ -229,16 +249,74 @@ $qp_sci_index = 0;
 		</section>
 		<?php endif; ?>
 
+		<section class="qp-front-section qp-front-section--articles">
+			<div class="qp-front-section__head">
+				<div>
+					<div class="qp-front-section__eyebrow">تازه‌ترین‌ها</div>
+					<h2 class="qp-front-section__title">آخرین مقاله‌ها</h2>
+				</div>
+				<a class="qp-front-section__link" href="<?php echo esc_url( home_url( '/topic/fundamentals/' ) ); ?>">همهٔ مقاله‌ها</a>
+			</div>
+
+			<?php if ( $latest_articles->have_posts() ) : ?>
+				<div class="qp-front-articles">
+					<?php
+					while ( $latest_articles->have_posts() ) :
+						$latest_articles->the_post();
+						?>
+						<?php
+						$terms      = get_the_terms( get_the_ID(), 'quantum_category' );
+						$term_label = ( ! is_wp_error( $terms ) && ! empty( $terms ) ) ? $terms[0]->name : '';
+						?>
+						<a class="qp-front-article" href="<?php the_permalink(); ?>">
+							<div class="qp-front-article__meta">
+								<?php if ( $term_label ) : ?>
+									<span class="qp-front-article__term"><?php echo esc_html( $term_label ); ?></span>
+								<?php endif; ?>
+								<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date( 'j F Y' ) ); ?></time>
+							</div>
+							<h3 class="qp-front-article__title"><?php the_title(); ?></h3>
+							<p class="qp-front-article__excerpt"><?php echo esc_html( get_the_excerpt() ); ?></p>
+						</a>
+					<?php endwhile; ?>
+				</div>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+		</section>
+
+		<section class="qp-front-section qp-front-section--search" aria-label="جست‌وجو">
+			<div class="qp-front-searchbox">
+				<div class="qp-front-searchbox__label">دنبال موضوع خاصی هستید؟</div>
+				<div class="qp-front-search">
+					<?php get_search_form(); ?>
+				</div>
+			</div>
+		</section>
+
+		<section class="qp-front-section qp-front-section--stats" aria-label="آمار دانشنامه">
+			<div class="qp-front-hero__stats" data-qp-counters>
+				<?php foreach ( $qp_stats as $qp_stat ) : ?>
+					<div class="qp-front-stat">
+						<span
+							class="qp-front-stat__num"
+							data-qp-count="<?php echo esc_attr( (string) $qp_stat['num'] ); ?>"
+						><?php echo esc_html( number_format_i18n( $qp_stat['num'] ) ); ?></span>
+						<span class="qp-front-stat__label"><?php echo esc_html( $qp_stat['label'] ); ?></span>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</section>
+
 		<section id="qp-front-cats" class="qp-front-section qp-front-section--cats">
 			<div class="qp-front-section__head">
 				<div>
 					<div class="qp-front-section__eyebrow">ساختار دانشنامه</div>
 					<h2 class="qp-front-section__title">دسته‌بندی موضوعات</h2>
-					<p class="qp-front-section__desc">هفت مسیر اصلی برای خواندن موضوعی مقاله‌ها.</p>
+					<p class="qp-front-section__desc">مسیرهای اصلی برای خواندن موضوعی مقاله‌ها.</p>
 				</div>
 			</div>
 
-			<?php if ( ! is_wp_error( $parent_categories ) && ! empty( $parent_categories ) ) : ?>
+			<?php if ( ! empty( $parent_categories ) ) : ?>
 				<div class="qp-front-cats">
 					<?php foreach ( $parent_categories as $category ) : ?>
 						<?php
@@ -249,9 +327,9 @@ $qp_sci_index = 0;
 								'parent'     => $category->term_id,
 							)
 						);
-						$slug      = isset( $category->slug ) ? $category->slug : '';
-						$cat_desc  = isset( $cat_descriptions[ $slug ] ) ? $cat_descriptions[ $slug ] : '';
-						$cat_icon  = isset( $cat_icons[ $slug ] ) ? $cat_icons[ $slug ] : 'موضوع';
+						$slug     = isset( $category->slug ) ? $category->slug : '';
+						$cat_desc = isset( $cat_descriptions[ $slug ] ) ? $cat_descriptions[ $slug ] : '';
+						$cat_icon = isset( $cat_icons[ $slug ] ) ? $cat_icons[ $slug ] : 'موضوع';
 						?>
 						<a class="qp-front-cat" href="<?php echo esc_url( get_term_link( $category ) ); ?>">
 							<div class="qp-front-cat__top">
@@ -276,41 +354,6 @@ $qp_sci_index = 0;
 			<?php endif; ?>
 		</section>
 
-		<section class="qp-front-section qp-front-section--articles">
-			<div class="qp-front-section__head">
-				<div>
-					<div class="qp-front-section__eyebrow">تازه‌ترین‌ها</div>
-					<h2 class="qp-front-section__title">آخرین مقاله‌ها</h2>
-				</div>
-				<a class="qp-front-section__link" href="<?php echo esc_url( home_url( '/topic/fundamentals/' ) ); ?>">همهٔ مقاله‌ها</a>
-			</div>
-
-			<?php if ( $latest_articles->have_posts() ) : ?>
-				<div class="qp-front-articles">
-					<?php while ( $latest_articles->have_posts() ) : $latest_articles->the_post(); ?>
-						<?php
-						$terms      = get_the_terms( get_the_ID(), 'quantum_category' );
-						$term_label = '';
-						if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-							$term_label = $terms[0]->name;
-						}
-						?>
-						<a class="qp-front-article" href="<?php the_permalink(); ?>">
-							<div class="qp-front-article__meta">
-								<?php if ( $term_label ) : ?>
-									<span class="qp-front-article__term"><?php echo esc_html( $term_label ); ?></span>
-								<?php endif; ?>
-								<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date( 'j F Y' ) ); ?></time>
-							</div>
-							<h3 class="qp-front-article__title"><?php the_title(); ?></h3>
-							<p class="qp-front-article__excerpt"><?php echo esc_html( get_the_excerpt() ); ?></p>
-						</a>
-					<?php endwhile; ?>
-				</div>
-				<?php wp_reset_postdata(); ?>
-			<?php endif; ?>
-		</section>
-
 		<section class="qp-front-section qp-front-section--scientists">
 			<div class="qp-front-section__head">
 				<div>
@@ -324,15 +367,17 @@ $qp_sci_index = 0;
 			<?php if ( $featured_scientists->have_posts() ) : ?>
 				<div class="qp-front-scirail" role="region" aria-label="دانشمندان برجسته" tabindex="0">
 					<div class="qp-front-scirail__track">
-						<?php while ( $featured_scientists->have_posts() ) : $featured_scientists->the_post(); ?>
+						<?php
+						while ( $featured_scientists->have_posts() ) :
+							$featured_scientists->the_post();
+							?>
 							<?php
 							$en_name = trim( (string) get_post_meta( get_the_ID(), '_scientist_en_name', true ) );
 							$initial = 'Q';
 							if ( $en_name ) {
-								$initial = strtoupper( function_exists( 'mb_substr' ) ? mb_substr( $en_name, 0, 1, 'UTF-8' ) : substr( $en_name, 0, 1 ) );
+								$initial = strtoupper( mb_substr( $en_name, 0, 1, 'UTF-8' ) );
 							}
 							$qp_sci_index++;
-							$qp_loading = ( $qp_sci_index <= 3 ) ? 'eager' : 'lazy';
 							?>
 							<a class="qp-front-scientist" href="<?php the_permalink(); ?>">
 								<div class="qp-front-scientist__media">
@@ -343,7 +388,7 @@ $qp_sci_index = 0;
 											'medium',
 											array(
 												'class'    => 'qp-front-scientist__image',
-												'loading'  => $qp_loading,
+												'loading'  => ( $qp_sci_index <= 3 ) ? 'eager' : 'lazy',
 												'decoding' => 'async',
 											)
 										);
@@ -372,6 +417,7 @@ $qp_sci_index = 0;
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
 		</section>
+
 	</div>
 </main>
 <?php

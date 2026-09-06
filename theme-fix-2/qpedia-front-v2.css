@@ -1,24 +1,57 @@
 /* ══════════════════════════════════════════════════════════
-   QPEDIA — استایل بازطراحی صفحهٔ نخست (نسخهٔ ۲)
+   QPEDIA — استایل بازطراحی صفحهٔ نخست (نسخهٔ ۳)
    محل: quantum-pedia-child/assets/css/qpedia-front-v2.css
-   این فایل پس از qpedia-layouts.css بارگذاری می‌شود و فقط
-   بخش‌های تازه را اضافه یا اصلاح می‌کند.
-   بدون جاوااسکریپت. بدون تصویر. بدون فونت اضافه.
+   پس از qpedia-layouts.css و custom.css بارگذاری می‌شود.
+   بدون تصویر، بدون فونت اضافه.
    ══════════════════════════════════════════════════════════ */
 
-/* ── ۱) لوگوی SVG در هدر ───────────────────────────────── */
-/* رنگ از currentColor می‌آید، پس فقط رنگ متن را تعیین می‌کنیم. */
-.qp-brand__logo-wrap{
-  color:#39ff14;                 /* رنگ نئون لوگو */
-}
-svg.qp-brand__logo{
-  width:44px;
-  height:44px;
+/* ── ۱) نشان متنی هدر (جای لوگو) ───────────────────────── */
+.qp-brand__wordmark{
   display:block;
-  filter:drop-shadow(0 2px 10px rgba(57,255,20,.18));
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.42rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.14em;
+  color:#fff;
+  direction:ltr;
+  text-align:left;
+  margin-bottom:6px;
+  text-shadow:0 0 18px rgba(57,255,20,.18);
+}
+.qp-brand__wordmark-thin{
+  font-weight:300;
+  color:var(--qp-neon,#39ff14);
+  margin-inline-start:.34em;
+}
+/* عنوان فارسی زیر نشان، کمی کوچک‌تر تا سلسله‌مراتب درست بماند */
+.qp-brand__title{font-size:.96rem !important}
+.qp-brand__desc{font-size:.78rem}
+
+/* ── ۲) نشان متنی فوتر (کنار لوگوی اختصاصی) ───────────── */
+.qp-global-footer__titles{display:flex;flex-direction:column;gap:6px}
+.qp-global-footer__logo{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+}
+.qp-global-footer__wordmark{
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.5rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.15em;
+  color:#fff;
+  direction:ltr;
+  text-align:left;
+}
+.qp-global-footer__wordmark-thin{
+  font-weight:300;
+  color:var(--qp-neon,#39ff14);
+  margin-inline-start:.34em;
 }
 
-/* ── ۲) مقاله‌های پیشنهادی ─────────────────────────────── */
+/* ── ۳) مقاله‌های پیشنهادی ─────────────────────────────── */
 .qp-front-picks{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -87,14 +120,92 @@ svg.qp-brand__logo{
 }
 .qp-front-pick__more::after{
   content:"\00a0←";
-  transition:transform .16s ease;
   display:inline-block;
+  transition:transform .16s ease;
 }
 .qp-front-pick:hover .qp-front-pick__more::after{transform:translateX(-3px)}
 
-/* ── ۳) ردیف اسلایدری دانشمندان ─────────────────────────
-   اسکرول افقی بومی مرورگر. بدون جاوااسکریپت، بدون کتابخانه.
-   روی موبایل با انگشت و روی دسکتاپ با شیفت+چرخ کار می‌کند. */
+/* ── ۴) کارت‌های مقالهٔ تازه: گوشهٔ رنگی ظریف ───────────
+   بدون تصویر شاخص. یک نوار گرادیان سبز-آبی روی گوشهٔ بالا. */
+.qp-front-article{
+  position:relative;
+  overflow:hidden;
+}
+.qp-front-article::before{
+  content:"";
+  position:absolute;
+  inset-block-start:0;
+  inset-inline:0;
+  height:3px;
+  background:linear-gradient(90deg,#2dd4bf 0%,#38bdf8 100%);
+  opacity:.75;
+  transition:opacity .16s ease;
+}
+.qp-front-article:hover::before{opacity:1}
+
+/* لکهٔ نرم رنگی در گوشهٔ بالا-شروع کارت */
+.qp-front-article::after{
+  content:"";
+  position:absolute;
+  inset-block-start:-42px;
+  inset-inline-start:-42px;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(45,212,191,.16) 0%,rgba(56,189,248,.07) 55%,transparent 72%);
+  pointer-events:none;
+}
+
+/* ── ۵) جعبهٔ جست‌وجو ──────────────────────────────────── */
+.qp-front-searchbox{
+  background:linear-gradient(135deg,#f0fdfa 0%,#ffffff 70%);
+  border:1px solid rgba(15,118,110,.18);
+  border-radius:18px;
+  padding:22px;
+}
+.qp-front-searchbox__label{
+  margin:0 0 12px;
+  color:var(--qp-ink);
+  font-weight:800;
+  font-size:1.05rem;
+}
+.qp-front-searchbox .qp-front-search{margin:0}
+
+/* ── ۶) شمارنده‌ها ─────────────────────────────────────── */
+.qp-front-section--stats{margin-top:26px}
+
+.qp-front-section--stats .qp-front-hero__stats{margin:0}
+
+.qp-front-stat{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+.qp-front-stat::before{
+  content:"";
+  position:absolute;
+  inset-block-start:0;
+  inset-inline:0;
+  height:3px;
+  background:linear-gradient(90deg,#2dd4bf 0%,#38bdf8 100%);
+  opacity:.7;
+}
+.qp-front-stat:hover{
+  border-color:var(--qp-accent);
+  transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(15,118,110,.09);
+}
+.qp-front-stat__num{
+  /* عرض ثابت رقم‌ها تا هنگام شمارش، کادر نلرزد */
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1;
+  color:var(--qp-accent) !important;
+  font-size:1.9rem !important;
+}
+
+/* ── ۷) ردیف اسلایدری دانشمندان ─────────────────────────
+   اسکرول افقی بومی مرورگر. بدون جاوااسکریپت. */
 .qp-front-scirail{
   overflow-x:auto;
   overflow-y:hidden;
@@ -102,7 +213,7 @@ svg.qp-brand__logo{
   scroll-snap-type:x mandatory;
   scroll-padding-inline:2px;
   scrollbar-width:thin;
-  scrollbar-color:var(--qp-accent) transparent;
+  scrollbar-color:rgba(15,118,110,.5) transparent;
   padding-bottom:10px;
   /* محو شدن لبه‌ها تا کاربر بفهمد ادامه دارد */
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);
@@ -125,11 +236,10 @@ svg.qp-brand__logo{
   display:flex;
   gap:14px;
   padding-inline:2px;
-  /* هر کارت دقیقاً یک‌سوم عرض، مثل قبل — فقط در یک ردیف */
+  /* هر کارت یک‌سوم عرض، مثل قبل — فقط در یک ردیف */
   --qp-sci-w:calc((100% - 28px) / 3);
 }
 
-/* کارت دانشمند داخل ریل: عرض ثابت، کوچک نشود */
 .qp-front-scirail .qp-front-scientist{
   flex:0 0 var(--qp-sci-w);
   width:var(--qp-sci-w);
@@ -171,19 +281,21 @@ svg.qp-brand__logo{
   .qp-front-swipe-hint{display:none}
 }
 
-/* اگر کاربر انیمیشن کمتر خواسته، پرش‌ها را خاموش کن */
+/* ── ۸) احترام به تنظیم «انیمیشن کمتر» ─────────────────── */
 @media (prefers-reduced-motion:reduce){
   .qp-front-pick,
+  .qp-front-stat,
   .qp-front-pick__more::after{transition:none}
-  .qp-front-pick:hover{transform:none}
+  .qp-front-pick:hover,
+  .qp-front-stat:hover{transform:none}
   .qp-front-scirail{scroll-behavior:auto}
 }
 
-/* ── ۴) واکنش‌گرا ──────────────────────────────────────── */
+/* ── ۹) واکنش‌گرا ──────────────────────────────────────── */
 @media (max-width:900px){
   .qp-front-picks{grid-template-columns:repeat(2,minmax(0,1fr))}
   .qp-front-pick--lead{grid-column:span 2}
-  /* روی تبلت: دو کارت‌ونیم دیده شود تا بفهمد ادامه دارد */
+  /* تبلت: دو کارت‌ونیم دیده شود تا بفهمد ادامه دارد */
   .qp-front-scirail__track{--qp-sci-w:calc((100% - 28px) / 2.3)}
 }
 
@@ -191,7 +303,13 @@ svg.qp-brand__logo{
   .qp-front-picks{grid-template-columns:1fr}
   .qp-front-pick--lead{grid-column:span 1}
   .qp-front-pick--lead .qp-front-pick__title{font-size:1.15rem}
-  /* روی موبایل: یک کارت‌ونیم */
+  /* موبایل: یک کارت‌ونیم */
   .qp-front-scirail__track{--qp-sci-w:calc((100% - 14px) / 1.45)}
   .qp-front-scientist--all{min-height:150px}
+
+  .qp-brand__wordmark{font-size:1.2rem;letter-spacing:.1em}
+  .qp-global-footer__wordmark{font-size:1.25rem}
+  .qp-global-footer__logo{width:52px;height:52px}
+  .qp-front-stat__num{font-size:1.6rem !important}
+  .qp-front-searchbox{padding:18px}
 }
