@@ -8,7 +8,7 @@ h1{font-size:26px;margin:0 0 6px}h2{font-size:20px;margin:32px 0 14px;
 border-right:3px solid var(--acc);padding-right:10px}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 .sub{color:var(--mut);margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:16px 0}
 .kpi{background:var(--card);border-radius:10px;padding:14px}
 .kpi b{display:block;font-size:26px;color:var(--acc)}
 .kpi.ok b{color:var(--ok)}.kpi.warn b{color:var(--warn)}
@@ -20,20 +20,24 @@ a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 .im{background:var(--card);border-radius:10px;overflow:hidden}
 .im img{width:100%;display:block}
 .im figcaption{padding:8px 10px;font-size:12px;color:var(--mut);
-display:flex;justify-content:space-between;gap:8px}
-.tag{background:#1d7a4a;color:#fff;border-radius:4px;padding:1px 7px;font-size:11px}
-.tag.v1{background:#2a3560;color:var(--mut)}
+display:flex;justify-content:space-between;gap:8px;align-items:center}
+.tag{border-radius:4px;padding:1px 7px;font-size:11px;white-space:nowrap}
+.t26{background:#1d7a4a;color:#fff}.t27{background:#2563a8;color:#fff}
+.t1{background:#2a3560;color:var(--mut)}
+.rem{background:var(--card);border-radius:10px;padding:14px 16px;
+columns:3;font-size:13px;color:var(--mut)}
+.rem code{color:var(--fg)}
 </style><body>
 <h1>QPedia — پیش‌نمایش کار</h1>
-<div class="sub">141 تصویر آماده · 87 نسخهٔ ۲ · 65 مقاله باقی‌مانده</div>
+<div class="sub">150 تصویر آماده · 101 نسخهٔ ۲ · 49 مقاله باقی‌مانده</div>
 <div class="grid">
 <div class="kpi ok"><b>0</b><span>مقالهٔ یتیم</span></div>
 <div class="kpi ok"><b>0</b><span>لینک شکسته</span></div>
 <div class="kpi ok"><b>150/150</b><span>متادسکریپشن</span></div>
 <div class="kpi ok"><b>1</b><span>دانشمند یتیم</span></div>
-<div class="kpi warn"><b>87/150</b><span>تصویر نسخهٔ ۲</span></div>
-<div class="kpi"><b>65</b><span>باقی‌مانده</span></div>
-<div class="kpi"><b>141</b><span>کل تصویر</span></div>
+<div class="kpi warn"><b>101/150</b><span>تصویر نسخهٔ ۲</span></div>
+<div class="kpi"><b>49</b><span>باقی‌مانده</span></div>
+<div class="kpi"><b>150</b><span>کل تصویر</span></div>
 </div>
 <h2>گزارش‌ها</h2><div class="docs">
 <div class="doc"><b><a href="گزارش-سلامت-سایت.html">تحلیل جامع ۱۵۰ مقاله</a></b><small>گزارش-سلامت-سایت.html</small></div>
@@ -43,148 +47,210 @@ display:flex;justify-content:space-between;gap:8px}
 <div class="doc"><b><a href="منابع-هجده-مقاله-هاب.md">منابع هجده مقالهٔ هاب</a></b><small>منابع-هجده-مقاله-هاب.md</small></div>
 <div class="doc"><b><a href="نقشه-لینک-داخلی.csv">خروجی CSV نقشه</a></b><small>نقشه-لینک-داخلی.csv</small></div>
 </div>
-<h2>تصاویر شاخص — 141</h2>
-<div class="sub">همه WebP ۹۰۰×۴۵۰ · <span class="tag">نسخهٔ ۲</span> = زیرنویس فارسی + خط اسکن زیر کلمه</div>
-<div class="imgs">
-<figure class="im"><img loading="lazy" src="../thumbs-webp/absolute-zero.webp" alt=""><figcaption><span>صفر مطلق چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/alpha-decay.webp" alt=""><figcaption><span>واپاشی آلفا چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/antimatter.webp" alt=""><figcaption><span>پادماده چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/aspect-experiment-1982.webp" alt=""><figcaption><span>آزمایش آسپه ۱۹۸۲ چه بود؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/atomic-clock-gps.webp" alt=""><figcaption><span>ساعت اتمی و جی‌پی‌اس</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/bell-experiments.webp" alt=""><figcaption><span>آزمایش های بل: چگونه درهم تنیدگی اثبات شد!</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/bell-inequality.webp" alt=""><figcaption><span>نامساوی بل</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/bird-quantum-compass.webp" alt=""><figcaption><span>قطب‌نمای پرندگان</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/bohr-atomic-model.webp" alt=""><figcaption><span>مدل اتمی بور</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/bose-einstein-condensate.webp" alt=""><figcaption><span>چگالش بوز-اینشتین چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/brain-quantum-phenomena.webp" alt=""><figcaption><span>آیا مغز انسان از پدیده های کوانتومی استفاد</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/casimir-effect.webp" alt=""><figcaption><span>اثر کازیمیر</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/coherence.webp" alt=""><figcaption><span>همدوسی چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/coin-vs-dice-quantum-uncertainty.webp" alt=""><figcaption><span>تمثیل تاس در مقابل تمثیل سکه: کدام برای عد</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/copenhagen-interpretation.webp" alt=""><figcaption><span>تفسیر کپنهاگی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/decoherence.webp" alt=""><figcaption><span>واهمدوسی؛ چرا دنیا عادی است!</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/dirac-antimatter.webp" alt=""><figcaption><span>دیراک و پیش‌بینی پادماده؛ وقتی ریاضیات از </span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/does-quantum-prove-god.webp" alt=""><figcaption><span>آیا کوانتوم ثابت می کند خدا وجود دارد یا ن</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/double-slit-experiment.webp" alt=""><figcaption><span>آزمایش دو شکاف</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/einstein-bohr-debate.webp" alt=""><figcaption><span>نبرد اینشتین و بور بر سر معنای کوانتوم</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/einstein-photoelectric-effect.webp" alt=""><figcaption><span>اینشتین و اثر فوتوالکتریک (نه فقط نسبیت)</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/electron.webp" alt=""><figcaption><span>الکترون چیست؟ ویژگی‌ها، نقش در اتم و برق</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/energy-levels.webp" alt=""><figcaption><span>ترازهای انرژی و کوانتش</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/entanglement-myths.webp" alt=""><figcaption><span>آیا درهم تنیدگی یعنی اطلاعات سریع تر از نو</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/entanglement-quantum-computers.webp" alt=""><figcaption><span>درهم‌تنیدگی در کامپیوترهای کوانتومی امروزی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/everything-is-energy-claim.webp" alt=""><figcaption><span>«همه‌چیز انرژی است» — بررسی یک ادعا</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/feynman-quantum-explainer.webp" alt=""><figcaption><span>فاینمن: نابغه‌ای که کوانتوم را ساده توضیح </span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/forgotten-women-quantum.webp" alt=""><figcaption><span>زنان فراموش‌شدهٔ فیزیک کوانتوم</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/grover-algorithm.webp" alt=""><figcaption><span>الگوریتم گروور چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/heisenberg-uncertainty-principle.webp" alt=""><figcaption><span>اصل عدم قطعیت هایزنبرگ به زبان ساده</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/higgs-boson.webp" alt=""><figcaption><span>بوزون هیگز چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/how-lasers-work.webp" alt=""><figcaption><span>لیزر چطور کار می‌کند؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/is-classical-physics-wrong.webp" alt=""><figcaption><span>آیا فیزیک کلاسیک اشتباه بود؟ نه، محدود بود</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/is-many-worlds-real.webp" alt=""><figcaption><span>آیا کوانتوم یعنی چندجهانی واقعی است؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/is-the-brain-quantum.webp" alt=""><figcaption><span>آیا مغز کوانتومی است؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/many-worlds-interpretation.webp" alt=""><figcaption><span>تفسیر جهان‌های موازی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/mind-quantum-reality.webp" alt=""><figcaption><span>آیا با فکر کردن می توان واقعیت کوانتومی را</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/mri-quantum.webp" alt=""><figcaption><span>ام‌آرآی (MRI) چگونه کار می‌کند؟ ریشهٔ کوان</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/neutrino.webp" alt=""><figcaption><span>نوترینو چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/nuclear-spin.webp" alt=""><figcaption><span>اسپین هسته‌ای چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/pauli-exclusion-principle.webp" alt=""><figcaption><span>اصل طرد پاولی دقیقاً چه می‌گوید؟ به زبان س</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/photoelectric-effect.webp" alt=""><figcaption><span>اثر فوتوالکتریک</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/photon.webp" alt=""><figcaption><span>فوتون دقیقا چیست ؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/pilot-wave.webp" alt=""><figcaption><span>تفسیر دوبروی-بوهم چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/planck-constant.webp" alt=""><figcaption><span>ثابت پلانک؛ کوچک‌ترین واحد جهان</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-alternative-medicine-science.webp" alt=""><figcaption><span>کوانتوم و پزشکی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-analogy-exercise-boundary.webp" alt=""><figcaption><span>تمرین ذهنی: خودتان یک تمثیل بسازید و مرزش </span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-century-2025.webp" alt=""><figcaption><span>صد سالگی کوانتوم؛ از جزیرهٔ هلگولاند تا ام</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-computer-reality.webp" alt=""><figcaption><span>کامپیوتر کوانتومی چیست و چقدر با واقعیت فا</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-cryptography-internet-security.webp" alt=""><figcaption><span>رمزنگاری کوانتومی و آیندهٔ امنیت اینترنت</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-entanglement-explained.webp" alt=""><figcaption><span>درهم‌تنیدگی کوانتومی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-error-correction.webp" alt=""><figcaption><span>تصحیح خطای کوانتومی چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-fivefold-mental-map.webp" alt=""><figcaption><span>نقشهٔ ذهنی پنج‌گانه برای فهم درست کوانتوم</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-interpretation-debate.webp" alt=""><figcaption><span>آیا فیزیک دانان بر سر معنای اندازه گیری تو</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-measurement.webp" alt=""><figcaption><span>اندازه‌گیری و فروپاشی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-photosynthesis.webp" alt=""><figcaption><span>فتوسنتز؛ کارآمدترین ماشین جهان و رد پای کو</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-physics-vs-quantum-mechanics.webp" alt=""><figcaption><span>تفاوت فیزیک کوانتوم و مکانیک کوانتومی چیست</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-sensors.webp" alt=""><figcaption><span>حسگرهای کوانتومی؛ آیندهٔ دقت اندازه‌گیری</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-simulation.webp" alt=""><figcaption><span>شبیه‌سازی کوانتومی چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-spin.webp" alt=""><figcaption><span>اسپین؛ چرخشی که چرخش نیست</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-superposition.webp" alt=""><figcaption><span>برهم‌نهی کوانتومی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-supremacy.webp" alt=""><figcaption><span>برتری کوانتومی چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-tunneling.webp" alt=""><figcaption><span>تونل‌زنی کوانتومی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-zeno-effect.webp" alt=""><figcaption><span>اثر زنون کوانتومی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quark.webp" alt=""><figcaption><span>کوارک چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/qubit.webp" alt=""><figcaption><span>کیوبیت چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/schrodinger-cat.webp" alt=""><figcaption><span>گربهٔ شرودینگر</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/schrodinger-life-equation.webp" alt=""><figcaption><span>شرودینگر: زندگی، معادله و گربه‌ای که هرگز </span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/shor-algorithm.webp" alt=""><figcaption><span>الگوریتم شور چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/solar-cells-photoelectric.webp" alt=""><figcaption><span>پنل خورشیدی و اثر فوتوالکتریک؛ تبدیل نور ب</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/solvay-conference-1927.webp" alt=""><figcaption><span>کنفرانس سولوی ۱۹۲۷ چه بود؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/standard-model.webp" alt=""><figcaption><span>مدل استاندارد چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/stellar-fusion.webp" alt=""><figcaption><span>همجوشی ستارگان چگونه ممکن است؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/stern-gerlach-experiment.webp" alt=""><figcaption><span>آزمایش اشترن-گرلاخ چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/stimulated-emission.webp" alt=""><figcaption><span>گسیل تحریکی چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/superconductivity.webp" alt=""><figcaption><span>ابررسانایی</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/superfluidity.webp" alt=""><figcaption><span>ابرشارگی؛ مایعی که از لیوان بالا می‌رود</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/superposition-explained.webp" alt=""><figcaption><span>برهم نهی چیست؟ وقتی یک ذره «هم این است هم </span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/transistor-quantum.webp" alt=""><figcaption><span>ترانزیستور؛ کوانتوم در جیب شما</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/ultraviolet-catastrophe.webp" alt=""><figcaption><span>فاجعهٔ فرابنفش</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/vacuum-fluctuations.webp" alt=""><figcaption><span>نوسانات خلأ</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/virtual-particles.webp" alt=""><figcaption><span>ذرات مجازی چیستند؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/wave-function.webp" alt=""><figcaption><span>تابع موج چیست؟</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/wave-particle-duality.webp" alt=""><figcaption><span>دوگانگی موج و ذره</span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/why-quantum-math-works.webp" alt=""><figcaption><span>چرا ریاضیات کوانتوم درست است ولی فهمش سخت </span><span class="tag">نسخهٔ ۲</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/attosecond-nobel-2023.webp" alt=""><figcaption><span>نوبل فیزیک ۲۰۲۳؛ عکاسی از حرکت الکترون</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/bitcoin-quantum-threat.webp" alt=""><figcaption><span>آیا کامپیوتر کوانتومی بیت کوین را نابود می</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/black-hole-information-paradox.webp" alt=""><figcaption><span>پارادوکس اطلاعات سیاه چاله؛ معمای هاوکینگ</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/determinism-vs-probability.webp" alt=""><figcaption><span>تفاوت جبرگرایی کلاسیک و احتمال کوانتومی</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/epr-paradox.webp" alt=""><figcaption><span>پارادوکس EPR؛ اعتراض اینشتین که فیزیک را ج</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/google-error-correction.webp" alt=""><figcaption><span>تصحیح خطای کوانتومی؛ نقطهٔ عطف گوگل در نیچ</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/harvest-now-decrypt-later.webp" alt=""><figcaption><span>الان جمع کن، بعداً رمزگشایی کن؛ تهدیدی که </span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/holographic-principle.webp" alt=""><figcaption><span>اصل هولوگرافیک؛ آیا جهان ما یک هولوگرام اس</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/human-teleportation.webp" alt=""><figcaption><span>چرا تله پورت انسان از نظر علمی غیرممکن است</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/ibm-condor-processor.webp" alt=""><figcaption><span>پردازندهٔ IBM Condor؛ چرا هزار کیوبیت کافی</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/josephson-junction.webp" alt=""><figcaption><span>پیوند جوزفسون؛ قلب تپندهٔ کامپیوتر کوانتوم</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/law-of-attraction-quantum.webp" alt=""><figcaption><span>قانون جذب و کوانتوم؛ کجای این استدلال می ل</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/max-planck-blackbody.webp" alt=""><figcaption><span>پلانک و بحران تابش جسم سیاه؛ جرقه‌ای که فی</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/moore-law-quantum-limit.webp" alt=""><figcaption><span>پایان قانون مور؛ چرا ترانزیستورها به دیوار</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/no-cloning-theorem.webp" alt=""><figcaption><span>قضیهٔ عدم کپی؛ چرا کوانتوم را نمی توان تکث</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/nobel-physics-2025.webp" alt=""><figcaption><span>نوبل فیزیک ۲۰۲۵؛ وقتی یک مدار مثل اتم رفتا</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/pet-scan-antimatter.webp" alt=""><figcaption><span>پادماده در پزشکی؛ اسکن پت چطور کار می کند؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/physicists-on-quantum-weirdness.webp" alt=""><figcaption><span>ده دیدگاه فیزیکدانان بزرگ دربارهٔ عجایب کو</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/post-quantum-cryptography.webp" alt=""><figcaption><span>رمزنگاری پساکوانتومی؛ قفل های تازهٔ اینترن</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/q-day.webp" alt=""><figcaption><span>روز کیو چیست و واقعاً کِی می رسد؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-annealing-dwave.webp" alt=""><figcaption><span>آنیلینگ کوانتومی؛ چرا هزار کیوبیت یعنی هزا</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-battery.webp" alt=""><figcaption><span>باتری کوانتومی؛ چرا بزرگ تر یعنی سریع تر؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-career-future-learn.webp" alt=""><figcaption><span>آینده شغلی: آیا باید فیزیک کوانتوم یاد بگی</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-chemistry.webp" alt=""><figcaption><span>شیمی کوانتومی چیست؟ چرا دستتان از دیوار رد</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-classical-boundary.webp" alt=""><figcaption><span>چرا کوانتوم را در زندگی روزمره حس نمی کنیم</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-darwinism.webp" alt=""><figcaption><span>داروینیسم کوانتومی؛ چرا همه یک واقعیت می ب</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-documentaries.webp" alt=""><figcaption><span>بهترین مستندهای فیزیک کوانتوم که باید ببین</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-dots-displays.webp" alt=""><figcaption><span>نقطهٔ کوانتومی؛ کوانتومی که در تلویزیون شم</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-eraser.webp" alt=""><figcaption><span>پاک کن کوانتومی؛ آیا آینده بر گذشته اثر می</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-fluctuations-cosmos.webp" alt=""><figcaption><span>افت وخیز کوانتومی؛ چطور کهکشان ها متولد شد</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-free-will.webp" alt=""><figcaption><span>کوانتوم و ارادهٔ آزاد؛ آیا آینده از قبل نو</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-gate.webp" alt=""><figcaption><span>گیت کوانتومی؛ آجرهای سازندهٔ کامپیوتر کوان</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-gravity.webp" alt=""><figcaption><span>گرانش کوانتومی چیست؟ بزرگ ترین چالش فیزیک</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-healing-debunked.webp" alt=""><figcaption><span>شفای کوانتومی؛ چرا این ادعا شبه علم است؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-hype-bubble.webp" alt=""><figcaption><span>حباب هیجان کوانتومی؛ چقدرش واقعی است؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-immortality.webp" alt=""><figcaption><span>جاودانگی کوانتومی؛ کجای این استدلال می لنگ</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-internet-satellite.webp" alt=""><figcaption><span>اینترنت کوانتومی فضایی؛ ماجرای ماهوارهٔ می</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-machine-learning.webp" alt=""><figcaption><span>یادگیری ماشین کوانتومی؛ وعده ها و واقعیت ه</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-navigation.webp" alt=""><figcaption><span>ناوبری کوانتومی؛ مسیریابی بدون ماهواره</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-physics-in-movies-ant-man.webp" alt=""><figcaption><span>فیزیک کوانتوم در فیلم مرد مورچه ای؛ واقعیت</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-radar.webp" alt=""><figcaption><span>رادار کوانتومی؛ آیا جنگندهٔ رادارگریز را م</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-random-number-generator.webp" alt=""><figcaption><span>عدد تصادفی کوانتومی؛ تنها تصادف واقعی جهان</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-spin-liquid.webp" alt=""><figcaption><span>مایع اسپینی کوانتومی؛ ماده ای که هرگز آرام</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-teleportation.webp" alt=""><figcaption><span>تله پورت کوانتومی چیست؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-thermodynamics.webp" alt=""><figcaption><span>ترمودینامیک کوانتومی؛ موتوری به اندازهٔ یک</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-time-travel.webp" alt=""><figcaption><span>آیا سفر در زمان با فیزیک کوانتوم ممکن است؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/room-temperature-superconductor.webp" alt=""><figcaption><span>ابررسانای دمای اتاق؛ درس LK-99 دربارهٔ هیج</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/simulation-hypothesis-quantum.webp" alt=""><figcaption><span>آیا جهان یک شبیه سازی است؟ نقد سه استدلال </span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/spot-pseudoscience-one-sentence.webp" alt=""><figcaption><span>چگونه ادعای شبه‌علمی را در یک جمله تشخیص د</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/string-theory-quantum.webp" alt=""><figcaption><span>نظریهٔ ریسمان و کوانتوم؛ جهان از جنس نت اس</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/time-crystal.webp" alt=""><figcaption><span>کریستال زمان چیست؟ ماده ای که در زمان تکرا</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/what-is-quantum.webp" alt=""><figcaption><span>کوانتوم یعنی چه؟</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/why-large-objects-dont-superpose.webp" alt=""><figcaption><span>برهم نهی یعنی چه، و چرا اشیای بزرگ برهم نه</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/wigner-friend.webp" alt=""><figcaption><span>پارادوکس دوست ویگنر؛ آیا واقعیت برای همه ی</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/willow-chip.webp" alt=""><figcaption><span>تراشهٔ ویلو؛ گوگل واقعاً چه چیزی را ثابت ک</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
-<figure class="im"><img loading="lazy" src="../thumbs-webp/zero-point-energy-scam.webp" alt=""><figcaption><span>انرژی نقطهٔ صفر و افسانهٔ انرژی رایگان</span><span class="tag v1">نسخهٔ ۱</span></figcaption></figure>
+<h2>تصاویر — 150</h2>
+<div class="sub">WebP ۹۰۰×۴۵۰ ·
+<span class="tag t26">بستهٔ ۲۶</span> و
+<span class="tag t27">بستهٔ ۲۷</span> = نسخهٔ ۲ با زیرنویس فارسی ·
+<span class="tag t1">قدیمی</span> = نسخهٔ ۱</div><div class="imgs">
+<figure class="im"><img loading="lazy" src="../thumbs-webp/bird-quantum-compass.webp" alt=""><figcaption><span>قطب‌نمای پرندگان</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/brain-quantum-phenomena.webp" alt=""><figcaption><span>آیا مغز انسان از پدیده های کوانتومی استف</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/coin-vs-dice-quantum-uncertainty.webp" alt=""><figcaption><span>تمثیل تاس در مقابل تمثیل سکه: کدام برای </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/determinism-vs-probability.webp" alt=""><figcaption><span>تفاوت جبرگرایی کلاسیک و احتمال کوانتومی</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/dirac-antimatter.webp" alt=""><figcaption><span>دیراک و پیش‌بینی پادماده؛ وقتی ریاضیات ا</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/does-ai-use-quantum.webp" alt=""><figcaption><span>آیا هوش مصنوعی از کوانتوم استفاده می کند</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/does-quantum-prove-god.webp" alt=""><figcaption><span>آیا کوانتوم ثابت می کند خدا وجود دارد یا</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/einstein-bohr-debate.webp" alt=""><figcaption><span>نبرد اینشتین و بور بر سر معنای کوانتوم</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/einstein-photoelectric-effect.webp" alt=""><figcaption><span>اینشتین و اثر فوتوالکتریک (نه فقط نسبیت)</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/entanglement-myths.webp" alt=""><figcaption><span>آیا درهم تنیدگی یعنی اطلاعات سریع تر از </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/entanglement-quantum-computers.webp" alt=""><figcaption><span>درهم‌تنیدگی در کامپیوترهای کوانتومی امرو</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/enzyme-quantum-tunneling.webp" alt=""><figcaption><span>آنزیم‌ها؛ عبور از دیوار به‌جای پریدن</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/everything-is-energy-claim.webp" alt=""><figcaption><span>«همه‌چیز انرژی است» — بررسی یک ادعا</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/feynman-quantum-explainer.webp" alt=""><figcaption><span>فاینمن: نابغه‌ای که کوانتوم را ساده توضی</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/fiber-optics.webp" alt=""><figcaption><span>فیبر نوری چگونه کار می‌کند؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/flash-memory.webp" alt=""><figcaption><span>حافظهٔ فلش چطور کار می‌کند؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/forgotten-women-quantum.webp" alt=""><figcaption><span>زنان فراموش‌شدهٔ فیزیک کوانتوم</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/genetic-mutation.webp" alt=""><figcaption><span>آیا جهش ژنتیکی کوانتومی است؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/grover-algorithm.webp" alt=""><figcaption><span>الگوریتم گروور چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/is-classical-physics-wrong.webp" alt=""><figcaption><span>آیا فیزیک کلاسیک اشتباه بود؟ نه، محدود ب</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/is-many-worlds-real.webp" alt=""><figcaption><span>آیا کوانتوم یعنی چندجهانی واقعی است؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/is-the-brain-quantum.webp" alt=""><figcaption><span>آیا مغز کوانتومی است؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/max-planck-blackbody.webp" alt=""><figcaption><span>پلانک و بحران تابش جسم سیاه؛ جرقه‌ای که </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/mind-quantum-reality.webp" alt=""><figcaption><span>آیا با فکر کردن می توان واقعیت کوانتومی </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/pilot-wave.webp" alt=""><figcaption><span>تفسیر دوبروی-بوهم چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-alternative-medicine-science.webp" alt=""><figcaption><span>کوانتوم و پزشکی</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-analogy-exercise-boundary.webp" alt=""><figcaption><span>تمرین ذهنی: خودتان یک تمثیل بسازید و مرز</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-classical-boundary.webp" alt=""><figcaption><span>چرا کوانتوم را در زندگی روزمره حس نمی کن</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-computer-reality.webp" alt=""><figcaption><span>کامپیوتر کوانتومی چیست و چقدر با واقعیت </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-cryptography-internet-security.webp" alt=""><figcaption><span>رمزنگاری کوانتومی و آیندهٔ امنیت اینترنت</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-error-correction.webp" alt=""><figcaption><span>تصحیح خطای کوانتومی چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-fivefold-mental-map.webp" alt=""><figcaption><span>نقشهٔ ذهنی پنج‌گانه برای فهم درست کوانتو</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-interpretation-debate.webp" alt=""><figcaption><span>آیا فیزیک دانان بر سر معنای اندازه گیری </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-learning-resources.webp" alt=""><figcaption><span>منابع معتبر فارسی و انگلیسی برای یادگیری</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-photosynthesis.webp" alt=""><figcaption><span>فتوسنتز؛ کارآمدترین ماشین جهان و رد پای </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-physics-vs-quantum-mechanics.webp" alt=""><figcaption><span>تفاوت فیزیک کوانتوم و مکانیک کوانتومی چی</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-sensors.webp" alt=""><figcaption><span>حسگرهای کوانتومی؛ آیندهٔ دقت اندازه‌گیری</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-simulation.webp" alt=""><figcaption><span>شبیه‌سازی کوانتومی چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-smell.webp" alt=""><figcaption><span>حس بویایی؛ شکل یا ارتعاش؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-supremacy.webp" alt=""><figcaption><span>برتری کوانتومی چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-teleportation.webp" alt=""><figcaption><span>تله پورت کوانتومی چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-understanding-achievement.webp" alt=""><figcaption><span>چرا «نفهمیدنِ درست» کوانتوم، خودش یک دست</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-zeno-effect.webp" alt=""><figcaption><span>اثر زنون کوانتومی</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/scanning-tunneling-microscope.webp" alt=""><figcaption><span>میکروسکوپ تونلی چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/schrodinger-life-equation.webp" alt=""><figcaption><span>شرودینگر: زندگی، معادله و گربه‌ای که هرگ</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/shor-algorithm.webp" alt=""><figcaption><span>الگوریتم شور چیست؟</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/spot-pseudoscience-one-sentence.webp" alt=""><figcaption><span>چگونه ادعای شبه‌علمی را در یک جمله تشخیص</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/superposition-explained.webp" alt=""><figcaption><span>برهم نهی چیست؟ وقتی یک ذره «هم این است ه</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/why-large-objects-dont-superpose.webp" alt=""><figcaption><span>برهم نهی یعنی چه، و چرا اشیای بزرگ برهم </span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/why-quantum-math-works.webp" alt=""><figcaption><span>چرا ریاضیات کوانتوم درست است ولی فهمش سخ</span><span class="tag t27">بستهٔ ۲۷</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/absolute-zero.webp" alt=""><figcaption><span>صفر مطلق چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/alpha-decay.webp" alt=""><figcaption><span>واپاشی آلفا چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/antimatter.webp" alt=""><figcaption><span>پادماده چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/aspect-experiment-1982.webp" alt=""><figcaption><span>آزمایش آسپه ۱۹۸۲ چه بود؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/atomic-clock-gps.webp" alt=""><figcaption><span>ساعت اتمی و جی‌پی‌اس</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/bell-experiments.webp" alt=""><figcaption><span>آزمایش های بل: چگونه درهم تنیدگی اثبات ش</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/bell-inequality.webp" alt=""><figcaption><span>نامساوی بل</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/bohr-atomic-model.webp" alt=""><figcaption><span>مدل اتمی بور</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/bose-einstein-condensate.webp" alt=""><figcaption><span>چگالش بوز-اینشتین چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/casimir-effect.webp" alt=""><figcaption><span>اثر کازیمیر</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/coherence.webp" alt=""><figcaption><span>همدوسی چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/copenhagen-interpretation.webp" alt=""><figcaption><span>تفسیر کپنهاگی</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/decoherence.webp" alt=""><figcaption><span>واهمدوسی؛ چرا دنیا عادی است!</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/double-slit-experiment.webp" alt=""><figcaption><span>آزمایش دو شکاف</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/electron.webp" alt=""><figcaption><span>الکترون چیست؟ ویژگی‌ها، نقش در اتم و برق</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/energy-levels.webp" alt=""><figcaption><span>ترازهای انرژی و کوانتش</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/heisenberg-uncertainty-principle.webp" alt=""><figcaption><span>اصل عدم قطعیت هایزنبرگ به زبان ساده</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/higgs-boson.webp" alt=""><figcaption><span>بوزون هیگز چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/how-lasers-work.webp" alt=""><figcaption><span>لیزر چطور کار می‌کند؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/many-worlds-interpretation.webp" alt=""><figcaption><span>تفسیر جهان‌های موازی</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/mri-quantum.webp" alt=""><figcaption><span>ام‌آرآی (MRI) چگونه کار می‌کند؟ ریشهٔ کو</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/neutrino.webp" alt=""><figcaption><span>نوترینو چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/nuclear-spin.webp" alt=""><figcaption><span>اسپین هسته‌ای چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/pauli-exclusion-principle.webp" alt=""><figcaption><span>اصل طرد پاولی دقیقاً چه می‌گوید؟ به زبان</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/photoelectric-effect.webp" alt=""><figcaption><span>اثر فوتوالکتریک</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/photon.webp" alt=""><figcaption><span>فوتون دقیقا چیست ؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/planck-constant.webp" alt=""><figcaption><span>ثابت پلانک؛ کوچک‌ترین واحد جهان</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-century-2025.webp" alt=""><figcaption><span>صد سالگی کوانتوم؛ از جزیرهٔ هلگولاند تا </span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-entanglement-explained.webp" alt=""><figcaption><span>درهم‌تنیدگی کوانتومی</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-measurement.webp" alt=""><figcaption><span>اندازه‌گیری و فروپاشی</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-spin.webp" alt=""><figcaption><span>اسپین؛ چرخشی که چرخش نیست</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-superposition.webp" alt=""><figcaption><span>برهم‌نهی کوانتومی</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-tunneling.webp" alt=""><figcaption><span>تونل‌زنی کوانتومی</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quark.webp" alt=""><figcaption><span>کوارک چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/qubit.webp" alt=""><figcaption><span>کیوبیت چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/schrodinger-cat.webp" alt=""><figcaption><span>گربهٔ شرودینگر</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/solar-cells-photoelectric.webp" alt=""><figcaption><span>پنل خورشیدی و اثر فوتوالکتریک؛ تبدیل نور</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/solvay-conference-1927.webp" alt=""><figcaption><span>کنفرانس سولوی ۱۹۲۷ چه بود؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/standard-model.webp" alt=""><figcaption><span>مدل استاندارد چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/stellar-fusion.webp" alt=""><figcaption><span>همجوشی ستارگان چگونه ممکن است؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/stern-gerlach-experiment.webp" alt=""><figcaption><span>آزمایش اشترن-گرلاخ چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/stimulated-emission.webp" alt=""><figcaption><span>گسیل تحریکی چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/superconductivity.webp" alt=""><figcaption><span>ابررسانایی</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/superfluidity.webp" alt=""><figcaption><span>ابرشارگی؛ مایعی که از لیوان بالا می‌رود</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/transistor-quantum.webp" alt=""><figcaption><span>ترانزیستور؛ کوانتوم در جیب شما</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/ultraviolet-catastrophe.webp" alt=""><figcaption><span>فاجعهٔ فرابنفش</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/vacuum-fluctuations.webp" alt=""><figcaption><span>نوسانات خلأ</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/virtual-particles.webp" alt=""><figcaption><span>ذرات مجازی چیستند؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/wave-function.webp" alt=""><figcaption><span>تابع موج چیست؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/wave-particle-duality.webp" alt=""><figcaption><span>دوگانگی موج و ذره</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/what-is-quantum.webp" alt=""><figcaption><span>کوانتوم یعنی چه؟</span><span class="tag t26">بستهٔ ۲۶</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/attosecond-nobel-2023.webp" alt=""><figcaption><span>نوبل فیزیک ۲۰۲۳؛ عکاسی از حرکت الکترون</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/bitcoin-quantum-threat.webp" alt=""><figcaption><span>آیا کامپیوتر کوانتومی بیت کوین را نابود </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/black-hole-information-paradox.webp" alt=""><figcaption><span>پارادوکس اطلاعات سیاه چاله؛ معمای هاوکین</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/epr-paradox.webp" alt=""><figcaption><span>پارادوکس EPR؛ اعتراض اینشتین که فیزیک را</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/google-error-correction.webp" alt=""><figcaption><span>تصحیح خطای کوانتومی؛ نقطهٔ عطف گوگل در ن</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/harvest-now-decrypt-later.webp" alt=""><figcaption><span>الان جمع کن، بعداً رمزگشایی کن؛ تهدیدی ک</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/holographic-principle.webp" alt=""><figcaption><span>اصل هولوگرافیک؛ آیا جهان ما یک هولوگرام </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/human-teleportation.webp" alt=""><figcaption><span>چرا تله پورت انسان از نظر علمی غیرممکن ا</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/ibm-condor-processor.webp" alt=""><figcaption><span>پردازندهٔ IBM Condor؛ چرا هزار کیوبیت کا</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/josephson-junction.webp" alt=""><figcaption><span>پیوند جوزفسون؛ قلب تپندهٔ کامپیوتر کوانت</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/law-of-attraction-quantum.webp" alt=""><figcaption><span>قانون جذب و کوانتوم؛ کجای این استدلال می</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/moore-law-quantum-limit.webp" alt=""><figcaption><span>پایان قانون مور؛ چرا ترانزیستورها به دیو</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/no-cloning-theorem.webp" alt=""><figcaption><span>قضیهٔ عدم کپی؛ چرا کوانتوم را نمی توان ت</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/nobel-physics-2025.webp" alt=""><figcaption><span>نوبل فیزیک ۲۰۲۵؛ وقتی یک مدار مثل اتم رف</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/pet-scan-antimatter.webp" alt=""><figcaption><span>پادماده در پزشکی؛ اسکن پت چطور کار می کن</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/physicists-on-quantum-weirdness.webp" alt=""><figcaption><span>ده دیدگاه فیزیکدانان بزرگ دربارهٔ عجایب </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/post-quantum-cryptography.webp" alt=""><figcaption><span>رمزنگاری پساکوانتومی؛ قفل های تازهٔ اینت</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/q-day.webp" alt=""><figcaption><span>روز کیو چیست و واقعاً کِی می رسد؟</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-annealing-dwave.webp" alt=""><figcaption><span>آنیلینگ کوانتومی؛ چرا هزار کیوبیت یعنی ه</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-battery.webp" alt=""><figcaption><span>باتری کوانتومی؛ چرا بزرگ تر یعنی سریع تر</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-career-future-learn.webp" alt=""><figcaption><span>آینده شغلی: آیا باید فیزیک کوانتوم یاد ب</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-chemistry.webp" alt=""><figcaption><span>شیمی کوانتومی چیست؟ چرا دستتان از دیوار </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-darwinism.webp" alt=""><figcaption><span>داروینیسم کوانتومی؛ چرا همه یک واقعیت می</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-documentaries.webp" alt=""><figcaption><span>بهترین مستندهای فیزیک کوانتوم که باید بب</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-dots-displays.webp" alt=""><figcaption><span>نقطهٔ کوانتومی؛ کوانتومی که در تلویزیون </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-eraser.webp" alt=""><figcaption><span>پاک کن کوانتومی؛ آیا آینده بر گذشته اثر </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-fluctuations-cosmos.webp" alt=""><figcaption><span>افت وخیز کوانتومی؛ چطور کهکشان ها متولد </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-free-will.webp" alt=""><figcaption><span>کوانتوم و ارادهٔ آزاد؛ آیا آینده از قبل </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-gate.webp" alt=""><figcaption><span>گیت کوانتومی؛ آجرهای سازندهٔ کامپیوتر کو</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-gravity.webp" alt=""><figcaption><span>گرانش کوانتومی چیست؟ بزرگ ترین چالش فیزی</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-healing-debunked.webp" alt=""><figcaption><span>شفای کوانتومی؛ چرا این ادعا شبه علم است؟</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-hype-bubble.webp" alt=""><figcaption><span>حباب هیجان کوانتومی؛ چقدرش واقعی است؟</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-immortality.webp" alt=""><figcaption><span>جاودانگی کوانتومی؛ کجای این استدلال می ل</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-internet-satellite.webp" alt=""><figcaption><span>اینترنت کوانتومی فضایی؛ ماجرای ماهوارهٔ </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-machine-learning.webp" alt=""><figcaption><span>یادگیری ماشین کوانتومی؛ وعده ها و واقعیت</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-navigation.webp" alt=""><figcaption><span>ناوبری کوانتومی؛ مسیریابی بدون ماهواره</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-physics-in-movies-ant-man.webp" alt=""><figcaption><span>فیزیک کوانتوم در فیلم مرد مورچه ای؛ واقع</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-radar.webp" alt=""><figcaption><span>رادار کوانتومی؛ آیا جنگندهٔ رادارگریز را</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-random-number-generator.webp" alt=""><figcaption><span>عدد تصادفی کوانتومی؛ تنها تصادف واقعی جه</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-spin-liquid.webp" alt=""><figcaption><span>مایع اسپینی کوانتومی؛ ماده ای که هرگز آر</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-thermodynamics.webp" alt=""><figcaption><span>ترمودینامیک کوانتومی؛ موتوری به اندازهٔ </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/quantum-time-travel.webp" alt=""><figcaption><span>آیا سفر در زمان با فیزیک کوانتوم ممکن اس</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/room-temperature-superconductor.webp" alt=""><figcaption><span>ابررسانای دمای اتاق؛ درس LK-99 دربارهٔ ه</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/simulation-hypothesis-quantum.webp" alt=""><figcaption><span>آیا جهان یک شبیه سازی است؟ نقد سه استدلا</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/string-theory-quantum.webp" alt=""><figcaption><span>نظریهٔ ریسمان و کوانتوم؛ جهان از جنس نت </span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/time-crystal.webp" alt=""><figcaption><span>کریستال زمان چیست؟ ماده ای که در زمان تک</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/wigner-friend.webp" alt=""><figcaption><span>پارادوکس دوست ویگنر؛ آیا واقعیت برای همه</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/willow-chip.webp" alt=""><figcaption><span>تراشهٔ ویلو؛ گوگل واقعاً چه چیزی را ثابت</span><span class="tag t1">قدیمی</span></figcaption></figure>
+<figure class="im"><img loading="lazy" src="../thumbs-webp/zero-point-energy-scam.webp" alt=""><figcaption><span>انرژی نقطهٔ صفر و افسانهٔ انرژی رایگان</span><span class="tag t1">قدیمی</span></figcaption></figure>
+</div>
+<h2>49 مقالهٔ بدون تصویر نسخهٔ ۲</h2><div class="rem">
+<div><code>attosecond-nobel-2023</code></div>
+<div><code>bitcoin-quantum-threat</code></div>
+<div><code>black-hole-information-paradox</code></div>
+<div><code>epr-paradox</code></div>
+<div><code>google-error-correction</code></div>
+<div><code>harvest-now-decrypt-later</code></div>
+<div><code>holographic-principle</code></div>
+<div><code>human-teleportation</code></div>
+<div><code>ibm-condor-processor</code></div>
+<div><code>josephson-junction</code></div>
+<div><code>law-of-attraction-quantum</code></div>
+<div><code>moore-law-quantum-limit</code></div>
+<div><code>no-cloning-theorem</code></div>
+<div><code>nobel-physics-2025</code></div>
+<div><code>pet-scan-antimatter</code></div>
+<div><code>physicists-on-quantum-weirdness</code></div>
+<div><code>post-quantum-cryptography</code></div>
+<div><code>q-day</code></div>
+<div><code>quantum-annealing-dwave</code></div>
+<div><code>quantum-battery</code></div>
+<div><code>quantum-career-future-learn</code></div>
+<div><code>quantum-chemistry</code></div>
+<div><code>quantum-darwinism</code></div>
+<div><code>quantum-documentaries</code></div>
+<div><code>quantum-dots-displays</code></div>
+<div><code>quantum-eraser</code></div>
+<div><code>quantum-fluctuations-cosmos</code></div>
+<div><code>quantum-free-will</code></div>
+<div><code>quantum-gate</code></div>
+<div><code>quantum-gravity</code></div>
+<div><code>quantum-healing-debunked</code></div>
+<div><code>quantum-hype-bubble</code></div>
+<div><code>quantum-immortality</code></div>
+<div><code>quantum-internet-satellite</code></div>
+<div><code>quantum-machine-learning</code></div>
+<div><code>quantum-navigation</code></div>
+<div><code>quantum-physics-in-movies-ant-man</code></div>
+<div><code>quantum-radar</code></div>
+<div><code>quantum-random-number-generator</code></div>
+<div><code>quantum-spin-liquid</code></div>
+<div><code>quantum-thermodynamics</code></div>
+<div><code>quantum-time-travel</code></div>
+<div><code>room-temperature-superconductor</code></div>
+<div><code>simulation-hypothesis-quantum</code></div>
+<div><code>string-theory-quantum</code></div>
+<div><code>time-crystal</code></div>
+<div><code>wigner-friend</code></div>
+<div><code>willow-chip</code></div>
+<div><code>zero-point-energy-scam</code></div>
 </div></body></html>
