@@ -164,6 +164,9 @@ def add_link(body, term, target):
     out = re.sub(r'<(br|hr)\s*/>', r'<\1>', out)
     out = re.sub('\ue000([A-Za-z][A-Za-z0-9]{1,31})\ue001',
                  lambda m: '&' + m.group(1) + ';', out)
+    # minidom نقل‌قول را بی‌جهت escape می‌کند؛ در محتوای متنی
+    # (بیرون از صفت‌ها) لازم نیست و متن را تغییر می‌دهد.
+    out = re.sub(r'&quot;(?=[^<>]*(?:<|$))', '"', out)
     return out.strip() + ('\n\n' + tail if tail else ''), True, state['ctx']
 
 

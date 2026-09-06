@@ -14,7 +14,7 @@ for slug, d in DOCS.items():
 CATNAME = {c['slug']: c['name'] for d in DOCS.values() for c in d.get('cats', [])}
 
 # نسخهٔ به‌روز: تغییرات بسته‌های ۹ تا ۱۳ را هم اعمال کن
-for n in range(9, 20):
+for n in range(9, 25):
     p = f'qpedia-importer-{n}/data/articles.json'
     if os.path.exists(p):
         for a in json.load(open(p, encoding='utf-8'))['articles']:

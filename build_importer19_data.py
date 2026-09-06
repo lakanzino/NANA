@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-QPedia Importer 18 — خوشهٔ «پدیده‌های کوانتومی»
+QPedia Importer 19 — خوشهٔ «تاریخ و آزمایش‌ها»
 
-هفت مقالهٔ کوتاه از ضعیف‌ترین خوشهٔ سایت:
-  coherence (۴۳۱), absolute-zero (۴۳۲), alpha-decay (۴۷۴),
-  stimulated-emission (۴۸۲), bose-einstein-condensate (۵۰۴),
-  stellar-fusion (۵۱۳), superfluidity (۷۳۰)
+چهار مقالهٔ کوتاه از ضعیف‌ترین خوشهٔ سایت:
+  stern-gerlach-experiment (۵۴۹), aspect-experiment-1982 (۵۵۸),
+  solvay-conference-1927 (۵۹۱), quantum-zeno-effect (۶۹۷)
 
-همه فقط یک منبع بریتانیکا داشتند — و superfluidity هیچ منبعی.
+به‌علاوه بستن حلقهٔ لینک در دستهٔ `history` که **صفر لینک
+درون‌خوشه‌ای** داشت.
 """
 
 import json
@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = json.load(open('/tmp/src/articles.json', encoding='utf-8'))
 
 # آخرین نسخهٔ هر مقاله (پس از بسته‌های ۹ تا ۱۶)
-for _n in range(9, 18):
+for _n in range(9, 19):
     _p = os.path.join(ROOT, f'qpedia-importer-{_n}', 'data', 'articles.json')
     if os.path.exists(_p):
         for _a in json.load(open(_p, encoding='utf-8'))['articles']:
@@ -28,13 +28,10 @@ for _n in range(9, 18):
                 SRC[_a['slug']] = dict(SRC[_a['slug']], body=_a['html'])
 
 BATCH = [
-    'coherence',
-    'absolute-zero',
-    'alpha-decay',
-    'stimulated-emission',
-    'bose-einstein-condensate',
-    'stellar-fusion',
-    'superfluidity',
+    'stern-gerlach-experiment',
+    'aspect-experiment-1982',
+    'solvay-conference-1927',
+    'quantum-zeno-effect',
 ]
 
 # ── لینک برگشتی (رفت‌وبرگشت) ────────────────────────────────────
@@ -42,12 +39,14 @@ BATCH = [
 # این بسته می‌گیرند تا خوشه دوطرفه شود. اصطلاح در متنشان از قبل
 # وجود دارد و فقط لینک‌دار می‌شود.
 BACKLINKS = {
-    # تقویت خوشه: هاب‌های بیرونی به اعضای این خوشه برمی‌گردند.
-    # مقالهٔ لیزر «گسیل القایی» می‌گوید، نه «گسیل تحریکی».
-    'how-lasers-work': ('گسیل القایی', 'stimulated-emission'),
+    # عبارت‌ها از روی متن واقعی هر مقاله انتخاب شده‌اند.
+    # توجه: bell-experiments املای «اسپه» دارد نه «آسپه».
+    'epr-paradox':      ('۱۹۸۲', 'aspect-experiment-1982'),
+    'bell-experiments': ('آلن اسپه', 'aspect-experiment-1982'),
+    'dirac-antimatter': ('اسپین', 'stern-gerlach-experiment'),
 }
 
-from sections_18 import SECTIONS, VOICE
+from sections_19 import SECTIONS, VOICE
 
 ZWNJ = '\u200c'
 
@@ -190,83 +189,59 @@ SKIP_TAGS = {'a', 'h1', 'h2', 'h3', 'h4', 'code', 'pre', 'blockquote'}
 # منابع قبلی متن ساده بودند (بدون لینک و DOI). اینجا هر منبع به
 # شناسهٔ دائمی و قابل راستی‌آزمایی وصل می‌شود.
 REFS = {
-    'coherence': [
-        ('Glauber, R. J.', 'Coherent and Incoherent States of the '
-         'Radiation Field', 'Physical Review', '131, 1963',
-         '10.1103/PhysRev.131.2766'),
-        ('Zurek, W. H.',
-         'Decoherence, einselection, and the quantum origins of the classical',
-         'Reviews of Modern Physics', '75, 2003',
-         '10.1103/RevModPhys.75.715'),
-        ('Streltsov, A., Adesso, G. &amp; Plenio, M. B.',
-         'Colloquium: Quantum coherence as a resource',
-         'Reviews of Modern Physics', '89, 2017',
-         '10.1103/RevModPhys.89.041003'),
+    'stern-gerlach-experiment': [
+        ('Gerlach, W. &amp; Stern, O.',
+         'Der experimentelle Nachweis der Richtungsquantelung im Magnetfeld',
+         'Zeitschrift für Physik', '9, 1922', '10.1007/BF01326983'),
+        ('Friedrich, B. &amp; Herschbach, D.',
+         'Stern and Gerlach: How a Bad Cigar Helped Reorient Atomic Physics',
+         'Physics Today', '56, 2003', '10.1063/1.1650229'),
+        ('Uhlenbeck, G. E. &amp; Goudsmit, S.',
+         'Spinning Electrons and the Structure of Spectra',
+         'Nature', '117, 1926', '10.1038/117264a0'),
     ],
-    'absolute-zero': [
-        ('Nernst, W.', 'Ueber die Beziehung zwischen Wärmeentwicklung '
-         'und maximaler Arbeit bei kondensierten Systemen',
-         'Sitzungsberichte der Preussischen Akademie', '1906',
-         'URL:https://www.nobelprize.org/prizes/chemistry/1920/nernst/facts/'),
-        ('Leanhardt, A. E. et al.',
-         'Cooling Bose-Einstein Condensates Below 500 Picokelvin',
-         'Science', '301, 2003', '10.1126/science.1088827'),
-        ('Anderson, M. H. et al.',
-         'Observation of Bose-Einstein Condensation in a Dilute Atomic Vapor',
-         'Science', '269, 1995', '10.1126/science.269.5221.198'),
+    'aspect-experiment-1982': [
+        ('Aspect, A., Dalibard, J. &amp; Roger, G.',
+         'Experimental Test of Bell\u2019s Inequalities Using '
+         'Time-Varying Analyzers',
+         'Physical Review Letters', '49, 1982',
+         '10.1103/PhysRevLett.49.1804'),
+        ('Aspect, A., Grangier, P. &amp; Roger, G.',
+         'Experimental Realization of Einstein-Podolsky-Rosen-Bohm '
+         'Gedankenexperiment: A New Violation of Bell\u2019s Inequalities',
+         'Physical Review Letters', '49, 1982',
+         '10.1103/PhysRevLett.49.91'),
+        ('Hensen, B. et al.',
+         'Loophole-free Bell inequality violation using electron spins '
+         'separated by 1.3 kilometres',
+         'Nature', '526, 2015', '10.1038/nature15759'),
     ],
-    'alpha-decay': [
-        ('Gamow, G.', 'Zur Quantentheorie des Atomkernes',
-         'Zeitschrift für Physik', '51, 1928', '10.1007/BF01343196'),
-        ('Gurney, R. W. &amp; Condon, E. U.',
-         'Quantum Mechanics and Radioactive Disintegration',
-         'Physical Review', '33, 1929', '10.1103/PhysRev.33.127'),
-        ('Rutherford, E.',
-         'The scattering of α and β particles by matter and the '
-         'structure of the atom',
-         'Philosophical Magazine', '21, 1911', '10.1080/14786440508637080'),
+    'solvay-conference-1927': [
+        ('Bacciagaluppi, G. &amp; Valentini, A.',
+         'Quantum Theory at the Crossroads: Reconsidering the 1927 '
+         'Solvay Conference',
+         'Cambridge University Press', '2009', '10.1017/CBO9781139194983'),
+        ('Bohr, N.',
+         'Discussion with Einstein on Epistemological Problems in '
+         'Atomic Physics', 'Albert Einstein: Philosopher-Scientist', '1949',
+         'URL:https://plato.stanford.edu/entries/qm-copenhagen/'),
+        ('Einstein, A., Podolsky, B. &amp; Rosen, N.',
+         'Can Quantum-Mechanical Description of Physical Reality Be '
+         'Considered Complete?',
+         'Physical Review', '47, 1935', '10.1103/PhysRev.47.777'),
     ],
-    'stimulated-emission': [
-        ('Einstein, A.', 'Zur Quantentheorie der Strahlung',
-         'Physikalische Zeitschrift', '18, 1917',
-         'URL:https://www.nobelprize.org/prizes/physics/1964/summary/'),
-        ('Maiman, T. H.', 'Stimulated Optical Radiation in Ruby',
-         'Nature', '187, 1960', '10.1038/187493a0'),
-        ('Schawlow, A. L. &amp; Townes, C. H.', 'Infrared and Optical Masers',
-         'Physical Review', '112, 1958', '10.1103/PhysRev.112.1940'),
-    ],
-    'bose-einstein-condensate': [
-        ('Bose, S. N.', 'Plancks Gesetz und Lichtquantenhypothese',
-         'Zeitschrift für Physik', '26, 1924', '10.1007/BF01327326'),
-        ('Anderson, M. H., Ensher, J. R., Matthews, M. R., Wieman, C. E. '
-         '&amp; Cornell, E. A.',
-         'Observation of Bose-Einstein Condensation in a Dilute Atomic Vapor',
-         'Science', '269, 1995', '10.1126/science.269.5221.198'),
-        ('Davis, K. B. et al.',
-         'Bose-Einstein Condensation in a Gas of Sodium Atoms',
-         'Physical Review Letters', '75, 1995',
-         '10.1103/PhysRevLett.75.3969'),
-    ],
-    'stellar-fusion': [
-        ('Bethe, H. A.', 'Energy Production in Stars',
-         'Physical Review', '55, 1939', '10.1103/PhysRev.55.434'),
-        ('Gamow, G.', 'Zur Quantentheorie des Atomkernes',
-         'Zeitschrift für Physik', '51, 1928', '10.1007/BF01343196'),
-        ('Ahmad, Q. R. et al. (SNO Collaboration)',
-         'Direct Evidence for Neutrino Flavor Transformation from '
-         'Neutral-Current Interactions in the Sudbury Neutrino Observatory',
-         'Physical Review Letters', '89, 2002',
-         '10.1103/PhysRevLett.89.011301'),
-    ],
-    'superfluidity': [
-        ('Kapitza, P.', 'Viscosity of Liquid Helium below the λ-Point',
-         'Nature', '141, 1938', '10.1038/141074a0'),
-        ('Allen, J. F. &amp; Misener, A. D.', 'Flow of Liquid Helium II',
-         'Nature', '141, 1938', '10.1038/141075a0'),
-        ('Osheroff, D. D., Richardson, R. C. &amp; Lee, D. M.',
-         'Evidence for a New Phase of Solid He3',
-         'Physical Review Letters', '28, 1972',
-         '10.1103/PhysRevLett.28.885'),
+    'quantum-zeno-effect': [
+        ('Misra, B. &amp; Sudarshan, E. C. G.',
+         'The Zeno\u2019s paradox in quantum theory',
+         'Journal of Mathematical Physics', '18, 1977', '10.1063/1.523304'),
+        ('Itano, W. M., Heinzen, D. J., Bollinger, J. J. &amp; '
+         'Wineland, D. J.', 'Quantum Zeno effect',
+         'Physical Review A', '41, 1990', '10.1103/PhysRevA.41.2295'),
+        ('Fischer, M. C., Gutiérrez-Medina, B. &amp; Raizen, M. G.',
+         'Observation of the Quantum Zeno and Anti-Zeno Effects in an '
+         'Unstable System',
+         'Physical Review Letters', '87, 2001',
+         '10.1103/PhysRevLett.87.040402'),
     ],
 }
 
@@ -502,13 +477,7 @@ def apply_backlinks(articles_out):
 # سه لینک به مقالاتی اشاره می‌کنند که هرگز ساخته نشده‌اند.
 # راه‌حل: اگر مقصد جایگزین معناداری هست، لینک اصلاح می‌شود؛
 # وگرنه فقط تگ <a> برداشته می‌شود و **متن دست‌نخورده می‌ماند**.
-BROKEN = {
-    # /fundamental-forces/ هرگز ساخته نشد؛ مدل استاندارد همان
-    # نیروها را توصیف می‌کند و مقصد درستی است.
-    'fundamental-forces': 'standard-model',
-    # /led/ هیچ جایگزین معناداری ندارد → فقط لینک برداشته می‌شود.
-    'led': None,
-}
+BROKEN = {}   # همهٔ لینک‌های شکسته در بستهٔ ۱۸ رفع شدند
 
 
 def fix_broken_links(body):
@@ -581,19 +550,6 @@ def main():
         report.append((slug, zw, n_fix + n_broken, n_voice, n_sec, n_links, len(REFS[slug]),
                        len(re.sub(r'<[^>]+>', ' ', body).split())))
 
-    # مقالاتی که فقط لینک شکسته دارند — هیچ تغییر دیگری نمی‌کنند
-    for slug in ('flash-memory', 'fiber-optics'):
-        if slug in SRC and slug not in BATCH:
-            fixed, k = fix_broken_links(SRC[slug]['body'])
-            if k:
-                articles.append({
-                    'slug': slug, 'title': SRC[slug]['title'],
-                    'excerpt': SRC[slug]['excerpt'], 'html': fixed,
-                    'category': 'core-concepts',
-                    'meta': {'author': 'محمدرضا بردیا'},
-                })
-                print(f'  ✂ لینک شکسته رفع شد: {slug} ({k} مورد)')
-
     backs = apply_backlinks(articles)
     for slug, target in backs:
         print(f'  ↩ لینک برگشتی: {slug} → {target}')
@@ -606,7 +562,7 @@ def main():
         ],
         'articles': articles,
     }
-    out_dir = os.path.join(ROOT, 'qpedia-importer-18', 'data')
+    out_dir = os.path.join(ROOT, 'qpedia-importer-19', 'data')
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, 'articles.json'), 'w',
               encoding='utf-8') as f:
