@@ -15,23 +15,27 @@
 .qp-global-header__brand{margin-inline-start:0 !important;flex:0 0 auto}
 .qp-global-header__mark{flex:0 0 auto;display:flex;align-items:center}
 
-/* دسته‌ها دقیقاً وسط، افقی و عمودی */
-.qp-desktop-nav{
-  flex:1 1 auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  align-self:stretch;
-}
-.qp-desktop-nav__list{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-  list-style:none;
-  margin:0;
-  padding:0;
+/* دسته‌ها دقیقاً وسط، افقی و عمودی — فقط دسکتاپ.
+   داخل media قرار دارد تا قانون display:none موبایلِ custom.css باطل نشود. */
+@media (min-width:901px){
+  .qp-desktop-nav{
+    flex:1 1 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    align-self:stretch;
+    min-width:0;
+  }
+  .qp-desktop-nav__list{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
 }
 
 /* ── ۲) نشان QPEDIA سمت چپ هدر ─────────────────────────── */
@@ -90,9 +94,14 @@
 
 /* ── ۵) موبایل ─────────────────────────────────────────── */
 @media (max-width:900px){
-  .qp-global-header__mark{display:none}
-  .qp-global-header__inner{min-height:82px}
+  .qp-global-header__mark{display:none !important}
+  .qp-desktop-nav{display:none !important}
+  .qp-global-header__inner{min-height:82px;gap:12px}
+  .qp-global-header__brand{flex:1 1 auto;min-width:0}
 }
+
+/* هیچ عنصری نباید عرض صفحه را بشکند */
+html,body{overflow-x:hidden;max-width:100%}
 @media (prefers-reduced-motion:reduce){
   .qp-brand-mark{transition:none}
 }
