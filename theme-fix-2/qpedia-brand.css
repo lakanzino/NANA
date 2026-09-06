@@ -102,6 +102,14 @@
 
 /* هیچ عنصری نباید عرض صفحه را بشکند */
 html,body{overflow-x:hidden;max-width:100%}
+
+/* گارد سراسری موبایل: منوی دسکتاپ در هیچ صفحه‌ای نباید باز شود */
+@media (max-width:900px){
+  body .qp-global-header .qp-desktop-nav,
+  body .qp-global-header .qp-desktop-nav__list,
+  body .qp-global-header__mark{display:none !important}
+  .qp-global-header__inner{flex-wrap:nowrap}
+}
 @media (prefers-reduced-motion:reduce){
   .qp-brand-mark{transition:none}
 }

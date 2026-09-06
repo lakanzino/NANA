@@ -9,8 +9,10 @@
    سه کارت دیده می‌شود، سه تای دیگر با کشیدن. */
 .qp-front-picksrail{
   position:relative;
-  margin:0 -4px;
-  padding:18px 4px;
+  margin:0;
+  padding:18px 0;
+  max-width:100%;
+  overflow:hidden;      /* سایه‌ها بیرون نزنند */
 }
 /* سایهٔ پررنگ بالا و پایین تا اسلایدر از بقیه جدا دیده شود */
 .qp-front-picksrail::before,
@@ -34,6 +36,8 @@
 .qp-front-picks{
   --qp-pick-gap:14px;
   display:flex;
+  max-width:100%;
+  min-width:0;
   gap:var(--qp-pick-gap);
   overflow-x:auto;
   scroll-snap-type:x mandatory;
@@ -46,6 +50,7 @@
 
 .qp-front-pick{
   flex:0 0 calc((100% - (var(--qp-pick-gap) * 2)) / 3);
+  min-width:0;
   aspect-ratio:1 / 1;            /* کاملاً مربعی و هم‌اندازه */
   scroll-snap-align:start;
   display:flex;
@@ -197,6 +202,8 @@
 /* ── ۷) ردیف اسلایدری دانشمندان ─────────────────────────
    اسکرول افقی بومی مرورگر. بدون جاوااسکریپت. */
 .qp-front-scirail{
+  max-width:100%;
+  min-width:0;
   overflow-x:auto;
   overflow-y:hidden;
   -webkit-overflow-scrolling:touch;
@@ -226,6 +233,8 @@
   display:flex;
   gap:14px;
   padding-inline:2px;
+  width:100%;
+  box-sizing:border-box;
   /* هر کارت یک‌سوم عرض، مثل قبل — فقط در یک ردیف */
   --qp-sci-w:calc((100% - 28px) / 3);
 }
@@ -284,14 +293,16 @@
 
 /* ── ۹) واکنش‌گرا ──────────────────────────────────────── */
 @media (max-width:900px){
-  .qp-front-pick{flex-basis:calc((100% - var(--qp-pick-gap)) / 2)}
+  .qp-front-pick{flex:0 0 calc((100% - var(--qp-pick-gap)) / 2)}
   /* تبلت: دو کارت‌ونیم دیده شود تا بفهمد ادامه دارد */
   .qp-front-scirail__track{--qp-sci-w:calc((100% - 28px) / 2.3)}
 }
 
 @media (max-width:640px){
-  .qp-front-pick{flex-basis:82%}
+  .qp-front-picks{--qp-pick-gap:12px}
+  .qp-front-pick{flex:0 0 84%;aspect-ratio:auto;min-height:230px;padding:22px 18px 18px}
   .qp-front-pick__title{font-size:1.1rem}
+  .qp-front-pick__hook{font-size:.95rem}
   /* موبایل: یک کارت‌ونیم */
   .qp-front-scirail__track{--qp-sci-w:calc((100% - 14px) / 1.45)}
   .qp-front-scientist--all{min-height:150px}
