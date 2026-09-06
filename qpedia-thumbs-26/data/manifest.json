@@ -1,0 +1,310 @@
+{
+ "items": [
+  {
+   "slug": "absolute-zero",
+   "file": "absolute-zero.webp",
+   "alt": "دماسنجی که به صفر کلوین نزدیک می‌شود و سرمایش لیزری با شش پرتو، گرد عبارت ABSOLUTE ZERO",
+   "title": "صفر مطلق چیست؟"
+  },
+  {
+   "slug": "alpha-decay",
+   "file": "alpha-decay.webp",
+   "alt": "هسته‌ای که ذرهٔ آلفا را از سد پتانسیل بیرون می‌فرستد و مقایسهٔ نیمه‌عمرها، گرد عبارت ALPHA DECAY",
+   "title": "واپاشی آلفا چیست؟"
+  },
+  {
+   "slug": "antimatter",
+   "file": "antimatter.webp",
+   "alt": "پوزیترون و الکترون که نابود می‌شوند و به پرتو گاما تبدیل می‌گردند، گرد واژهٔ ANTIMATTER با خط اسکن قرمز",
+   "title": "پادماده چیست؟"
+  },
+  {
+   "slug": "aspect-experiment-1982",
+   "file": "aspect-experiment-1982.webp",
+   "alt": "جفت فوتون درهم‌تنیده به سوی دو تحلیلگر دوردست با سوییچ‌های سریع، گرد عبارت ASPECT 1982",
+   "title": "آزمایش آسپه ۱۹۸۲ چه بود؟"
+  },
+  {
+   "slug": "atomic-clock-gps",
+   "file": "atomic-clock-gps.webp",
+   "alt": "ساعت اتمی سزیم، ماهواره‌های جی‌پی‌اس بر کمان زمین و تصحیح نسبیتی زمان، گرد عبارت ATOMIC CLOCK",
+   "title": "ساعت اتمی و جی‌پی‌اس"
+  },
+  {
+   "slug": "bell-experiments",
+   "file": "bell-experiments.webp",
+   "alt": "خط زمانی آزمایش‌ها از ۱۹۷۲ تا ۲۰۱۵، شمارندهٔ همدوسی و نشان نوبل ۲۰۲۲، گرد عبارت BELL TESTS",
+   "title": "آزمایش های بل: چگونه درهم تنیدگی اثبات شد!"
+  },
+  {
+   "slug": "bell-inequality",
+   "file": "bell-inequality.webp",
+   "alt": "دو آشکارساز با زاویه‌های متفاوت و منحنی کوانتومی که از سقف کلاسیک می‌گذرد، گرد عبارت BELL INEQUALITY",
+   "title": "نامساوی بل"
+  },
+  {
+   "slug": "bohr-atomic-model",
+   "file": "bohr-atomic-model.webp",
+   "alt": "اتم با مدارهای گسسته، پرش الکترون و گسیل فوتون و سری خطوط هیدروژن، گرد عبارت BOHR MODEL",
+   "title": "مدل اتمی بور"
+  },
+  {
+   "slug": "bose-einstein-condensate",
+   "file": "bose-einstein-condensate.webp",
+   "alt": "اتم‌های جدا که به یک موج مادهٔ واحد درمی‌آیند و قلهٔ تیز توزیع سرعت، گرد واژهٔ CONDENSATE",
+   "title": "چگالش بوز-اینشتین چیست؟"
+  },
+  {
+   "slug": "casimir-effect",
+   "file": "casimir-effect.webp",
+   "alt": "دو صفحهٔ نزدیک با مدهای موجی محدود میانشان و منحنی نیرو بر حسب فاصله، گرد عبارت CASIMIR EFFECT",
+   "title": "اثر کازیمیر"
+  },
+  {
+   "slug": "coherence",
+   "file": "coherence.webp",
+   "alt": "دو موج در قفل فاز کامل، طول همدوسی روی پرتو و مقایسهٔ نور لیزر با لامپ، گرد واژهٔ COHERENCE",
+   "title": "همدوسی چیست؟"
+  },
+  {
+   "slug": "copenhagen-interpretation",
+   "file": "copenhagen-interpretation.webp",
+   "alt": "فروپاشی تابع موج هنگام اندازه‌گیری و مرز میان سیستم کوانتومی و دستگاه کلاسیک، گرد واژهٔ COPENHAGEN",
+   "title": "تفسیر کپنهاگی"
+  },
+  {
+   "slug": "decoherence",
+   "file": "decoherence.webp",
+   "alt": "موج همدوس که رفته‌رفته فاز خود را از دست می‌دهد و ذرات محیط که به سیستم برخورد می‌کنند، گرد واژهٔ DECOHERENCE",
+   "title": "واهمدوسی؛ چرا دنیا عادی است!"
+  },
+  {
+   "slug": "double-slit-experiment",
+   "file": "double-slit-experiment.webp",
+   "alt": "دو شکاف با جبهه‌های موج و الگوی تداخل که نقطه‌به‌نقطه ساخته می‌شود، گرد عبارت DOUBLE SLIT",
+   "title": "آزمایش دو شکاف"
+  },
+  {
+   "slug": "electron",
+   "file": "electron.webp",
+   "alt": "اتم با ابر احتمال به‌جای مدار، شکل اوربیتال‌ها و جریان برق در سیم، گرد واژهٔ ELECTRON",
+   "title": "الکترون چیست؟ ویژگی‌ها، نقش در اتم و برق"
+  },
+  {
+   "slug": "energy-levels",
+   "file": "energy-levels.webp",
+   "alt": "نردبان ترازهای انرژی، پرش الکترون با گسیل فوتون و خطوط طیفی، گرد عبارت ENERGY LEVELS",
+   "title": "ترازهای انرژی و کوانتش"
+  },
+  {
+   "slug": "heisenberg-uncertainty-principle",
+   "file": "heisenberg-uncertainty-principle.webp",
+   "alt": "بستهٔ موج باریک در برابر موج کشیده و نامساوی عدم قطعیت، گرد واژهٔ UNCERTAINTY با خط اسکن فیروزه‌ای",
+   "title": "اصل عدم قطعیت هایزنبرگ به زبان ساده"
+  },
+  {
+   "slug": "higgs-boson",
+   "file": "higgs-boson.webp",
+   "alt": "پتانسیل کلاه‌مکزیکی، فوران رد ذرات در آشکارساز و قلهٔ جرم در ۱۲۵ گیگاالکترون‌ولت، گرد واژهٔ HIGGS",
+   "title": "بوزون هیگز چیست؟"
+  },
+  {
+   "slug": "how-lasers-work",
+   "file": "how-lasers-work.webp",
+   "alt": "کاواک نوری با دو آینه، گسیل تحریکی دو فوتون همسان و وارونگی جمعیت، گرد واژهٔ LASER با خط اسکن قرمز",
+   "title": "لیزر چطور کار می‌کند؟"
+  },
+  {
+   "slug": "many-worlds-interpretation",
+   "file": "many-worlds-interpretation.webp",
+   "alt": "خط زمانی که به شاخه‌های موازی تقسیم می‌شود و ناظری که دو نسخه می‌شود، گرد عبارت MANY WORLDS",
+   "title": "تفسیر جهان‌های موازی"
+  },
+  {
+   "slug": "mri-quantum",
+   "file": "mri-quantum.webp",
+   "alt": "محفظهٔ دستگاه ام‌آر‌آی، هسته‌های هیدروژن در حال تقدیم و مقطع مغز، گرد واژهٔ MRI با خط اسکن سرخابی",
+   "title": "ام‌آرآی (MRI) چگونه کار می‌کند؟ ریشهٔ کوانتومی آن"
+  },
+  {
+   "slug": "neutrino",
+   "file": "neutrino.webp",
+   "alt": "نوترینوهایی که مستقیم از زمین می‌گذرند و منحنی نوسان سه طعم، گرد واژهٔ NEUTRINO",
+   "title": "نوترینو چیست؟"
+  },
+  {
+   "slug": "nuclear-spin",
+   "file": "nuclear-spin.webp",
+   "alt": "هستهٔ اتم که مانند فرفره در میدان مغناطیسی تقدیم می‌کند و طیف تشدید، گرد عبارت NUCLEAR SPIN",
+   "title": "اسپین هسته‌ای چیست؟"
+  },
+  {
+   "slug": "pauli-exclusion-principle",
+   "file": "pauli-exclusion-principle.webp",
+   "alt": "لایه‌های الکترونی که یکی‌یکی پر می‌شوند و نماد منع برای دو فرمیون همسان، گرد عبارت PAULI EXCLUSION",
+   "title": "اصل طرد پاولی دقیقاً چه می‌گوید؟ به زبان ساده"
+  },
+  {
+   "slug": "photoelectric-effect",
+   "file": "photoelectric-effect.webp",
+   "alt": "فوتون‌هایی که الکترون از فلز می‌کنند و نمودار بسامد آستانه، گرد عبارت PHOTOELECTRIC با خط اسکن نارنجی",
+   "title": "اثر فوتوالکتریک"
+  },
+  {
+   "slug": "photon",
+   "file": "photon.webp",
+   "alt": "بستهٔ موج نور، رابطهٔ انرژی و بسامد و الکترون‌های کندهٔ اثر فوتوالکتریک، گرد واژهٔ PHOTON",
+   "title": "فوتون دقیقا چیست ؟"
+  },
+  {
+   "slug": "planck-constant",
+   "file": "planck-constant.webp",
+   "alt": "عدد ثابت پلانک به خط دست، منحنی تابش جسم سیاه و ترازوی کیبل، گرد عبارت PLANCK CONSTANT",
+   "title": "ثابت پلانک؛ کوچک‌ترین واحد جهان"
+  },
+  {
+   "slug": "quantum-century-2025",
+   "file": "quantum-century-2025.webp",
+   "alt": "جزیرهٔ صخره‌ای با پیکره‌ای در حال نوشتن معادله و خط زمانی صدسالهٔ ۱۹۲۵ تا ۲۰۲۵، گرد واژهٔ CENTURY",
+   "title": "صد سالگی کوانتوم؛ از جزیرهٔ هلگولاند تا امروز"
+  },
+  {
+   "slug": "quantum-entanglement-explained",
+   "file": "quantum-entanglement-explained.webp",
+   "alt": "دو ذرهٔ درهم‌تنیده با پیوند نقطه‌چین و دو ایستگاه اندازه‌گیری دوردست، گرد واژهٔ ENTANGLEMENT",
+   "title": "درهم‌تنیدگی کوانتومی"
+  },
+  {
+   "slug": "quantum-measurement",
+   "file": "quantum-measurement.webp",
+   "alt": "تابع موج گسترده که به یک قله فرومی‌پاشد و آشکارساز با نماد ثبت، گرد واژهٔ MEASUREMENT",
+   "title": "اندازه‌گیری و فروپاشی"
+  },
+  {
+   "slug": "quantum-spin",
+   "file": "quantum-spin.webp",
+   "alt": "آهنربای اشترن-گرلاخ که پرتو اتمی را دو شاخه می‌کند و حلقهٔ چرخش ۷۲۰ درجه، گرد واژهٔ SPIN با خط اسکن بنفش",
+   "title": "اسپین؛ چرخشی که چرخش نیست"
+  },
+  {
+   "slug": "quantum-superposition",
+   "file": "quantum-superposition.webp",
+   "alt": "کرهٔ بلاخ، دو موج روی هم و نماد دامنهٔ احتمال، گرد واژهٔ SUPERPOSITION با خط اسکن بنفش",
+   "title": "برهم‌نهی کوانتومی"
+  },
+  {
+   "slug": "quantum-tunneling",
+   "file": "quantum-tunneling.webp",
+   "alt": "بستهٔ موج که از سد انرژی می‌گذرد و ذرهٔ آلفا در حال فرار از هسته، گرد واژهٔ TUNNELING",
+   "title": "تونل‌زنی کوانتومی"
+  },
+  {
+   "slug": "quark",
+   "file": "quark.webp",
+   "alt": "سه کوارک درون پروتون با فنرهای گلوئونی و مثلث بار رنگی، گرد واژهٔ QUARK با خط اسکن سبز",
+   "title": "کوارک چیست؟"
+  },
+  {
+   "slug": "qubit",
+   "file": "qubit.webp",
+   "alt": "کرهٔ بلاخ در برابر کلید دودویی صفر و یک و تراشهٔ ابررسانا، گرد واژهٔ QUBIT با خط اسکن سبز",
+   "title": "کیوبیت چیست؟"
+  },
+  {
+   "slug": "schrodinger-cat",
+   "file": "schrodinger-cat.webp",
+   "alt": "جعبهٔ دربسته با گربه‌ای نیمه‌خط‌چین، ماشهٔ واپاشی پرتوزا و نماد برهم‌نهی، گرد عبارت SCHRÖDINGER’S CAT",
+   "title": "گربهٔ شرودینگر"
+  },
+  {
+   "slug": "solar-cells-photoelectric",
+   "file": "solar-cells-photoelectric.webp",
+   "alt": "فوتون‌های خورشید بر سطح پنل، پیوند p-n و جریان خروجی به بار، گرد عبارت SOLAR CELL",
+   "title": "پنل خورشیدی و اثر فوتوالکتریک؛ تبدیل نور به جریان زندگی"
+  },
+  {
+   "slug": "solvay-conference-1927",
+   "file": "solvay-conference-1927.webp",
+   "alt": "صندلی‌های تالار کنفرانس و آزمایش فکری جعبهٔ نور با ترازو، گرد عبارت SOLVAY 1927",
+   "title": "کنفرانس سولوی ۱۹۲۷ چه بود؟"
+  },
+  {
+   "slug": "standard-model",
+   "file": "standard-model.webp",
+   "alt": "جدول ذرات بنیادی در سه نسل و بوزون‌های حامل نیرو، گرد عبارت STANDARD MODEL با خط اسکن بنفش",
+   "title": "مدل استاندارد چیست؟"
+  },
+  {
+   "slug": "stellar-fusion",
+   "file": "stellar-fusion.webp",
+   "alt": "مقطع خورشید با هستهٔ داغ، زنجیرهٔ پروتون-پروتون و راکتور توکامک، گرد واژهٔ FUSION با خط اسکن قرمز",
+   "title": "همجوشی ستارگان چگونه ممکن است؟"
+  },
+  {
+   "slug": "stern-gerlach-experiment",
+   "file": "stern-gerlach-experiment.webp",
+   "alt": "پرتو اتم نقره که در میدان مغناطیسی ناهمگن دقیقاً به دو لکه تقسیم می‌شود، گرد عبارت STERN-GERLACH",
+   "title": "آزمایش اشترن-گرلاخ چیست؟"
+  },
+  {
+   "slug": "stimulated-emission",
+   "file": "stimulated-emission.webp",
+   "alt": "فوتونی که اتم برانگیخته را وادار به گسیل فوتون همسان می‌کند و وارونگی جمعیت، گرد عبارت STIMULATED EMISSION",
+   "title": "گسیل تحریکی چیست؟"
+  },
+  {
+   "slug": "superconductivity",
+   "file": "superconductivity.webp",
+   "alt": "آهنربای شناور بر دیسک سرد، افت مقاومت به صفر و جفت کوپر، گرد واژهٔ SUPERCONDUCTIVITY",
+   "title": "ابررسانایی"
+  },
+  {
+   "slug": "superfluidity",
+   "file": "superfluidity.webp",
+   "alt": "هلیوم مایع که از دیوارهٔ ظرف بالا می‌رود و شبکهٔ گردابه‌های گسسته، گرد واژهٔ SUPERFLUID",
+   "title": "ابرشارگی؛ مایعی که از لیوان بالا می‌رود"
+  },
+  {
+   "slug": "transistor-quantum",
+   "file": "transistor-quantum.webp",
+   "alt": "مقطع ترانزیستور سیلیکونی، نمودار شکاف انرژی و شبکهٔ تراشه، گرد واژهٔ TRANSISTOR",
+   "title": "ترانزیستور؛ کوانتوم در جیب شما"
+  },
+  {
+   "slug": "ultraviolet-catastrophe",
+   "file": "ultraviolet-catastrophe.webp",
+   "alt": "منحنی کلاسیک که به بی‌نهایت می‌رود در برابر منحنی پلانک منطبق بر داده، گرد عبارت UV CATASTROPHE",
+   "title": "فاجعهٔ فرابنفش"
+  },
+  {
+   "slug": "vacuum-fluctuations",
+   "file": "vacuum-fluctuations.webp",
+   "alt": "جعبهٔ به‌ظاهر خالی که پر از فعالیت موجی گذراست و جابه‌جایی لمب، گرد عبارت VACUUM FLUCTUATIONS",
+   "title": "نوسانات خلأ"
+  },
+  {
+   "slug": "virtual-particles",
+   "file": "virtual-particles.webp",
+   "alt": "دیاگرام فاینمن با خط تبادل درونی و صفحات کازیمیر که به هم فشرده می‌شوند، گرد عبارت VIRTUAL PARTICLES",
+   "title": "ذرات مجازی چیستند؟"
+  },
+  {
+   "slug": "wave-function",
+   "file": "wave-function.webp",
+   "alt": "منحنی تابع موج، مربع دامنه به‌صورت چگالی احتمال و معادلهٔ شرودینگر، گرد عبارت WAVE FUNCTION",
+   "title": "تابع موج چیست؟"
+  },
+  {
+   "slug": "wave-particle-duality",
+   "file": "wave-particle-duality.webp",
+   "alt": "موجی که به ذره تبدیل می‌شود، رابطهٔ طول موج دوبروی و فریزهای تداخل، گرد واژهٔ DUALITY",
+   "title": "دوگانگی موج و ذره"
+  },
+  {
+   "slug": "what-is-quantum",
+   "file": "what-is-quantum.webp",
+   "alt": "پلکان ترازهای انرژی، بستهٔ موج و طیف خطی گرد واژهٔ انگلیسی QUANTUM با خط اسکن فیروزه‌ای",
+   "title": "کوانتوم یعنی چه؟"
+  }
+ ]
+}
