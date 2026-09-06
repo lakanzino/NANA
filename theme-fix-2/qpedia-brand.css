@@ -1,0 +1,98 @@
+/* ══════════════════════════════════════════════════════════
+   QPEDIA — استایل سراسری نشان (هدر و فوتر)
+   محل: quantum-pedia-child/assets/css/qpedia-brand.css
+   روی همهٔ صفحه‌ها بارگذاری می‌شود (بعد از custom.css).
+   ══════════════════════════════════════════════════════════ */
+
+/* ── ۱) چیدمان هدر: راست = نام فارسی، وسط = دسته‌ها، چپ = QPEDIA ── */
+.qp-global-header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:88px;
+}
+.qp-global-header__brand{margin-inline-start:0 !important;flex:0 0 auto}
+.qp-global-header__mark{flex:0 0 auto;display:flex;align-items:center}
+
+/* دسته‌ها دقیقاً وسط، افقی و عمودی */
+.qp-desktop-nav{
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  align-self:stretch;
+}
+.qp-desktop-nav__list{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+/* ── ۲) نشان QPEDIA سمت چپ هدر ─────────────────────────── */
+.qp-brand-mark{
+  display:inline-flex;
+  align-items:baseline;
+  direction:ltr;
+  text-decoration:none;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.6rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.12em;
+  white-space:nowrap;
+  transition:filter .18s ease,transform .18s ease;
+}
+.qp-brand-mark:hover,
+.qp-brand-mark:focus-visible{transform:translateY(-1px);filter:brightness(1.12)}
+.qp-brand-mark__q{
+  color:#38e8ff;
+  text-shadow:0 0 6px rgba(56,232,255,.75),0 0 18px rgba(56,232,255,.45),0 0 34px rgba(56,232,255,.22);
+}
+.qp-brand-mark__rest{
+  color:#f2fbff;
+  font-weight:300;
+  text-shadow:0 0 8px rgba(255,255,255,.22),0 0 20px rgba(255,255,255,.10);
+}
+
+/* ── ۳) فوتر: بدون تصویر، فقط نشان متنی ────────────────── */
+.qp-global-footer__logo{display:none !important}
+.qp-global-footer__brand-top{display:flex;align-items:center;gap:14px}
+.qp-global-footer__titles{display:flex;flex-direction:column;gap:6px}
+.qp-global-footer__wordmark{
+  direction:ltr;
+  text-align:left;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.55rem;
+  font-weight:300;
+  line-height:1;
+  letter-spacing:.13em;
+  color:#f2fbff;
+  text-shadow:0 0 8px rgba(255,255,255,.20);
+}
+.qp-global-footer__q{
+  font-weight:800;
+  color:#38e8ff;
+  text-shadow:0 0 6px rgba(56,232,255,.75),0 0 18px rgba(56,232,255,.45);
+}
+
+/* ── ۴) سه واژهٔ نئونی داخل متن فوتر ───────────────────── */
+.qp-neon-word{
+  color:#7cf7ff;
+  font-weight:700;
+  text-shadow:0 0 6px rgba(124,247,255,.55),0 0 16px rgba(124,247,255,.25);
+}
+
+/* ── ۵) موبایل ─────────────────────────────────────────── */
+@media (max-width:900px){
+  .qp-global-header__mark{display:none}
+  .qp-global-header__inner{min-height:82px}
+}
+@media (prefers-reduced-motion:reduce){
+  .qp-brand-mark{transition:none}
+}

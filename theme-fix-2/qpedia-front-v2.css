@@ -5,52 +5,6 @@
    بدون تصویر، بدون فونت اضافه.
    ══════════════════════════════════════════════════════════ */
 
-/* ── ۱) نشان متنی هدر (جای لوگو) ───────────────────────── */
-.qp-brand__wordmark{
-  display:block;
-  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-size:1.42rem;
-  font-weight:800;
-  line-height:1;
-  letter-spacing:.14em;
-  color:#fff;
-  direction:ltr;
-  text-align:left;
-  margin-bottom:6px;
-  text-shadow:0 0 18px rgba(57,255,20,.18);
-}
-.qp-brand__wordmark-thin{
-  font-weight:300;
-  color:var(--qp-neon,#39ff14);
-  margin-inline-start:.34em;
-}
-/* عنوان فارسی زیر نشان، کمی کوچک‌تر تا سلسله‌مراتب درست بماند */
-.qp-brand__title{font-size:.96rem !important}
-.qp-brand__desc{font-size:.78rem}
-
-/* ── ۲) نشان متنی فوتر (کنار لوگوی اختصاصی) ───────────── */
-.qp-global-footer__titles{display:flex;flex-direction:column;gap:6px}
-.qp-global-footer__logo{
-  width:64px;
-  height:64px;
-  object-fit:contain;
-}
-.qp-global-footer__wordmark{
-  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-size:1.5rem;
-  font-weight:800;
-  line-height:1;
-  letter-spacing:.15em;
-  color:#fff;
-  direction:ltr;
-  text-align:left;
-}
-.qp-global-footer__wordmark-thin{
-  font-weight:300;
-  color:var(--qp-neon,#39ff14);
-  margin-inline-start:.34em;
-}
-
 /* ── ۳) مقاله‌های پیشنهادی ─────────────────────────────── */
 .qp-front-picks{
   display:grid;

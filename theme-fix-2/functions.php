@@ -56,6 +56,16 @@ function qpedia_child_enqueue_assets() {
 		);
 	}
 
+	$brand_file = get_stylesheet_directory() . '/assets/css/qpedia-brand.css';
+	if ( file_exists( $brand_file ) ) {
+		wp_enqueue_style(
+			'qpedia-brand',
+			get_stylesheet_directory_uri() . '/assets/css/qpedia-brand.css',
+			array( 'qpedia-child-custom' ),
+			filemtime( $brand_file )
+		);
+	}
+
 	$custom_js = get_stylesheet_directory() . '/assets/js/custom.js';
 	if ( file_exists( $custom_js ) ) {
 		wp_enqueue_script(
@@ -78,7 +88,7 @@ function qpedia_child_enqueue_assets() {
 			wp_enqueue_style(
 				'qpedia-front-v2',
 				get_stylesheet_directory_uri() . '/assets/css/qpedia-front-v2.css',
-				array( 'qpedia-child-custom' ),
+				array( 'qpedia-brand' ),
 				filemtime( $front_css )
 			);
 		}

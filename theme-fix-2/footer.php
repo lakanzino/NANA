@@ -11,13 +11,12 @@ defined( 'ABSPATH' ) || exit;
 	<div class="container qp-global-footer__inner">
 		<div class="qp-global-footer__brand">
 			<div class="qp-global-footer__brand-top">
-				<img class="qp-global-footer__logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/qpedia-logo-white.png' ); ?>" alt="<?php esc_attr_e( 'لوگوی کوانتوم پدیا', 'quantum-pedia-child' ); ?>" width="64" height="64" loading="lazy" decoding="async" />
 				<div class="qp-global-footer__titles">
-					<div class="qp-global-footer__wordmark">QUANTUM<span class="qp-global-footer__wordmark-thin">PEDIA</span></div>
+					<div class="qp-global-footer__wordmark"><span class="qp-global-footer__q">Q</span>PEDIA</div>
 					<div class="qp-global-footer__title">کوانتوم پدیا فارسی</div>
 				</div>
 			</div>
-			<p class="qp-global-footer__desc">منبعی مینیمال و دقیق برای مرور مفاهیم، فناوری‌ها و روایت‌های مهم دنیای کوانتوم.</p>
+			<p class="qp-global-footer__desc">منبعی <span class="qp-neon-word">مینیمال</span> و دقیق برای مرور <span class="qp-neon-word">مفاهیم</span> و فناوری‌های دنیای <span class="qp-neon-word">کوانتوم</span>.</p>
 		</div>
 
 		<div class="qp-global-footer__links">

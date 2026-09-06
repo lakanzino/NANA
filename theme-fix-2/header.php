@@ -63,7 +63,6 @@ if ( ! is_wp_error( $qpedia_header_categories ) && ! empty( $qpedia_header_categ
 		<div class="qp-global-header__brand">
 			<a class="qp-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<span class="qp-brand__text">
-					<span class="qp-brand__wordmark" aria-hidden="true">QUANTUM<span class="qp-brand__wordmark-thin">PEDIA</span></span>
 					<span class="qp-brand__title">کوانتوم پدیا فارسی</span>
 					<span class="qp-brand__desc">دانشنامهٔ فارسی فیزیک کوانتوم</span>
 				</span>
@@ -111,5 +110,11 @@ if ( ! is_wp_error( $qpedia_header_categories ) && ! empty( $qpedia_header_categ
 				</ul>
 			<?php endif; ?>
 		</nav>
+
+		<div class="qp-global-header__mark">
+			<a class="qp-brand-mark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php esc_attr_e( 'خانه', 'quantum-pedia-child' ); ?>">
+				<span class="qp-brand-mark__q" aria-hidden="true">Q</span><span class="qp-brand-mark__rest" aria-hidden="true">PEDIA</span>
+			</a>
+		</div>
 	</div>
 </header>
