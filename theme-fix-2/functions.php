@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front6b' );
+define( 'QPEDIA_CHILD_VERSION', '2026.09.08-page7' );
 
 /*
  * Notice: ob_end_flush() Failed to send buffer of zlib output compression
@@ -240,9 +240,12 @@ function qpedia_child_filter_article_request( $query_vars ) {
 	 * اگر بعداً برگهٔ ثابت جدیدی ساختی، فقط اسلاگش را به این آرایه اضافه کن.
 	 */
 	$known_pages = array(
+		'home',
 		'about-us',
 		'contact-us',
 		'privacy-policy',
+		'rules',
+		'terms',
 	);
 
 	if ( in_array( $slug, $known_pages, true ) ) {
@@ -319,7 +322,7 @@ function qpedia_child_maybe_flush_rewrites() {
 		return;
 	}
 
-	$version = 'qpedia-lite-2026-09-08-front6';
+	$version = 'qpedia-lite-2026-09-08-page7';
 
 	if ( get_option( 'qpedia_child_rewrite_version' ) !== $version ) {
 		flush_rewrite_rules();
@@ -358,8 +361,8 @@ function qpedia_child_main_queries( $query ) {
 		return;
 	}
 
-	// اگر خانه روی «آخرین نوشته‌ها» باشد، مقالات کوانتوم را نشان بده.
-	if ( $query->is_home() ) {
+	// فهرست نوشته‌ها — نه برگهٔ ثابت خانه.
+	if ( $query->is_home() && ! $query->is_front_page() ) {
 		$query->set( 'post_type', array( 'quantum_article' ) );
 		$query->set( 'posts_per_page', 12 );
 		$query->set( 'ignore_sticky_posts', true );
@@ -491,6 +494,78 @@ $qp_front_settings = get_stylesheet_directory() . '/inc/front-settings.php';
 if ( is_readable( $qp_front_settings ) ) {
 	require_once $qp_front_settings;
 }
+
+/**
+ * خانه = برگهٔ ایستا. اگر Reading هنوز «آخرین نوشته‌ها» باشد، برگهٔ «خانه» را می‌سازد/می‌گذارد.
+ */
+function qpedia_ensure_static_front_page() {
+	if ( ! is_admin() || wp_doing_ajax() || ( function_exists( 'wp_installing' ) && wp_installing() ) ) {
+		return;
+	}
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	$front_id = (int) get_option( 'page_on_front' );
+	$front    = $front_id ? get_post( $front_id ) : null;
+	$ok       = ( $front instanceof WP_Post && 'page' === $front->post_type && 'publish' === $front->post_status );
+
+	if ( $ok ) {
+		if ( 'page' !== get_option( 'show_on_front' ) ) {
+			update_option( 'show_on_front', 'page' );
+		}
+		return;
+	}
+
+	$page = get_page_by_path( 'home' );
+	if ( ! $page instanceof WP_Post ) {
+		$found = get_posts(
+			array(
+				'post_type'              => 'page',
+				'post_status'            => array( 'publish', 'draft' ),
+				'title'                  => 'خانه',
+				'posts_per_page'         => 1,
+				'no_found_rows'          => true,
+				'update_post_meta_cache' => false,
+				'update_post_term_cache' => false,
+			)
+		);
+		$page = ! empty( $found ) ? $found[0] : null;
+	}
+
+	if ( $page instanceof WP_Post ) {
+		$page_id = (int) $page->ID;
+		if ( 'publish' !== $page->post_status ) {
+			wp_update_post(
+				array(
+					'ID'          => $page_id,
+					'post_status' => 'publish',
+				)
+			);
+		}
+	} else {
+		$d    = function_exists( 'qpedia_front_defaults' ) ? qpedia_front_defaults() : array();
+		$desc = isset( $d['hero_desc'] ) ? (string) $d['hero_desc'] : '';
+		$new  = wp_insert_post(
+			array(
+				'post_title'   => 'خانه',
+				'post_name'    => 'home',
+				'post_status'  => 'publish',
+				'post_type'    => 'page',
+				'post_content' => $desc ? wpautop( $desc ) : '',
+			),
+			true
+		);
+		if ( is_wp_error( $new ) || ! $new ) {
+			return;
+		}
+		$page_id = (int) $new;
+	}
+
+	update_option( 'show_on_front', 'page' );
+	update_option( 'page_on_front', $page_id );
+}
+add_action( 'admin_init', 'qpedia_ensure_static_front_page', 20 );
 
 /**
  * CSS هدر/فوتر/لوگو — داخل functions می‌ماند تا با قالب PHP قاطی نشود.

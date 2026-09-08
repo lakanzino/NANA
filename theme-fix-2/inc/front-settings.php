@@ -393,8 +393,17 @@ function qpedia_front_settings_page() {
 	</style>
 	<div class="wrap qpf-wrap" dir="rtl">
 		<h1>صفحهٔ نخست</h1>
-		<p class="qpf-lead">متن‌ها، دکمه‌ها، مقاله‌های پیشنهادی و نمایش هر بخش را از اینجا عوض کنید. نیازی به ویرایش فایل PHP نیست.</p>
-		<p><a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" rel="noopener">مشاهدهٔ صفحهٔ نخست</a></p>
+		<p class="qpf-lead">خانه یک <strong>برگهٔ ایستا</strong> است (قالب <code>page.php</code>). عنوان و متن بالای صفحه را از ویرایشگر برگه عوض کنید. کارت‌ها، جست‌وجو، دسته‌ها و دانشمندان از همین فرم کنترل می‌شوند.</p>
+		<p>
+			<?php
+			$qp_front_id  = (int) get_option( 'page_on_front' );
+			$qp_edit_home = $qp_front_id ? get_edit_post_link( $qp_front_id, 'raw' ) : admin_url( 'edit.php?post_type=page' );
+			$qp_reading   = admin_url( 'options-reading.php' );
+			?>
+			<a class="button button-primary" href="<?php echo esc_url( $qp_edit_home ); ?>">ویرایش برگهٔ خانه</a>
+			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" rel="noopener">مشاهدهٔ صفحهٔ نخست</a>
+			<a class="button" href="<?php echo esc_url( $qp_reading ); ?>">تنظیمات خواندن</a>
+		</p>
 
 		<form method="post">
 			<?php wp_nonce_field( 'qpedia_front_save', 'qpedia_front_nonce' ); ?>
@@ -404,12 +413,13 @@ function qpedia_front_settings_page() {
 				<p class="qpf-check"><label><input type="checkbox" name="show_hero" value="1" <?php checked( $F['show_hero'] ); ?>> نمایش این بخش</label></p>
 				<?php
 				qpedia_front_field( 'hero_badge', $F['hero_badge'], 'برچسب کوچک بالای عنوان' );
-				qpedia_front_field( 'hero_title', $F['hero_title'], 'عنوان اصلی (H1)' );
+				qpedia_front_field( 'hero_title', $F['hero_title'], 'عنوان جایگزین (اگر عنوان برگه «خانه» باشد)' );
 				?>
 				<p class="qpf-field">
-					<label for="qpf-hero_desc">توضیح زیر عنوان</label>
+					<label for="qpf-hero_desc">توضیح جایگزین (اگر متن برگه خالی باشد)</label>
 					<textarea class="qpf-wide" id="qpf-hero_desc" name="hero_desc" rows="3"><?php echo esc_textarea( $F['hero_desc'] ); ?></textarea>
 				</p>
+				<p class="qpf-note">اگر عنوان برگه چیزی غیر از «خانه» باشد، همان H1 می‌شود. اگر متن برگه پر باشد، به‌جای توضیح جایگزین نشان داده می‌شود.</p>
 				<div class="qpf-row">
 					<?php
 					qpedia_front_field( 'hero_btn1_text', $F['hero_btn1_text'], 'متن دکمهٔ اصلی' );
