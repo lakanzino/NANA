@@ -1,0 +1,315 @@
+/* ══════════════════════════════════════════════════════════
+   QPEDIA — استایل بازطراحی صفحهٔ نخست (نسخهٔ ۳)
+   محل: quantum-pedia-child/assets/css/qpedia-front-v2.css
+   پس از qpedia-layouts.css و custom.css بارگذاری می‌شود.
+   بدون تصویر، بدون فونت اضافه.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── ۳) مقاله‌های پیشنهادی: اسلایدر افقی، شش کارت مربعی ─
+   سه کارت دیده می‌شود، سه تای دیگر با کشیدن. */
+.qp-front-picksrail{
+  position:relative;
+  margin:0;
+  padding:18px 0;
+  max-width:100%;
+  overflow:hidden;      /* سایه‌ها بیرون نزنند */
+}
+/* سایهٔ پررنگ بالا و پایین تا اسلایدر از بقیه جدا دیده شود */
+.qp-front-picksrail::before,
+.qp-front-picksrail::after{
+  content:"";
+  position:absolute;
+  inset-inline:0;
+  height:16px;
+  pointer-events:none;
+  z-index:2;
+}
+.qp-front-picksrail::before{
+  top:0;
+  background:linear-gradient(180deg,rgba(15,118,110,.13),rgba(15,118,110,0));
+}
+.qp-front-picksrail::after{
+  bottom:0;
+  background:linear-gradient(0deg,rgba(15,118,110,.13),rgba(15,118,110,0));
+}
+
+.qp-front-picks{
+  --qp-pick-gap:14px;
+  display:flex;
+  max-width:100%;
+  min-width:0;
+  gap:var(--qp-pick-gap);
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding:6px 2px 10px;
+}
+.qp-front-picks::-webkit-scrollbar{display:none}
+
+.qp-front-pick{
+  flex:0 0 calc((100% - (var(--qp-pick-gap) * 2)) / 3);
+  min-width:0;
+  aspect-ratio:1 / 1;            /* کاملاً مربعی و هم‌اندازه */
+  scroll-snap-align:start;
+  display:flex;
+  flex-direction:column;
+  padding:26px 22px 20px;        /* فاصله از بالای کاور تا شروع متن */
+  background:var(--qp-card);
+  border:1px solid var(--qp-line);
+  border-radius:18px;
+  text-decoration:none;
+  color:inherit;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(17,24,39,.07);
+  transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+.qp-front-pick:hover,
+.qp-front-pick:focus-visible{
+  border-color:var(--qp-accent);
+  transform:translateY(-3px);
+  box-shadow:0 18px 38px rgba(15,118,110,.14);
+}
+
+/* کارت اول: زمینهٔ کاملاً سفید با سایهٔ نرم، هم‌اندازهٔ بقیه */
+.qp-front-pick--first{
+  background:#ffffff;
+  border-color:rgba(15,118,110,.18);
+  box-shadow:0 14px 34px rgba(17,24,39,.10);
+}
+
+.qp-front-pick__tag{
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  padding:5px 11px;
+  border-radius:999px;
+  background:var(--qp-accent-soft);
+  color:var(--qp-accent);
+  font-size:.8rem;
+  font-weight:800;
+}
+.qp-front-pick__title{
+  margin:16px 0 0;
+  color:var(--qp-ink);
+  font-size:1.22rem;
+  line-height:1.65;
+  font-weight:900;
+  letter-spacing:-.01em;
+}
+.qp-front-pick__hook{
+  margin:12px 0 0;
+  color:var(--qp-dim);
+  line-height:1.9;
+  font-size:1rem;
+  font-weight:600;
+  flex:1;
+  overflow:hidden;
+}
+.qp-front-pick__more{
+  margin-top:12px;
+  color:var(--qp-accent);
+  font-weight:800;
+  font-size:.96rem;
+}
+.qp-front-pick__more::after{
+  content:"\00a0←";
+  display:inline-block;
+  transition:transform .16s ease;
+}
+.qp-front-pick:hover .qp-front-pick__more::after{transform:translateX(-3px)}
+
+/* ── ۴) کارت‌های مقالهٔ تازه: گوشهٔ رنگی ظریف ───────────
+   بدون تصویر شاخص. یک نوار گرادیان سبز-آبی روی گوشهٔ بالا. */
+.qp-front-article{
+  position:relative;
+  overflow:hidden;
+}
+.qp-front-article::before{
+  content:"";
+  position:absolute;
+  inset-block-start:0;
+  inset-inline:0;
+  height:3px;
+  background:linear-gradient(90deg,#2dd4bf 0%,#38bdf8 100%);
+  opacity:.75;
+  transition:opacity .16s ease;
+}
+.qp-front-article:hover::before{opacity:1}
+
+/* لکهٔ نرم رنگی در گوشهٔ بالا-شروع کارت */
+.qp-front-article::after{
+  content:"";
+  position:absolute;
+  inset-block-start:-42px;
+  inset-inline-start:-42px;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(45,212,191,.16) 0%,rgba(56,189,248,.07) 55%,transparent 72%);
+  pointer-events:none;
+}
+
+/* ── ۵) جعبهٔ جست‌وجو ──────────────────────────────────── */
+.qp-front-searchbox{
+  background:linear-gradient(135deg,#f0fdfa 0%,#ffffff 70%);
+  border:1px solid rgba(15,118,110,.18);
+  border-radius:18px;
+  padding:22px;
+}
+.qp-front-searchbox__label{
+  margin:0 0 12px;
+  color:var(--qp-ink);
+  font-weight:800;
+  font-size:1.05rem;
+}
+.qp-front-searchbox .qp-front-search{margin:0}
+
+/* ── ۶) شمارنده‌ها ─────────────────────────────────────── */
+.qp-front-section--stats{margin-top:26px}
+
+.qp-front-section--stats .qp-front-hero__stats{margin:0}
+
+.qp-front-stat{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+.qp-front-stat::before{
+  content:"";
+  position:absolute;
+  inset-block-start:0;
+  inset-inline:0;
+  height:3px;
+  background:linear-gradient(90deg,#2dd4bf 0%,#38bdf8 100%);
+  opacity:.7;
+}
+.qp-front-stat:hover{
+  border-color:var(--qp-accent);
+  transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(15,118,110,.09);
+}
+.qp-front-stat__num{
+  /* عرض ثابت رقم‌ها تا هنگام شمارش، کادر نلرزد */
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1;
+  color:var(--qp-accent) !important;
+  font-size:1.9rem !important;
+}
+
+/* ── ۷) ردیف اسلایدری دانشمندان ─────────────────────────
+   اسکرول افقی بومی مرورگر. بدون جاوااسکریپت. */
+.qp-front-scirail{
+  max-width:100%;
+  min-width:0;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:2px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(15,118,110,.5) transparent;
+  padding-bottom:10px;
+  /* محو شدن لبه‌ها تا کاربر بفهمد ادامه دارد */
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);
+}
+.qp-front-scirail:focus-visible{
+  outline:2px solid var(--qp-accent);
+  outline-offset:4px;
+  border-radius:16px;
+}
+.qp-front-scirail::-webkit-scrollbar{height:6px}
+.qp-front-scirail::-webkit-scrollbar-track{background:transparent}
+.qp-front-scirail::-webkit-scrollbar-thumb{
+  background:rgba(15,118,110,.35);
+  border-radius:999px;
+}
+.qp-front-scirail::-webkit-scrollbar-thumb:hover{background:var(--qp-accent)}
+
+.qp-front-scirail__track{
+  display:flex;
+  gap:14px;
+  padding-inline:2px;
+  width:100%;
+  box-sizing:border-box;
+  /* هر کارت یک‌سوم عرض، مثل قبل — فقط در یک ردیف */
+  --qp-sci-w:calc((100% - 28px) / 3);
+}
+
+.qp-front-scirail .qp-front-scientist{
+  flex:0 0 var(--qp-sci-w);
+  width:var(--qp-sci-w);
+  scroll-snap-align:start;
+}
+
+/* کارت پایانی «همهٔ دانشمندان» */
+.qp-front-scientist--all{
+  display:grid;
+  place-items:center;
+  min-height:180px;
+  background:linear-gradient(135deg,#f0fdfa 0%,#ffffff 70%);
+  border-style:dashed;
+  border-color:rgba(15,118,110,.35);
+}
+.qp-front-scientist--all__inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  padding:20px;
+  text-align:center;
+}
+.qp-front-scientist--all__num{
+  font-size:2rem;
+  font-weight:800;
+  color:var(--qp-accent);
+  line-height:1;
+}
+.qp-front-scientist--all__text{
+  color:var(--qp-dim);
+  font-size:.9rem;
+  font-weight:700;
+}
+
+/* راهنمای کشیدن فقط روی صفحه‌های لمسی معنا دارد */
+.qp-front-swipe-hint{font-size:.88rem}
+@media (hover:hover) and (pointer:fine){
+  .qp-front-swipe-hint{display:none}
+}
+
+/* ── ۸) احترام به تنظیم «انیمیشن کمتر» ─────────────────── */
+@media (prefers-reduced-motion:reduce){
+  .qp-front-pick,
+  .qp-front-stat,
+  .qp-front-pick__more::after{transition:none}
+  .qp-front-pick:hover,
+  .qp-front-stat:hover{transform:none}
+  .qp-front-scirail,
+  .qp-front-picks{scroll-behavior:auto}
+}
+
+/* ── ۹) واکنش‌گرا ──────────────────────────────────────── */
+@media (max-width:900px){
+  .qp-front-pick{flex:0 0 calc((100% - var(--qp-pick-gap)) / 2)}
+  /* تبلت: دو کارت‌ونیم دیده شود تا بفهمد ادامه دارد */
+  .qp-front-scirail__track{--qp-sci-w:calc((100% - 28px) / 2.3)}
+}
+
+@media (max-width:640px){
+  .qp-front-picks{--qp-pick-gap:12px}
+  .qp-front-pick{flex:0 0 84%;aspect-ratio:auto;min-height:230px;padding:22px 18px 18px}
+  .qp-front-pick__title{font-size:1.1rem}
+  .qp-front-pick__hook{font-size:.95rem}
+  /* موبایل: یک کارت‌ونیم */
+  .qp-front-scirail__track{--qp-sci-w:calc((100% - 14px) / 1.45)}
+  .qp-front-scientist--all{min-height:150px}
+
+  .qp-brand__wordmark{font-size:1.2rem;letter-spacing:.1em}
+  .qp-global-footer__wordmark{font-size:1.25rem}
+  .qp-global-footer__logo{width:52px;height:52px}
+  .qp-front-stat__num{font-size:1.6rem !important}
+  .qp-front-searchbox{padding:18px}
+}
