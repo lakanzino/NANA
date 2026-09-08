@@ -128,18 +128,5 @@ if ( function_exists( 'qpedia_front_get' ) ) {
 				</ul>
 			<?php endif; ?>
 		</nav>
-
-		<div class="qp-global-header__mark">
-			<a class="qp-brand-mark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php esc_attr_e( 'خانه', 'quantum-pedia-child' ); ?>">
-				<?php
-				$qp_mark = function_exists( 'qpedia_brand_logo_html' ) ? qpedia_brand_logo_html( 'qp-brand-mark__logo', 44, 44 ) : '';
-				if ( $qp_mark ) {
-					echo $qp_mark; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				} else {
-					echo '<span class="qp-brand-mark__q" aria-hidden="true">Q</span><span class="qp-brand-mark__rest" aria-hidden="true">PEDIA</span>';
-				}
-				?>
-			</a>
-		</div>
 	</div>
 </header>

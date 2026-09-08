@@ -45,7 +45,6 @@ foreach ( array( 'مینیمال', 'مفاهیم', 'کوانتوم' ) as $qp_neo
 				}
 				?>
 				<div class="qp-global-footer__titles">
-					<div class="qp-global-footer__wordmark"><span class="qp-global-footer__q">Q</span>PEDIA</div>
 					<div class="qp-global-footer__title"><?php echo esc_html( $qp_footer_title ); ?></div>
 				</div>
 			</div>
