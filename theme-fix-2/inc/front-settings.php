@@ -518,6 +518,12 @@ function qpedia_front_settings_page() {
 					qpedia_front_field( 'sci_count', (string) $F['sci_count'], 'تعداد چهره (۳ تا ۲۴)', false );
 					?>
 				</div>
+				<p class="qpf-field">
+					<label for="qpf-sci_slugs">اسلایدر — اسلاگ دانشمندان (هر خط یکی، به همان ترتیب نمایش)</label>
+					<textarea class="qpf-wide" id="qpf-sci_slugs" name="sci_slugs" rows="6" placeholder="albert-einstein"><?php echo esc_textarea( isset( $F['sci_slugs'] ) ? (string) $F['sci_slugs'] : '' ); ?></textarea>
+				</p>
+				<p class="qpf-note">از نشانی بردارید: <code>qpedia.ir/scientists/albert-einstein/</code> → <code>albert-einstein</code>. اگر خالی باشد تازه‌ترین‌ها می‌آیند.</p>
+				<p class="qpf-check"><label><input type="checkbox" name="sci_fill" value="1" <?php checked( ! empty( $F['sci_fill'] ) ); ?>> اگر اسلاگ‌ها کمتر از تعداد بود، بقیه را از تازه‌ترین‌ها پر کن</label></p>
 			</div>
 
 			<div class="qpf-card">

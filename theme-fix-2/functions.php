@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front5' );
+define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front6' );
 
 /**
  * بارگذاری textdomain پوستهٔ فرزند — رفع خطای Doing it Wrong (ترجمهٔ زودهنگام)
@@ -56,15 +56,11 @@ function qpedia_child_enqueue_assets() {
 		);
 	}
 
-	$brand_file = get_stylesheet_directory() . '/assets/css/qpedia-brand.css';
-	if ( file_exists( $brand_file ) ) {
-		wp_enqueue_style(
-			'qpedia-brand',
-			get_stylesheet_directory_uri() . '/assets/css/qpedia-brand.css',
-			array( 'qpedia-child-custom' ),
-			filemtime( $brand_file )
-		);
+	$brand_parent = 'qpedia-child-custom';
+	if ( ! wp_style_is( $brand_parent, 'enqueued' ) ) {
+		$brand_parent = wp_style_is( 'qpedia-layouts', 'enqueued' ) ? 'qpedia-layouts' : 'qpedia-child-style';
 	}
+	wp_add_inline_style( $brand_parent, qpedia_brand_css_text() );
 
 	$custom_js = get_stylesheet_directory() . '/assets/js/custom.js';
 	if ( file_exists( $custom_js ) ) {
@@ -88,7 +84,7 @@ function qpedia_child_enqueue_assets() {
 			wp_enqueue_style(
 				'qpedia-front-v2',
 				get_stylesheet_directory_uri() . '/assets/css/qpedia-front-v2.css',
-				array( 'qpedia-brand' ),
+				array( $brand_parent ),
 				filemtime( $front_css )
 			);
 		}
@@ -314,7 +310,7 @@ function qpedia_child_maybe_flush_rewrites() {
 		return;
 	}
 
-	$version = 'qpedia-lite-2026-09-08-front5';
+	$version = 'qpedia-lite-2026-09-08-front6';
 
 	if ( get_option( 'qpedia_child_rewrite_version' ) !== $version ) {
 		flush_rewrite_rules();
@@ -485,6 +481,54 @@ require_once get_stylesheet_directory() . '/inc/glossary-content.php';
 $qp_front_settings = get_stylesheet_directory() . '/inc/front-settings.php';
 if ( is_readable( $qp_front_settings ) ) {
 	require_once $qp_front_settings;
+}
+
+/**
+ * CSS هدر/فوتر/لوگو — داخل functions می‌ماند تا با قالب PHP قاطی نشود.
+ *
+ * @return string
+ */
+function qpedia_brand_css_text() {
+	return <<<'CSS'
+.qp-global-header__inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:88px}
+.qp-global-header__brand{margin-inline-start:0 !important;flex:0 0 auto}
+.qp-global-header__mark{flex:0 0 auto;display:flex;align-items:center}
+.qp-brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.qp-brand__picture{display:flex;flex-shrink:0;line-height:0}
+.qp-brand__logo{width:48px;height:48px;object-fit:contain;display:block;filter:drop-shadow(0 0 8px rgba(56,232,255,.28))}
+@media (min-width:901px){
+.qp-desktop-nav{flex:1 1 auto;display:flex;align-items:center;justify-content:center;align-self:stretch;min-width:0}
+.qp-desktop-nav__list{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+}
+.qp-brand-mark{display:inline-flex;align-items:center;direction:ltr;text-decoration:none;line-height:0;transition:filter .18s ease,transform .18s ease}
+.qp-brand-mark:hover,.qp-brand-mark:focus-visible{transform:translateY(-1px);filter:brightness(1.12)}
+.qp-brand-mark__logo{width:44px;height:44px;object-fit:contain;display:block;filter:drop-shadow(0 0 10px rgba(56,232,255,.35))}
+.qp-brand-mark__q{color:#38e8ff;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.12em;text-shadow:0 0 6px rgba(56,232,255,.75),0 0 18px rgba(56,232,255,.45),0 0 34px rgba(56,232,255,.22)}
+.qp-brand-mark__rest{color:#f2fbff;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:1.6rem;font-weight:300;letter-spacing:.12em;text-shadow:0 0 8px rgba(255,255,255,.22),0 0 20px rgba(255,255,255,.10)}
+.qp-global-footer__brand-top{display:flex;align-items:center;gap:14px}
+.qp-global-footer__logo{display:block !important;width:56px;height:56px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(56,232,255,.3))}
+.qp-global-footer__titles{display:flex;flex-direction:column;gap:6px}
+.qp-global-footer__wordmark{direction:ltr;text-align:left;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:1.55rem;font-weight:300;line-height:1;letter-spacing:.13em;color:#f2fbff;text-shadow:0 0 8px rgba(255,255,255,.20)}
+.qp-global-footer__q{font-weight:800;color:#38e8ff;text-shadow:0 0 6px rgba(56,232,255,.75),0 0 18px rgba(56,232,255,.45)}
+.qp-neon-word{color:#7cf7ff;font-weight:700;text-shadow:0 0 6px rgba(124,247,255,.55),0 0 16px rgba(124,247,255,.25)}
+@media (max-width:900px){
+.qp-global-header__mark{display:none !important}
+.qp-desktop-nav{display:none !important}
+.qp-global-header__inner{min-height:82px;gap:12px}
+.qp-global-header__brand{flex:1 1 auto;min-width:0}
+.qp-brand{gap:10px}
+.qp-brand__logo{width:40px;height:40px}
+.qp-global-footer__logo{width:48px;height:48px}
+}
+html,body{overflow-x:hidden;max-width:100%}
+@media (max-width:900px){
+body .qp-global-header .qp-desktop-nav,
+body .qp-global-header .qp-desktop-nav__list,
+body .qp-global-header__mark{display:none !important}
+.qp-global-header__inner{flex-wrap:nowrap}
+}
+@media (prefers-reduced-motion:reduce){.qp-brand-mark{transition:none}}
+CSS;
 }
 
 /**
