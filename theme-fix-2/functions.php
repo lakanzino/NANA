@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front4' );
+define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front5' );
 
 /**
  * بارگذاری textdomain پوستهٔ فرزند — رفع خطای Doing it Wrong (ترجمهٔ زودهنگام)
@@ -314,7 +314,7 @@ function qpedia_child_maybe_flush_rewrites() {
 		return;
 	}
 
-	$version = 'qpedia-lite-2026-09-08-front4';
+	$version = 'qpedia-lite-2026-09-08-front5';
 
 	if ( get_option( 'qpedia_child_rewrite_version' ) !== $version ) {
 		flush_rewrite_rules();
@@ -485,6 +485,39 @@ require_once get_stylesheet_directory() . '/inc/glossary-content.php';
 $qp_front_settings = get_stylesheet_directory() . '/inc/front-settings.php';
 if ( is_readable( $qp_front_settings ) ) {
 	require_once $qp_front_settings;
+}
+
+/**
+ * لوگوی برند — WebP با پشتیبان PNG.
+ *
+ * @param string $class کلاس تصویر.
+ * @param int    $width عرض نمایش.
+ * @param int    $height ارتفاع نمایش.
+ * @return string HTML یا رشتهٔ خالی.
+ */
+function qpedia_brand_logo_html( $class = 'qp-brand__logo', $width = 48, $height = 48 ) {
+	$dir  = get_stylesheet_directory() . '/assets/images';
+	$uri  = get_stylesheet_directory_uri() . '/assets/images';
+	$webp = is_readable( $dir . '/qpedia-logo.webp' );
+	$png  = is_readable( $dir . '/qpedia-logo.png' );
+	if ( ! $webp && ! $png ) {
+		return '';
+	}
+
+	$alt = 'کوانتوم پدیا';
+	$w   = (int) $width;
+	$h   = (int) $height;
+	$cls = esc_attr( $class );
+
+	if ( $webp && $png ) {
+		return '<picture class="qp-brand__picture">'
+			. '<source type="image/webp" srcset="' . esc_url( $uri . '/qpedia-logo.webp' ) . '">'
+			. '<img class="' . $cls . '" src="' . esc_url( $uri . '/qpedia-logo.png' ) . '" alt="' . esc_attr( $alt ) . '" width="' . $w . '" height="' . $h . '" decoding="async">'
+			. '</picture>';
+	}
+
+	$src = $webp ? $uri . '/qpedia-logo.webp' : $uri . '/qpedia-logo.png';
+	return '<img class="' . $cls . '" src="' . esc_url( $src ) . '" alt="' . esc_attr( $alt ) . '" width="' . $w . '" height="' . $h . '" decoding="async">';
 }
 
 /* حذف شد: پیام دیباگ unfiltered_html در پیشخوان. کارش تمام شده بود. */

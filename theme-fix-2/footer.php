@@ -39,6 +39,11 @@ foreach ( array( 'مینیمال', 'مفاهیم', 'کوانتوم' ) as $qp_neo
 	<div class="container qp-global-footer__inner">
 		<div class="qp-global-footer__brand">
 			<div class="qp-global-footer__brand-top">
+				<?php
+				if ( function_exists( 'qpedia_brand_logo_html' ) ) {
+					echo qpedia_brand_logo_html( 'qp-global-footer__logo', 56, 56 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				}
+				?>
 				<div class="qp-global-footer__titles">
 					<div class="qp-global-footer__wordmark"><span class="qp-global-footer__q">Q</span>PEDIA</div>
 					<div class="qp-global-footer__title"><?php echo esc_html( $qp_footer_title ); ?></div>

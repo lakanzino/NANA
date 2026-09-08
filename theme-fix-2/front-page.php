@@ -165,19 +165,61 @@ if ( $show_latest ) {
 	);
 }
 
-$featured_scientists = null;
+$qp_sci_posts = array();
 if ( $show_scientists ) {
-	$featured_scientists = new WP_Query(
-		array(
-			'post_type'           => 'quantum_scientist',
-			'posts_per_page'      => $sci_count,
-			'post_status'         => 'publish',
-			'orderby'             => 'date',
-			'order'               => 'DESC',
-			'ignore_sticky_posts' => true,
-			'no_found_rows'       => true,
-		)
-	);
+	$sci_slugs = function_exists( 'qpedia_front_sci_slugs' ) ? qpedia_front_sci_slugs( $F ) : array();
+	$sci_fill  = ! isset( $F['sci_fill'] ) || ! empty( $F['sci_fill'] );
+
+	if ( ! empty( $sci_slugs ) ) {
+		$sci_pick = get_posts(
+			array(
+				'post_type'              => 'quantum_scientist',
+				'post_status'            => 'publish',
+				'post_name__in'          => $sci_slugs,
+				'posts_per_page'         => count( $sci_slugs ),
+				'orderby'                => 'post_name__in',
+				'no_found_rows'          => true,
+				'ignore_sticky_posts'    => true,
+			)
+		);
+		$by_slug = array();
+		foreach ( $sci_pick as $sci_p ) {
+			$by_slug[ $sci_p->post_name ] = $sci_p;
+		}
+		foreach ( $sci_slugs as $sci_slug ) {
+			if ( isset( $by_slug[ $sci_slug ] ) ) {
+				$qp_sci_posts[] = $by_slug[ $sci_slug ];
+			}
+		}
+		if ( $sci_fill && count( $qp_sci_posts ) < $sci_count ) {
+			$exclude = wp_list_pluck( $qp_sci_posts, 'ID' );
+			$fill    = get_posts(
+				array(
+					'post_type'           => 'quantum_scientist',
+					'post_status'         => 'publish',
+					'posts_per_page'      => $sci_count - count( $qp_sci_posts ),
+					'post__not_in'        => $exclude,
+					'orderby'             => 'date',
+					'order'               => 'DESC',
+					'ignore_sticky_posts' => true,
+					'no_found_rows'       => true,
+				)
+			);
+			$qp_sci_posts = array_merge( $qp_sci_posts, $fill );
+		}
+	} else {
+		$qp_sci_posts = get_posts(
+			array(
+				'post_type'           => 'quantum_scientist',
+				'post_status'         => 'publish',
+				'posts_per_page'      => $sci_count,
+				'orderby'             => 'date',
+				'order'               => 'DESC',
+				'ignore_sticky_posts' => true,
+				'no_found_rows'       => true,
+			)
+		);
+	}
 }
 
 $qp_sci_index = 0;
@@ -405,27 +447,24 @@ if ( $counter_ms < 200 ) {
 				<?php endif; ?>
 			</div>
 
-			<?php if ( $featured_scientists && $featured_scientists->have_posts() ) : ?>
+			<?php if ( ! empty( $qp_sci_posts ) ) : ?>
 				<div class="qp-front-scirail" role="region" aria-label="دانشمندان برجسته" tabindex="0">
 					<div class="qp-front-scirail__track">
-						<?php
-						while ( $featured_scientists->have_posts() ) :
-							$featured_scientists->the_post();
-							?>
+						<?php foreach ( $qp_sci_posts as $sci_post ) : ?>
 							<?php
-							$en_name = trim( (string) get_post_meta( get_the_ID(), '_scientist_en_name', true ) );
+							$en_name = trim( (string) get_post_meta( $sci_post->ID, '_scientist_en_name', true ) );
 							$initial = 'Q';
 							if ( $en_name ) {
 								$initial = strtoupper( mb_substr( $en_name, 0, 1, 'UTF-8' ) );
 							}
 							$qp_sci_index++;
 							?>
-							<a class="qp-front-scientist" href="<?php the_permalink(); ?>">
+							<a class="qp-front-scientist" href="<?php echo esc_url( get_permalink( $sci_post ) ); ?>">
 								<div class="qp-front-scientist__media">
-									<?php if ( has_post_thumbnail() ) : ?>
+									<?php if ( has_post_thumbnail( $sci_post ) ) : ?>
 										<?php
 										echo get_the_post_thumbnail( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-											get_the_ID(),
+											$sci_post->ID,
 											'medium',
 											array(
 												'class'    => 'qp-front-scientist__image',
@@ -439,13 +478,13 @@ if ( $counter_ms < 200 ) {
 									<?php endif; ?>
 								</div>
 								<div class="qp-front-scientist__body">
-									<h3 class="qp-front-scientist__name"><?php the_title(); ?></h3>
+									<h3 class="qp-front-scientist__name"><?php echo esc_html( get_the_title( $sci_post ) ); ?></h3>
 									<?php if ( $en_name ) : ?>
 										<p class="qp-front-scientist__latin"><?php echo esc_html( $en_name ); ?></p>
 									<?php endif; ?>
 								</div>
 							</a>
-						<?php endwhile; ?>
+						<?php endforeach; ?>
 
 						<a class="qp-front-scientist qp-front-scientist--all" href="<?php echo esc_url( $qp_href( isset( $F['sci_url'] ) ? $F['sci_url'] : '/scientists/' ) ); ?>">
 							<span class="qp-front-scientist--all__inner">
@@ -455,7 +494,6 @@ if ( $counter_ms < 200 ) {
 						</a>
 					</div>
 				</div>
-				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
 		</section>
 		<?php endif; ?>

@@ -75,6 +75,11 @@ if ( function_exists( 'qpedia_front_get' ) ) {
 	<div class="container qp-global-header__inner">
 		<div class="qp-global-header__brand">
 			<a class="qp-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php
+				if ( function_exists( 'qpedia_brand_logo_html' ) ) {
+					echo qpedia_brand_logo_html( 'qp-brand__logo', 48, 48 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				}
+				?>
 				<span class="qp-brand__text">
 					<span class="qp-brand__title"><?php echo esc_html( $qp_header_title ); ?></span>
 					<span class="qp-brand__desc"><?php echo esc_html( $qp_header_desc ); ?></span>
@@ -126,7 +131,14 @@ if ( function_exists( 'qpedia_front_get' ) ) {
 
 		<div class="qp-global-header__mark">
 			<a class="qp-brand-mark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php esc_attr_e( 'خانه', 'quantum-pedia-child' ); ?>">
-				<span class="qp-brand-mark__q" aria-hidden="true">Q</span><span class="qp-brand-mark__rest" aria-hidden="true">PEDIA</span>
+				<?php
+				$qp_mark = function_exists( 'qpedia_brand_logo_html' ) ? qpedia_brand_logo_html( 'qp-brand-mark__logo', 44, 44 ) : '';
+				if ( $qp_mark ) {
+					echo $qp_mark; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				} else {
+					echo '<span class="qp-brand-mark__q" aria-hidden="true">Q</span><span class="qp-brand-mark__rest" aria-hidden="true">PEDIA</span>';
+				}
+				?>
 			</a>
 		</div>
 	</div>

@@ -103,6 +103,8 @@ function qpedia_front_defaults() {
 		'sci_link'        => 'همهٔ دانشمندان',
 		'sci_url'         => '/scientists/',
 		'sci_count'       => 10,
+		'sci_slugs'       => '',
+		'sci_fill'        => 1,
 		'header_title'    => 'کوانتوم پدیا فارسی',
 		'header_desc'     => 'دانشنامهٔ فارسی فیزیک کوانتوم',
 		'footer_desc'     => 'منبعی مینیمال و دقیق برای مرور مفاهیم و فناوری‌های دنیای کوانتوم.',
@@ -151,6 +153,32 @@ function qpedia_front_get( $key = null ) {
  * @param string $url مقدار خام.
  * @return string
  */
+/**
+ * اسلاگ‌های اسلایدر دانشمندان از تنظیمات.
+ *
+ * @param array|null $F خروجی qpedia_front_get.
+ * @return string[]
+ */
+function qpedia_front_sci_slugs( $F = null ) {
+	if ( null === $F ) {
+		$F = qpedia_front_get();
+	}
+	$raw = isset( $F['sci_slugs'] ) ? $F['sci_slugs'] : '';
+	if ( is_array( $raw ) ) {
+		$lines = $raw;
+	} else {
+		$lines = preg_split( '/[\r\n,]+/', (string) $raw );
+	}
+	$out = array();
+	foreach ( $lines as $line ) {
+		$slug = sanitize_title( trim( (string) $line ) );
+		if ( '' !== $slug && ! in_array( $slug, $out, true ) ) {
+			$out[] = $slug;
+		}
+	}
+	return $out;
+}
+
 function qpedia_front_href( $url ) {
 	$url = trim( (string) $url );
 	if ( '' === $url ) {
@@ -301,6 +329,8 @@ function qpedia_front_handle_save() {
 		'sci_link'         => $txt( 'sci_link', $d['sci_link'] ),
 		'sci_url'          => $txt( 'sci_url', $d['sci_url'] ),
 		'sci_count'        => $sci_count,
+		'sci_slugs'        => $area( 'sci_slugs', '' ),
+		'sci_fill'         => $chk( 'sci_fill' ),
 		'header_title'     => $txt( 'header_title', $d['header_title'] ),
 		'header_desc'      => $txt( 'header_desc', $d['header_desc'] ),
 		'footer_desc'      => $area( 'footer_desc', $d['footer_desc'] ),
