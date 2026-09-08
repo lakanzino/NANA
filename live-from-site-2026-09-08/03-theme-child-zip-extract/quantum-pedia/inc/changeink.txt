@@ -1,0 +1,14 @@
+# Changelog - inc
+## [1.0.0] - 2026-08-18
+### Added
+- template-tags.php - توابع نمایش متا و فوتر نوشته
+- sanitization.php - توابع پاکسازی ورودی‌ها
+- template-functions.php - بهبود کلاس‌های body و pingback
+- customizer.php - تنظیمات ساده و انتقال زنده
+### Changed
+- همه فایل‌ها بر اساس استاندارد Quantum Pedia ساخته شدند
+### Fixed
+- (اولین نسخه)
+
+## [Unreleased]
+- تغییرات آینده اینجا ثبت شود

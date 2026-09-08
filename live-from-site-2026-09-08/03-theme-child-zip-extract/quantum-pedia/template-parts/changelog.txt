@@ -1,0 +1,15 @@
+# Changelog - template-parts
+## [1.0.0] - 2026-08-18
+### Added
+- content.php - نمایش آیتم در حلقه/آرشیو
+- content-single.php - نمایش کامل نوشته
+- content-page.php - نمایش برگه
+- content-search.php - نمایش نتیجه جستجو
+- content-none.php - نمایش پیام یافت نشد
+### Changed
+- همه فایل‌ها از ابتدا با استانداردهای Quantum Pedia ساخته شدند
+### Fixed
+- (این نسخه اولین نسخه است)
+
+## [Unreleased]
+- تغییرات آینده اینجا ثبت شود

@@ -1,0 +1,43 @@
+/* Local fonts for Quantum Pedia */
+
+/* فارسی - Vazir (نمونه) */
+@font-face {
+	font-family: 'Vazir';
+	src: url('../fonts/fa/Vazir.woff2') format('woff2'),
+	     url('../fonts/fa/Vazir.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vazir';
+	src: url('../fonts/fa/Vazir-Bold.woff2') format('woff2'),
+	     url('../fonts/fa/Vazir-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* انگلیسی - Roboto (نمونه) */
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/en/Roboto.woff2') format('woff2'),
+	     url('../fonts/en/Roboto.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/en/Roboto-Bold.woff2') format('woff2'),
+	     url('../fonts/en/Roboto-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: 'Vazir', 'Roboto', sans-serif;
+}

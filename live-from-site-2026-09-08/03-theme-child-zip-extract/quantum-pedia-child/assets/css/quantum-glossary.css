@@ -1,0 +1,76 @@
+:root{
+    --quantum-primary:#00d4ff;
+    --quantum-accent:#7fffd4;
+    --quantum-bg:rgba(12,16,28,.96);
+    --quantum-term:#1E3A8A;
+}
+
+/* اصطلاح گلاسری: آبی، بولد، داخل کادر مستطیلی با خط‌چین ریزِ نزدیک به هم */
+.quantum-glossary-term{
+    color:var(--quantum-term);
+    font-weight:700;
+    text-decoration:none;
+    cursor:pointer;
+    padding:1px 6px;
+    margin:0 2px;
+    border-radius:6px;
+    /* کادر خط‌چین با کنترل کامل فاصلهٔ خط‌چین‌ها (ریز و نزدیک به هم) */
+    background-image:
+        repeating-linear-gradient(0deg,   var(--quantum-term) 0 4px, transparent 4px 7px),
+        repeating-linear-gradient(90deg,  var(--quantum-term) 0 4px, transparent 4px 7px),
+        repeating-linear-gradient(0deg,   var(--quantum-term) 0 4px, transparent 4px 7px),
+        repeating-linear-gradient(90deg,  var(--quantum-term) 0 4px, transparent 4px 7px);
+    background-size:1.5px 100%, 100% 1.5px, 1.5px 100%, 100% 1.5px;
+    background-position:0 0, 0 0, 100% 0, 0 100%;
+    background-repeat:no-repeat;
+    /* یکپارچه‌ماندن کادر هنگام شکستن خط */
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+    transition:.25s ease;
+}
+
+/* حالت هاور: کمی روشن‌تر و پس‌زمینهٔ ملایم — بدون هالهٔ نئونی */
+.quantum-glossary-term:hover{
+    color:#2563EB;
+    background-color:rgba(37,99,235,.06);
+}
+
+.quantum-glossary-tooltip{
+    position:fixed;
+    z-index:999999;
+    max-width:340px;
+    width:max-content;
+    direction:rtl;
+    text-align:right;
+    color:#fff;
+    background:var(--quantum-bg);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(0,212,255,.22);
+    border-radius:18px;
+    padding:16px 18px;
+    line-height:1.9;
+    font-size:.95rem;
+    box-shadow:
+        0 12px 45px rgba(0,0,0,.35),
+        0 0 25px rgba(0,212,255,.12);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:
+        opacity .22s ease,
+        transform .22s ease;
+}
+
+.quantum-glossary-tooltip.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+    .quantum-glossary-tooltip{
+        max-width:260px;
+        font-size:.88rem;
+        padding:14px;
+    }
+}
