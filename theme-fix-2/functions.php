@@ -13,7 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front6' );
+define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front6b' );
+
+/*
+ * Notice: ob_end_flush() Failed to send buffer of zlib output compression
+ * هسته روی shutdown همهٔ بافرها را می‌بندد؛ zlib از قبل یکی دارد.
+ * wp-includes را دست نزن — فقط این هوک برداشته می‌شود.
+ */
+if ( function_exists( 'remove_action' ) ) {
+	remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
+}
 
 /**
  * بارگذاری textdomain پوستهٔ فرزند — رفع خطای Doing it Wrong (ترجمهٔ زودهنگام)

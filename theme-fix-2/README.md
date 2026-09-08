@@ -6,4 +6,4 @@
 - استایل برند داخل `functions.php` است؛ فایل CSS جدا روی سرور نگذارید
 - تنظیمات خانه در منوی پیشخوان **صفحهٔ نخست**
 
-نسخه: `QPEDIA_CHILD_VERSION` = `2026.09.08-front6`
+نسخه: `QPEDIA_CHILD_VERSION` = `2026.09.08-front6b`

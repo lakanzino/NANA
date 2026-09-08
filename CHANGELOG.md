@@ -15,6 +15,13 @@
 
 ---
 
+## 🐛 [2026-09-08] نسخهٔ ۶ب — Notice فشرده‌سازی zlib
+
+`ob_end_flush(): Failed to send buffer of zlib output compression` از هسته است (`wp-includes/functions.php` خط ۵۵۸۱)، نه از قالب.
+هوک `wp_ob_end_flush_all` روی shutdown در پوستهٔ فرزند برداشته شد. فایل هسته دست نخورده.
+
+---
+
 ## 🛠️ [2026-09-08] نسخهٔ ۶ — CSS برند داخل functions.php
 
 متن خام `qpedia-brand.css` روی صفحهٔ نخست چاپ می‌شد چون فایل CSS جای `front-page.php` رفته بود.
