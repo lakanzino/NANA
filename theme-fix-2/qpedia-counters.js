@@ -36,6 +36,11 @@
 		return;
 	}
 
+	var duration = parseInt( box.getAttribute( 'data-qp-duration' ), 10 );
+	if ( isNaN( duration ) || duration < 200 ) {
+		duration = 1100;
+	}
+
 	function run( el ) {
 		var target = parseInt( el.getAttribute( 'data-qp-count' ), 10 );
 
@@ -43,7 +48,6 @@
 			return;
 		}
 
-		var duration = 1100; // میلی‌ثانیه
 		var start = null;
 
 		el.textContent = toFa( 0 );

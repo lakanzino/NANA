@@ -15,6 +15,16 @@
 
 ---
 
+## 🎨 [2026-09-08] صفحهٔ نخست از پیشخوان — نسخهٔ ۴
+
+همهٔ کنترل‌های خانه به منوی وردپرس **صفحهٔ نخست** منتقل شد (`option`: `qpedia_front`، قابلیت `edit_theme_options`). پیش‌فرض‌ها = متن‌های سخت‌کد نسخهٔ ۳.
+
+فایل جدید: `theme-fix-2/inc/front-settings.php`. جایگزینی: `functions.php` (`2026.09.08-front4`)، `front-page.php`، `header.php`، `footer.php`، `qpedia-counters.js` (`data-qp-duration`).
+
+تحویل فقط GitHub `raw/` روی شاخهٔ `arena/01a07c22-nana`.
+
+---
+
 ## 🧬 [2026-09-07] بستهٔ ۳۲ — بیست زندگی‌نامهٔ نسل دوم + ستون اینشتین
 
 اسلاگ زنده `albert-einstein` حفظ شد. ستون اینشتین به ۲۸ صفحهٔ دانشمند لینک می‌دهد. افزونهٔ تجمیعی: `qpedia-sci-32.zip`.

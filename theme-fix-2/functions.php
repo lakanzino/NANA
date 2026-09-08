@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'QPEDIA_CHILD_VERSION', '2026.08.30-ui3' );
+define( 'QPEDIA_CHILD_VERSION', '2026.09.08-front4' );
 
 /**
  * بارگذاری textdomain پوستهٔ فرزند — رفع خطای Doing it Wrong (ترجمهٔ زودهنگام)
@@ -314,7 +314,7 @@ function qpedia_child_maybe_flush_rewrites() {
 		return;
 	}
 
-	$version = 'qpedia-lite-2026-09-06-front3';
+	$version = 'qpedia-lite-2026-09-08-front4';
 
 	if ( get_option( 'qpedia_child_rewrite_version' ) !== $version ) {
 		flush_rewrite_rules();
@@ -481,6 +481,11 @@ require_once get_stylesheet_directory() . '/inc/glossary-post-type.php';
 require_once get_stylesheet_directory() . '/inc/glossary-assets.php';
 require_once get_stylesheet_directory() . '/inc/glossary-cache.php';
 require_once get_stylesheet_directory() . '/inc/glossary-content.php';
+
+$qp_front_settings = get_stylesheet_directory() . '/inc/front-settings.php';
+if ( is_readable( $qp_front_settings ) ) {
+	require_once $qp_front_settings;
+}
 
 /* حذف شد: پیام دیباگ unfiltered_html در پیشخوان. کارش تمام شده بود. */
 

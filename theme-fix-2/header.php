@@ -46,6 +46,19 @@ if ( ! is_wp_error( $qpedia_header_categories ) && ! empty( $qpedia_header_categ
 		}
 	);
 }
+
+$qp_header_title = 'کوانتوم پدیا فارسی';
+$qp_header_desc  = 'دانشنامهٔ فارسی فیزیک کوانتوم';
+if ( function_exists( 'qpedia_front_get' ) ) {
+	$qp_ht = (string) qpedia_front_get( 'header_title' );
+	$qp_hd = (string) qpedia_front_get( 'header_desc' );
+	if ( '' !== $qp_ht ) {
+		$qp_header_title = $qp_ht;
+	}
+	if ( '' !== $qp_hd ) {
+		$qp_header_desc = $qp_hd;
+	}
+}
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -63,8 +76,8 @@ if ( ! is_wp_error( $qpedia_header_categories ) && ! empty( $qpedia_header_categ
 		<div class="qp-global-header__brand">
 			<a class="qp-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<span class="qp-brand__text">
-					<span class="qp-brand__title">کوانتوم پدیا فارسی</span>
-					<span class="qp-brand__desc">دانشنامهٔ فارسی فیزیک کوانتوم</span>
+					<span class="qp-brand__title"><?php echo esc_html( $qp_header_title ); ?></span>
+					<span class="qp-brand__desc"><?php echo esc_html( $qp_header_desc ); ?></span>
 				</span>
 			</a>
 		</div>
