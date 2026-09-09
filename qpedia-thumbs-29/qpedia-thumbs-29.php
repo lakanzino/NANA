@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: QPedia Thumbnails 29
- * Description: ده تصویر شاخص نسخهٔ سه (مقالات ایمپورتر ۲۱) را آپلود و به پیش نویس وصل می کند. متن مقاله تغییر نمی کند.
- * Version:     29.0.0
+ * Description: بیست و پنج تصویر شاخص نسخه سه را آپلود و به پیش نویس quantum_article وصل می کند. متن مقاله تغییر نمی کند. اجرای دوباره تکراری نمی سازد.
+ * Version:     29.1.0
  * Author:      QPedia
  * Text Domain: qpedia-thumbs-29
  */
@@ -32,6 +32,15 @@ function qpt29_load() {
 		return new WP_Error( 'badjson', 'ساختار JSON نامعتبر است.' );
 	}
 	return $d;
+}
+
+function qpt29_existing_attachment( $filename ) {
+	global $wpdb;
+	$id = $wpdb->get_var( $wpdb->prepare(
+		"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s ORDER BY post_id DESC LIMIT 1",
+		'%' . $wpdb->esc_like( $filename )
+	) );
+	return $id ? (int) $id : 0;
 }
 
 function qpt29_sideload( $path, $filename, $alt, $post_id, $title ) {
@@ -94,6 +103,18 @@ function qpt29_run( $dry = false ) {
 			continue;
 		}
 
+		$exist = qpt29_existing_attachment( $file );
+		if ( $exist ) {
+			if ( ! $dry ) {
+				set_post_thumbnail( $post_id, $exist );
+				if ( '' !== $alt && '' === (string) get_post_meta( $exist, '_wp_attachment_image_alt', true ) ) {
+					update_post_meta( $exist, '_wp_attachment_image_alt', $alt );
+				}
+			}
+			$log['skipped'][] = $slug . ' (فایل از قبل در رسانه است؛ دوباره آپلود نشد)';
+			continue;
+		}
+
 		$path = QPT29_DIR . 'images/' . $file;
 		if ( ! file_exists( $path ) ) {
 			$log['errors'][] = $slug . ' — فایل در بسته نیست';
@@ -120,7 +141,7 @@ function qpt29_page() {
 	if ( ! current_user_can( 'manage_options' ) ) { return; }
 
 	echo '<div class="wrap" dir="rtl"><h1>QPedia Thumbnails 29</h1>';
-	echo '<p>ده تصویر شاخص نسخهٔ سه را آپلود می کند، متن جایگزین فارسی می نویسد و به مقالهٔ هم نام وصل می کند. محتوای مقاله تغییر نمی کند. اگر تصویر شاخص از قبل باشد رد می شود.</p>';
+	echo '<p>بیست و پنج تصویر شاخص نسخه سه را آپلود می کند، متن جایگزین فارسی می نویسد و به مقاله هم نام وصل می کند. محتوای مقاله تغییر نمی کند. اگر تصویر شاخص یا همان فایل در رسانه باشد رد می شود و دوباره آپلود نمی شود.</p>';
 
 	$data = qpt29_load();
 	if ( is_wp_error( $data ) ) {
@@ -146,7 +167,7 @@ function qpt29_page() {
 				. '</strong></p></div>';
 			foreach ( array(
 				'done'    => array( 'انجام شده', '#1d7a4a' ),
-				'skipped' => array( 'رد شد', '#8a6d00' ),
+				'skipped' => array( 'رد شد / تکراری نبود', '#8a6d00' ),
 				'missing' => array( 'اسلاگ پیدا نشد', '#b32d2e' ),
 				'errors'  => array( 'خطا', '#b32d2e' ),
 			) as $k => $m ) {
