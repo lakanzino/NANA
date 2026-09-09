@@ -15,6 +15,40 @@
 
 ---
 
+## 🎨 [2026-09-09] دستورالعمل تصویر شاخص مقالات + بستهٔ thumbs-29 (ده تصویر اول)
+
+مالک سبک نسخهٔ دو را برای مقالات تازه تأیید کرد («دقیقا همینه») و خواست پرامپت
+و دستورالعمل اجرایی ثبت شود تا تولید بعدی همان مدل را بدهد.
+
+### سند الزام‌آور
+`دستورالعمل-تصویر-شاخص-مقالات.md` — چیدمان سه‌لایه (انگلیسی PHASE-مانند → خط
+اسکن نئونی → فارسی ۲–۳ کلمه‌ای یکان)، زمینه `#f4f3ef`، دیاگرام فقط حاشیه،
+خروجی WebP ۹۰۰×۴۵۰، alt طبق Google Search Central.
+بخش ۱۲ `دستورالعمل-مقاله-نویسی-QPedia.md` به همین سند ارجاع شد.
+
+دانشمندان عمداً خارج از این قالب‌اند.
+
+### بستهٔ ۲۹ — ده تصویر اول از ۲۵ مقالهٔ ایمپورتر ۲۱
+افزونهٔ `qpedia-thumbs-29` تصاویر را به پیش‌نویس `quantum_article` وصل می‌کند.
+اسلاگ ناموجود یا دارای تصویر شاخص رد می‌شود. پست جدید ساخته نمی‌شود.
+
+| اسلاگ | انگلیسی | فارسی |
+|---|---|---|
+| `gluon-w-z-bosons` | GLUON | چسب هسته |
+| `muon-and-tau` | MUON TAU | میون و تاو |
+| `proton-neutron-quark-structure` | QUARK | ساختار کوارکی |
+| `mitochondria-proton-tunneling` | TUNNELING | تونل میتوکندری |
+| `quantum-long-term-memory` | MEMORY | حافظه کوانتومی |
+| `dna-repair-enzymes` | DNA REPAIR | ترمیم DNA |
+| `nobel-physics-2012` | NOBEL 2012 | نوبل ۲۰۱۲ |
+| `nobel-physics-2022` | NOBEL 2022 | نوبل ۲۰۲۲ |
+| `loophole-free-bell-test` | BELL TEST | بل بدون حفره |
+| `wheeler-delayed-choice` | DELAYED CHOICE | انتخاب تأخیری |
+
+تحویل: `qpedia-thumbs-29.zip` — لینک GitHub raw/.
+
+---
+
 ## 🐛 [2026-09-08] نسخهٔ ۶ب — Notice فشرده‌سازی zlib
 
 `ob_end_flush(): Failed to send buffer of zlib output compression` از هسته است (`wp-includes/functions.php` خط ۵۵۸۱)، نه از قالب.
