@@ -15,6 +15,29 @@
 
 ---
 
+## 🎨 [2026-09-09] دستورالعمل تصویر دانشمندان + بستهٔ thumbs-30 (هفت کاور sci-33)
+
+نمونهٔ ماکس پلانک تأیید شد. قاعده: مربع = نیم‌چهرهٔ سیاه‌وسفید + کادر رنگی نام؛
+ماسک رنگ فقط روی همان نیمه؛ نیمهٔ دیگر بدون هیچ لکهٔ رنگی.
+سند: `دستورالعمل-تصویر-شاخص-دانشمندان.md`. بخش ۲۲.۱ به‌روز شد.
+
+افزونهٔ `qpedia-thumbs-30` هفت کاور را به پیش‌نویس `quantum_scientist` وصل می‌کند.
+اسلاگ ناموجود یا دارای تصویر شاخص رد می‌شود. اجرای دوباره تکراری نمی‌سازد.
+
+| اسلاگ | نام روی کادر |
+|---|---|
+| `john-clarke` | JOHN CLARKE |
+| `michel-devoret` | MICHEL DEVORET |
+| `john-martinis` | JOHN MARTINIS |
+| `david-wineland` | DAVID WINELAND |
+| `serge-haroche` | SERGE HAROCHE |
+| `yakir-aharonov` | YAKIR AHARONOV |
+| `roger-penrose` | ROGER PENROSE |
+
+تحویل: `qpedia-thumbs-30.zip`
+
+---
+
 ## 🎨 [2026-09-09] بستهٔ thumbs-29 کامل — ۲۵ تصویر شاخص مقالات ایمپورتر ۲۱
 
 افزونهٔ `qpedia-thumbs-29` نسخهٔ ۲۹.۱ هر ۲۵ پیش‌نویس `quantum_article` را پوشش می‌دهد.
