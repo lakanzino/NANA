@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "batch": "fundamentals-batch-01-fa",
+  "description": "دو مقاله بنیادی با تصاویر آموزشی فارسی و لوگوی qpedia.ir گوشه - کوانتوم یعنی چه و دوگانگی موج و ذره",
+  "items": [
+    {
+      "slug": "what-is-quantum",
+      "title": "کوانتوم یعنی چه؟",
+      "file": "what-is-quantum.html",
+      "category": "core-concepts",
+      "excerpt": "نور پیوسته به نظر می رسد اما از بسته های کوچک انرژی ساخته شده. این مقاله چیستی کوانتوم را با دیاگرام مقیاس و نقشه ذهنی فارسی به زبان ساده توضیح می دهد.",
+      "images": [
+        "what-is-quantum-scale-01.webp",
+        "what-is-quantum-classical-vs-quantum-02.webp",
+        "what-is-quantum-mindmap-03.webp"
+      ]
+    },
+    {
+      "slug": "wave-particle-duality",
+      "title": "دوگانگی موج و ذره",
+      "file": "wave-particle-duality.html",
+      "category": "core-concepts",
+      "excerpt": "نور هم موج است هم ذره؟ آزمایش دو شکاف با الکترون تکی چطور این دوگانگی را ثابت کرد؟ با 4 دیاگرام فارسی و قیاس بازار تبریز.",
+      "images": [
+        "wave-particle-duality-diagram-01.webp",
+        "wave-particle-duality-double-slit-02.webp",
+        "wave-particle-duality-graph-03.webp",
+        "wave-particle-duality-bazaar-04.webp"
+      ]
+    }
+  ]
+}
