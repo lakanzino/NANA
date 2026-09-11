@@ -2,8 +2,9 @@
 
 دستورالعمل اجرایی + کل پیش‌نویس کتاب الف.
 
-- **دانلود واقعی روی موبایل (ZIP):** [`saber-kon-chi.zip`](saber-kon-chi.zip) — باز کنید؛ داخلش HTML است
-- **کتاب کامل HTML:** [`complete-book.html`](complete-book.html) — پیشگفتار + هر ۲۳ فصل
+- **دانلود PDF:** [`complete-book.pdf`](complete-book.pdf) — پیشگفتار + هر ۲۳ فصل
+- **دانلود ZIP (PDF+HTML+MD):** [`saber-kon-chi.zip`](saber-kon-chi.zip)
+- **کتاب کامل HTML:** [`complete-book.html`](complete-book.html)
 - **همان کتاب یک‌تکه (Markdown):** [`complete-book.md`](complete-book.md)
 - **نسخهٔ جاری qbook (دانلود):** [`qbook.md`](qbook.md) — الان **۱٫۲۴٫۰**
 - **همین فایل در ریشهٔ ریپو:** [`/qbook.md`](../qbook.md)
