@@ -2,7 +2,9 @@
 
 دستورالعمل اجرایی + کل پیش‌نویس کتاب الف.
 
-- **نسخهٔ جاری (دانلود):** [`qbook.md`](qbook.md) — الان **۱٫۲۴٫۰**
+- **کتاب کامل برای خواندن/دانلود (HTML، راست‌به‌چپ):** [`complete-book.html`](complete-book.html) — پیشگفتار + هر ۲۳ فصل
+- **همان کتاب یک‌تکه (Markdown):** [`complete-book.md`](complete-book.md)
+- **نسخهٔ جاری qbook (دانلود):** [`qbook.md`](qbook.md) — الان **۱٫۲۴٫۰**
 - **همین فایل در ریشهٔ ریپو:** [`/qbook.md`](../qbook.md)
 - **بایگانی:**
   - [`versions/qbook-v1.0.0-1405-06-21.md`](versions/qbook-v1.0.0-1405-06-21.md)
