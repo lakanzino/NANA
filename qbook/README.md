@@ -6,7 +6,7 @@
 - **دانلود ZIP (PDF+HTML+MD):** [`saber-kon-chi.zip`](saber-kon-chi.zip)
 - **کتاب کامل HTML:** [`complete-book.html`](complete-book.html)
 - **همان کتاب یک‌تکه (Markdown):** [`complete-book.md`](complete-book.md)
-- **نسخهٔ جاری qbook (دانلود):** [`qbook.md`](qbook.md) — الان **۱٫۲۴٫۰**
+- **نسخهٔ جاری qbook (دانلود):** [`qbook.md`](qbook.md) — الان **۱٫۲۵٫۰**
 - **همین فایل در ریشهٔ ریپو:** [`/qbook.md`](../qbook.md)
 - **بایگانی:**
   - [`versions/qbook-v1.0.0-1405-06-21.md`](versions/qbook-v1.0.0-1405-06-21.md)
@@ -34,6 +34,7 @@
   - [`versions/qbook-v1.22.0-1405-06-21.md`](versions/qbook-v1.22.0-1405-06-21.md)
   - [`versions/qbook-v1.23.0-1405-06-21.md`](versions/qbook-v1.23.0-1405-06-21.md)
   - [`versions/qbook-v1.24.0-1405-06-21.md`](versions/qbook-v1.24.0-1405-06-21.md)
+  - [`versions/qbook-v1.25.0-1405-06-21.md`](versions/qbook-v1.25.0-1405-06-21.md)
 
 اگر گفتید «qbook را بیاور»، فایل جاری باز می‌شود.
 
