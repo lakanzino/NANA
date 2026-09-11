@@ -1,0 +1,498 @@
+[
+  {
+    "id": "236",
+    "title": "آرتور کامپتون؛ برخوردی که نور را ذره کرد",
+    "slug": "arthur-compton",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/arthur-compton/",
+    "date": "2026-08-21 06:12:31"
+  },
+  {
+    "id": "235",
+    "title": "آرنولد زومرفلد؛ استادی که اتم بور را دقیق‌تر کرد",
+    "slug": "arnold-sommerfeld",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/arnold-sommerfeld/",
+    "date": "2026-08-21 06:11:39"
+  },
+  {
+    "id": "2060",
+    "title": "آلبرت اینشتین؛ نوبل برای نور، نه نسبیت",
+    "slug": "albert-einstein",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/albert-einstein/",
+    "date": "2026-09-02 14:20:02"
+  },
+  {
+    "id": "233",
+    "title": "آلن اسپه؛ آزمایش‌های بل و بستن گریزگاه موضعیت",
+    "slug": "alain-aspect",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/alain-aspect/",
+    "date": "2026-08-21 06:08:59"
+  },
+  {
+    "id": "234",
+    "title": "آنتون زایلینگر؛ تله‌پورت کوانتومی و آزمایش‌های درهم‌تنیدگی",
+    "slug": "anton-zeilinger",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/anton-zeilinger/",
+    "date": "2026-08-21 06:10:40"
+  },
+  {
+    "id": "2353",
+    "title": "آکیرا تونومورا؛ الکترون‌ها یکی‌یکی",
+    "slug": "akira-tonomura",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/akira-tonomura/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "322",
+    "title": "آیزاک نیوتن؛ مکانیکی که محدود بود نه غلط",
+    "slug": "isaac-newton",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/isaac-newton/",
+    "date": "2026-08-23 06:37:42"
+  },
+  {
+    "id": "2347",
+    "title": "اتو اشترن؛ آزمایشی که اسپین را عینی کرد",
+    "slug": "otto-stern",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/otto-stern/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "2344",
+    "title": "ارنست رادرفورد؛ کاشف هستهٔ اتم",
+    "slug": "ernest-rutherford",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/ernest-rutherford/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "2328",
+    "title": "اروین شرودینگر؛ مردی که جهان را موج کرد",
+    "slug": "erwin-schrodinger",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/erwin-schrodinger/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "2357",
+    "title": "امی نوتر؛ زنی که تقارن را ترجمه کرد",
+    "slug": "emmy-noether",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/emmy-noether/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "240",
+    "title": "انریکو فرمی؛ معمار نخستین واکنش زنجیره‌ای هسته‌ای",
+    "slug": "enrico-fermi",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/enrico-fermi/",
+    "date": "2026-08-21 06:16:38"
+  },
+  {
+    "id": "2352",
+    "title": "برایان جوزفسون؛ پیش‌بینی در ۲۲سالگی",
+    "slug": "brian-josephson",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/brian-josephson/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "274",
+    "title": "جان بل؛ فیزیک‌دانی که درهم‌تنیدگی کوانتومی را آزمون‌پذیر کرد",
+    "slug": "john-bell",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/john-bell/",
+    "date": "2026-08-23 06:38:24"
+  },
+  {
+    "id": "2342",
+    "title": "جان فون‌نویمان؛ مغزی که کوانتوم را بنیان نوشت",
+    "slug": "john-von-neumann",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/john-von-neumann/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "2339",
+    "title": "جان ویلر؛ مردی که سیاه‌چاله را نام گذاشت",
+    "slug": "john-wheeler",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/john-wheeler/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "2767",
+    "title": "جان کلارک؛ مداری که مثل اتم تونل زد",
+    "slug": "john-clarke",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/john-clarke/",
+    "date": "2026-09-09 16:21:31"
+  },
+  {
+    "id": "2341",
+    "title": "جان کلاوزر؛ آزمایشگری که به حاشیه گوش نداد",
+    "slug": "john-clauser",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/john-clauser/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "2337",
+    "title": "جرج گاموف؛ از تونل‌زنی تا مهبانگ",
+    "slug": "george-gamow",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/george-gamow/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "2333",
+    "title": "جولیان شوینگر؛ مهارکنندهٔ بی‌نهایت‌ها",
+    "slug": "julian-schwinger",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/julian-schwinger/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "2354",
+    "title": "جیمز کلرک ماکسول؛ مرد چهار معادله",
+    "slug": "james-clerk-maxwell",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/james-clerk-maxwell/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "231",
+    "title": "دیوید بوهم؛ بازگشت متغیر پنهان",
+    "slug": "david-bohm",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/david-bohm/",
+    "date": "2026-08-21 05:49:21"
+  },
+  {
+    "id": "238",
+    "title": "دیوید دویچ؛ از تعریف فیزیکی محاسبه تا ماشین کوانتومی",
+    "slug": "david-deutsch",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/david-deutsch/",
+    "date": "2026-08-21 06:14:38"
+  },
+  {
+    "id": "239",
+    "title": "دیوید هیلبرت؛ ریاضی‌دانی که زبان فیزیک کوانتومی را فراهم کرد",
+    "slug": "david-hilbert",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/david-hilbert/",
+    "date": "2026-08-21 06:15:33"
+  },
+  {
+    "id": "2345",
+    "title": "رابرت میلیکان؛ وزن کردن بار الکترون",
+    "slug": "robert-millikan",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/robert-millikan/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "2332",
+    "title": "ریچارد فاینمن؛ مردی که کوانتوم را به تصویر کشید",
+    "slug": "richard-feynman",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/richard-feynman/",
+    "date": "2026-09-04 23:04:52"
+  },
+  {
+    "id": "271",
+    "title": "ساتیندرا بوز؛ نامه‌ای از داکا که مفهوم ذره را دگرگون کرد",
+    "slug": "satyendra-bose",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/satyendra-bose/",
+    "date": "2026-08-23 06:46:53"
+  },
+  {
+    "id": "2771",
+    "title": "سرژ آروش؛ فوتونی در قفس که نمرد",
+    "slug": "serge-haroche",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/serge-haroche/",
+    "date": "2026-09-10 16:20:31"
+  },
+  {
+    "id": "2334",
+    "title": "سین-ایتیرو توموناگا؛ نابغهٔ تنها در جنگ",
+    "slug": "sin-itiro-tomonaga",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/sin-itiro-tomonaga/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "272",
+    "title": "فریمن دایسون؛ پلی که سه زبان الکترودینامیک کوانتومی را یکی کرد",
+    "slug": "freeman-dyson",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/freeman-dyson/",
+    "date": "2026-08-23 06:38:34"
+  },
+  {
+    "id": "2349",
+    "title": "لئو اساکی؛ دیودی که از دیوار عبور کرد",
+    "slug": "leo-esaki",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/leo-esaki/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "2338",
+    "title": "لو لاندائو؛ نابغه‌ای که سانحه خاموشش کرد",
+    "slug": "lev-landau",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/lev-landau/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "2355",
+    "title": "لودویگ بولتزمن؛ شمارندهٔ بی‌نظمی",
+    "slug": "ludwig-boltzmann",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/ludwig-boltzmann/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "2327",
+    "title": "لویی دوبروی؛ شاهزاده‌ای که الکترون را موج کرد",
+    "slug": "louis-de-broglie",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/louis-de-broglie/",
+    "date": "2026-09-01 23:04:52"
+  },
+  {
+    "id": "2358",
+    "title": "لیزه مایتنر؛ مادر شکافت هسته‌ای",
+    "slug": "lise-meitner",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/lise-meitner/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "2356",
+    "title": "ماری کوری؛ دو نوبل، یک زندگی",
+    "slug": "marie-curie",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/marie-curie/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "2330",
+    "title": "ماکس بورن؛ مترجم احتمال در کوانتوم",
+    "slug": "max-born",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/max-born/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "265",
+    "title": "ماکس پلانک؛ انقلابی محافظه‌کار در قلب فیزیک",
+    "slug": "max-planck",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/max-planck/",
+    "date": "2026-08-23 06:36:35"
+  },
+  {
+    "id": "2768",
+    "title": "میشل دووره؛ مدار را اتم مصنوعی کرد",
+    "slug": "michel-devoret",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/michel-devoret/",
+    "date": "2026-09-10 07:28:56"
+  },
+  {
+    "id": "266",
+    "title": "نیلز بور؛ معماری که زبان دنیای اتمی را ساخت",
+    "slug": "niels-bohr",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/niels-bohr/",
+    "date": "2026-08-23 06:37:24"
+  },
+  {
+    "id": "2336",
+    "title": "هانس بته؛ مردی که راز خورشید را گشود",
+    "slug": "hans-bethe",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/hans-bethe/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "2331",
+    "title": "هانس کرامرس؛ نابغهٔ گمنام مکانیک کوانتومی",
+    "slug": "hendrik-kramers",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/hendrik-kramers/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "2351",
+    "title": "هاینریش روهرر؛ دیدن اتم‌ها با لمس",
+    "slug": "heinrich-rohrer",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/heinrich-rohrer/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "270",
+    "title": "هرمان وایل؛ ریاضی‌دانی که تقارن را زبان فیزیک کرد",
+    "slug": "hermann-weyl",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/hermann-weyl/",
+    "date": "2026-08-23 06:47:03"
+  },
+  {
+    "id": "273",
+    "title": "هیدکی یوکاوا؛ فیزیک‌دانی که ذره‌ای نادیده را برای پیوند هسته اتم پیش‌بینی کرد",
+    "slug": "hideki-yukawa",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/hideki-yukawa/",
+    "date": "2026-08-23 06:46:45"
+  },
+  {
+    "id": "275",
+    "title": "هیو اورت؛ فیزیک‌دانی که با حذف فروریزش، جهان‌های چندگانه را پیش نهاد",
+    "slug": "hugh-everett",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/hugh-everett/",
+    "date": "2026-08-23 06:35:44"
+  },
+  {
+    "id": "2348",
+    "title": "والتر گرلاخ؛ دستانی که اسپین را دیدند",
+    "slug": "walther-gerlach",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/walther-gerlach/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "2329",
+    "title": "ورنر هایزنبرگ؛ جوانی که عدم قطعیت را کشف کرد",
+    "slug": "werner-heisenberg",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/werner-heisenberg/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "268",
+    "title": "ولفگانگ پاولی؛ ذهنی تیز که به طبیعت نظم داد",
+    "slug": "wolfgang-pauli",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/wolfgang-pauli/",
+    "date": "2026-08-23 06:38:07"
+  },
+  {
+    "id": "2340",
+    "title": "وویچیخ زورک؛ توضیح‌دهندهٔ دنیای کلاسیک",
+    "slug": "wojciech-zurek",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/wojciech-zurek/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "269",
+    "title": "پاسکوال یوردان؛ ریاضی‌دانی که در سایه ماند اما پایه‌ها را ساخت",
+    "slug": "pascual-jordan",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/pascual-jordan/",
+    "date": "2026-08-29 17:54:02"
+  },
+  {
+    "id": "2343",
+    "title": "پل اهرنفست؛ پلی که زیر پای خودش شکست",
+    "slug": "paul-ehrenfest",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/paul-ehrenfest/",
+    "date": "2026-09-04 23:04:23"
+  },
+  {
+    "id": "267",
+    "title": "پل دیراک؛ سکوت، ریاضیات و پیش‌بینی پادماده",
+    "slug": "paul-dirac",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/paul-dirac/",
+    "date": "2026-08-23 06:37:56"
+  },
+  {
+    "id": "242",
+    "title": "پیتر شور؛ الگوریتمی که امنیت رمزنگاری کلاسیک را از بنیان به پرسش کشید",
+    "slug": "peter-shor",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/peter-shor/",
+    "date": "2026-08-21 06:53:33"
+  },
+  {
+    "id": "237",
+    "title": "چارلز ویلسون؛ رد ذرات روی ابر",
+    "slug": "charles-wilson",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/charles-wilson/",
+    "date": "2026-08-21 06:13:33"
+  },
+  {
+    "id": "2346",
+    "title": "کلینتون دیویسون؛ کشف تصادفی موج الکترون",
+    "slug": "clinton-davisson",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/clinton-davisson/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "2350",
+    "title": "گرد بینیگ؛ نخستین نگاه به اتم‌ها",
+    "slug": "gerd-binnig",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/gerd-binnig/",
+    "date": "2026-09-04 23:02:55"
+  },
+  {
+    "id": "2335",
+    "title": "یوجین ویگنر؛ زبان تقارن در فیزیک",
+    "slug": "eugene-wigner",
+    "status": "publish",
+    "url": "https://qpedia.ir/scientists/eugene-wigner/",
+    "date": "2026-09-04 23:03:46"
+  },
+  {
+    "id": "2769",
+    "title": "جان مارتینیس؛ از سن پدرو تا برتری کوانتومی",
+    "slug": "john-martinis",
+    "status": "draft",
+    "url": "https://qpedia.ir/scientists/john-martinis/",
+    "date": "2026-09-09 10:22:04"
+  },
+  {
+    "id": "2770",
+    "title": "دیوید واینلند؛ یونی که دیده شد و نمرد",
+    "slug": "david-wineland",
+    "status": "draft",
+    "url": "https://qpedia.ir/scientists/david-wineland/",
+    "date": "2026-09-09 10:22:04"
+  },
+  {
+    "id": "2773",
+    "title": "راجر پنروز؛ سیاه چاله اجبار نسبیت است",
+    "slug": "roger-penrose",
+    "status": "draft",
+    "url": "https://qpedia.ir/scientists/roger-penrose/",
+    "date": "2026-09-09 10:22:04"
+  },
+  {
+    "id": "2772",
+    "title": "یاکیر آهارونوف؛ فازی بدون میدان محلی",
+    "slug": "yakir-aharonov",
+    "status": "draft",
+    "url": "https://qpedia.ir/scientists/yakir-aharonov/",
+    "date": "2026-09-09 10:22:04"
+  }
+]
