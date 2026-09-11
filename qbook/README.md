@@ -2,7 +2,7 @@
 
 دستورالعمل اجرایی + کل پیش‌نویس کتاب الف.
 
-- **نسخهٔ جاری (دانلود):** [`qbook.md`](qbook.md) — الان **۱٫۹٫۰**
+- **نسخهٔ جاری (دانلود):** [`qbook.md`](qbook.md) — الان **۱٫۱۰٫۰**
 - **همین فایل در ریشهٔ ریپو:** [`/qbook.md`](../qbook.md)
 - **بایگانی:**
   - [`versions/qbook-v1.0.0-1405-06-21.md`](versions/qbook-v1.0.0-1405-06-21.md)
@@ -15,6 +15,7 @@
   - [`versions/qbook-v1.7.0-1405-06-21.md`](versions/qbook-v1.7.0-1405-06-21.md)
   - [`versions/qbook-v1.8.0-1405-06-21.md`](versions/qbook-v1.8.0-1405-06-21.md)
   - [`versions/qbook-v1.9.0-1405-06-21.md`](versions/qbook-v1.9.0-1405-06-21.md)
+  - [`versions/qbook-v1.10.0-1405-06-21.md`](versions/qbook-v1.10.0-1405-06-21.md)
 
 اگر گفتید «qbook را بیاور»، فایل جاری باز می‌شود.
 
