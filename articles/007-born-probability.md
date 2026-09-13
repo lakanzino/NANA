@@ -58,8 +58,8 @@ sources:
 
 <h2>منابع</h2>
 <ol>
-<li>Born, M. (1926). «Zur Quantenmechanik der Stoßvorgänge». <em>Zeitschrift für Physik</em> 37, 863–867. — مقاله اصلی که قاعده احتمال در آن معرفی شد.</li>
-<li>جایزه نوبل فیزیک ۱۹۵۴ — ماکس بورن: «for his fundamental research in quantum mechanics, especially for his statistical interpretation of the wavefunction». https://www.nobelprize.org/prizes/physics/1954/summary/</li>
-<li>Born, M. & Oppenheimer, R. (1927). «Zur Quantentheorie der Molekeln». <em>Annalen der Physik</em> 389(20), 457–484. — تقریب بورن-اوپنهایمر که شیمی محاسباتی بر آن بناست.</li>
-<li>صفحه دانشمند: <a href="https://qpedia.ir/scientists/max-born/">ماکس بورن</a>؛ مقالات مرتبط: <a href="https://qpedia.ir/quantum_article/wave-function/">تابع موج چیست</a>، <a href="https://qpedia.ir/quantum_article/quantum-measurement/">اندازه گیری و فروپاشی</a>.</li>
+<li>Born, M. (1926). «Zur Quantenmechanik der Stoßvorgänge». <em>Zeitschrift für Physik</em> 37, 863–867. — <a href="https://doi.org/10.1007/BF01397477" target="_blank" rel="noopener">DOI 10.1007/BF01397477</a>.</li>
+<li>جایزه نوبل فیزیک ۱۹۵۴ — Max Born: «for his fundamental research in quantum mechanics, especially for his statistical interpretation of the wavefunction». — <a href="https://www.nobelprize.org/prizes/physics/1954/born/facts/" target="_blank" rel="noopener">NobelPrize.org: Facts on Max Born</a>.</li>
+<li>Born, M. &amp; Oppenheimer, R. (1927). «Zur Quantentheorie der Molekeln». <em>Annalen der Physik</em> 389(20), 457–484. — <a href="https://doi.org/10.1002/andp.19273892002" target="_blank" rel="noopener">DOI 10.1002/andp.19273892002</a>.</li>
+<li>صفحهٔ دانشمند: <a href="/scientists/max-born/">ماکس بورن</a>؛ مقالات مرتبط: <strong>تابع موج چیست</strong> و <strong>اندازه گیری و فروپاشی</strong> (در دست انتشار در همین سری).</li>
 </ol>

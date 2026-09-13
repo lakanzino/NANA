@@ -53,8 +53,8 @@ sources:
 
 <h2>منابع</h2>
 <ol>
-<li>Cassidy, D. C. (1992). <em>Uncertainty: The Life and Science of Werner Heisenberg</em>. W. H. Freeman. — زندگی نامه مرجع با اسناد بایگانی.</li>
-<li>Bernstein, J. (2001). <em>Hitler's Uranium Club: The Secret Recordings at Farm Hall</em> (2nd ed.). Copernicus/Springer. — متن کامل ترانسکریپت های شنود و تحلیل.</li>
-<li>«Transcript of Surreptitiously Taped Conversations among German Nuclear Physicists at Farm Hall (August 6–7, 1945)». <em>German History in Documents and Images (GHDI)</em>, German Historical Institute. — نسخه آنلاین بخشی از ترانسکریپت ها: https://germanhistorydocs.org/en/nazi-germany-1933-1945/transcript-of-surreptitiously-taped-conversations-among-german-nuclear-physicists-at-farm-hall-august-6-7-1945</li>
-<li>نیلز بور و هایزنبرگ، بخش «تاریخ» در مقالهٔ <a href="https://qpedia.ir/quantum_article/uncertainty-principle/">اصل عدم قطعیت هایزنبرگ</a>، و صفحه دانشمند: <a href="https://qpedia.ir/scientists/werner-heisenberg/">ورنر هایزنبرگ</a>.</li>
+<li>Cassidy, D. C. (1992). <em>Uncertainty: The Life and Science of Werner Heisenberg</em>. W. H. Freeman. — <a href="https://www.macmillan.com/books/9780716727736/uncertainty" target="_blank" rel="noopener">صفحهٔ ناشر (Macmillan)</a>.</li>
+<li>Bernstein, J. (2001). <em>Hitler's Uranium Club: The Secret Recordings at Farm Hall</em> (2nd ed.). Copernicus/Springer. — <a href="https://doi.org/10.1007/978-0-387-27045-6" target="_blank" rel="noopener">DOI 10.1007/978-0-387-27045-6</a>.</li>
+<li>«Transcript of Surreptitiously Taped Conversations among German Nuclear Physicists at Farm Hall (August 6–7, 1945)». <em>German History in Documents and Images (GHDI)</em>, German Historical Institute. — <a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/transcript-of-surreptitiously-taped-conversations-among-german-nuclear-physicists-at-farm-hall-august-6-7-1945" target="_blank" rel="noopener">متن کامل شنودها</a>.</li>
+<li>Niels Bohr Library &amp; Archives (AIP). «Werner Heisenberg — Biographical profile» و جایزه نوبل فیزیک ۱۹۳۲: «for the creation of quantum mechanics, the application of which has, inter alia, led to the discovery of the allotropic forms of hydrogen». — <a href="https://www.nobelprize.org/prizes/physics/1932/heisenberg/facts/" target="_blank" rel="noopener">NobelPrize.org: Facts on Werner Heisenberg</a>. همچنین مقالهٔ <a href="https://qpedia.ir/quantum_article/uncertainty-principle/">اصل عدم قطعیت هایزنبرگ</a> و صفحهٔ دانشمند <a href="/scientists/werner-heisenberg/">ورنر هایزنبرگ</a>.</li>
 </ol>

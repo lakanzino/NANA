@@ -58,8 +58,8 @@ sources:
 
 <h2>منابع</h2>
 <ol>
-<li>Pauli, W. (1925). «Über den Zusammenhang des Abschlusses der Elektronengruppen im Atom mit der Komplexstruktur der Spektren». <em>Zeitschrift für Physik</em> 31, 765–783. — مقاله اصلی اصل طرد.</li>
-<li>جایزه نوبل فیزیک ۱۹۴۵ — ولفگانگ پاولی: «for the discovery of the Exclusion Principle, also called the Pauli Principle». https://www.nobelprize.org/prizes/physics/1945/summary/</li>
-<li>«January 1925: Wolfgang Pauli announces the exclusion principle». <em>APS News</em>, January 2007 (American Physical Society). https://www.aps.org/publications/apsnews/200701/history.cfm</li>
-<li>صفحه دانشمند: <a href="https://qpedia.ir/scientists/wolfgang-pauli/">ولفگانگ پاولی</a>؛ مقاله مرتبط: <a href="https://qpedia.ir/quantum_article/pauli-exclusion-principle/">اصل طرد پاولی</a>.</li>
+<li>Pauli, W. (1925). «Über den Zusammenhang des Abschlusses der Elektronengruppen im Atom mit der Komplexstruktur der Spektren». <em>Zeitschrift für Physik</em> 31, 765–783. — <a href="https://doi.org/10.1007/BF02980631" target="_blank" rel="noopener">DOI 10.1007/BF02980631</a>.</li>
+<li>جایزه نوبل فیزیک ۱۹۴۵ — Wolfgang Pauli: «for the discovery of the Exclusion Principle, also called the Pauli Principle». — <a href="https://www.nobelprize.org/prizes/physics/1945/pauli/facts/" target="_blank" rel="noopener">NobelPrize.org: Facts on Wolfgang Pauli</a>.</li>
+<li>«January 1925: Wolfgang Pauli announces the exclusion principle». <em>APS News</em>, January 2007 (American Physical Society). — <a href="https://www.aps.org/publications/apsnews/200701/history.cfm" target="_blank" rel="noopener">APS News / This Month in Physics History</a>.</li>
+<li>صفحهٔ دانشمند: <a href="/scientists/wolfgang-pauli/">ولفگانگ پاولی</a>؛ مقالات مرتبط: <a href="https://qpedia.ir/quantum_article/quantum-spin/">اسپین الکترون</a>، <a href="https://qpedia.ir/quantum_article/bohr-atomic-model/">مدل اتمی بور</a>، <a href="https://qpedia.ir/quantum_article/superconductivity/">ابررسانایی</a>، اصل طرد پاولی.</li>
 </ol>

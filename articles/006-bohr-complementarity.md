@@ -60,8 +60,8 @@ sources:
 
 <h2>منابع</h2>
 <ol>
-<li>Bohr, N. (1928). «The Quantum Postulate and the Recent Development of Atomic Theory». <em>Nature</em> 121, 580–590. — متن اصلی سخنرانی کومو که اصل تکمیل برای اولین بار در آن منتشر شد: https://www.nature.com/articles/121580a0</li>
-<li>Faye, J. (2019). «Copenhagen Interpretation of Quantum Mechanics», §4 Complementarity. <em>Stanford Encyclopedia of Philosophy</em>: https://plato.stanford.edu/entries/qm-copenhagen/</li>
-<li>Pais, A. (1991). <em>Niels Bohr's Times, In Physics, Philosophy, and Polity</em>. Oxford University Press. — زندگی نامه مرجع.</li>
-<li>صفحه دانشمند <a href="https://qpedia.ir/scientists/niels-bohr/">نیلز بور</a> و مقاله مرتبط: <a href="https://qpedia.ir/quantum_article/wave-particle-duality/">دوگانگی موج و ذره</a>.</li>
+<li>Bohr, N. (1928). «The Quantum Postulate and the Recent Development of Atomic Theory». <em>Nature</em> 121, 580–590. — <a href="https://doi.org/10.1038/121580a0" target="_blank" rel="noopener">DOI 10.1038/121580a0</a>.</li>
+<li>Faye, J. &amp; Folse, H. (2019). «Copenhagen Interpretation of Quantum Mechanics», §4 Complementarity. <em>Stanford Encyclopedia of Philosophy</em>. — <a href="https://plato.stanford.edu/entries/qm-copenhagen/" target="_blank" rel="noopener">SEP: Copenhagen Interpretation</a>.</li>
+<li>Pais, A. (1991). <em>Niels Bohr's Times, In Physics, Philosophy, and Polity</em>. Oxford University Press. — <a href="https://global.oup.com/academic/product/niels-bohrs-times-9780198520498" target="_blank" rel="noopener">صفحهٔ OUP (ISBN 9780198520498)</a>.</li>
+<li>صفحهٔ دانشمند <a href="/scientists/niels-bohr/">نیلز بور</a> و مقالهٔ مرتبط: <a href="https://qpedia.ir/quantum_article/wave-particle-duality/">دوگانگی موج و ذره</a>.</li>
 </ol>
