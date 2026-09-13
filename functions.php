@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'QPEDIA_CHILD_VERSION', '2026.09.13-perf1' );
+define( 'QPEDIA_CHILD_VERSION', '2026.09.13-perf2' );
 
 /**
  * بارگذاری textdomain پوستهٔ فرزند — رفع خطای Doing it Wrong (ترجمهٔ زودهنگام)
@@ -137,16 +137,18 @@ add_action( 'wp_enqueue_scripts', 'qpedia_child_dequeue_roboto_fonts', 999 );
 add_action( 'wp_print_styles',    'qpedia_child_dequeue_roboto_fonts', 999 );
 
 /**
- * افزودن preload و preconnect به <head> برای فونت Vazirmatn.
- * مسیر فونت از گزارش لایت‌هاوس ../fonts/Vazirmatn-*.woff2 از دامنه خودِ qpedia.ir است
- * (از پوسته مادر سرو می‌شود)، preload آن را در critical path جلو می‌اندازد.
+ * افزودن preload برای فونت Vazirmatn.
+ *
+ * LiteSpeed Cache (Font Optimization) فونت‌های گوگل را لوکالایز می‌کند و
+ * در /fonts/ واقع در ریشه سایت سرو می‌کند (نه در پوشه پوسته).
+ * پیشوندِ ../fonts در زنجیره شبکه لایت‌هاوس از _css/ به /fonts/ ریشه resolve می‌شود.
  */
 function qpedia_child_preload_vazirmatn() {
-	$font_base = get_template_directory_uri() . '/fonts';
-	echo "\n<!-- Qpedia: preload critical fonts -->\n";
+	// LiteSpeed-localized font paths (site root /fonts/):
+	$font_base = home_url( '/fonts' );
+	echo "\n<!-- Qpedia: preload critical fonts (LiteSpeed-localized) -->\n";
 	echo '<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="' . esc_url( $font_base . '/Vazirmatn-Regular.woff2' ) . '">' . "\n";
 	echo '<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="' . esc_url( $font_base . '/Vazirmatn-Bold.woff2' ) . '">' . "\n";
-	// فونت‌های اضافی که لایت‌هاوس نشان می‌دهد (در صورت وجود نادیده گرفته می‌شوند)
 	echo '<link rel="dns-prefetch" href="//fonts.googleapis.com">' . "\n";
 	echo "<!-- /Qpedia preload -->\n";
 }
