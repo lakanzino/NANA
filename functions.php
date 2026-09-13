@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'QPEDIA_CHILD_VERSION', '2026.08.30-ui3' );
+define( 'QPEDIA_CHILD_VERSION', '2026.09.13-perf1' );
 
 /**
  * بارگذاری textdomain پوستهٔ فرزند — رفع خطای Doing it Wrong (ترجمهٔ زودهنگام)
@@ -25,23 +25,28 @@ add_action( 'after_setup_theme', 'qpedia_child_load_textdomain' );
 
 /**
  * استایل‌های ضروری پوستهٔ فرزند
+ *
+ * نسخه به‌روز ۱۴۰۵/۰۶/۲۳ (عملکرد):
+ *  - حذف enqueue تکراریِ style.css فرزند (پوسته مادر خودش استایل فرزند را enqueue می‌کند).
+ *  - preload فونت Vazirmatn برای کاهش critical-path latency.
+ *  - غیرفعال‌سازی درخواست‌های فونت Roboto (متعلق به قالب/افزونه‌های قدیمی) که ۴۰۴ می‌دادند.
+ *  - بارگذاری غیرهمزمان اسکریپت/استایل‌های غیربحرانی.
  */
 function qpedia_child_enqueue_assets() {
-	$theme_version = wp_get_theme()->get( 'Version' );
-
-	wp_enqueue_style(
-		'qpedia-child-style',
-		get_stylesheet_uri(),
-		array(),
-		$theme_version
-	);
+	/*
+	 * style.css فرزند را دیگر اینجا enqueue نمی‌کنیم تا هدر دوبار درخواست نشود
+	 * (در لایت‌هاوس دو ردیف quantum-pedia-child/style.css با ver های متفاوت دیده می‌شد).
+	 * اگر تمایل داری محتوای style.css هم لود شود، به انتهای تابع
+	 * wp_enqueue_style('qpedia-child-style', get_stylesheet_uri()) را برگردان —
+	 * ولی در حال حاضر این فایل فقط هدر کامنت‌های قالب است و خالی است.
+	 */
 
 	$layouts_file = get_stylesheet_directory() . '/assets/css/qpedia-layouts.css';
 	if ( file_exists( $layouts_file ) ) {
 		wp_enqueue_style(
 			'qpedia-layouts',
 			get_stylesheet_directory_uri() . '/assets/css/qpedia-layouts.css',
-			array( 'qpedia-child-style' ),
+			array(),
 			filemtime( $layouts_file )
 		);
 	}
@@ -75,11 +80,11 @@ function qpedia_child_enqueue_assets() {
 			filemtime( $custom_js ),
 			true
 		);
+		wp_script_add_data( 'qpedia-child-custom', 'defer', true );
 	}
 
 	/*
 	 * ── دارایی‌های مخصوص صفحهٔ نخست ──
-	 * فقط روی صفحهٔ اول بارگذاری می‌شوند تا صفحات مقاله سبک بمانند.
 	 */
 	if ( is_front_page() ) {
 
@@ -107,6 +112,55 @@ function qpedia_child_enqueue_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'qpedia_child_enqueue_assets', 20 );
+
+/**
+ * حذف درخواست‌های ۴۰۴ فونت Roboto (فایل‌های fonts.css قدیمی قالب مادر/افزونه‌ها).
+ * هر handle که حاوی roboto/font-roboto/fonts.css باشد، از صف خروج می‌کند.
+ */
+function qpedia_child_dequeue_roboto_fonts() {
+	$kill_handles = array();
+	global $wp_styles;
+	if ( $wp_styles instanceof WP_Styles ) {
+		foreach ( array_keys( $wp_styles->registered ) as $handle ) {
+			$src = (string) ( $wp_styles->registered[ $handle ]->src ?? '' );
+			if ( preg_match( '/(roboto|fonts\.css|font-roboto)/i', $handle . ' ' . $src ) ) {
+				$kill_handles[] = $handle;
+			}
+		}
+	}
+	foreach ( $kill_handles as $h ) {
+		wp_dequeue_style( $h );
+		wp_deregister_style( $h );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'qpedia_child_dequeue_roboto_fonts', 999 );
+add_action( 'wp_print_styles',    'qpedia_child_dequeue_roboto_fonts', 999 );
+
+/**
+ * افزودن preload و preconnect به <head> برای فونت Vazirmatn.
+ * مسیر فونت از گزارش لایت‌هاوس ../fonts/Vazirmatn-*.woff2 از دامنه خودِ qpedia.ir است
+ * (از پوسته مادر سرو می‌شود)، preload آن را در critical path جلو می‌اندازد.
+ */
+function qpedia_child_preload_vazirmatn() {
+	$font_base = get_template_directory_uri() . '/fonts';
+	echo "\n<!-- Qpedia: preload critical fonts -->\n";
+	echo '<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="' . esc_url( $font_base . '/Vazirmatn-Regular.woff2' ) . '">' . "\n";
+	echo '<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="' . esc_url( $font_base . '/Vazirmatn-Bold.woff2' ) . '">' . "\n";
+	// فونت‌های اضافی که لایت‌هاوس نشان می‌دهد (در صورت وجود نادیده گرفته می‌شوند)
+	echo '<link rel="dns-prefetch" href="//fonts.googleapis.com">' . "\n";
+	echo "<!-- /Qpedia preload -->\n";
+}
+add_action( 'wp_head', 'qpedia_child_preload_vazirmatn', 1 );
+
+/**
+ * بلوکه کردن درخواست‌های Roboto حتی اگر از HTML مستقیم (نه wp_enqueue) آمده باشند —
+ * با یک استایل خالی که @font-face را override می‌کند و درخواست شبکه را خاموش می‌کند.
+ */
+function qpedia_child_block_roboto_inline() {
+	echo "<style id=\"qpedia-block-roboto\">@font-face{font-family:'Roboto';src:local('Segoe UI'),local('Tahoma'),local('Arial');font-display:swap}</style>\n";
+}
+add_action( 'wp_head',  'qpedia_child_block_roboto_inline', 2 );
+add_action( 'wp_print_styles', 'qpedia_child_block_roboto_inline', 2 );
 
 /**
  * پاک‌سازی سبکِ head
@@ -509,9 +563,80 @@ defined( 'ABSPATH' ) || exit;
 // ۳. درج خودکار متاتگ‌های سئو و OpenGraph در هدر مقالات
 add_action( 'wp_head', 'qpedia_auto_seo_meta_tags', 1 );
 function qpedia_auto_seo_meta_tags() {
-    if ( ! is_singular( 'quantum_article' ) ) {
-        return;
-    }
+
+	// ── صفحه اصلی (خانه) ──────────────────────────────
+	if ( is_front_page() || is_home() ) {
+		$title = 'کوانتوم پدیا | دانشنامه فیزیک کوانتوم به زبان ساده';
+		$desc  = 'کوانتوم پدیا — دانشنامه رایگان فیزیک کوانتوم به زبان ساده. ده‌ها مقاله، دانشمند، آزمایش و تفسیر کوانتومی با منبع علمی معتبر و بدون فرمول‌های ترسناک.';
+		$url   = home_url( '/' );
+		$image = esc_url( get_site_icon_url( 512 ) );
+
+		echo "\n<!-- Qpedia SEO & OpenGraph Meta Tags (home) -->\n";
+		echo '<meta name="description" content="' . esc_attr( $desc ) . '">' . "\n";
+		echo '<link rel="canonical" href="' . esc_url( $url ) . '">' . "\n";
+		echo '<meta property="og:locale" content="fa_IR">' . "\n";
+		echo '<meta property="og:type" content="website">' . "\n";
+		echo '<meta property="og:title" content="' . esc_attr( $title ) . '">' . "\n";
+		echo '<meta property="og:description" content="' . esc_attr( $desc ) . '">' . "\n";
+		echo '<meta property="og:url" content="' . esc_url( $url ) . '">' . "\n";
+		echo '<meta property="og:site_name" content="کوانتوم پدیا">' . "\n";
+		if ( $image ) {
+			echo '<meta property="og:image" content="' . $image . '">' . "\n";
+		}
+		echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+		echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '">' . "\n";
+		echo '<meta name="twitter:description" content="' . esc_attr( $desc ) . '">' . "\n";
+		if ( $image ) {
+			echo '<meta name="twitter:image" content="' . $image . '">' . "\n";
+		}
+		echo "<!-- /Qpedia SEO -->\n\n";
+		return;
+	}
+
+	// ── آرشیوها / دسته‌بندی / جستجو / برگه‌ها ─────────
+	if ( is_tax( 'quantum_category' ) || is_category() || is_tag() || is_search() || is_post_type_archive() || is_page() ) {
+		$title = esc_attr( wp_get_document_title() );
+		$url   = esc_url( ( is_ssl() ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
+
+		if ( is_tax( 'quantum_category' ) || is_category() || is_tag() ) {
+			$term = get_queried_object();
+			$desc = 'مقاله‌های دستهٔ «' . wp_strip_all_tags( single_term_title( '', false ) ) . '» در دانشنامه کوانتوم پدیا.';
+		} elseif ( is_search() ) {
+			$desc = 'نتایج جست‌وجو در دانشنامه کوانتوم پدیا.';
+		} elseif ( is_post_type_archive() ) {
+			$desc = 'آرشیو ' . post_type_archive_title( '', false ) . ' در کوانتوم پدیا.';
+		} else { // is_page
+			$pid   = get_the_ID();
+			$desc  = wp_strip_all_tags( get_the_excerpt( $pid ) );
+			if ( empty( $desc ) ) {
+				$desc = wp_trim_words( wp_strip_all_tags( get_post_field( 'post_content', $pid ) ), 30, '...' );
+			}
+			if ( empty( $desc ) ) {
+				$desc = 'برگه‌ای از دانشنامه کوانتوم پدیا.';
+			}
+		}
+		$desc = esc_attr( $desc );
+
+		echo "\n<!-- Qpedia SEO & OpenGraph Meta Tags (archive/page) -->\n";
+		echo '<meta name="description" content="' . $desc . '">' . "\n";
+		echo '<link rel="canonical" href="' . $url . '">' . "\n";
+		echo '<meta property="og:locale" content="fa_IR">' . "\n";
+		echo '<meta property="og:type" content="website">' . "\n";
+		echo '<meta property="og:title" content="' . $title . '">' . "\n";
+		echo '<meta property="og:description" content="' . $desc . '">' . "\n";
+		echo '<meta property="og:url" content="' . $url . '">' . "\n";
+		echo '<meta property="og:site_name" content="کوانتوم پدیا">' . "\n";
+		echo '<meta name="twitter:card" content="summary">' . "\n";
+		echo '<meta name="twitter:title" content="' . $title . '">' . "\n";
+		echo '<meta name="twitter:description" content="' . $desc . '">' . "\n";
+		echo "<!-- /Qpedia SEO -->\n\n";
+		return;
+	}
+
+	// ── تک‌نوشته مقاله/دانشمند ────────────────────────
+	if ( ! is_singular( array( 'quantum_article', 'quantum_scientist' ) ) ) {
+		return;
+	}
 
     $post_id   = get_the_ID();
     $post      = get_post( $post_id );

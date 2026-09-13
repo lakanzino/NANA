@@ -44,7 +44,7 @@
   align-items:baseline;
   direction:ltr;
   text-decoration:none;
-  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family:Vazirmatn,"Segoe UI",Tahoma,Arial,sans-serif;
   font-size:1.6rem;
   font-weight:800;
   line-height:1;
@@ -71,7 +71,7 @@
 .qp-global-footer__wordmark{
   direction:ltr;
   text-align:left;
-  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family:Vazirmatn,"Segoe UI",Tahoma,Arial,sans-serif;
   font-size:1.55rem;
   font-weight:300;
   line-height:1;
