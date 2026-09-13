@@ -1,27 +1,27 @@
 <!doctype html>
 <html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>QPedia Article Updater</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
-<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;direction:rtl}a.btn{display:inline-block;background:#0d6efd;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none}code{background:#f4f4f4;padding:2px 6px;border-radius:4px}ul{line-height:1.9}.ver{background:#e7f3ff;border-left:4px solid #0d6efd;padding:8px 12px;border-radius:4px}</style></head>
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;direction:rtl}a.btn{display:inline-block;background:#0d6efd;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none}code{background:#f4f4f4;padding:2px 6px;border-radius:4px}ul{line-height:1.9}.ver{background:#e7f3ff;border-left:4px solid #0d6efd;padding:8px 12px;border-radius:4px}.ver2{background:#fff4e5;border-left:4px solid #E85D04;padding:8px 12px;border-radius:4px;margin-top:8px}</style></head>
 <body>
 <h1>📥 QPedia Article Updater</h1>
-<p class="ver"><strong>نسخه 2026.09.13c — شامل ۴ مقاله + تصاویر باندل‌شده داخل افزونه (بدون نیاز به اینترنت بین‌الملل)</strong></p>
-<p>در این نسخه مشکل <code>cURL error 28: Connection timed out</code> برای دانلود عکس‌ها از GitHub Pages رفع شده: فایل‌های webp دیاگرام‌ها مستقیماً داخل پوشهٔ <code>assets/images/</code> خود افزونه قرار گرفته‌اند و ایمپورتر اول از روی دیسک می‌خواند؛ فقط اگر فایل محلی موجود نباشد از اینترنت (با ۳ بار تلاش و تایم‌اوت افزایش‌یافته) دانلود می‌کند. تصویر شاخص سایت دست نمی‌خورد.</p>
-<p><strong>مقالات داخل این بسته (payloads/):</strong></p>
+<p class="ver"><strong>نسخه 2026.09.13d — شامل ۹ مقاله (۰۰۱ تا ۰۰۹) + همهٔ تصاویر باندل‌شده داخل افزونه</strong></p>
+<p class="ver2">مقالات جدید این نسخه (بخش «تاریخ و افراد»):</p>
 <ul>
-<li>۰۰۱ — کوانتوم یعنی چه؟ (slug: <code>what-is-quantum</code>)</li>
-<li>۰۰۲ — برهم‌نهی کوانتومی (slug: <code>quantum-superposition</code>)</li>
-<li>۰۰۳ — آزمایش دو شکاف (slug: <code>double-slit-experiment</code>)</li>
-<li>۰۰۴ — درهم‌تنیدگی کوانتومی (slug: <code>quantum-entanglement-explained</code>)</li>
+<li>۰۰۵ — هایزنبرگ؛ نابغه ای که جنگ او را به دو نیم کرد — <code>heisenberg-ww2</code></li>
+<li>۰۰۶ — نیلز بور و اصل تکمیل — <code>bohr-complementarity</code></li>
+<li>۰۰۷ — ماکس بورن و تفسیر احتمالاتی تابع موج — <code>born-probability</code></li>
+<li>۰۰۸ — پاولی و اصل طرد — <code>pauli-exclusion</code></li>
+<li>۰۰۹ — مقایسه دیدگاه اینشتین و شرودینگر درباره واقعیت — <code>einstein-schrodinger-reality</code></li>
 </ul>
-<p>همهٔ اسلاگ‌ها مستقیماً از REST API خود سایت <code>qpedia.ir</code> گرفته شده‌اند.</p>
-<p><a class="btn" href="qpedia-article-updater-v2026.09.13c.zip" download>⬇️ دانلود افزونه نسخه c (حدود ۱۸۰KB)</a></p>
+<p>تصویر شاخص (کاور) سایت برای هر پنج مقاله دست نمی‌خورد؛ فقط یک دیاگرام آموزشی مینیمال در ابتدای هر مقاله درج می‌شود. لینک‌های داخلی به مقالات ✅ و به صفحه دانشمندان به فرم <code>scientists/&lt;slug&gt;</code> تنظیم شده‌اند.</p>
+<p><a class="btn" href="qpedia-article-updater-v2026.09.13d.zip" download>⬇️ دانلود افزونه نسخه d (حدود ۴۰۰KB)</a></p>
 <h2>نصب</h2>
 <ol>
-<li>اول افزونهٔ نسخه قبلی را از پیشخوان «غیرفعال» و «حذف» کنید (نگران نباشید payloadها و پیوست‌ها در این مرحله حذف نمی‌شوند چون پوشه‌ها حذف می‌شوند اما مقاله‌ها و رسانه‌ها در دیتابیس مونده‌اند).</li>
-<li>افزونه‌ها ← افزودن ← بارگذاری افزونه ← فایل <code>qpedia-article-updater-v2026.09.13c.zip</code> را آپلود و فعال کنید.</li>
-<li>از منوی «مقالات کوانتوم» ← «📥 به‌روزرسانی مقاله» وارد صفحه شوید.</li>
-<li>برای مقاله ۰۰۴ (درهم‌تنیدگی) دوباره اول Dry-Run و بعد Apply را بزنید — باید لاگ این‌بار «✅ از پوشهٔ داخلی افزونه پیوست شد» را برای دیاگرامش بنویسد.</li>
+<li>افزونهٔ نسخه قبلی را در پیشخوان «غیرفعال» و «حذف» کنید (مقاله‌ها و رسانه‌ها حذف نمی‌شوند، فقط پوشهٔ افزونه پاک می‌شود).</li>
+<li>افزونه‌ها ← افزودن ← بارگذاری افزونه ← فایل <code>qpedia-article-updater-v2026.09.13d.zip</code> را آپلود و فعال کنید.</li>
+<li>از منوی «مقالات کوانتوم» ← «📥 به‌روزرسانی مقاله» وارد شوید.</li>
+<li>برای هر مقاله اول <strong>Dry-Run</strong> و بعد <strong>Apply</strong> را بزنید. لاگ سبز «از پوشهٔ داخلی افزونه پیوست شد» یعنی عکس بدون نیاز به اینترنت بین‌الملل درون رفته است.</li>
 </ol>
-<p style="color:#b45309"><strong>اگر مرورگر کش داشت:</strong> <code>Ctrl+F5</code> (یا <code>Cmd+Shift+R</code>) بزنید.</p>
+<p style="color:#b45309"><strong>کش مرورگر:</strong> اگر هنوز نسخه قبلی را می‌بینید <code>Ctrl+F5</code> (مک <code>Cmd+Shift+R</code>) بزنید.</p>
 <p><a href="../fix/">← بازگشت به صفحهٔ فیکس‌ها</a></p>
 </body></html>

@@ -611,3 +611,39 @@
 - صفحه دانلود `docs/fix/updater.html` به نسخه c آپدیت شد (لینک به `qpedia-article-updater-v2026.09.13c.zip`، راهنمای حذف نسخهٔ قبلی، توضیح باندل بودن تصاویر).
 
 ادامهٔ کار (پس از QA این نسخه روی سایت): مقالات ۰۰۵، ۰۰۶، ۰۰۷ به ترتیب (تابع موج `wave-function`، اندازه‌گیری و فروپاشی `quantum-measurement`، تونل‌زنی کوانتومی `quantum-tunneling`).
+
+## ۵۴ — ۱۴۰۵/۰۶/۲۳ — شروع از لیست جدید ۱۵۰ تایی «تاریخ و افراد» (۰۰۵ تا ۰۰۹)
+
+دستور کار جدید (کارفرما): لیست ۱۵۰تایی جدید با اولویت «تاریخ و افراد» شروع شود. پنج مقاله اول این سری ساخته شد.
+
+**قوانین تازه که در «دستورالعمل-مقاله‌نویسی-QPedia.md» (بخش ۱۲ جدید) ثبت شد:**
+- تصویر شاخص مقالات از این به بعد در قالب ۲.۱:
+  - ۱۶:۹ (۱۲۰۰×۶۷۵)، WebP، **زیر ۵۰KB**.
+  - زمینه سفید بافت کاغذی.
+  - مرکز: تیتر انگلیسی بولد سیاه + خط رنگی افقی نازک (رنگ تصادفی از پالت قراردادی، غیرتکراری نسبت به مقاله قبل) + تیتر فارسی کوچک تر زیرش.
+  - چهار گوشه: اشکال دیاگرامی مینیمال مرتبط با موضوع، خط مشکی نازک + فیل روشن.
+  - بدون لوگو، بدون پرتره، بدون گرادیان/سایه.
+  - نام فایل: `<slug>-cover.webp`.
+- هر مقاله **علاوه بر کاور** یک دیاگرام آموزشی مینیمال (زیر ۵۰KB، زمینه سفید، برچسب فارسی راست چین) هم دارد و در نقطهٔ آموزشی طبیعی (پس از لید، پیش از نخستین H2) در بدنه قرار می‌گیرد. نام فایل: `<slug>-diagram.webp`.
+- **تصویر شاخص از قبل موجود سایت هرگز دستکاری نمی‌شود** (`featured_image=""` در payload).
+- **لینک به دانشمندان از فرم `/scientists/<slug>/` استفاده می‌کند** (صفحات دانشمند از قبل در سایت موجودند: werner-heisenberg, niels-bohr, max-born, wolfgang-pauli, albert-einstein, erwin-schrodinger, john-bell, alain-aspect, arnold-sommerfeld و …).
+
+**پنج مقاله جدید:**
+| # | اسلاگ | تیتر | دسته‌ها | رنگ خط | منابع |
+|---|---|---|---|---|---|
+| ۰۰۵ | heisenberg-ww2 | هایزنبرگ؛ نابغه ای که جنگ او را به دو نیم کرد | history-experiments, history | #E85D04 | Cassidy 1992; Bernstein/Farm Hall; GHDI; AIP |
+| ۰۰۶ | bohr-complementarity | نیلز بور و اصل تکمیل؛ چرا یک چیز هم موج است هم ذره؟ | history-experiments, history, fundamentals, core-concepts | #2563EB | Bohr 1928 Nature; SEP Copenhagen; Pais 1991 |
+| ۰۰۷ | born-probability | ماکس بورن و تفسیر احتمالاتی؛ مربع تابع موج چه می گوید؟ | history-experiments, history, fundamentals, core-concepts | #0D9488 | Born 1926 ZfPhys; Nobel 1954; Born-Oppenheimer 1927 |
+| ۰۰۸ | pauli-exclusion | پاولی و اصل طرد؛ چرا دو الکترون مثل هم در یک «اتاق» نمی مانند؟ | history-experiments, history, fundamentals, core-concepts | #7C3AED | Pauli 1925 ZfPhys; Nobel 1945; APS News 2007 |
+| ۰۰۹ | einstein-schrodinger-reality | اینشتین و شرودینگر؛ دو دوست که با کوانتوم در افتادند | history-experiments, history, phenomena | #E11D48 | EPR 1935 PhysRev; Schrödinger 1935 Naturwiss; SEP EPR |
+
+**اسلاگ انگلیسی مختصر:** با قاعده «لاتین کوتاه ۲–۳ کلمه، بدون stop word، خط تیره» و بدون تشبیه به مقالات تکراری (مثل pauli-exclusion دربرابر pauli-exclusion-principle موجود).
+
+**افزونه v2026.09.13d:** 
+- همهٔ کاورها و دیاگرام‌های ۰۰۱–۰۰۹ در `assets/images/` باندل شده‌اند.
+- ایمپورتر در هر سایدلود اول از روی دیسک هاست می‌خواند و اصلاً به github.io متصل نمی‌شود.
+- تصاویر جدید به حجم ۱۱–۴۵KB هر کرسیده‌اند (کاورها با کیفیت ۷۰ و ریزنگاری ۱۰۰۰px به زیر ۱۸KB، دیاگرام‌ها زیر ۴۵KB).
+- صفحه دانلود `docs/fix/updater.html` و زیپ `qpedia-article-updater-v2026.09.13d.zip` (حدود ۴۰۰KB) آپدیت شد.
+- بعد از دهمین مقاله (۰۱۰) نسخه پایدار برای تحویل دوباره ساخته و شماره نسخه نهایی گذاشته می‌شود.
+
+**نکته اسلاگ‌ها:** نقشه رسمی اسلاگ مقالات زنده در `qpedia-article-updater/slug-map.json` هست (استخراج از `فهرست-به‌روزشده-مقالات-منتشرشده-و-درصف.md`). برای این پنج مقاله، لینک‌های داخلی به مقالات زنده (uncertainty-principle, bohr-atomic-model, schrodinger-cat, double-slit-experiment, quantum-superposition, quantum-entanglement-explained, what-is-quantum) و به دانشمندان (`/scientists/<slug>/`) تنظیم شده و پیوند به مقالات هنوز منتشرنشده (مثل wave-function, quantum-measurement, decoherence, quantum-tunneling, pauli-exclusion-principle) به صورت `#` گذاشته نشده — فقط به مقالات زنده اشاره شده است.
