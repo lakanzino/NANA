@@ -1,0 +1,222 @@
+{
+  "double-slit-experiment": {
+    "title": "آزمایش دو شکاف",
+    "section": "تاریخ و آزمایش‌های کوانتوم — 6 مقاله"
+  },
+  "quantum-zeno-effect": {
+    "title": "اثر زنون کوانتومی",
+    "section": "تاریخ و آزمایش‌های کوانتوم — 6 مقاله"
+  },
+  "photoelectric-effect": {
+    "title": "اثر فوتوالکتریک",
+    "section": "تاریخ و آزمایش‌های کوانتوم — 6 مقاله"
+  },
+  "ultraviolet-catastrophe": {
+    "title": "فاجعهٔ فرابنفش",
+    "section": "تاریخ و آزمایش‌های کوانتوم — 6 مقاله"
+  },
+  "bohr-atomic-model": {
+    "title": "مدل اتمی بور",
+    "section": "تاریخ و آزمایش‌های کوانتوم — 6 مقاله"
+  },
+  "bell-inequality": {
+    "title": "نامساوی بل",
+    "section": "تاریخ و آزمایش‌های کوانتوم — 6 مقاله"
+  },
+  "many-worlds-interpretation": {
+    "title": "تفسیر جهان‌های موازی",
+    "section": "تفسیرها و فلسفهٔ کوانتوم — 2 مقاله"
+  },
+  "copenhagen-interpretation": {
+    "title": "تفسیر کپنهاگی",
+    "section": "تفسیرها و فلسفهٔ کوانتوم — 2 مقاله"
+  },
+  "qubit": {
+    "title": "کیوبیت چیست؟",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "enzyme-quantum-tunneling": {
+    "title": "آنزیم‌ها؛ عبور از دیوار به‌جای پریدن",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "quantum-smell": {
+    "title": "حس بویایی؛ شکل یا ارتعاش؟",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "quantum-photosynthesis": {
+    "title": "فتوسنتز؛ کارآمدترین ماشین جهان",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "bird-quantum-compass": {
+    "title": "قطب‌نمای پرندگان",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "transistor-quantum": {
+    "title": "ترانزیستور؛ کوانتوم در جیب شما",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "atomic-clock-gps": {
+    "title": "ساعت اتمی و جی‌پی‌اس",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "how-lasers-work": {
+    "title": "لیزر چطور کار می‌کند؟",
+    "section": "فناوری و کاربردهای کوانتومی — 8 مقاله"
+  },
+  "quantum-spin": {
+    "title": "اسپین؛ چرخشی که چرخش نیست",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "uncertainty-principle": {
+    "title": "اصل عدم قطعیت هایزنبرگ",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "quantum-measurement": {
+    "title": "اندازه‌گیری و فروپاشی",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "quantum-superposition": {
+    "title": "برهم‌نهی کوانتومی",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "wave-function": {
+    "title": "تابع موج چیست؟",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "energy-levels": {
+    "title": "ترازهای انرژی و کوانتش",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "planck-constant": {
+    "title": "ثابت پلانک؛ کوچک‌ترین واحد جهان",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "wave-particle-duality": {
+    "title": "دوگانگی موج و ذره",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "decoherence": {
+    "title": "واهمدوسی؛ چرا دنیا عادی است",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "what-is-quantum": {
+    "title": "کوانتوم یعنی چه؟",
+    "section": "مبانی و مفاهیم کوانتوم — 10 مقاله"
+  },
+  "everything-is-energy-claim": {
+    "title": "«همه‌چیز انرژی است» — بررسی یک ادعا",
+    "section": "نقد شبه‌علم — 2 مقاله"
+  },
+  "is-the-brain-quantum": {
+    "title": "آیا مغز کوانتومی است؟",
+    "section": "نقد شبه‌علم — 2 مقاله"
+  },
+  "superconductivity": {
+    "title": "ابررسانایی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "superfluidity": {
+    "title": "ابرشارگی؛ مایعی که از لیوان بالا می‌رود",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "casimir-effect": {
+    "title": "اثر کازیمیر",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "quantum-tunneling": {
+    "title": "تونل‌زنی کوانتومی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "quantum-entanglement-explained": {
+    "title": "درهم‌تنیدگی کوانتومی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "vacuum-fluctuations": {
+    "title": "نوسانات خلأ",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "schrodinger-cat": {
+    "title": "گربهٔ شرودینگر",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "quantum-state-2": {
+    "title": "حالت کوانتومی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "quantum-number": {
+    "title": "عدد کوانتومی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "observer": {
+    "title": "ناظر",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "complementarity-principle": {
+    "title": "اصل مکملیت",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "photon": {
+    "title": "فوتون",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "nuclear-spin": {
+    "title": "اسپین هسته‌ای",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "stern-gerlach-experiment": {
+    "title": "اشترن-گرلاخ",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "⚠اسلاگ-فارسی": {
+    "title": "منحنی لیساژو",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "hilbert-space": {
+    "title": "فضای هیلبرت",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "bra-ket-notation": {
+    "title": "نماد براکت",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "operator": {
+    "title": "عملگر",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "hermitian-operator": {
+    "title": "عملگر هرمیتی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "eigenvalue": {
+    "title": "مقدار ویژه",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "density-matrix": {
+    "title": "ماتریس چگالی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "renormalization": {
+    "title": "بازبهنجارش",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "mri-quantum-origin": {
+    "title": "MRI",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "quantum-cryptography-internet-security": {
+    "title": "رمزنگاری کوانتومی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "wave-function-collapse": {
+    "title": "فروپاشی عینی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "quantum-alternative-medicine-science": {
+    "title": "کوانتوم و پزشکی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  },
+  "spot-pseudoscience-one-sentence": {
+    "title": "تشخیص ادعای شبه‌علمی",
+    "section": "پدیده‌های کوانتومی — 7 مقاله"
+  }
+}
