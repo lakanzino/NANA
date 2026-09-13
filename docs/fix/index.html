@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a1628">
+<title>دانلود اصلاحات قالب — کوانتوم پدیا</title>
+<link rel="icon" type="image/png" href="../icons/icon-192.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#0a1628;color:#e6f1ff;font-family:Vazirmatn,"Segoe UI",Tahoma,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;padding:24px 16px 60px}
+.wrap{max-width:640px;margin:0 auto}
+.brand{text-align:center;margin-bottom:28px}
+.brand .logo{display:inline-flex;align-items:center;gap:8px;font-size:1.6rem;font-weight:700;color:#38e8ff}
+.brand .logo span:first-child{font-size:2rem;text-shadow:0 0 12px rgba(56,232,255,.7)}
+.brand .sub{color:#8aa0bf;margin-top:6px;font-size:.92rem}
+.ver{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:20px;background:rgba(56,232,255,.12);color:#38e8ff;font-size:.8rem;font-family:ui-monospace,Menlo,Consolas,monospace;direction:ltr;letter-spacing:.5px}
+.card{background:linear-gradient(145deg,#101c33,#0d1728);border:1px solid rgba(56,232,255,.12);border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.card h2{font-size:1.08rem;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h2 .emoji{font-size:1.3rem}
+.card p{color:#9eb3d0;font-size:.92rem;line-height:1.75}
+.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 14px;border-radius:12px;border:none;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;text-decoration:none;transition:all .18s ease;-webkit-tap-highlight-color:transparent}
+.btn-primary{background:linear-gradient(135deg,#38e8ff,#00b4d8);color:#041018;box-shadow:0 6px 16px rgba(0,180,216,.35)}
+.btn-primary:hover,.btn-primary:active{transform:translateY(-1px);filter:brightness(1.08)}
+.btn-secondary{background:rgba(255,255,255,.06);color:#cfe6ff;border:1px solid rgba(255,255,255,.1)}
+.btn-secondary:hover,.btn-secondary:active{background:rgba(255,255,255,.1)}
+.btn-full{grid-column:1/-1}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#14233f;color:#fff;padding:12px 22px;border-radius:30px;font-size:.9rem;box-shadow:0 8px 24px rgba(0,0,0,.4);opacity:0;transition:all .3s ease;border:1px solid rgba(56,232,255,.3);z-index:99;direction:rtl}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+ul.steps{list-style:none;counter-reset:step;margin-top:14px}
+ul.steps li{counter-increment:step;position:relative;padding:10px 36px 10px 0;color:#c9dcf7;line-height:1.8;font-size:.9rem}
+ul.steps li::before{content:counter(step);position:absolute;right:0;top:10px;width:26px;height:26px;border-radius:50%;background:#38e8ff;color:#041018;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.code{background:#06111f;border:1px solid rgba(56,232,255,.15);border-radius:8px;padding:12px 14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem;color:#7cf7ff;direction:ltr;text-align:left;margin-top:12px;overflow-x:auto;word-break:break-all}
+.files-list{margin-top:14px}
+.file-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-top:1px solid rgba(255,255,255,.06)}
+.file-row:first-child{border-top:none}
+.file-name{display:flex;align-items:center;gap:8px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;direction:ltr;color:#cfe6ff}
+.file-name .ext{color:#7cf7ff}
+.file-actions{display:flex;gap:6px}
+.file-actions .btn{padding:8px 10px;font-size:.78rem;border-radius:8px;font-weight:500}
+.note{margin-top:12px;padding:10px 12px;background:rgba(255,193,7,.08);border-right:3px solid #ffc107;border-radius:6px;font-size:.84rem;color:#ffe3a3;line-height:1.7}
+.back{display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;color:#7cf7ff;text-decoration:none;font-size:.88rem}
+.back:hover{color:#38e8ff}
+.github{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:6px;font-size:.8rem;color:#6b80a0}
+.github a{color:#38e8ff;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../">← بازگشت به PWA</a>
+
+  <div class="brand">
+    <div class="logo"><span>⚛</span><span>کوانتوم پدیا</span></div>
+    <div class="sub">مرکز دانلود اصلاحات قالب وردپرس</div>
+    <div class="ver">v2026.09.13-perf1</div>
+  </div>
+
+  <!-- MAIN DOWNLOAD CARD -->
+  <div class="card">
+    <h2><span class="emoji">📦</span> دانلود بسته کامل اصلاحات</h2>
+    <p>یک فایل zip شامل همهٔ فایل‌های اصلاح‌شده. این را دانلود کن و از طریق سی‌پنل یا FTP در مسیر قالب فرزند جایگزین کن.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary btn-full" href="qpedia-child-perf-fix.zip" download>
+        ⬇️ دانلود qpedia-child-perf-fix.zip
+      </a>
+    </div>
+    <div class="note">
+      پس از آپلود و جایگزینی فایل‌ها، وارد پیشخوان وردپرس شو و از منوی <b>LiteSpeed Cache → Purge All</b> کش سایت را خالی کن.
+    </div>
+  </div>
+
+  <!-- RAW FILES (copy or individual download) -->
+  <div class="card">
+    <h2><span class="emoji">📄</span> فایل‌های تغییرکرده (تکی)</h2>
+    <p>اگر نمی‌خوای zip آپلود کنی، هر فایل را تکی دانلود یا محتوایش را کپی کن:</p>
+    <div class="files-list" id="files-list">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+  <!-- INSTALL STEPS -->
+  <div class="card">
+    <h2><span class="emoji">🛠</span> راهنمای نصب در سی‌پنل</h2>
+    <ul class="steps">
+      <li>وارد File Manager سی‌پنل شو.</li>
+      <li>به مسیر <span class="code" style="display:inline;padding:4px 8px;margin-top:6px">public_html/wp-content/themes/quantum-pedia-child/</span> برو.</li>
+      <li>سه فایل زیر را آپلود و جایگزین فایل‌های موجود کن:
+        <br><span class="code">functions.php</span>
+        <br><span class="code">style.css</span>
+        <br><span class="code">assets/css/qpedia-brand.css</span>
+      </li>
+      <li>وارد پیشخوان وردپرس شده، LiteSpeed Cache → Purge All را بزن.</li>
+      <li>سایت را در حالت ناشناس/incognito باز کن و با PageSpeed تست بگیر.</li>
+    </ul>
+  </div>
+
+  <!-- GITHUB LINK -->
+  <div class="card">
+    <h2><span class="emoji">🐙</span> مشاهده در گیت‌هاب</h2>
+    <p>همه تغییرات روی برنچ main ریپو ثبت شده:</p>
+    <div class="btn-row">
+      <a class="btn btn-secondary btn-full" href="https://github.com/lakanzino/NANA" target="_blank" rel="noopener">
+        باز کردن ریپو lakanzino/NANA ↗
+      </a>
+    </div>
+    <div class="code">https://github.com/lakanzino/NANA/tree/main</div>
+    <div class="github">
+      آدرس دائمی این صفحه:
+      <a id="permalink" href="https://lakanzino.github.io/NANA/fix/">lakanzino.github.io/NANA/fix/</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">✓ کپی شد</div>
+
+<script>
+const FILES = [
+  { name: 'functions.php',       path: 'functions.php',      desc: 'قلب اصلاحات (preload + dequeue Roboto + meta desc)' },
+  { name: 'qpedia-brand.css',    path: 'qpedia-brand.css',   desc: 'حذف Roboto از font-family', target: 'assets/css/qpedia-brand.css' },
+  { name: 'style.css',           path: 'style.css',          desc: 'فقط افزایش نسخه قالب برای bust کش', target: 'style.css' },
+];
+
+const list = document.getElementById('files-list');
+const toast = document.getElementById('toast');
+
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(()=>toast.classList.remove('show'), 1800);
+}
+
+async function copyText(text){
+  try{
+    await navigator.clipboard.writeText(text);
+    showToast('✓ در کلیپ‌بورد کپی شد');
+  }catch(e){
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); showToast('✓ کپی شد'); }
+    catch(_){ showToast('خطا در کپی'); }
+    document.body.removeChild(ta);
+  }
+}
+
+async function copyFile(path){
+  try{
+    const r = await fetch(path);
+    const t = await r.text();
+    await copyText(t);
+  }catch(e){ showToast('خطا در بارگذاری فایل'); }
+}
+
+FILES.forEach(f=>{
+  const row = document.createElement('div');
+  row.className = 'file-row';
+  row.innerHTML = `
+    <div>
+      <div class="file-name"><span class="ext">${f.name.split('.').pop()}</span>/${f.name}</div>
+      <div style="font-size:.76rem;color:#6b80a0;margin-top:4px">${f.desc}</div>
+    </div>
+    <div class="file-actions">
+      <a class="btn btn-secondary" href="${f.path}" download>⬇ دانلود</a>
+      <button class="btn btn-primary" data-copy="${f.path}">📋 کپی</button>
+    </div>
+  `;
+  list.appendChild(row);
+});
+
+list.addEventListener('click', e=>{
+  const b = e.target.closest('button[data-copy]');
+  if(b) copyFile(b.dataset.copy);
+});
+
+// Set permalink to current URL
+document.getElementById('permalink').textContent = location.href.replace(/#.*$/,'');
+document.getElementById('permalink').href = location.href.replace(/#.*$/,'');
+</script>
+</body>
+</html>
