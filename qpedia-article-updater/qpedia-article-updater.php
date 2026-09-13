@@ -1,15 +1,14 @@
 <?php
 /**
- * Plugin Name: QPedia Article Updater (v2026.09.13f)
- * Description: به‌روزرسانی تک‌دکمه‌ای مقالات quantum_article از روی فایل‌های JSON در پوشه payloads. تصاویر درون‌متن ابتدا از پوشهٔ assets داخل خود افزونه خوانده می‌شوند (برای جلوگیری از timeout اینترنت بین‌الملل) و فقط در صورت نبودن از GitHub Pages دانلود می‌گردند (تا ۳ بار تلاش). تصویر شاخص را دست نمی‌زند.
- * Version: 2026.09.13f
+ * Plugin Name: QPedia Article Importer (v2026.09.13g)
+ * Description: درون‌ریزی/به‌روزرسانی تک‌دکمه‌ای مقالات quantum_article. اگر اسلاگ موجود باشد مقاله آپدیت می‌شود (بدون دست زدن به تصویر شاخص در صورتی که در payload خالی باشد)؛ اگر اسلاگ موجود نباشد، مقالهٔ جدید به صورت پیش‌نویس (draft) با تمام جزئیات — تایتل، متا، تصویر شاخص و alt، دیاگرام درون‌متن و alt، دسته/زیردسته، اسلاگ — ساخته می‌شود.
+ * Version: 2026.09.13g
  * Author: Arena Agent for QPedia
- * Depends: qpedia-fixes (optional, for CPT definitions if already active)
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'QAU_VERSION', '2026.09.13f' );
+define( 'QAU_VERSION', '2026.09.13g' );
 define( 'QAU_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'QAU_PAYLOAD_DIR', QAU_PLUGIN_DIR . 'payloads/' );
 define( 'QAU_ASSETS_DIR', QAU_PLUGIN_DIR . 'assets/images/' );
@@ -20,8 +19,8 @@ define( 'QAU_REMOTE_BASE', 'https://lakanzino.github.io/NANA/images/' );
 add_action( 'admin_menu', function () {
     add_submenu_page(
         'edit.php?post_type=quantum_article',
-        'QPedia Updater',
-        '📥 به‌روزرسانی مقاله',
+        'QPedia Importer',
+        '📥 درون‌ریزی مقاله',
         'manage_options',
         'qpedia-updater',
         'qau_render_admin'
@@ -44,6 +43,12 @@ add_action( 'admin_init', function () {
     }
 } );
 
+/**
+ * اجرای درون‌ریزی روی یک payload.
+ * منطق:
+ *  - اگر پستی با این اسلاگ از قبل وجود داشت: به‌روزرسانی می‌شود (wp_update_post).
+ *  - اگر وجود نداشت: پست جدید با وضعیت draft ساخته می‌شود (wp_insert_post).
+ */
 function qau_run( $filename, $dry_run = true ) {
     $path = QAU_PAYLOAD_DIR . $filename . '.json';
     if ( ! file_exists( $path ) ) {
@@ -60,14 +65,18 @@ function qau_run( $filename, $dry_run = true ) {
     }
 
     $data = wp_parse_args( $data, array(
-        'slug'            => '',
-        'post_type'       => 'quantum_article',
-        'title'           => '',
-        'excerpt'         => '',
-        'body_html'       => '',
-        'featured_image'  => '',
-        'inline_images'   => array(),
-        'categories'      => array(),
+        'slug'                => '',
+        'post_type'           => 'quantum_article',
+        'post_status'         => 'draft',
+        'title'               => '',
+        'excerpt'             => '',
+        'body_html'           => '',
+        'featured_image'      => '',
+        'featured_image_alt'  => '',
+        'inline_images'       => array(),
+        'categories'          => array(),
+        'tags'                => array(),
+        'meta'                => array(),   // meta_key => value برای post_meta اختیاری
     ) );
 
     if ( ! in_array( $data['post_type'], QAU_ALLOWED_POST_TYPES, true ) ) {
@@ -75,72 +84,125 @@ function qau_run( $filename, $dry_run = true ) {
         wp_redirect( admin_url( 'edit.php?post_type=quantum_article&page=qpedia-updater' ) );
         exit;
     }
-
-    $existing = get_page_by_path( $data['slug'], OBJECT, $data['post_type'] );
-    if ( ! $existing ) {
-        qau_flash( '❌ مقاله‌ای با این اسلاگ پیدا نشد — مطمئن شوید اسلاگ درست است: ' . esc_html( $data['slug'] ), 'error' );
+    if ( ! $data['slug'] ) {
+        qau_flash( '❌ فیلد slug در payload خالی است.', 'error' );
         wp_redirect( admin_url( 'edit.php?post_type=quantum_article&page=qpedia-updater' ) );
         exit;
     }
 
-    $post_id = $existing->ID;
-    $log     = array();
-    $log[]   = ( $dry_run ? '[DRY-RUN] ' : '[APPLY] ' ) . 'شروع به‌روزرسانی «' . $data['title'] . '» (اسلاگ: ' . $data['slug'] . '، شناسه: ' . $post_id . ')';
+    // بررسی وجود پست
+    $existing = get_page_by_path( $data['slug'], OBJECT, $data['post_type'] );
+    $is_new   = ! $existing;
 
-    $body = $data['body_html'];
-
-    // در حالت طراحی ما featured_image همیشه خالی است؛ ولی اگر بود هم محترمانه عمل می‌کنیم
-    $featured_id = 0;
-    if ( ! empty( $data['featured_image'] ) ) {
-        $res = qau_maybe_sideload( $data['featured_image'], $post_id, $dry_run );
-        $featured_id = $res['id'];
-        $log[] = '🖼 تصویر شاخص: ' . $res['log'];
+    if ( $is_new ) {
+        $log[] = ( $dry_run ? '[DRY-RUN] ' : '[APPLY] ' ) . '📝 مقالهٔ جدید ساخته خواهد شد (پیش‌نویس): «' . $data['title'] . '» (اسلاگ: ' . $data['slug'] . ')';
+        $post_id = 0;
     } else {
-        $log[] = 'ℹ️ تصویر شاخص در payload خالی است — تصویر شاخص فعلی سایت حفظ می‌شود.';
+        $post_id = $existing->ID;
+        $log[]   = ( $dry_run ? '[DRY-RUN] ' : '[APPLY] ' ) . '🔄 به‌روزرسانی مقالهٔ موجود «' . $data['title'] . '» (اسلاگ: ' . $data['slug'] . '، شناسه: ' . $post_id . ')';
     }
 
+    // ---- تصویر شاخص (فقط اگر در payload معرفی شده باشد: برای مقالات جدید کاور و برای آپدیت‌های دلخواه)
+    $featured_id = 0;
+    if ( ! empty( $data['featured_image'] ) ) {
+        // برای مقالات جدید post_id هنوز ۰ است اما media_handle_sideload در صورت 0 در کتابخانه آپلود می‌کند؛ بعد از insert/post متصل می‌کنیم.
+        $attach_to = $post_id ? $post_id : 0;
+        $res = qau_maybe_sideload( $data['featured_image'], $attach_to, $dry_run );
+        $featured_id = $res['id'];
+        $log[] = '🖼 تصویر شاخص: ' . $res['log'];
+        if ( ! $dry_run && $featured_id && ! empty( $data['featured_image_alt'] ) ) {
+            update_post_meta( $featured_id, '_wp_attachment_image_alt', sanitize_text_field( $data['featured_image_alt'] ) );
+        }
+    } else {
+        $log[] = 'ℹ️ تصویر شاخص در payload خالی است — ' . ( $is_new ? 'هشدار: بدون تصویر شاخص ذخیره می‌شود' : 'تصویر شاخص فعلی حفظ می‌شود' ) . '.';
+    }
+
+    // ---- بدنه + تصاویر درون‌متن
+    $body = $data['body_html'];
     $replace_map = array();
     foreach ( (array) $data['inline_images'] as $remote => $meta ) {
-        $res = qau_maybe_sideload( $remote, $post_id, $dry_run );
+        $alt  = is_array( $meta ) && ! empty( $meta['alt'] ) ? $meta['alt'] : '';
+        $res  = qau_maybe_sideload( $remote, $post_id ? $post_id : 0, $dry_run );
         if ( ! empty( $res['url'] ) ) {
             $replace_map[ $remote ] = $res['url'];
         }
         $log[] = '🖼 درون‌متن: ' . $res['log'];
+        if ( ! $dry_run && $res['id'] && $alt ) {
+            update_post_meta( $res['id'], '_wp_attachment_image_alt', sanitize_text_field( $alt ) );
+        }
     }
     if ( $replace_map ) {
         $body = str_replace( array_keys( $replace_map ), array_values( $replace_map ), $body );
     }
 
+    // ---- آرگومان‌های پست
     $postarr = array(
-        'ID'           => $post_id,
         'post_title'   => $data['title'],
         'post_content' => $body,
         'post_excerpt' => $data['excerpt'],
         'post_type'    => $data['post_type'],
+        'post_name'    => sanitize_title( $data['slug'] ),
+        'post_status'  => $is_new ? $data['post_status'] : $existing->post_status,
     );
-
-    if ( ! empty( $data['categories'] ) ) {
-        $cat_ids = array();
-        foreach ( (array) $data['categories'] as $cat_slug ) {
-            $t = get_term_by( 'slug', $cat_slug, 'quantum_category' );
-            if ( $t ) { $cat_ids[] = (int) $t->term_id; }
-            else      { $log[] = '⚠️ دسته پیدا نشد: ' . $cat_slug; }
-        }
-        if ( $cat_ids ) {
-            wp_set_object_terms( $post_id, $cat_ids, 'quantum_category', false );
-        }
+    if ( ! $is_new ) {
+        $postarr['ID'] = $post_id;
     }
 
     if ( ! $dry_run ) {
-        $pid = wp_update_post( wp_slash( $postarr ), true );
-        if ( is_wp_error( $pid ) ) {
-            qau_flash( '❌ خطا در به‌روزرسانی: ' . $pid->get_error_message(), 'error' );
-            wp_redirect( admin_url( 'edit.php?post_type=quantum_article&page=qpedia-updater' ) );
-            exit;
+        if ( $is_new ) {
+            $pid = wp_insert_post( wp_slash( $postarr ), true );
+            if ( is_wp_error( $pid ) ) {
+                qau_flash( '❌ خطا در ساخت مقاله: ' . $pid->get_error_message(), 'error' );
+                wp_redirect( admin_url( 'edit.php?post_type=quantum_article&page=qpedia-updater' ) );
+                exit;
+            }
+            $post_id = $pid;
+            // بعد از ساخت پست، پیوست‌هایی را که به ۰ چسبیده بودند، به post_id نسبت دهیم
+            if ( $featured_id ) { wp_update_post( array( 'ID' => $featured_id, 'post_parent' => $post_id ) ); }
+            // اتصال تصاویر درون‌متن (اگر در طول sideload به ۰ وصل شده بودند)
+            foreach ( $replace_map as $remote => $local_url ) {
+                $att_id = attachment_url_to_postid( $local_url );
+                if ( $att_id ) { wp_update_post( array( 'ID' => $att_id, 'post_parent' => $post_id ) ); }
+            }
+            $log[] = '✅ مقالهٔ جدید ساخته شد (شناسه: ' . $post_id . '، وضعیت: ' . $data['post_status'] . ').';
+        } else {
+            $pid = wp_update_post( wp_slash( $postarr ), true );
+            if ( is_wp_error( $pid ) ) {
+                qau_flash( '❌ خطا در به‌روزرسانی: ' . $pid->get_error_message(), 'error' );
+                wp_redirect( admin_url( 'edit.php?post_type=quantum_article&page=qpedia-updater' ) );
+                exit;
+            }
+            $log[] = '✅ مقاله به‌روز شد (شناسه: ' . $pid . ').';
         }
-        if ( $featured_id ) { set_post_thumbnail( $pid, $featured_id ); }
-        $log[] = '✅ مقاله به‌روز شد (شناسه: ' . $pid . ').';
+
+        // تصویر شاخص
+        if ( $featured_id ) { set_post_thumbnail( $post_id, $featured_id ); }
+
+        // دسته‌ها
+        if ( ! empty( $data['categories'] ) ) {
+            $cat_ids = array();
+            foreach ( (array) $data['categories'] as $cat_slug ) {
+                $t = get_term_by( 'slug', $cat_slug, 'quantum_category' );
+                if ( $t ) { $cat_ids[] = (int) $t->term_id; }
+                else      { $log[] = '⚠️ دسته پیدا نشد: ' . $cat_slug; }
+            }
+            if ( $cat_ids ) { wp_set_object_terms( $post_id, $cat_ids, 'quantum_category', false ); }
+        }
+
+        // meta fields اختیاری
+        if ( ! empty( $data['meta'] ) && is_array( $data['meta'] ) ) {
+            foreach ( $data['meta'] as $mk => $mv ) {
+                update_post_meta( $post_id, sanitize_key( $mk ), $mv );
+            }
+        }
     } else {
+        // در dry-run دسته‌ها را هم چک کنیم
+        if ( ! empty( $data['categories'] ) ) {
+            foreach ( (array) $data['categories'] as $cat_slug ) {
+                $t = get_term_by( 'slug', $cat_slug, 'quantum_category' );
+                if ( ! $t ) { $log[] = '⚠️ دسته پیدا نشد: ' . $cat_slug; }
+            }
+        }
         $log[] = '🟡 در حالت dry-run هیچ تغییری در دیتابیس اعمال نشد.';
     }
 
@@ -153,9 +215,9 @@ function qau_run( $filename, $dry_run = true ) {
  * دانلود/sideload تصویر. اولویت:
  *   ۱) اگر قبلاً با همین _qau_source_url پیوست شده، همان را برمی‌گرداند.
  *   ۲) اگر فایل در پوشهٔ assets/images/ داخل افزونه هست، مستقیم از روی دیسک sideload می‌کند (بدون اینترنت).
- *   ۳) در غیر این صورت از آدرس remote با ۳ بار تلاش و تایم‌اوت ۳۰ ثانیه دانلود می‌کند.
+ *   ۳) در غیر این صورت از آدرس remote با ۳ بار تلاش و تایم‌اوت افزایش‌یافته دانلود می‌کند.
  */
-function qau_maybe_sideload( $url, $post_id, $dry_run ) {
+function qau_maybe_sideload( $url, $post_id = 0, $dry_run = false ) {
     require_once ABSPATH . 'wp-admin/includes/media.php';
     require_once ABSPATH . 'wp-admin/includes/file.php';
     require_once ABSPATH . 'wp-admin/includes/image.php';
@@ -179,7 +241,7 @@ function qau_maybe_sideload( $url, $post_id, $dry_run ) {
         return array( 'id' => 0, 'url' => $url, 'log' => 'در apply پیوست خواهد شد' . $local_hint . ': ' . $filename );
     }
 
-    // گام ۱: اگر فایل داخل خود افزونه هست، مستقیم از دیسک بردار و داخل tmp کپی کن که media_handle_sideload بتواند مدیریت کند.
+    // گام ۱: فایل محلی درون افزونه
     $local_file = QAU_ASSETS_DIR . $filename;
     if ( file_exists( $local_file ) && is_readable( $local_file ) ) {
         $tmp = wp_tempnam( $filename );
@@ -203,7 +265,7 @@ function qau_maybe_sideload( $url, $post_id, $dry_run ) {
     $tmp = false;
     $last_err = '';
     for ( $attempt = 1; $attempt <= 3; $attempt++ ) {
-        $timeout = 20 + ( $attempt - 1 ) * 15; // 20s, 35s, 50s
+        $timeout = 20 + ( $attempt - 1 ) * 15;
         $tmp = download_url( $url, $timeout );
         if ( ! is_wp_error( $tmp ) ) { break; }
         $last_err = $tmp->get_error_message();
@@ -241,10 +303,13 @@ function qau_render_admin() {
         foreach ( glob( QAU_PAYLOAD_DIR . '*.json' ) as $f ) {
             $raw  = file_get_contents( $f );
             $data = json_decode( $raw, true );
+            $slug = isset( $data['slug'] ) ? $data['slug'] : '';
+            $exists = $slug && get_page_by_path( $slug, OBJECT, isset( $data['post_type'] ) ? $data['post_type'] : 'quantum_article' );
             $files[] = array(
                 'file'     => basename( $f, '.json' ),
                 'title'    => isset( $data['title'] ) ? $data['title'] : '(عنوان ندارد)',
-                'slug'     => isset( $data['slug'] ) ? $data['slug'] : '',
+                'slug'     => $slug,
+                'is_new'   => ! $exists,
                 'modified' => date( 'Y-m-d H:i', filemtime( $f ) ),
                 'size'     => size_format( filesize( $f ) ),
             );
@@ -252,38 +317,45 @@ function qau_render_admin() {
     }
     ?>
     <div class="wrap">
-        <h1>📥 به‌روزرسانی مقالات QPedia</h1>
+        <h1>📥 درون‌ریزی مقالات QPedia</h1>
         <p style="max-width:720px">
-            این افزونه مقالهٔ <strong>ازقبل‌منتشرشده</strong> را بر اساس فایل JSON در پوشهٔ <code>payloads/</code> به‌روز می‌کند.
-            تصاویر درون‌متن ابتدا از پوشهٔ <code>assets/images/</code> داخل خود افزونه خوانده می‌شوند (نیازی به اینترنت نیست) و در صورت نبودن تا ۳ بار از GitHub Pages دانلود می‌گردند.
-            تصویر شاخص فعلی سایت دست نمی‌خورد.
+            این افزونه فایل‌های JSON پوشهٔ <code>payloads/</code> را یکی‌یکی درون‌ریزی می‌کند.<br>
+            <strong>اگر اسلاگ موجود باشد:</strong> همان مقاله به‌روز می‌شود (و اگر <code>featured_image</code> خالی باشد تصویر شاخص فعلی دست نمی‌خورد).<br>
+            <strong>اگر اسلاگ موجود نباشد:</strong> مقالهٔ جدید به‌صورت <strong>پیش‌نویس (draft)</strong> با همهٔ جزئیات — تایتل، متا، تصویر شاخص و alt، دیاگرام درون‌متن و alt، دسته/زیردسته، اسلاگ — ساخته می‌شود.
         </p>
-        <p><strong>نسخهٔ افزونه:</strong> <?php echo esc_html( QAU_VERSION ); ?> — تعداد payloadها: <?php echo count( $files ); ?></p>
+        <p>
+            تصاویر ابتدا از پوشهٔ <code>assets/images/</code> داخل خود افزونه بارگذاری می‌شوند (بدون نیاز به اینترنت).<br>
+            <strong>نسخهٔ افزونه:</strong> <?php echo esc_html( QAU_VERSION ); ?> — تعداد payloadها: <?php echo count( $files ); ?>
+        </p>
 
         <?php if ( $log ) : ?>
             <div class="notice notice-info" style="white-space:pre-wrap;font-family:monospace"><?php echo esc_html( implode( "\n", $log ) ); ?></div>
         <?php endif; ?>
 
-        <table class="wp-list-table widefat fixed striped" style="max-width:960px">
+        <table class="wp-list-table widefat fixed striped" style="max-width:1020px">
             <thead><tr>
-                <th>فایل payload</th><th>عنوان</th><th>اسلاگ</th><th>تاریخ</th><th>حجم</th><th>عملیات</th>
+                <th>فایل</th><th>عنوان</th><th>اسلاگ</th><th>وضعیت</th><th>تاریخ</th><th>حجم</th><th>عملیات</th>
             </tr></thead>
             <tbody>
             <?php if ( ! $files ) : ?>
-                <tr><td colspan="6">هیچ فایل payload پیدا نشد.</td></tr>
+                <tr><td colspan="7">هیچ فایل payload پیدا نشد.</td></tr>
             <?php else : foreach ( $files as $f ) :
                 $dry_url   = wp_nonce_url( admin_url( 'edit.php?post_type=quantum_article&page=qpedia-updater&qau_action=dryrun&qau_payload=' . rawurlencode( $f['file'] ) ), 'qau_run', 'qau_nonce' );
                 $apply_url = wp_nonce_url( admin_url( 'edit.php?post_type=quantum_article&page=qpedia-updater&qau_action=apply&qau_payload=' . rawurlencode( $f['file'] ) ), 'qau_run', 'qau_nonce' );
+                $badge = $f['is_new']
+                    ? '<span style="background:#06b6d4;color:#fff;padding:2px 8px;border-radius:10px;font-size:.75rem">جدید (پیش‌نویس)</span>'
+                    : '<span style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:10px;font-size:.75rem">موجود (آپدیت)</span>';
             ?>
                 <tr>
                     <td><code><?php echo esc_html( $f['file'] ); ?></code></td>
                     <td><?php echo esc_html( $f['title'] ); ?></td>
                     <td><code><?php echo esc_html( $f['slug'] ); ?></code></td>
+                    <td><?php echo $badge; ?></td>
                     <td><?php echo esc_html( $f['modified'] ); ?></td>
                     <td><?php echo esc_html( $f['size'] ); ?></td>
                     <td>
-                        <a class="button" href="<?php echo esc_url( $dry_url ); ?>">🟡 پیش‌نمایش (Dry-Run)</a>
-                        <a class="button button-primary" href="<?php echo esc_url( $apply_url ); ?>" onclick="return confirm('اعمال به‌روزرسانی؟');">✅ اعمال به‌روزرسانی</a>
+                        <a class="button" href="<?php echo esc_url( $dry_url ); ?>">🟡 پیش‌نمایش</a>
+                        <a class="button button-primary" href="<?php echo esc_url( $apply_url ); ?>" onclick="return confirm('اعمال درون‌ریزی؟');"><?php echo $f['is_new'] ? '✅ درون‌ریزی (draft)' : '✅ به‌روزرسانی'; ?></a>
                     </td>
                 </tr>
             <?php endforeach; endif; ?>

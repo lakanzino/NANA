@@ -1,34 +1,38 @@
 <!doctype html>
-<html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>QPedia Article Updater</title>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>QPedia Article Importer</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
-<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;direction:rtl}
+<style>
+body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;direction:rtl}
 a.btn{display:inline-block;background:#0d6efd;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05rem}
 code{background:#f4f4f4;padding:2px 6px;border-radius:4px}
-ul{line-height:1.9}.ver{background:#e7f3ff;border-left:4px solid #0d6efd;padding:10px 14px;border-radius:4px}.ver2{background:#fff4e5;border-left:4px solid #E85D04;padding:10px 14px;border-radius:4px;margin-top:8px}.tip{background:#fef3c7;border-left:4px solid #d97706;padding:10px 14px;border-radius:4px;margin-top:10px;font-size:.95rem}code.url{background:#eef;border:1px solid #ccd;padding:3px 6px;border-radius:4px;direction:ltr;display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace}</style></head>
+ul,ol{line-height:1.9}
+.ver{background:#e7f3ff;border-left:4px solid #0d6efd;padding:10px 14px;border-radius:4px}
+.ver2{background:#fff4e5;border-left:4px solid #E85D04;padding:10px 14px;border-radius:4px;margin-top:8px}
+.tip{background:#fef3c7;border-left:4px solid #d97706;padding:10px 14px;border-radius:4px;margin-top:10px;font-size:.95rem}
+code.url{background:#eef;border:1px solid #ccd;padding:3px 6px;border-radius:4px;direction:ltr;display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace}
+</style></head>
 <body>
-<h1>📥 QPedia Article Updater</h1>
-<p class="ver"><strong>نسخه 2026.09.13f — شامل ۹ مقاله (۰۰۱ تا ۰۰۹) + همهٔ تصاویر باندل‌شده</strong></p>
-<p class="ver2">مقالات جدید این نسخه (بخش «تاریخ و افراد»): ۰۰۵ هایزنبرگ، ۰۰۶ بور/تکمیل، ۰۰۷ بورن/احتمال، ۰۰۸ پاولی/طرد، ۰۰۹ اینشتین-شرودینگر.</p>
-<p>تصویر شاخص سایت دست نمی‌خورد؛ فقط دیاگرام‌های درون‌متن اضافه می‌شوند. لینک‌ها به مقالات زنده و صفحات دانشمندان تنظیم شده‌اند.</p>
+<h1>📥 درون‌ریزی مقالات QPedia</h1>
+<p class="ver"><strong>نسخه 2026.09.13g — Importer</strong></p>
+<p class="ver2">منطق جدید درون‌ریزی:</p>
+<ul>
+  <li>✅ اگر اسلاگ مقاله در سایت <strong>موجود باشد</strong> → همان مقاله به‌روز می‌شود. اگر <code>featured_image</code> در payload خالی باشد تصویر شاخص فعلی دست نمی‌خورد (رفتار نسخه‌های قبل، مخصوص ۰۰۱–۰۰۴).</li>
+  <li>🆕 اگر اسلاگ <strong>موجود نباشد</strong> → مقالهٔ جدید به صورت <strong>پیش‌نویس (draft)</strong> با همهٔ جزئیات ساخته می‌شود: تایتل، چکیده، بدنه HTML، تصویر شاخص + alt، دیاگرام درون‌متن + alt، دسته و زیردسته، اسلاگ.</li>
+</ul>
+<p>این نسخه شامل ۹ payload است: ۰۰۱–۰۰۴ آپدیت و ۰۰۵–۰۰۹ درون‌ریزی مقاله جدید در دسته‌های «تاریخ و آزمایش‌های کوانتوم / تاریخ کوانتوم».</p>
 
-<p><a class="btn" href="https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.13f.zip?v=2">⬇️ دانلود فایل زیپ (نسخه f)</a></p>
+<p><a class="btn" href="https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.13g.zip?v=2">⬇️ دانلود فایل زیپ (نسخه g)</a></p>
 
-<p class="tip"><strong>اگر روی موبایل به‌جای zip، فایل html دانلود شد یا خطای «No file» دیدید:</strong></p>
-<ol>
-  <li>اول <strong>Ctrl+F5</strong> (اندروید: در مرورگر منو ← History ← Clear browsing data for last hour) بزنید تا کش پاک شود.</li>
-  <li>روی دکمهٔ بالا <strong>لمس طولانی</strong> کنید و «Download link» یا «Save link» را انتخاب کنید.</li>
-  <li>اگر باز هم نشد، این آدرس را مستقیم در تب جدید کپی کنید:<br>
-    <code class="url">https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.13f.zip?v=2</code>
-  </li>
-</ol>
+<p class="tip"><strong>اگر در موبایل دانلود به html افتاد:</strong> روی دکمه <strong>لمس طولانی</strong> و «Download link» را بزنید، یا این آدرس را مستقیم باز کنید:<br>
+<code class="url">https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.13g.zip?v=2</code></p>
 
 <h2>نصب</h2>
 <ol>
-  <li>در پیشخوان وردپرس → افزونه‌ها، اگر نسخهٔ قبلی QPedia Article Updater نصب است، اول «غیرفعال» و بعد «حذف» کنید (مقاله‌ها و رسانه‌ها حذف <em>نمی‌شوند</em>).</li>
-  <li>افزونه‌ها ← افزودن ← بارگذاری افزونه ← فایل زیپ را انتخاب و «هم‌اکنون نصب کن» را بزنید.</li>
-  <li>افزونه را فعال کنید (دیگر خطای «نیاز افزونه دیگر» نخواهد بود).</li>
-  <li>از منوی «مقالات کوانتوم» ← «📥 به‌روزرسانی مقاله» وارد شوید.</li>
-  <li>برای هر مقاله اول <strong>Dry-Run</strong> و بعد <strong>Apply</strong> را بزنید. لاگ سبز «از پوشهٔ داخلی افزونه پیوست شد» یعنی عکس بدون اینترنت درون رفته است.</li>
+  <li>در پیشخوان وردپرس → افزونه‌ها، نسخهٔ قبلی «QPedia Article Updater/Importer» را «غیرفعال» و «حذف» کنید (مقاله‌ها و رسانه‌ها حذف <em>نمی‌شوند</em>).</li>
+  <li>افزونه‌ها ← افزودن ← بارگذاری افزونه ← فایل <code>qpedia-article-updater-v2026.09.13g.zip</code> را آپلود و فعال کنید.</li>
+  <li>از منوی «مقالات کوانتوم» ← «📥 درون‌ریزی مقاله» وارد صفحه شوید.</li>
+  <li>ستون «وضعیت» هر رکورد را نشان می‌دهد: <span style="background:#06b6d4;color:#fff;padding:2px 6px;border-radius:8px;font-size:.75rem">جدید (draft)</span> یا <span style="background:#16a34a;color:#fff;padding:2px 6px;border-radius:8px;font-size:.75rem">موجود (آپدیت)</span>.</li>
+  <li>برای هر مقاله اول <strong>پیش‌نمایش</strong> و بعد <strong>درون‌ریزی</strong> را بزنید. برای مقالات جدید بعد از Apply در «فهرست مقاله‌ها» یک پیش‌نویس با همان اسلاگ ظاهر می‌شود که می‌توانید پس از بازبینی منتشر کنید.</li>
 </ol>
 
 <p><a href="../fix/">← بازگشت به صفحهٔ فیکس‌ها</a></p>
