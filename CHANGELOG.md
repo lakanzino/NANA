@@ -647,3 +647,15 @@
 - بعد از دهمین مقاله (۰۱۰) نسخه پایدار برای تحویل دوباره ساخته و شماره نسخه نهایی گذاشته می‌شود.
 
 **نکته اسلاگ‌ها:** نقشه رسمی اسلاگ مقالات زنده در `qpedia-article-updater/slug-map.json` هست (استخراج از `فهرست-به‌روزشده-مقالات-منتشرشده-و-درصف.md`). برای این پنج مقاله، لینک‌های داخلی به مقالات زنده (uncertainty-principle, bohr-atomic-model, schrodinger-cat, double-slit-experiment, quantum-superposition, quantum-entanglement-explained, what-is-quantum) و به دانشمندان (`/scientists/<slug>/`) تنظیم شده و پیوند به مقالات هنوز منتشرنشده (مثل wave-function, quantum-measurement, decoherence, quantum-tunneling, pauli-exclusion-principle) به صورت `#` گذاشته نشده — فقط به مقالات زنده اشاره شده است.
+
+## ۵۵ — ۱۴۰۵/۰۶/۲۳ — فیکس خطای فعال‌سازی: حذف هدر `Requires Plugins` (نسخه e)
+
+خطای گزارش‌شده هنگام فعال‌سازی نسخه d: «خطا: QPedia Article Updater نیاز دارد افزونه 1 نصب و فعال شده باشد: qpedia-fixes».
+
+علت: هدر استاندارد وردپرس `Requires Plugins: qpedia-fixes` که در هدر افزونه بود، از نسخه ۶.۵ وردپرس فعال‌سازی را به‌طور سخت منع می‌کند وقتی افزونه وابسته فعال نیست، حتی اگر این وابستگی در واقع برای ما اختیاری بود (چون خود قالب CPT را ثبت می‌کند).
+
+رفع:
+- هدر `Requires Plugins` از هدر PHP حذف شد.
+- رشته‌های نسخه (نام افزونه، `QAU_VERSION`) به 2026.09.13e آپدیت.
+- زیپ جدید `qpedia-article-updater-v2026.09.13e.zip` (حدود ۴۰۰KB) و صفحهٔ `updater.html` لینک دانلود را به نسخهٔ e تغییر داد.
+- یادآوری نصب: کاربر باید نسخه‌های c/d را در پیشخوان حذف کند و فایل e را تازه نصب کند.

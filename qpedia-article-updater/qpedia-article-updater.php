@@ -1,15 +1,15 @@
 <?php
 /**
- * Plugin Name: QPedia Article Updater (v2026.09.13c)
+ * Plugin Name: QPedia Article Updater (v2026.09.13d)
  * Description: به‌روزرسانی تک‌دکمه‌ای مقالات quantum_article از روی فایل‌های JSON در پوشه payloads. تصاویر درون‌متن ابتدا از پوشهٔ assets داخل خود افزونه خوانده می‌شوند (برای جلوگیری از timeout اینترنت بین‌الملل) و فقط در صورت نبودن از GitHub Pages دانلود می‌گردند (تا ۳ بار تلاش). تصویر شاخص را دست نمی‌زند.
- * Version: 2026.09.13c
+ * Version: 2026.09.13d
  * Author: Arena Agent for QPedia
- * Requires Plugins: qpedia-fixes
+ * Depends: qpedia-fixes (optional, for CPT definitions if already active)
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'QAU_VERSION', '2026.09.13c' );
+define( 'QAU_VERSION', '2026.09.13d' );
 define( 'QAU_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'QAU_PAYLOAD_DIR', QAU_PLUGIN_DIR . 'payloads/' );
 define( 'QAU_ASSETS_DIR', QAU_PLUGIN_DIR . 'assets/images/' );
