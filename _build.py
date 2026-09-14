@@ -64,6 +64,24 @@ ARTICLES = [
         'categories':['interpretations'],
         'file':'012-quantum-realism.md',
     },
+    {
+        'num':'013', 'slug':'quantum-history',
+        'title':'تاریخ صد ساله فیزیک کوانتوم؛ از کوانتای پلانک تا کامپیوتر کوانتومی',
+        'meta':'روایت کامل یک صد سال فیزیک کوانتوم: از کوانتای پلانک در ۱۹۰۰، دوران طلایی ۲۷-۱۹۲۵، EPR و بل، الکترودینامیک کوانتومی، تا عصر رایانه‌های کوانتومی و نوبل ۲۰۲۲، همراه با ۷ تصویر آموزشی.',
+        'accent':'#6D28D9',
+        'cover':'quantum-history-cover.webp',
+        'cover_alt':'کاور مقاله: عنوان انگلیسی و فارسی در مرکز با خط تاکیدی بنفش، و شش نماد کوچک رنگی در اطراف به ترتیب کوره جسم سیاه، اتم بور، موج شرودینگر، مارپیچ زمان، ذرات درهم‌تنیده و کیوبیت.',
+        'inline':{
+            'quantum-history-spiral.webp':'دیاگرام مارپیچ طلایی-کهربایی که از مرکز (۱۹۰۰) به بیرون (۲۰۲۲) می‌چرخد و گره‌های آن سال‌های کلیدی ۱۹۰۰، ۱۹۰۵، ۱۹۱۳، ۱۹۲۵، ۱۹۲۷، ۱۹۳۵، ۱۹۴۸، ۱۹۶۴، ۱۹۸۲، ۱۹۹۴، ۲۰۱۵، ۲۰۲۲ هستند.',
+            'quantum-history-ultraviolet.webp':'دو پنل: در پنل بالا منحنی پیش‌بینی کلاسیک در ناحیه فرابنفش به بی‌نهایت می‌رود (فاجعه فرابنفش)؛ در پنل پایین منحنی پلانک/آزمایش به یک قله می‌رسد و در طول‌موج کوتاه به صفر می‌افتد.',
+            'quantum-history-golden-age.webp':'صورت فلکی آبی از کشفیات ۱۹۲۵-۲۷: در مرکز اتم هسته، هشت خط آبی به هشت گره می‌رسد که نماد ماتریس، موج، تاس/احتمال بورن، عدم‌قطعیت، موج/ذره مکملیت، اصل طرد پائولی، دیراک نسبیتی و گربه شرودینگر هستند.',
+            'quantum-history-feynman.webp':'سه دیاگرام فاینمن سبز، از بالا به پایین: پراکندگی الکترون-الکترون با تبادل فوتون، نابودی الکترون-پوزیترون، و اصلاح حلقه‌ای یک‌حلقه.',
+            'quantum-history-epr-bell.webp':'سه‌مرحله: ابر فکری EPR ۱۹۳۵، قضیه بل ۱۹۶۴، آزمایش اسپکت ۱۹۸۲ که سقف نامساوی بل می‌شکند.',
+            'quantum-history-quantum-tech.webp':'شش وینیت فیروزه‌ای: کره بلوخ، کیوبیت‌ها با دروازه سی‌نات، قفل و کلید کوانتومی، تله یونی، یخچال رقیق‌ساز برای رایانه کوانتومی، و چگالش بوز-انیشتین / ساعت اتمی.',
+        },
+        'categories':['history-experiments','history','fundamentals','core-concepts'],
+        'file':'013-quantum-history.md',
+    },
 ]
 
 def copy_images():
@@ -144,9 +162,10 @@ def main():
     live_slugs = {a['slug'] for a in ARTICLES}  # builder rebuilds all in ARTICLES list
     # also accept previously-released slugs 001-009
     live_slugs |= {
-        'what-is-quantum','quantum-superposition','double-slit-experiment','quantum-entanglement',
+        'what-is-quantum','quantum-superposition','double-slit-experiment','quantum-entanglement-explained',
         'heisenberg-ww2','bohr-complementarity','born-probability','pauli-exclusion',
-        'einstein-schrodinger-reality',
+        'einstein-schrodinger-reality','grw-collapse','transactional-interpretation',
+        'quantum-realism','quantum-history',
     }
     version = '2026.09.14a'  # NOTE: plugin version stays until 10-new-articles batch is ready
     for a in ARTICLES:
