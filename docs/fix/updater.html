@@ -13,26 +13,26 @@ code.url{background:#eef;border:1px solid #ccd;padding:3px 6px;border-radius:4px
 </style></head>
 <body>
 <h1>📥 درون‌ریزی مقالات QPedia</h1>
-<p class="ver"><strong>نسخه 2026.09.13g2 — Importer</strong></p>
-<p class="ver2">منطق جدید درون‌ریزی:</p>
+<p class="ver"><strong>نسخه 2026.09.14a — Importer</strong></p>
+<p class="ver2"><strong>مقالات جدید این نسخه (۱۱=۹+۲):</strong></p>
 <ul>
-  <li>✅ اگر اسلاگ مقاله در سایت <strong>موجود باشد</strong> → همان مقاله به‌روز می‌شود. اگر <code>featured_image</code> در payload خالی باشد تصویر شاخص فعلی دست نمی‌خورد (رفتار نسخه‌های قبل، مخصوص ۰۰۱–۰۰۴).</li>
-  <li>🆕 اگر اسلاگ <strong>موجود نباشد</strong> → مقالهٔ جدید به صورت <strong>پیش‌نویس (draft)</strong> با همهٔ جزئیات ساخته می‌شود: تایتل، چکیده، بدنه HTML، تصویر شاخص + alt، دیاگرام درون‌متن + alt، دسته و زیردسته، اسلاگ.</li>
+  <li>۰۱۰ — تفسیر GRW (فروپاشی خودبه‌خودی) — <code>grw-collapse</code></li>
+  <li>۰۱۱ — تفسیر تراکنشی کوانتوم — <code>transactional-interpretation</code></li>
 </ul>
-<p>این نسخه شامل ۹ payload است: ۰۰۱–۰۰۴ آپدیت و ۰۰۵–۰۰۹ درون‌ریزی مقاله جدید در دسته‌های «تاریخ و آزمایش‌های کوانتوم / تاریخ کوانتوم».</p>
+<p>منطق درون‌ریزی مثل قبل است: اسلاگ موجود → آپدیت؛ اسلاگ ناموجود → مقالهٔ تازه در وضعیت <strong>draft</strong> با تمام متادیتا (تیتر، متا، کاور + alt، دیاگرام + alt، دسته/زیردسته، اسلاگ). دسته‌های مقالات جدید در شاخهٔ «تفسیرها و فلسفه» (<code>interpretations</code>) قرار می‌گیرند.</p>
+<p>همهٔ کاورها و دیاگرام‌ها (شامل ۰۰۱–۰۱۱) درون پوشهٔ <code>assets/images/</code> افزونه باندل شده‌اند تا بدون اینترنت پیوست شوند. همهٔ لینک‌های منابع (DOIها، NobelPrize، SEP، ناشران، APS) تست شده‌اند.</p>
 
-<p><a class="btn" href="https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.13g2.zip?v=3">⬇️ دانلود فایل زیپ (نسخه g2)</a></p>
+<p><a class="btn" href="https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.14a.zip?v=4" target="_blank" rel="noopener">⬇️ دانلود فایل زیپ (نسخه ۱۴a)</a></p>
 
 <p class="tip"><strong>اگر در موبایل دانلود به html افتاد:</strong> روی دکمه <strong>لمس طولانی</strong> و «Download link» را بزنید، یا این آدرس را مستقیم باز کنید:<br>
-<code class="url">https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.13g2.zip?v=3</code></p>
+<code class="url">https://lakanzino.github.io/NANA/fix/qpedia-article-updater-v2026.09.14a.zip?v=4</code></p>
 
 <h2>نصب</h2>
 <ol>
-  <li>در پیشخوان وردپرس → افزونه‌ها، نسخهٔ قبلی «QPedia Article Updater/Importer» را «غیرفعال» و «حذف» کنید (مقاله‌ها و رسانه‌ها حذف <em>نمی‌شوند</em>).</li>
-  <li>افزونه‌ها ← افزودن ← بارگذاری افزونه ← فایل <code>qpedia-article-updater-v2026.09.13g2.zip</code> را آپلود و فعال کنید.</li>
-  <li>از منوی «مقالات کوانتوم» ← «📥 درون‌ریزی مقاله» وارد صفحه شوید.</li>
-  <li>ستون «وضعیت» هر رکورد را نشان می‌دهد: <span style="background:#06b6d4;color:#fff;padding:2px 6px;border-radius:8px;font-size:.75rem">جدید (draft)</span> یا <span style="background:#16a34a;color:#fff;padding:2px 6px;border-radius:8px;font-size:.75rem">موجود (آپدیت)</span>.</li>
-  <li>برای هر مقاله اول <strong>پیش‌نمایش</strong> و بعد <strong>درون‌ریزی</strong> را بزنید. برای مقالات جدید بعد از Apply در «فهرست مقاله‌ها» یک پیش‌نویس با همان اسلاگ ظاهر می‌شود که می‌توانید پس از بازبینی منتشر کنید.</li>
+  <li>در پیشخوان وردپرس → افزونه‌ها، نسخهٔ قبلی QPedia Article Importer را «غیرفعال» و «حذف» کنید.</li>
+  <li>افزونه‌ها ← افزودن ← بارگذاری افزونه ← فایل <code>qpedia-article-updater-v2026.09.14a.zip</code> را آپلود و فعال کنید.</li>
+  <li>از منوی «مقالات کوانتوم» ← «📥 درون‌ریزی مقاله» وارد شوید؛ 010 و 011 را باید آبی‌رنگ «جدید (draft)» ببینید.</li>
+  <li>برای هر کدام اول <strong>پیش‌نمایش</strong> و بعد <strong>درون‌ریزی</strong> را بزنید.</li>
 </ol>
 
 <p><a href="../fix/">← بازگشت به صفحهٔ فیکس‌ها</a></p>
