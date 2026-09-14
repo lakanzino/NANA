@@ -788,3 +788,17 @@ Payloadها با `post_status=draft`، `featured_image`/`featured_image_alt`، `
   - binding (۱۸ KB): جایگاه فعال پروتئین/لیگاند با ناحیه پیوند نارنجی و نمادهای انتقال بار/تونل/الکترواستاتیک + مقایسه میدان‌نیرو در مقابل QM.
   **محتوا:** روش‌های کلاسیک (HF، Coupled Cluster، DFT، QM/MM، force field)، اسکیلینگ نمایی، الگوریتم phase estimation ۲۰۰۵ آسپورو-گوزیک، VQE و NISQ، چهار کاربرد در دارو (انرژی اتصال، حالت‌های برانگیخته، واکنش‌های آنزیمی، داکینگ)، وضعیت کنونی (IBM/Google/IonQ/Quantinuum/Zapata)، گلوگاه‌ها (کیوبیت تصحیح‌خطاشده، وفاداری، صفحات بی‌حاصل، بار اندازه‌گیری، اعتبارسنجی)، ترکیب هوش مصنوعی+QC، جمع‌بندی متوازن.
   **منابع:** Feynman 1982 IJTP، Aspuru-Guzik 2005 Science، Cao et al. 2019 Chem Rev، Bauer et al. 2020 Chem Rev، Peruzzo et al. 2014 Nat Commun، Arute/Google 2020 Science، McArdle et al. 2020 RMP، Smaldone et al. 2025 Chem Rev، Preskill 2018 Quantum.
+
+## ۶۴ — ۱۴۰۵/۰۶/۲۴ — بستن نسخه 14b افزونه با ۱۶ مقاله (۰۰۱–۰۱۶)
+
+قانون بچ‌بندی به «هر ۵ مقاله جدید» تغییر کرد (بخش ۱۳ه دستورالعمل).
+این نسخه شامل تمام ۱۱ مقالهٔ قبلی + ۵ مقاله جدید بچ ۱۴b است:
+- ۰۱۲ `quantum-realism` — رئالیسم کوانتومی
+- ۰۱۳ `quantum-history` — تاریخ صد ساله فیزیک کوانتوم
+- ۰۱۴ `quantum-memory` — حافظه کوانتومی
+- ۰۱۵ `majorana-topological` — کیوبیت‌های توپولوژیک مایورانا
+- ۰۱۶ `quantum-chemistry-drug-discovery` — شیمی محاسباتی کوانتومی در کشف دارو
+
+افزونه هدر/ثابت `QAU_VERSION` به `2026.09.14b` بامپ شد.
+زیپ افزونه در `docs/fix/qpedia-article-updater-v2026.09.14b.zip` (۷۴۸ KB) قرار گرفت.
+`updater.html` با لیست مقالات جدید، دستورالعمل جدید بچ‌بندی و cachebuster `?v=5` بازنویسی شد.

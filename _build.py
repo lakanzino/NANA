@@ -208,7 +208,7 @@ def main():
         'einstein-schrodinger-reality','grw-collapse','transactional-interpretation',
         'quantum-realism','quantum-history',
     }
-    version = '2026.09.14a'  # NOTE: plugin version stays until 10-new-articles batch is ready
+    version = '2026.09.14b'  # current plugin version (released: 16 articles = 001-016)
     for a in ARTICLES:
         md = (ART/a['file']).read_text(encoding='utf-8')
         md = re.sub(r'^# .+\n', '', md, count=1)

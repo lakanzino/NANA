@@ -5,7 +5,7 @@
   "post_status": "draft",
   "post_type": "quantum_article",
   "meta": {
-    "_qau_import_version": "2026.09.14a",
+    "_qau_import_version": "2026.09.14b",
     "accent_color": "#EA580C",
     "meta_description": "شیمی محاسباتی کوانتومی (quantum CADD) چگونه کار می‌کند، چرا دیوار اسکیلینگ نمایی روش‌های کلاسیک به رایانه کوانتومی نیاز دارد، VQE و phase estimation چیست، کجای خط‌لوله دارو مؤثر است و تا کاربرد بالینی واقعی چقدر فاصله داریم."
   },

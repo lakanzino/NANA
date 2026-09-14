@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: QPedia Article Importer (v2026.09.14a)
+ * Plugin Name: QPedia Article Importer (v2026.09.14b)
  * Description: درون‌ریزی/به‌روزرسانی تک‌دکمه‌ای مقالات quantum_article. اگر اسلاگ موجود باشد مقاله آپدیت می‌شود (بدون دست زدن به تصویر شاخص در صورتی که در payload خالی باشد)؛ اگر اسلاگ موجود نباشد، مقالهٔ جدید به صورت پیش‌نویس (draft) با تمام جزئیات — تایتل، متا، تصویر شاخص و alt، دیاگرام درون‌متن و alt، دسته/زیردسته، اسلاگ — ساخته می‌شود.
- * Version: 2026.09.14a
+ * Version: 2026.09.14b
  * Author: Arena Agent for QPedia
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'QAU_VERSION', '2026.09.14a' );
+define( 'QAU_VERSION', '2026.09.14b' );
 define( 'QAU_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'QAU_PAYLOAD_DIR', QAU_PLUGIN_DIR . 'payloads/' );
 define( 'QAU_ASSETS_DIR', QAU_PLUGIN_DIR . 'assets/images/' );
