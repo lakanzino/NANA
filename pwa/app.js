@@ -443,6 +443,7 @@ function render() {
   let html = '';
 
   switch (state.screen) {
+    case 'start': html = renderStart(); break;
     case 'home': html = renderHome(); break;
     case 'topics': html = renderTopics(); break;
     case 'category': html = renderCategory(); break;

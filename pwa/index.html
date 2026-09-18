@@ -41,6 +41,13 @@
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
+      <button class="nav-item" data-screen="start" onclick="navigate('start')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 15l7-9 4 5 3-2"/>
+          <path d="M14.5 12.5L11 20l-1.5-4.5L5 15"/>
+        </svg>
+        <span>استارت</span>
+      </button>
       <button class="nav-item active" data-screen="home" onclick="navigate('home')">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -83,6 +90,7 @@
   <!-- Toast -->
   <div id="toast" class="toast"></div>
 
+  <script src="start.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
